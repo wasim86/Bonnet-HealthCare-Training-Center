@@ -1,6 +1,7 @@
 // Base Quote Interface
 export interface BaseQuote {
   id?: string;
+  quoteType?: string;
   quoteNumber?: string;
   firstName: string;
   lastName: string;
@@ -356,25 +357,25 @@ export interface MedicareSupplementQuote extends BaseQuote {
 
 // Quote Types Enum
 export const QUOTE_TYPES = {
-  AUTO: 'AutoQuote',
-  BOAT: 'BoatQuote', 
-  MOTORCYCLE: 'MotorcycleQuote',
-  HOME: 'HomeQuote',
-  FLOOD: 'FloodQuote',
-  RENTERS: 'RentersQuote',
-  LANDLORDS: 'LandlordsQuote',
-  BUSINESS: 'BusinessQuote',
-  BOP: 'BOPQuote',
-  WORKERS_COMP: 'WorkersCompQuote',
-  HEALTH: 'HealthQuote',
-  DENTAL: 'DentalQuote',
-  VISION: 'VisionQuote',
-  LIFE: 'LifeInsuranceQuote',
-  DISABILITY: 'DisabilityInsuranceQuote',
-  UMBRELLA: 'UmbrellaInsuranceQuote',
-  ANNUITY: 'AnnuityQuote',
-  MEDICARE_ADVANTAGE: 'MedicareAdvantageQuote',
-  MEDICARE_SUPPLEMENT: 'MedicareSupplementQuote',
+  AUTO: 'Auto',
+  BOAT: 'Boat',
+  MOTORCYCLE: 'Motorcycle',
+  HOME: 'Home',
+  FLOOD: 'Flood',
+  RENTERS: 'Renters',
+  LANDLORDS: 'Landlords',
+  BUSINESS: 'Business',
+  BOP: 'BOP',
+  WORKERS_COMP: 'WorkersComp',
+  HEALTH: 'Health',
+  DENTAL: 'Dental',
+  VISION: 'Vision',
+  LIFE: 'LifeInsurance',
+  DISABILITY: 'DisabilityInsurance',
+  UMBRELLA: 'UmbrellaInsurance',
+  ANNUITY: 'Annuity',
+  MEDICARE_ADVANTAGE: 'MedicareAdvantage',
+  MEDICARE_SUPPLEMENT: 'MedicareSupplement',
 } as const;
 
 export type QuoteType = typeof QUOTE_TYPES[keyof typeof QUOTE_TYPES];

@@ -157,17 +157,17 @@ export function useQuotes(
 }
 
 // Specific hooks for common quote types
-export const useAutoQuotes = (options?: UseQuotesOptions) => 
-  useQuotes('AutoQuote', options);
+export const useAutoQuotes = (options?: UseQuotesOptions) =>
+  useQuotes('Auto', options);
 
-export const useHomeQuotes = (options?: UseQuotesOptions) => 
-  useQuotes('HomeQuote', options);
+export const useHomeQuotes = (options?: UseQuotesOptions) =>
+  useQuotes('Home', options);
 
-export const useHealthQuotes = (options?: UseQuotesOptions) => 
-  useQuotes('HealthQuote', options);
+export const useHealthQuotes = (options?: UseQuotesOptions) =>
+  useQuotes('Health', options);
 
-export const useBusinessQuotes = (options?: UseQuotesOptions) => 
-  useQuotes('BusinessQuote', options);
+export const useBusinessQuotes = (options?: UseQuotesOptions) =>
+  useQuotes('Business', options);
 
-export const useLifeInsuranceQuotes = (options?: UseQuotesOptions) => 
-  useQuotes('LifeInsuranceQuote', options);
+export const useLifeInsuranceQuotes = (options?: UseQuotesOptions) =>
+  useQuotes('LifeInsurance', options);

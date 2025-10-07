@@ -136,49 +136,49 @@ export const quoteService = new QuoteService();
 
 // Export specific quote type services for convenience
 export const autoQuoteService = {
-  create: (data: any) => quoteService.createQuote('AutoQuote', data),
-  getAll: (params?: PaginationParams) => quoteService.getQuotes('AutoQuote', params),
-  getById: (id: string) => quoteService.getQuote('AutoQuote', id),
-  update: (id: string, data: any) => quoteService.updateQuote('AutoQuote', id, data),
-  delete: (id: string) => quoteService.deleteQuote('AutoQuote', id),
+  create: (data: any) => quoteService.createQuote('Auto', data),
+  getAll: (params?: PaginationParams) => quoteService.getQuotes('Auto', params),
+  getById: (id: string) => quoteService.getQuote('Auto', id),
+  update: (id: string, data: any) => quoteService.updateQuote('Auto', id, data),
+  delete: (id: string) => quoteService.deleteQuote('Auto', id),
 };
 
 export const homeQuoteService = {
-  create: (data: any) => quoteService.createQuote('HomeQuote', data),
-  getAll: (params?: PaginationParams) => quoteService.getQuotes('HomeQuote', params),
-  getById: (id: string) => quoteService.getQuote('HomeQuote', id),
-  update: (id: string, data: any) => quoteService.updateQuote('HomeQuote', id, data),
-  delete: (id: string) => quoteService.deleteQuote('HomeQuote', id),
+  create: (data: any) => quoteService.createQuote('Home', data),
+  getAll: (params?: PaginationParams) => quoteService.getQuotes('Home', params),
+  getById: (id: string) => quoteService.getQuote('Home', id),
+  update: (id: string, data: any) => quoteService.updateQuote('Home', id, data),
+  delete: (id: string) => quoteService.deleteQuote('Home', id),
 };
 
 export const healthQuoteService = {
-  create: (data: any) => quoteService.createQuote('HealthQuote', data),
-  getAll: (params?: PaginationParams) => quoteService.getQuotes('HealthQuote', params),
-  getById: (id: string) => quoteService.getQuote('HealthQuote', id),
-  update: (id: string, data: any) => quoteService.updateQuote('HealthQuote', id, data),
-  delete: (id: string) => quoteService.deleteQuote('HealthQuote', id),
+  create: (data: any) => quoteService.createQuote('Health', data),
+  getAll: (params?: PaginationParams) => quoteService.getQuotes('Health', params),
+  getById: (id: string) => quoteService.getQuote('Health', id),
+  update: (id: string, data: any) => quoteService.updateQuote('Health', id, data),
+  delete: (id: string) => quoteService.deleteQuote('Health', id),
 };
 
 export const businessQuoteService = {
-  create: (data: any) => quoteService.createQuote('BusinessQuote', data),
-  getAll: (params?: PaginationParams) => quoteService.getQuotes('BusinessQuote', params),
-  getById: (id: string) => quoteService.getQuote('BusinessQuote', id),
-  update: (id: string, data: any) => quoteService.updateQuote('BusinessQuote', id, data),
-  delete: (id: string) => quoteService.deleteQuote('BusinessQuote', id),
+  create: (data: any) => quoteService.createQuote('Business', data),
+  getAll: (params?: PaginationParams) => quoteService.getQuotes('Business', params),
+  getById: (id: string) => quoteService.getQuote('Business', id),
+  update: (id: string, data: any) => quoteService.updateQuote('Business', id, data),
+  delete: (id: string) => quoteService.deleteQuote('Business', id),
 };
 
 export const lifeInsuranceQuoteService = {
-  create: (data: any) => quoteService.createQuote('LifeInsuranceQuote', data),
-  getAll: (params?: PaginationParams) => quoteService.getQuotes('LifeInsuranceQuote', params),
-  getById: (id: string) => quoteService.getQuote('LifeInsuranceQuote', id),
-  update: (id: string, data: any) => quoteService.updateQuote('LifeInsuranceQuote', id, data),
-  delete: (id: string) => quoteService.deleteQuote('LifeInsuranceQuote', id),
+  create: (data: any) => quoteService.createQuote('LifeInsurance', data),
+  getAll: (params?: PaginationParams) => quoteService.getQuotes('LifeInsurance', params),
+  getById: (id: string) => quoteService.getQuote('LifeInsurance', id),
+  update: (id: string, data: any) => quoteService.updateQuote('LifeInsurance', id, data),
+  delete: (id: string) => quoteService.deleteQuote('LifeInsurance', id),
 };
 
 export const motorcycleQuoteService = {
-  create: (data: any) => quoteService.createQuote('MotorcycleQuote', data),
-  getAll: (params?: PaginationParams) => quoteService.getQuotes('MotorcycleQuote', params),
-  getById: (id: string) => quoteService.getQuote('MotorcycleQuote', id),
-  update: (id: string, data: any) => quoteService.updateQuote('MotorcycleQuote', id, data),
-  delete: (id: string) => quoteService.deleteQuote('MotorcycleQuote', id),
+  create: (data: any) => quoteService.createQuote('Motorcycle', data),
+  getAll: (params?: PaginationParams) => quoteService.getQuotes('Motorcycle', params),
+  getById: (id: string) => quoteService.getQuote('Motorcycle', id),
+  update: (id: string, data: any) => quoteService.updateQuote('Motorcycle', id, data),
+  delete: (id: string) => quoteService.deleteQuote('Motorcycle', id),
 };
