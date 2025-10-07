@@ -1,0 +1,6 @@
+@JecaInsurance.API_HostAddress = http://localhost:5149
+
+GET {{JecaInsurance.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
