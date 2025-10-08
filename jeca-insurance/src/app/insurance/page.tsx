@@ -17,7 +17,7 @@ const insuranceTypes = [
     ),
     features: ['Auto Insurance', 'Motorcycle Insurance', 'Boat Insurance', 'Commercial Vehicle Coverage'],
     color: 'from-blue-600 to-indigo-700',
-    quoteHref: '/quote/auto',
+    quoteHref: 'https://www.agentinsure.com/compare/auto-insurance-home-insurance/jeca/quote.aspx',
   },
   {
     id: 'health',
@@ -49,7 +49,7 @@ const insuranceTypes = [
   },
   {
     id: 'property',
-    name: 'Property Insurance',
+    name: 'Home Owner Insurance',
     description: 'Protect your home, condo, rental property, and more with comprehensive coverage.',
     href: '/insurance/property/home',
     icon: (
@@ -59,7 +59,7 @@ const insuranceTypes = [
     ),
     features: ['Home Insurance', 'Flood Insurance', 'Landlords Insurance', 'Renters Insurance'],
     color: 'from-purple-600 to-pink-600',
-    quoteHref: '/quote/home',
+    quoteHref: 'https://www.agentinsure.com/compare/auto-insurance-home-insurance/jeca/quote.aspx',
   },
   {
     id: 'business',

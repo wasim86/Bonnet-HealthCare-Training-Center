@@ -85,7 +85,7 @@ API will be available at `http://localhost:5149`
 - Life Insurance
 - Health Insurance (Individual, Medicare, Dental, Vision)
 - Business Insurance (General Liability, BOP, Workers Comp)
-- Property Insurance (Renters, Landlords, Flood)
+- Home Owner Insurance (Renters, Landlords, Flood)
 - Specialty Insurance (Boat, Motorcycle, Umbrella, Disability)
 
 ### 📝 Blog Content

@@ -254,7 +254,7 @@ Basic Contact Information → Submit
 - `POST /api/quotes/boat` - Submit boat quote  
 - `POST /api/quotes/motorcycle` - Submit motorcycle quote
 
-### **Property Insurance Endpoints:**
+### **Home Owner Insurance Endpoints:**
 - `POST /api/quotes/home` - Submit home quote
 - `POST /api/quotes/flood` - Submit flood quote
 - `POST /api/quotes/renters` - Submit renters quote

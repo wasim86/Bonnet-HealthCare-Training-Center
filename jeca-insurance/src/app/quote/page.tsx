@@ -38,7 +38,7 @@ const quoteCategories = [
         id: 'auto',
         name: 'Auto Insurance',
         description: 'Complete coverage for cars and trucks with competitive rates.',
-        href: '/quote/auto',
+        href: 'https://www.agentinsure.com/compare/auto-insurance-home-insurance/jeca/quote.aspx',
         features: ['Collision Coverage', 'Comprehensive', '24/7 Roadside Assistance'],
         popular: true
       },
@@ -46,20 +46,20 @@ const quoteCategories = [
         id: 'motorcycle',
         name: 'Motorcycle Insurance',
         description: 'Specialized coverage for motorcycles and scooters.',
-        href: '/quote/motorcycle',
+        href: 'https://www.agentinsure.com/compare/auto-insurance-home-insurance/jeca/quote.aspx',
         features: ['Liability Coverage', 'Collision', 'Theft Protection']
       },
       {
         id: 'boat',
         name: 'Boat Insurance',
         description: 'Marine coverage for boats, yachts, and watercraft.',
-        href: '/quote/boat',
+        href: 'https://www.agentinsure.com/compare/auto-insurance-home-insurance/jeca/quote.aspx',
         features: ['Hull Coverage', 'Liability', 'Emergency Assistance']
       }
     ]
   },
   {
-    title: 'Property Insurance',
+    title: 'Home Owner Insurance',
     description: 'Protect your home and rental properties',
     icon: HomeIcon,
     gradient: 'from-green-600 to-emerald-600',
@@ -68,7 +68,7 @@ const quoteCategories = [
         id: 'home',
         name: 'Home Insurance',
         description: 'Comprehensive protection for your home and belongings.',
-        href: '/quote/home',
+        href: 'https://www.agentinsure.com/compare/auto-insurance-home-insurance/jeca/quote.aspx',
         features: ['Dwelling Coverage', 'Personal Property', 'Liability Protection'],
         popular: true
       },
@@ -76,21 +76,21 @@ const quoteCategories = [
         id: 'renters',
         name: 'Renters Insurance',
         description: 'Affordable coverage for renters and their belongings.',
-        href: '/quote/renters',
+        href: 'https://www.agentinsure.com/compare/auto-insurance-home-insurance/jeca/quote.aspx',
         features: ['Personal Property', 'Liability', 'Additional Living Expenses']
       },
       {
         id: 'landlords',
         name: 'Landlords Insurance',
         description: 'Specialized coverage for rental property owners.',
-        href: '/quote/landlords',
+        href: 'https://www.agentinsure.com/compare/auto-insurance-home-insurance/jeca/quote.aspx',
         features: ['Property Coverage', 'Rental Income', 'Liability Protection']
       },
       {
         id: 'flood',
         name: 'Flood Insurance',
         description: 'Essential flood protection for your property.',
-        href: '/quote/flood',
+        href: 'https://www.agentinsure.com/compare/auto-insurance-home-insurance/jeca/quote.aspx',
         features: ['Building Coverage', 'Contents Coverage', 'NFIP Compliant']
       }
     ]
@@ -106,7 +106,7 @@ const quoteCategories = [
         name: 'Business Insurance',
         description: 'General liability and property coverage for businesses.',
         href: '/quote/business',
-        features: ['General Liability', 'Property Insurance', 'Business Interruption'],
+        features: ['General Liability', 'Home Owner Insurance', 'Business Interruption'],
         popular: true
       },
       {

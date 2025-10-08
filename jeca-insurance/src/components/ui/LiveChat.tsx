@@ -2,13 +2,14 @@
 
 import { useState, useRef, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { 
-  ChatBubbleLeftRightIcon, 
-  XMarkIcon, 
+import {
+  ChatBubbleLeftRightIcon,
+  XMarkIcon,
   PaperAirplaneIcon,
   UserIcon,
   ComputerDesktopIcon
 } from '@heroicons/react/24/outline'
+import { useLiveChat } from '@/contexts/LiveChatContext'
 
 interface Message {
   id: string
@@ -36,10 +37,10 @@ const quickReplies = [
 ]
 
 const autoResponses: { [key: string]: string } = {
-  'auto quote': 'Great! I can help you get an auto insurance quote. We offer coverage for cars, motorcycles, and boats. Would you like to start with a specific vehicle type? You can get quotes at: /quote/auto, /quote/motorcycle, or /quote/boat',
+  'auto quote': 'Great! I can help you get an auto insurance quote. We offer coverage for cars, motorcycles, and boats. Would you like to start with a specific vehicle type? You can get quotes at: https://www.agentinsure.com/compare/auto-insurance-home-insurance/jeca/quote.aspx',
   'health quote': 'I\'d be happy to help with health insurance! We offer individual health plans, dental, vision, Medicare Advantage, and Medicare Supplement. Which type interests you? Visit /quotes/health to see all options.',
   'life insurance': 'Life insurance is a great way to protect your family\'s future. We offer life insurance, annuities, disability insurance, and umbrella coverage. You can explore options at /quotes/life-financial/life',
-  'property quote': 'Perfect! For property insurance, we cover homes, flood protection, landlord insurance, and renters insurance. What type of property do you need to protect? Start at /quote/home',
+  'property quote': 'Perfect! For property insurance, we cover homes, flood protection, landlord insurance, and renters insurance. What type of property do you need to protect? Start at https://www.agentinsure.com/compare/auto-insurance-home-insurance/jeca/quote.aspx',
   'business quote': 'Business insurance is essential! We offer general liability, business owner packages (BOP), and workers compensation. What size business do you have? Get started at /quote/business',
   'file a claim': 'I can help you file a claim. For immediate assistance with claims, please call our 24/7 claims hotline at 877-501-5460, or I can guide you through our online claims process at /services/report-claim',
   'get a quote': 'I\'d be happy to help you get a quote! We offer 5 main categories: Auto (cars, motorcycles, boats), Health (individual, dental, vision, Medicare), Life & Financial (life, annuities, disability), Property (home, flood, landlord, renters), and Business insurance. Which interests you?',
@@ -52,7 +53,7 @@ const autoResponses: { [key: string]: string } = {
 }
 
 export default function LiveChat() {
-  const [isOpen, setIsOpen] = useState(false)
+  const { isOpen, openChat, closeChat, toggleChat } = useLiveChat()
   const [messages, setMessages] = useState<Message[]>(initialMessages)
   const [inputValue, setInputValue] = useState('')
   const [isTyping, setIsTyping] = useState(false)
@@ -174,7 +175,7 @@ export default function LiveChat() {
         transition={{ delay: 2, type: "spring", stiffness: 200 }}
       >
         <motion.button
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={toggleChat}
           className="relative bg-gradient-to-r from-blue-600 to-purple-600 text-white p-3 sm:p-4 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 touch-target-comfortable"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
@@ -249,7 +250,7 @@ export default function LiveChat() {
                 </div>
               </div>
               <motion.button
-                onClick={() => setIsOpen(false)}
+                onClick={closeChat}
                 className="p-1 hover:bg-white/20 rounded-full transition-colors touch-target"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}

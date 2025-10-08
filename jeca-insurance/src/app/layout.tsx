@@ -4,6 +4,8 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import LiveChat from "@/components/ui/LiveChat";
+import { LiveChatProvider } from "@/contexts/LiveChatContext";
+import { AuthProvider } from "@/contexts/AuthContext";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -24,14 +26,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} font-sans antialiased`}>
-        <div className="min-h-screen flex flex-col">
-          <Header />
-          <main className="flex-1">
-            {children}
-          </main>
-          <Footer />
-          <LiveChat />
-        </div>
+        <AuthProvider>
+          <LiveChatProvider>
+            <div className="min-h-screen flex flex-col">
+              <Header />
+              <main className="flex-1">
+              {children}
+            </main>
+              <Footer />
+              <LiveChat />
+            </div>
+          </LiveChatProvider>
+        </AuthProvider>
       </body>
     </html>
   );

@@ -20,17 +20,24 @@ import {
   UserGroupIcon,
   BellIcon,
   CurrencyDollarIcon,
-  ChatBubbleLeftRightIcon
+  ChatBubbleLeftRightIcon,
+  ArrowRightOnRectangleIcon,
+  CogIcon
 } from '@heroicons/react/24/outline'
 import { useQuoteDashboard } from '../../lib/hooks/useQuoteDashboard'
 import { QUOTE_TYPES } from '../../lib/types'
+import ProtectedRoute from '@/components/auth/ProtectedRoute'
+import AdminSettings from '@/components/dashboard/AdminSettings'
+import { useAuth } from '@/contexts/AuthContext'
 
 export default function DashboardPage() {
+  const { user, logout } = useAuth()
   const [selectedQuoteType, setSelectedQuoteType] = useState<string>('All')
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedStatus, setSelectedStatus] = useState<string>('All')
   const [selectedQuoteDetails, setSelectedQuoteDetails] = useState<any>(null)
   const [loadingQuoteDetails, setLoadingQuoteDetails] = useState(false)
+  const [showAdminSettings, setShowAdminSettings] = useState(false)
 
   // Management section state
   const [activeManagementSection, setActiveManagementSection] = useState('quotes') // 'quotes' or 'services'
@@ -439,7 +446,8 @@ export default function DashboardPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <ProtectedRoute>
+      <div className="min-h-screen bg-gray-50">
       {/* Admin Header */}
       <div className="bg-white shadow-sm border-b">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -462,8 +470,19 @@ export default function DashboardPage() {
               <div className="h-8 w-8 bg-blue-600 rounded-full flex items-center justify-center">
                 <span className="text-white font-medium text-sm">A</span>
               </div>
-              <button className="bg-gray-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-gray-700">
-                Admin Settings
+              <button
+                onClick={() => setShowAdminSettings(true)}
+                className="bg-gray-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-gray-700 flex items-center space-x-2"
+              >
+                <CogIcon className="h-4 w-4" />
+                <span>Admin Settings</span>
+              </button>
+              <button
+                onClick={logout}
+                className="bg-red-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-red-700 flex items-center space-x-2"
+              >
+                <ArrowRightOnRectangleIcon className="h-4 w-4" />
+                <span>Logout</span>
               </button>
             </div>
           </div>
@@ -886,7 +905,7 @@ export default function DashboardPage() {
 
         {/* Service Details Modal */}
         {serviceDetailsModalOpen && selectedServiceDetails && (
-          <div className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50">
+          <div className="fixed inset-0 bg-gray-900/75 backdrop-blur-sm overflow-y-auto h-full w-full z-50">
             <div className="relative top-20 mx-auto p-5 border w-11/12 max-w-4xl shadow-lg rounded-md bg-white">
               <div className="mt-3">
                 {/* Modal Header */}
@@ -1095,7 +1114,7 @@ export default function DashboardPage() {
 
         {/* Quote Details Modal */}
         {selectedQuoteDetails && (
-          <div className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50">
+          <div className="fixed inset-0 bg-gray-900/75 backdrop-blur-sm overflow-y-auto h-full w-full z-50">
             <div className="relative top-20 mx-auto p-5 border w-11/12 max-w-4xl shadow-lg rounded-md bg-white">
               <div className="mt-3">
                 {/* Modal Header */}
@@ -2119,6 +2138,13 @@ export default function DashboardPage() {
         )}
 
       </div>
+
+      {/* Admin Settings Modal */}
+      <AdminSettings
+        isOpen={showAdminSettings}
+        onClose={() => setShowAdminSettings(false)}
+      />
     </div>
+    </ProtectedRoute>
   )
 }

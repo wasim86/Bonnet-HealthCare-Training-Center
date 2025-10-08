@@ -3,8 +3,11 @@
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { PhoneIcon, ChatBubbleLeftRightIcon, DocumentTextIcon, SparklesIcon } from '@heroicons/react/24/outline'
+import { useLiveChat } from '@/contexts/LiveChatContext'
 
 export default function CTASection() {
+  const { openChat } = useLiveChat()
+
   return (
     <div className="relative bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 overflow-hidden">
       {/* Background Elements */}
@@ -147,7 +150,14 @@ export default function CTASection() {
               </motion.div>
               <h4 className="mt-4 text-xl font-bold text-white">Call Us</h4>
               <p className="mt-2 text-gray-200">Speak with a licensed agent</p>
-              <p className="mt-3 text-2xl font-bold text-yellow-300">877-501-5460</p>
+              <motion.a
+                href="tel:877-501-5460"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="mt-3 block text-2xl font-bold text-yellow-300 hover:text-yellow-200 transition-colors cursor-pointer"
+              >
+                877-501-5460
+              </motion.a>
               <p className="text-sm text-green-300 font-medium">Available 24/7</p>
             </motion.div>
 
@@ -170,6 +180,7 @@ export default function CTASection() {
               <h4 className="mt-4 text-xl font-bold text-white">Live Chat</h4>
               <p className="mt-2 text-gray-200">Get instant help online</p>
               <motion.button
+                onClick={openChat}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="mt-4 rounded-xl bg-white px-6 py-3 text-sm font-bold text-purple-600 hover:bg-gray-100 transition-colors shadow-lg"

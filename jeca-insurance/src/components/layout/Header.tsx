@@ -5,11 +5,11 @@ import Link from 'next/link'
 import { Bars3Icon, XMarkIcon, PhoneIcon, ChevronDownIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
 import { motion, AnimatePresence } from 'framer-motion'
 import { cn } from '@/lib/utils'
-import Logo from '@/components/ui/Logo'
 
 interface SubmenuItem {
   name: string
   href: string
+  external?: boolean
 }
 
 interface DropdownItem {
@@ -37,20 +37,20 @@ const navigation: NavigationItem[] = [
         href: '#',
         hasSubmenu: true,
         submenu: [
-          { name: 'Auto Insurance Quote', href: '/quote/auto' },
-          { name: 'Boat Insurance Quote', href: '/quote/boat' },
-          { name: 'Motorcycle Insurance Quote', href: '/quote/motorcycle' },
+          { name: 'Auto Insurance Quote', href: 'https://www.agentinsure.com/compare/auto-insurance-home-insurance/jeca/quote.aspx', external: true },
+          { name: 'Boat Insurance Quote', href: 'https://www.agentinsure.com/compare/auto-insurance-home-insurance/jeca/quote.aspx', external: true },
+          { name: 'Motorcycle Insurance Quote', href: 'https://www.agentinsure.com/compare/auto-insurance-home-insurance/jeca/quote.aspx', external: true },
         ]
       },
       {
-        name: 'Property Quotes',
+        name: 'Home Owner Quotes',
         href: '#',
         hasSubmenu: true,
         submenu: [
-          { name: 'Home Insurance Quote', href: '/quote/home' },
-          { name: 'Flood Insurance Quote', href: '/quote/flood' },
-          { name: 'Landlords Insurance Quote', href: '/quote/landlords' },
-          { name: 'Renters Insurance Quote', href: '/quote/renters' },
+          { name: 'Home Insurance Quote', href: 'https://www.agentinsure.com/compare/auto-insurance-home-insurance/jeca/quote.aspx', external: true },
+          { name: 'Flood Insurance Quote', href: 'https://www.agentinsure.com/compare/auto-insurance-home-insurance/jeca/quote.aspx', external: true },
+          { name: 'Landlords Insurance Quote', href: 'https://www.agentinsure.com/compare/auto-insurance-home-insurance/jeca/quote.aspx', external: true },
+          { name: 'Renters Insurance Quote', href: 'https://www.agentinsure.com/compare/auto-insurance-home-insurance/jeca/quote.aspx', external: true },
         ]
       },
       {
@@ -118,7 +118,7 @@ const navigation: NavigationItem[] = [
         ]
       },
       {
-        name: 'Property',
+        name: 'Home Owner',
         href: '#',
         hasSubmenu: true,
         submenu: [
@@ -194,7 +194,11 @@ export default function Header() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-4 sm:p-6 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
-            <Logo size="md" animated={true} />
+            <img
+              src="/images/jeca-resources-logo.png"
+              alt="JECA Resources & Services"
+              className="h-14 w-auto"
+            />
           </Link>
         </div>
 
@@ -289,13 +293,28 @@ export default function Header() {
                               className="absolute top-0 left-full ml-1 w-64 bg-white rounded-lg shadow-xl border border-gray-100 py-2 z-60"
                             >
                               {dropdownItem.submenu.map((submenuItem) => (
-                                <Link
-                                  key={submenuItem.name}
-                                  href={submenuItem.href}
-                                  className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-colors"
-                                >
-                                  {submenuItem.name}
-                                </Link>
+                                submenuItem.external ? (
+                                  <a
+                                    key={submenuItem.name}
+                                    href={submenuItem.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center justify-between px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-colors"
+                                  >
+                                    <span>{submenuItem.name}</span>
+                                    <svg className="h-4 w-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                    </svg>
+                                  </a>
+                                ) : (
+                                  <Link
+                                    key={submenuItem.name}
+                                    href={submenuItem.href}
+                                    className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-colors"
+                                  >
+                                    {submenuItem.name}
+                                  </Link>
+                                )
                               ))}
                             </motion.div>
                           )}
@@ -309,13 +328,21 @@ export default function Header() {
           ))}
         </div>
         
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center lg:space-x-4">
+        <div className="hidden lg:flex lg:justify-end lg:items-center lg:space-x-4 lg:flex-shrink-0 lg:ml-8 xl:ml-10">
           {/*<Link
             href="/login"
             className="text-sm lg:text-sm xl:text-base font-semibold leading-6 text-gray-900 hover:text-blue-600 transition-colors px-3 py-2 rounded-md hover:bg-gray-50"
           >
             Log in
           </Link>*/}
+          <a
+            href="https://customerservice.agentinsure.com/EzlynxCustomerService/jeca/Account/LogIn"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-md bg-gray-600 px-4 py-2.5 lg:px-3.5 lg:py-2.5 xl:px-4 xl:py-3 text-sm lg:text-sm xl:text-base font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600 transition-all duration-200 hover:shadow-md"
+          >
+            Client Portal
+          </a>
           <Link
             href="/quote"
             className="rounded-md bg-blue-600 px-4 py-2.5 lg:px-3.5 lg:py-2.5 xl:px-4 xl:py-3 text-sm lg:text-sm xl:text-base font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transition-all duration-200 hover:shadow-md"
@@ -327,11 +354,15 @@ export default function Header() {
       
       {/* Mobile menu */}
       <div className={cn("lg:hidden", mobileMenuOpen ? "block" : "hidden")}>
-        <div className="fixed inset-0 z-50 bg-black/20" onClick={() => setMobileMenuOpen(false)} />
+        <div className="fixed inset-0 z-50 bg-gray-900/75 backdrop-blur-sm" onClick={() => setMobileMenuOpen(false)} />
         <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-4 py-6 sm:max-w-sm sm:px-6 sm:ring-1 sm:ring-gray-900/10 shadow-2xl">
           <div className="flex items-center justify-between">
             <Link href="/" className="-m-1.5 p-1.5">
-              <Logo size="md" animated={false} />
+              <img
+                src="/images/jeca-resources-logo.png"
+                alt="JECA Resources & Services"
+                className="h-12 w-auto"
+              />
             </Link>
             <button
               type="button"
@@ -384,14 +415,30 @@ export default function Header() {
                             {dropdownItem.hasSubmenu && dropdownItem.submenu && (
                               <div className="ml-6 mt-1 space-y-1">
                                 {dropdownItem.submenu.map((submenuItem) => (
-                                  <Link
-                                    key={submenuItem.name}
-                                    href={submenuItem.href}
-                                    className="-mx-3 block rounded-lg px-3 py-2.5 text-xs leading-5 text-gray-500 hover:bg-gray-50 hover:text-blue-600 touch-target transition-colors"
-                                    onClick={() => setMobileMenuOpen(false)}
-                                  >
-                                    {submenuItem.name}
-                                  </Link>
+                                  submenuItem.external ? (
+                                    <a
+                                      key={submenuItem.name}
+                                      href={submenuItem.href}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      className="-mx-3 flex items-center justify-between rounded-lg px-3 py-2.5 text-xs leading-5 text-gray-500 hover:bg-gray-50 hover:text-blue-600 touch-target transition-colors"
+                                      onClick={() => setMobileMenuOpen(false)}
+                                    >
+                                      <span>{submenuItem.name}</span>
+                                      <svg className="h-3 w-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                      </svg>
+                                    </a>
+                                  ) : (
+                                    <Link
+                                      key={submenuItem.name}
+                                      href={submenuItem.href}
+                                      className="-mx-3 block rounded-lg px-3 py-2.5 text-xs leading-5 text-gray-500 hover:bg-gray-50 hover:text-blue-600 touch-target transition-colors"
+                                      onClick={() => setMobileMenuOpen(false)}
+                                    >
+                                      {submenuItem.name}
+                                    </Link>
+                                  )
                                 ))}
                               </div>
                             )}
@@ -416,6 +463,15 @@ export default function Header() {
                 >
                   Log in
                 </Link>
+                <a
+                  href="https://customerservice.agentinsure.com/EzlynxCustomerService/jeca/Account/LogIn"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mx-3 block rounded-lg bg-gray-600 px-4 py-3 text-center text-base font-semibold text-white hover:bg-gray-500 touch-target-comfortable transition-all duration-200 shadow-md hover:shadow-lg"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Client Portal
+                </a>
                 <Link
                   href="/quote"
                   className="mx-3 block rounded-lg bg-blue-600 px-4 py-3 text-center text-base font-semibold text-white hover:bg-blue-500 touch-target-comfortable transition-all duration-200 shadow-md hover:shadow-lg"

@@ -14,6 +14,7 @@ import {
   ClockIcon as Clock24Icon,
   StarIcon
 } from '@heroicons/react/24/outline'
+import { useLiveChat } from '@/contexts/LiveChatContext'
 
 const contactMethods = [
   {
@@ -75,6 +76,7 @@ const offices = [
 ]
 
 export default function ContactPage() {
+  const { openChat } = useLiveChat()
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -298,7 +300,10 @@ export default function ContactPage() {
                 <ChatBubbleLeftRightIcon className="h-8 w-8 text-yellow-300 mb-3 mx-auto" />
                 <h3 className="text-lg font-semibold text-white mb-2">Live Chat</h3>
                 <p className="text-blue-100 text-sm mb-3">Instant assistance online</p>
-                <button className="text-yellow-300 font-semibold hover:text-yellow-200 transition-colors">
+                <button
+                  onClick={openChat}
+                  className="text-yellow-300 font-semibold hover:text-yellow-200 transition-colors cursor-pointer"
+                >
                   Start Chat
                 </button>
               </motion.div>
@@ -462,7 +467,9 @@ export default function ContactPage() {
                     <PhoneIcon className="h-4 w-4 text-gray-800" />
                   </div>
                   <div>
-                    <p className="text-lg font-bold text-gray-900">877-501-5460</p>
+                    <a href="tel:877-501-5460" className="text-lg font-bold text-gray-900 hover:text-blue-600 transition-colors cursor-pointer">
+                      877-501-5460
+                    </a>
                     <p className="text-sm text-gray-600">info@jecainsurancefl.com</p>
                   </div>
                 </div>
@@ -678,7 +685,7 @@ export default function ContactPage() {
                     <div>
                       <h4 className="text-red-800 font-semibold">Error Sending Message</h4>
                       <p className="text-red-700 text-sm">
-                        Sorry, there was an error sending your message. Please try again or call us directly at 877-501-5460.
+                        Sorry, there was an error sending your message. Please try again or call us directly at <a href="tel:877-501-5460" className="underline hover:text-red-800 transition-colors">877-501-5460</a>.
                       </p>
                     </div>
                   </div>

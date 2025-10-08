@@ -84,12 +84,14 @@ export default function AutoInsurancePage() {
               Get competitive rates, excellent coverage, and 24/7 support when you need it most.
             </p>
             <div className="mt-10 flex items-center gap-x-6">
-              <Link
-                href="/quote/auto"
+              <a
+                href="https://www.agentinsure.com/compare/auto-insurance-home-insurance/jeca/quote.aspx"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transition-all duration-200 transform hover:scale-105"
               >
                 Get Auto Quote
-              </Link>
+              </a>
               <Link href="/contact" className="text-sm font-semibold leading-6 text-gray-900 hover:text-blue-600 transition-colors">
                 Talk to Agent <span aria-hidden="true">→</span>
               </Link>
@@ -224,12 +226,14 @@ export default function AutoInsurancePage() {
                     <span className="text-5xl font-bold tracking-tight text-gray-900">Free</span>
                     <span className="text-sm font-semibold leading-6 tracking-wide text-gray-600">Quote</span>
                   </p>
-                  <Link
-                    href="/quote/auto"
+                  <a
+                    href="https://www.agentinsure.com/compare/auto-insurance-home-insurance/jeca/quote.aspx"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="mt-10 block w-full rounded-md bg-blue-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
                   >
                     Get Auto Quote
-                  </Link>
+                  </a>
                   <p className="mt-6 text-xs leading-5 text-gray-600">
                     No obligation. Get your personalized quote in minutes.
                   </p>
@@ -251,12 +255,14 @@ export default function AutoInsurancePage() {
               Get your free auto insurance quote today and start saving on comprehensive coverage.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
-              <Link
-                href="/quote/auto"
+              <a
+                href="https://www.agentinsure.com/compare/auto-insurance-home-insurance/jeca/quote.aspx"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-blue-600 shadow-sm hover:bg-blue-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
               >
                 Get Free Quote
-              </Link>
+              </a>
               <div className="flex items-center space-x-2 text-white">
                 <ClockIcon className="h-5 w-5" />
                 <span className="text-sm">24/7 Support: 877-501-5460</span>

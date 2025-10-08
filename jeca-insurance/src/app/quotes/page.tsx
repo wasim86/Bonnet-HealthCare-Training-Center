@@ -16,9 +16,9 @@ const quoteCategories = [
     color: 'from-blue-600 to-indigo-700',
     available: true,
     quotes: [
-      { name: 'Auto Insurance Quote', href: '/quote/auto' },
-      { name: 'Boat Insurance Quote', href: '/quote/boat' },
-      { name: 'Motorcycle Insurance Quote', href: '/quote/motorcycle' }
+      { name: 'Auto Insurance Quote', href: 'https://www.agentinsure.com/compare/auto-insurance-home-insurance/jeca/quote.aspx' },
+      { name: 'Boat Insurance Quote', href: 'https://www.agentinsure.com/compare/auto-insurance-home-insurance/jeca/quote.aspx' },
+      { name: 'Motorcycle Insurance Quote', href: 'https://www.agentinsure.com/compare/auto-insurance-home-insurance/jeca/quote.aspx' }
     ]
   },
   {
@@ -59,7 +59,7 @@ const quoteCategories = [
     ]
   },
   {
-    title: 'Property Insurance',
+    title: 'Home Owner Insurance',
     description: 'Protect your home, condo, rental property, and more with comprehensive coverage.',
     href: '/quote/home',
     icon: (
@@ -70,10 +70,10 @@ const quoteCategories = [
     color: 'from-purple-600 to-pink-600',
     available: true,
     quotes: [
-      { name: 'Home Insurance Quote', href: '/quote/home' },
-      { name: 'Flood Insurance Quote', href: '/quote/flood' },
-      { name: 'Landlords Insurance Quote', href: '/quote/landlords' },
-      { name: 'Renters Insurance Quote', href: '/quote/renters' }
+      { name: 'Home Insurance Quote', href: 'https://www.agentinsure.com/compare/auto-insurance-home-insurance/jeca/quote.aspx' },
+      { name: 'Flood Insurance Quote', href: 'https://www.agentinsure.com/compare/auto-insurance-home-insurance/jeca/quote.aspx' },
+      { name: 'Landlords Insurance Quote', href: 'https://www.agentinsure.com/compare/auto-insurance-home-insurance/jeca/quote.aspx' },
+      { name: 'Renters Insurance Quote', href: 'https://www.agentinsure.com/compare/auto-insurance-home-insurance/jeca/quote.aspx' }
     ]
   },
   {

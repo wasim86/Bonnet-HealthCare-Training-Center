@@ -201,12 +201,14 @@ export default function AutoInsurancePage() {
                   877-501-5460
                 </a>
                 <div>
-                  <Link
-                    href="/quote/auto"
+                  <a
+                    href="https://www.agentinsure.com/compare/auto-insurance-home-insurance/jeca/quote.aspx"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-block bg-gradient-to-r from-blue-600 to-indigo-700 text-white px-8 py-4 rounded-xl text-lg font-bold hover:from-blue-700 hover:to-indigo-800 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
                   >
                     Get Insured Now
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>

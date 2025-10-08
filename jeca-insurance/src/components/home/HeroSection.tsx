@@ -21,7 +21,7 @@ const quoteCategories = [
     description: 'Vehicle protection for cars, trucks, motorcycles',
     icon: TruckIcon,
     color: 'from-blue-600 to-indigo-700',
-    href: '/quote/auto',
+    href: 'https://www.agentinsure.com/compare/auto-insurance-home-insurance/jeca/quote.aspx',
     features: ['Collision Coverage', 'Comprehensive', '24/7 Roadside Assistance']
   },
   {
@@ -44,11 +44,11 @@ const quoteCategories = [
   },
   {
     id: 'home',
-    name: 'Property Insurance',
+    name: 'Home Owner Insurance',
     description: 'Protect your home and belongings',
     icon: HomeIcon,
     color: 'from-purple-600 to-pink-600',
-    href: '/quote/home',
+    href: 'https://www.agentinsure.com/compare/auto-insurance-home-insurance/jeca/quote.aspx',
     features: ['Dwelling Coverage', 'Personal Property', 'Liability Protection']
   },
   {
@@ -58,7 +58,7 @@ const quoteCategories = [
     icon: BuildingOfficeIcon,
     color: 'from-gray-600 to-slate-700',
     href: '/quote/business',
-    features: ['General Liability', 'Property Insurance', 'Workers Comp']
+    features: ['General Liability', 'Home Owner Insurance', 'Workers Comp']
   },
 ]
 
