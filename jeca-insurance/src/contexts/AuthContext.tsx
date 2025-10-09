@@ -18,7 +18,7 @@ interface AuthContextType {
 const AuthContext = createContext<AuthContextType | undefined>(undefined)
 
 // Admin credentials
-const ADMIN_EMAIL = 'info@jecainsurance.com'
+const ADMIN_EMAIL = 'info@jecainsurancefl.com'
 const ADMIN_PASSWORD_KEY = 'jeca_admin_password'
 const DEFAULT_PASSWORD = 'JecaAdmin2024!@#'
 
