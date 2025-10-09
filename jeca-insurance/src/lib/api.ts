@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-// API Configuration
+// API Configuration - Use environment variable for production
 export const API_CONFIG = {
-  baseURL: 'http://localhost:5149/api',
+  baseURL: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5149/api',
   timeout: 30000,
   headers: {
     'Content-Type': 'application/json',

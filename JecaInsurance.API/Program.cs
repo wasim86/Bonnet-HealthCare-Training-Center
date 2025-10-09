@@ -42,7 +42,9 @@ try
                 "https://localhost:3000", // Next.js development HTTPS
                 "https://localhost:3001", // Next.js development HTTPS (alternate port)
                 "https://jecainsurance.com", // Production domain
-                "https://www.jecainsurance.com" // Production www domain
+                "https://www.jecainsurance.com", // Production www domain
+                "https://jecainsurancefl.com", // Production domain
+                "https://www.jecainsurancefl.com" // Production www domain
             )
             .AllowAnyMethod()
             .AllowAnyHeader()
