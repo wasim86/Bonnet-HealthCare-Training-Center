@@ -11,7 +11,7 @@ services:
       - jeca_sqldata:/var/opt/mssql
       - ./database-backup:/backup
     ports:
-      - "1433:1433"
+      - "14330:1433"
     networks:
       - jeca-network
     restart: unless-stopped

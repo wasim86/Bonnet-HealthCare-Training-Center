@@ -14,7 +14,6 @@ Cloned github.com/ketankapure1997/jecadocker.git: ✅
 ║ Compose Type: docker-compose ✅                                              ║
 ║                                                                              ║
 ╚══════════════════════════════════════════════════════════════════════════════╝
-time="2025-10-09T16:25:34Z" level=warning msg="/etc/dokploy/compose/jeca-full-stack-zwn3sg/code/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
 #1 [internal] load local bake definitions
 #1 reading from stdin 1.26kB done
 #1 DONE 0.0s
@@ -24,623 +23,131 @@ time="2025-10-09T16:25:34Z" level=warning msg="/etc/dokploy/compose/jeca-full-st
 #3 [jeca-api internal] load build definition from Dockerfile
 #3 transferring dockerfile: 1.24kB done
 #3 DONE 0.0s
-#4 [jeca-api internal] load metadata for mcr.microsoft.com/dotnet/aspnet:8.0
+#4 [jeca-api internal] load metadata for mcr.microsoft.com/dotnet/sdk:8.0
 #4 DONE 0.1s
-#5 [jeca-api internal] load metadata for mcr.microsoft.com/dotnet/sdk:8.0
+#5 [jeca-api internal] load metadata for mcr.microsoft.com/dotnet/aspnet:8.0
 #5 DONE 0.1s
-#6 [jeca-frontend internal] load metadata for docker.io/library/node:18-alpine
-#6 DONE 0.1s
-#7 [jeca-frontend internal] load .dockerignore
-#7 transferring context: 1.89kB done
+#6 [jeca-api internal] load .dockerignore
+#6 transferring context: 1.44kB done
+#6 DONE 0.0s
+#7 [jeca-api build 1/7] FROM mcr.microsoft.com/dotnet/sdk:8.0@sha256:ff8311847c54c04d1a14c488362807997d59b61372da5095a95f89cbcda7f9b7
 #7 DONE 0.0s
-#8 [jeca-frontend base 1/1] FROM docker.io/library/node:18-alpine@sha256:8d6421d663b4c28fd3ebc498332f249011d118945588d0a35cb9bc4b8ca09d9e
+#8 [jeca-api base 1/2] FROM mcr.microsoft.com/dotnet/aspnet:8.0@sha256:53f73fbe620361e5116f68752bf42958dfcda8699a94a785dcb4657bc571c8f3
 #8 DONE 0.0s
-#9 [jeca-frontend builder 1/4] WORKDIR /app
-#9 CACHED
-#10 [jeca-frontend runner 3/8] RUN adduser --system --uid 1001 nextjs
-#10 CACHED
-#11 [jeca-frontend runner 2/8] RUN addgroup --system --gid 1001 nodejs
-#11 CACHED
-#12 [jeca-frontend runner 4/8] RUN mkdir .next
-#12 CACHED
-#13 [jeca-api internal] load .dockerignore
-#13 transferring context: 1.44kB done
-#13 DONE 0.0s
-#14 [jeca-api build 1/7] FROM mcr.microsoft.com/dotnet/sdk:8.0@sha256:ff8311847c54c04d1a14c488362807997d59b61372da5095a95f89cbcda7f9b7
-#14 DONE 0.0s
-#15 [jeca-api base 1/2] FROM mcr.microsoft.com/dotnet/aspnet:8.0@sha256:53f73fbe620361e5116f68752bf42958dfcda8699a94a785dcb4657bc571c8f3
-#15 DONE 0.0s
-#16 [jeca-api internal] load build context
-#16 transferring context: 421.07kB 0.0s done
-#16 DONE 0.0s
-#17 [jeca-api base 2/2] WORKDIR /app
+#9 [jeca-frontend internal] load metadata for docker.io/library/node:18-alpine
+#9 DONE 0.1s
+#10 [jeca-frontend internal] load .dockerignore
+#10 transferring context: 1.89kB done
+#10 DONE 0.0s
+#11 [jeca-api internal] load build context
+#11 transferring context: 421.07kB 0.0s done
+#11 DONE 0.0s
+#12 [jeca-frontend base 1/1] FROM docker.io/library/node:18-alpine@sha256:8d6421d663b4c28fd3ebc498332f249011d118945588d0a35cb9bc4b8ca09d9e
+#12 DONE 0.0s
+#13 [jeca-api final 3/4] COPY --from=publish /app/publish .
+#13 CACHED
+#14 [jeca-api final 1/4] WORKDIR /app
+#14 CACHED
+#15 [jeca-api build 4/7] RUN dotnet restore "JecaInsurance.API.csproj"
+#15 CACHED
+#16 [jeca-api build 6/7] WORKDIR /src
+#16 CACHED
+#17 [jeca-api build 3/7] COPY [JecaInsurance.API.csproj, .]
 #17 CACHED
-#18 [jeca-api build 4/7] RUN dotnet restore "JecaInsurance.API.csproj"
+#18 [jeca-api base 2/2] WORKDIR /app
 #18 CACHED
-#19 [jeca-api build 2/7] WORKDIR /src
+#19 [jeca-api final 2/4] RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
 #19 CACHED
-#20 [jeca-api build 3/7] COPY [JecaInsurance.API.csproj, .]
+#20 [jeca-api build 7/7] RUN dotnet build "JecaInsurance.API.csproj" -c Release -o /app/build
 #20 CACHED
-#21 [jeca-api build 6/7] WORKDIR /src
+#21 [jeca-api build 5/7] COPY . .
 #21 CACHED
-#22 [jeca-api publish 1/1] RUN dotnet publish "JecaInsurance.API.csproj" -c Release -o /app/publish /p:UseAppHost=false
+#22 [jeca-api build 2/7] WORKDIR /src
 #22 CACHED
-#23 [jeca-api build 7/7] RUN dotnet build "JecaInsurance.API.csproj" -c Release -o /app/build
+#23 [jeca-api publish 1/1] RUN dotnet publish "JecaInsurance.API.csproj" -c Release -o /app/publish /p:UseAppHost=false
 #23 CACHED
-#24 [jeca-api final 2/4] RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
+#24 [jeca-api final 4/4] RUN mkdir -p wwwroot/uploads
 #24 CACHED
-#25 [jeca-api build 5/7] COPY . .
-#25 CACHED
-#26 [jeca-api final 3/4] COPY --from=publish /app/publish .
-#26 CACHED
-#27 [jeca-api final 1/4] WORKDIR /app
-#27 CACHED
-#28 [jeca-api final 4/4] RUN mkdir -p wwwroot/uploads
+#25 [jeca-api] exporting to image
+#25 exporting layers done
+#25 writing image sha256:c09548bf3d2f4777ec65ce69e49ecf2f345ca6a250e44c2db2e30e9bbd7046df done
+#25 naming to docker.io/library/jeca-full-stack-zwn3sg-jeca-api done
+#25 DONE 0.0s
+#26 [jeca-frontend internal] load build context
+#26 transferring context: 2.71MB 0.1s done
+#26 DONE 0.1s
+#27 [jeca-api] resolving provenance for metadata file
+#27 DONE 0.0s
+#28 [jeca-frontend deps 4/4] RUN npm ci
 #28 CACHED
-#29 [jeca-api] exporting to image
-#29 exporting layers done
-#29 writing image sha256:52d4febb71e5a16df7d36dd737168aac64909b883527181967c614ee25751cda done
-#29 naming to docker.io/library/jeca-full-stack-zwn3sg-jeca-api done
-#29 DONE 0.0s
-#30 [jeca-frontend internal] load build context
-#30 transferring context: 2.71MB 0.1s done
-#30 DONE 0.1s
-#31 [jeca-frontend runner 5/8] RUN chown nextjs:nodejs .next
-#31 ...
-#32 [jeca-frontend deps 3/4] COPY package.json package-lock.json* ./
+#29 [jeca-frontend builder 2/4] COPY --from=deps /app/node_modules ./node_modules
+#29 CACHED
+#30 [jeca-frontend builder 4/4] RUN npm run build
+#30 CACHED
+#31 [jeca-frontend runner 6/8] COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+#31 CACHED
+#32 [jeca-frontend builder 1/4] WORKDIR /app
 #32 CACHED
 #33 [jeca-frontend deps 1/4] RUN apk add --no-cache libc6-compat
 #33 CACHED
 #34 [jeca-frontend deps 2/4] WORKDIR /app
 #34 CACHED
-#35 [jeca-frontend deps 4/4] RUN npm ci
+#35 [jeca-frontend runner 3/8] RUN adduser --system --uid 1001 nextjs
 #35 CACHED
-#36 [jeca-frontend builder 2/4] COPY --from=deps /app/node_modules ./node_modules
+#36 [jeca-frontend runner 4/8] RUN mkdir .next
 #36 CACHED
-#37 [jeca-api] resolving provenance for metadata file
-#37 DONE 0.0s
+#37 [jeca-frontend deps 3/4] COPY package.json package-lock.json* ./
+#37 CACHED
 #38 [jeca-frontend builder 3/4] COPY . .
-#38 DONE 0.1s
-#31 [jeca-frontend runner 5/8] RUN chown nextjs:nodejs .next
-#31 DONE 0.3s
-#39 [jeca-frontend builder 4/4] RUN npm run build
-#39 0.777
-#39 0.777 > jeca-insurance@0.1.0 build
-#39 0.777 > next build
-#39 0.777
-#39 1.983    ▲ Next.js 15.4.6
-#39 1.984
-#39 2.022    Creating an optimized production build ...
-#39 35.67  ✓ Compiled successfully in 29.0s
-#39 35.68    Linting and checking validity of types ...
-#39 42.83
-#39 42.83 ./src/app/about/page.tsx
-#39 42.83 46:7  Warning: 'leadership' is assigned a value but never used.  @typescript-eslint/no-unused-vars
-#39 42.83 186:19  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83 186:58  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83 281:17  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
-#39 42.83 574:19  Warning: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
-#39 42.83 574:41  Warning: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
-#39 42.83 582:21  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
-#39 42.83
-#39 42.83 ./src/app/admin-login/page.tsx
-#39 42.83 36:14  Warning: 'err' is defined but never used.  @typescript-eslint/no-unused-vars
-#39 42.83
-#39 42.83 ./src/app/blog/page.tsx
-#39 42.83 7:66  Warning: 'TagIcon' is defined but never used.  @typescript-eslint/no-unused-vars
-#39 42.83
-#39 42.83 ./src/app/claims/page.tsx
-#39 42.83 6:3  Warning: 'ClockIcon' is defined but never used.  @typescript-eslint/no-unused-vars
-#39 42.83 74:17  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83
-#39 42.83 ./src/app/contact/page.tsx
-#39 42.83 54:7  Warning: 'offices' is assigned a value but never used.  @typescript-eslint/no-unused-vars
-#39 42.83 668:27  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83
-#39 42.83 ./src/app/dashboard/page.tsx
-#39 42.83 8:3  Warning: 'CheckCircleIcon' is defined but never used.  @typescript-eslint/no-unused-vars
-#39 42.83 9:3  Warning: 'ClockIcon' is defined but never used.  @typescript-eslint/no-unused-vars
-#39 42.83 20:3  Warning: 'UserGroupIcon' is defined but never used.  @typescript-eslint/no-unused-vars
-#39 42.83 21:3  Warning: 'BellIcon' is defined but never used.  @typescript-eslint/no-unused-vars
-#39 42.83 22:3  Warning: 'CurrencyDollarIcon' is defined but never used.  @typescript-eslint/no-unused-vars
-#39 42.83 34:11  Warning: 'user' is assigned a value but never used.  @typescript-eslint/no-unused-vars
-#39 42.83 38:68  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 47:50  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 58:72  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 76:5  Warning: 'getQuoteDetails' is assigned a value but never used.  @typescript-eslint/no-unused-vars
-#39 42.83 77:5  Warning: 'filters' is assigned a value but never used.  @typescript-eslint/no-unused-vars
-#39 42.83 101:9  Warning: 'recentCustomerActivities' is assigned a value but never used.  @typescript-eslint/no-unused-vars
-#39 42.83 134:9  Warning: 'systemAlerts' is assigned a value but never used.  @typescript-eslint/no-unused-vars
-#39 42.83 1191:70  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 1216:68  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 1739:90  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 1807:105  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 1874:107  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 1941:110  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 2008:111  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 2075:112  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83
-#39 42.83 ./src/app/insurance/auto/page.tsx
-#39 42.83 102:15  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
-#39 42.83 119:19  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83
-#39 42.83 ./src/app/insurance/business/bop/page.tsx
-#39 42.83 86:29  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83 108:93  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83 110:260  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83 110:480  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83 144:71  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83 177:111  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83 177:166  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83 190:94  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83 224:31  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83 307:74  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83 426:41  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83
-#39 42.83 ./src/app/insurance/business/general/page.tsx
-#39 42.83 153:84  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83 155:35  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83 162:26  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83 162:217  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83 169:175  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83
-#39 42.83 ./src/app/insurance/business/workers-comp/page.tsx
-#39 42.83 114:84  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83 116:24  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83 116:215  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83 150:103  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83 155:594  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83 191:80  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83
-#39 42.83 ./src/app/insurance/health/dental/page.tsx
-#39 42.83 256:92  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83
-#39 42.83 ./src/app/insurance/health/individual/page.tsx
-#39 42.83 232:60  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83 274:83  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83
-#39 42.83 ./src/app/insurance/health/medicare-advantage/page.tsx
-#39 42.83 117:395  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83 117:493  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83 158:173  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83 158:252  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83 172:165  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83 172:209  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83 172:252  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83
-#39 42.83 ./src/app/insurance/health/medicare-supplement/page.tsx
-#39 42.83 61:9  Warning: 'medigapPlans' is assigned a value but never used.  @typescript-eslint/no-unused-vars
-#39 42.83 103:155  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83 124:269  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83 197:111  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83
-#39 42.83 ./src/app/insurance/home/page.tsx
-#39 42.83 87:15  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
-#39 42.83 133:19  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83
-#39 42.83 ./src/app/insurance/life-financial/disability/page.tsx
-#39 42.83 72:140  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83 93:160  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83 270:107  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83
-#39 42.83 ./src/app/insurance/life-financial/life/page.tsx
-#39 42.83 103:34  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83 201:108  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83 287:108  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83 328:34  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83 328:198  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83 445:78  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83
-#39 42.83 ./src/app/insurance/life-financial/umbrella/page.tsx
-#39 42.83 164:246  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83 207:48  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83
-#39 42.83 ./src/app/insurance/property/flood/page.tsx
-#39 42.83 45:123  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83
-#39 42.83 ./src/app/insurance/vehicles/boat/page.tsx
-#39 42.83 300:90  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83
-#39 42.83 ./src/app/quote/home/page.tsx
-#39 42.83 3:10  Warning: 'useState' is defined but never used.  @typescript-eslint/no-unused-vars
-#39 42.83
-#39 42.83 ./src/app/quote/page.tsx
-#39 42.83 20:3  Warning: 'AcademicCapIcon' is defined but never used.  @typescript-eslint/no-unused-vars
-#39 42.83 22:3  Warning: 'WrenchScrewdriverIcon' is defined but never used.  @typescript-eslint/no-unused-vars
-#39 42.83 23:3  Warning: 'ShieldExclamationIcon' is defined but never used.  @typescript-eslint/no-unused-vars
-#39 42.83 25:3  Warning: 'LifebuoyIcon' is defined but never used.  @typescript-eslint/no-unused-vars
-#39 42.83 26:3  Warning: 'EyeIcon' is defined but never used.  @typescript-eslint/no-unused-vars
-#39 42.83 27:3  Warning: 'BeakerIcon' is defined but never used.  @typescript-eslint/no-unused-vars
-#39 42.83 363:77  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83
-#39 42.83 ./src/app/services/consultation/page.tsx
-#39 42.83 18:30  Warning: 'success' is assigned a value but never used.  @typescript-eslint/no-unused-vars
-#39 42.83 18:59  Warning: 'reset' is assigned a value but never used.  @typescript-eslint/no-unused-vars
-#39 42.83
-#39 42.83 ./src/app/services/documents/page.tsx
-#39 42.83 5:8  Warning: 'Image' is defined but never used.  @typescript-eslint/no-unused-vars
-#39 42.83
-#39 42.83 ./src/app/services/page.tsx
-#39 42.83 84:115  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83
-#39 42.83 ./src/app/services/policy-review/page.tsx
-#39 42.83 18:30  Warning: 'success' is assigned a value but never used.  @typescript-eslint/no-unused-vars
-#39 42.83 18:59  Warning: 'reset' is assigned a value but never used.  @typescript-eslint/no-unused-vars
-#39 42.83 291:85  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83
-#39 42.83 ./src/app/services/proof-insurance/page.tsx
-#39 42.83 20:30  Warning: 'success' is assigned a value but never used.  @typescript-eslint/no-unused-vars
-#39 42.83 20:63  Warning: 'reset' is assigned a value but never used.  @typescript-eslint/no-unused-vars
-#39 42.83
-#39 42.83 ./src/app/services/report-claim/page.tsx
-#39 42.83 3:8  Warning: 'Link' is defined but never used.  @typescript-eslint/no-unused-vars
-#39 42.83 23:30  Warning: 'success' is assigned a value but never used.  @typescript-eslint/no-unused-vars
-#39 42.83 23:52  Warning: 'reset' is assigned a value but never used.  @typescript-eslint/no-unused-vars
-#39 42.83 115:17  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83 392:82  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83
-#39 42.83 ./src/app/services/update-contact/page.tsx
-#39 42.83 18:30  Warning: 'success' is assigned a value but never used.  @typescript-eslint/no-unused-vars
-#39 42.83 18:60  Warning: 'reset' is assigned a value but never used.  @typescript-eslint/no-unused-vars
-#39 42.83
-#39 42.83 ./src/components/dashboard/AdminSettings.tsx
-#39 42.83 63:14  Warning: 'err' is defined but never used.  @typescript-eslint/no-unused-vars
-#39 42.83
-#39 42.83 ./src/components/dashboard/QuotesDashboard.tsx
-#39 42.83 7:3  Warning: 'TrashIcon' is defined but never used.  @typescript-eslint/no-unused-vars
-#39 42.83 12:3  Warning: 'FunnelIcon' is defined but never used.  @typescript-eslint/no-unused-vars
-#39 42.83 27:10  Warning: 'showFilters' is assigned a value but never used.  @typescript-eslint/no-unused-vars
-#39 42.83 27:23  Warning: 'setShowFilters' is assigned a value but never used.  @typescript-eslint/no-unused-vars
-#39 42.83 44:5  Warning: 'filters' is assigned a value but never used.  @typescript-eslint/no-unused-vars
-#39 42.83
-#39 42.83 ./src/components/home/HeroSection.tsx
-#39 42.83 6:10  Warning: 'ChevronDownIcon' is defined but never used.  @typescript-eslint/no-unused-vars
-#39 42.83 67:10  Warning: 'isMounted' is assigned a value but never used.  @typescript-eslint/no-unused-vars
-#39 42.83
-#39 42.83 ./src/components/home/TestimonialsSection.tsx
-#39 42.83 118:16  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83 118:50  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83 158:22  Warning: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
-#39 42.83 158:51  Warning: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
-#39 42.83
-#39 42.83 ./src/components/layout/Footer.tsx
-#39 42.83 45:15  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
-#39 42.83
-#39 42.83 ./src/components/layout/Header.tsx
-#39 42.83 197:13  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
-#39 42.83 361:15  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
-#39 42.83
-#39 42.83 ./src/components/quote/AdditionalInformationForm.tsx
-#39 42.83 7:21  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 190:6  Warning: React Hook useEffect has a missing dependency: 'validateForm'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
-#39 42.83
-#39 42.83 ./src/components/quote/AnnuityQuoteForm.tsx
-#39 42.83 425:51  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83
-#39 42.83 ./src/components/quote/AutoQuoteForm.tsx
-#39 42.83 12:19  Warning: 'Driver' is defined but never used.  @typescript-eslint/no-unused-vars
-#39 42.83 20:64  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 21:72  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 24:62  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 25:70  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 26:78  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 80:45  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 90:71  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 102:44  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 112:69  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 124:58  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 129:57  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 153:47  Warning: 'index' is defined but never used.  @typescript-eslint/no-unused-vars
-#39 42.83 177:45  Warning: 'index' is defined but never used.  @typescript-eslint/no-unused-vars
-#39 42.83 407:45  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83
-#39 42.83 ./src/components/quote/BOPQuoteForm.tsx
-#39 42.83 485:49  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83
-#39 42.83 ./src/components/quote/BoatAdditionalInformationForm.tsx
-#39 42.83 7:20  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 17:3  Warning: 'className' is assigned a value but never used.  @typescript-eslint/no-unused-vars
-#39 42.83 84:6  Warning: React Hook useEffect has a missing dependency: 'validateForm'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
-#39 42.83
-#39 42.83 ./src/components/quote/BoatQuoteForm.tsx
-#39 42.83 5:20  Warning: 'TrashIcon' is defined but never used.  @typescript-eslint/no-unused-vars
-#39 42.83 30:58  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 31:66  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 34:66  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 35:74  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 36:78  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 51:100  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 52:108  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 78:42  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 89:65  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 106:46  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 117:73  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 134:52  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 436:45  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83
-#39 42.83 ./src/components/quote/BusinessQuoteForm.tsx
-#39 42.83 222:89  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83 844:47  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83
-#39 42.83 ./src/components/quote/DentalQuoteForm.tsx
-#39 42.83 46:10  Warning: 'fileAttachments' is assigned a value but never used.  @typescript-eslint/no-unused-vars
-#39 42.83 66:9  Warning: 'handleFileChange' is assigned a value but never used.  @typescript-eslint/no-unused-vars
-#39 42.83 127:9  Warning: 'checkboxOptions' is assigned a value but never used.  @typescript-eslint/no-unused-vars
-#39 42.83 539:51  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83
-#39 42.83 ./src/components/quote/DisabilityInsuranceQuoteForm.tsx
-#39 42.83 152:70  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83 543:51  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83
-#39 42.83 ./src/components/quote/DriverForm.tsx
-#39 42.83 13:46  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83
-#39 42.83 ./src/components/quote/FloodQuoteForm.tsx
-#39 42.83 555:47  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83
-#39 42.83 ./src/components/quote/HealthQuoteForm.tsx
-#39 42.83 704:49  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83
-#39 42.83 ./src/components/quote/HomeAdditionalInformationForm.tsx
-#39 42.83 3:20  Warning: 'useEffect' is defined but never used.  @typescript-eslint/no-unused-vars
-#39 42.83 8:21  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 98:6  Warning: React Hook React.useEffect has a missing dependency: 'handleSubmit'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
-#39 42.83
-#39 42.83 ./src/components/quote/HomeQuoteForm.tsx
-#39 42.83 109:58  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 780:43  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83
-#39 42.83 ./src/components/quote/LandlordsQuoteForm.tsx
-#39 42.83 436:47  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83
-#39 42.83 ./src/components/quote/LifeInsuranceQuoteForm.tsx
-#39 42.83 164:34  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83 672:51  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83
-#39 42.83 ./src/components/quote/MedicareAdvantageQuoteForm.tsx
-#39 42.83 377:51  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83
-#39 42.83 ./src/components/quote/MedicareSupplementQuoteForm.tsx
-#39 42.83 377:51  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83
-#39 42.83 ./src/components/quote/MotorcycleQuoteForm.tsx
-#39 42.83 5:20  Warning: 'TrashIcon' is defined but never used.  @typescript-eslint/no-unused-vars
-#39 42.83 7:10  Warning: 'MotorcycleQuote' is defined but never used.  @typescript-eslint/no-unused-vars
-#39 42.83 31:70  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 32:78  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 35:62  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 36:70  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 37:78  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 50:112  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 51:104  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 77:48  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 89:77  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 107:44  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 119:69  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 137:52  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 399:48  Warning: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
-#39 42.83 399:78  Warning: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
-#39 42.83 411:48  Warning: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
-#39 42.83 411:91  Warning: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
-#39 42.83 415:48  Warning: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
-#39 42.83 415:82  Warning: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
-#39 42.83 435:48  Warning: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
-#39 42.83 435:96  Warning: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
-#39 42.83 629:45  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83
-#39 42.83 ./src/components/quote/PrimaryAutoDriverForm.tsx
-#39 42.83 8:21  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83
-#39 42.83 ./src/components/quote/PrimaryAutoVehicleForm.tsx
-#39 42.83 8:21  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83
-#39 42.83 ./src/components/quote/PrimaryBoatForm.tsx
-#39 42.83 8:21  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 13:19  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83
-#39 42.83 ./src/components/quote/PrimaryMotorcycleDriverForm.tsx
-#39 42.83 7:21  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 9:17  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83
-#39 42.83 ./src/components/quote/PrimaryMotorcycleForm.tsx
-#39 42.83 7:21  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 9:17  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83
-#39 42.83 ./src/components/quote/PrimaryOperatorForm.tsx
-#39 42.83 8:21  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 13:19  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83
-#39 42.83 ./src/components/quote/RentersAdditionalInformationForm.tsx
-#39 42.83 3:20  Warning: 'useEffect' is defined but never used.  @typescript-eslint/no-unused-vars
-#39 42.83 8:21  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 98:6  Warning: React Hook React.useEffect has a missing dependency: 'handleSubmit'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
-#39 42.83
-#39 42.83 ./src/components/quote/RentersQuoteForm.tsx
-#39 42.83 84:58  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 589:45  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83
-#39 42.83 ./src/components/quote/SecondaryAutoDriverForm.tsx
-#39 42.83 9:21  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83
-#39 42.83 ./src/components/quote/SecondaryAutoVehicleForm.tsx
-#39 42.83 9:21  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83
-#39 42.83 ./src/components/quote/SecondaryBoatForm.tsx
-#39 42.83 9:21  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 15:19  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83
-#39 42.83 ./src/components/quote/SecondaryMotorcycleDriverForm.tsx
-#39 42.83 9:21  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 15:19  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83
-#39 42.83 ./src/components/quote/SecondaryMotorcycleForm.tsx
-#39 42.83 9:21  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 15:19  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83
-#39 42.83 ./src/components/quote/SecondaryOperatorForm.tsx
-#39 42.83 9:21  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 15:19  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83
-#39 42.83 ./src/components/quote/UmbrellaInsuranceQuoteForm.tsx
-#39 42.83 573:51  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83
-#39 42.83 ./src/components/quote/VehicleForm.tsx
-#39 42.83 17:47  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83
-#39 42.83 ./src/components/quote/VisionQuoteForm.tsx
-#39 42.83 473:51  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83
-#39 42.83 ./src/components/quote/WorkersCompQuoteForm.tsx
-#39 42.83 463:49  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-#39 42.83
-#39 42.83 ./src/components/ui/LiveChat.tsx
-#39 42.83 10:3  Warning: 'ComputerDesktopIcon' is defined but never used.  @typescript-eslint/no-unused-vars
-#39 42.83 56:19  Warning: 'openChat' is assigned a value but never used.  @typescript-eslint/no-unused-vars
-#39 42.83
-#39 42.83 ./src/components/ui/ResponsiveVideo.tsx
-#39 42.83 29:3  Warning: 'sizes' is assigned a value but never used.  @typescript-eslint/no-unused-vars
-#39 42.83
-#39 42.83 ./src/lib/hooks/useQuoteDashboard.ts
-#39 42.83 4:21  Warning: 'ApiResponse' is defined but never used.  @typescript-eslint/no-unused-vars
-#39 42.83 69:44  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83
-#39 42.83 ./src/lib/hooks/useQuotes.ts
-#39 42.83 3:32  Warning: 'PaginationParams' is defined but never used.  @typescript-eslint/no-unused-vars
-#39 42.83 3:50  Warning: 'ApiResponse' is defined but never used.  @typescript-eslint/no-unused-vars
-#39 42.83
-#39 42.83 ./src/lib/services/quoteService.ts
-#39 42.83 117:54  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 139:18  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 142:30  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 147:18  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 150:30  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 155:18  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 158:30  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 163:18  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 166:30  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 171:18  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 174:30  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 179:18  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83 182:30  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83
-#39 42.83 ./src/lib/test-api.ts
-#39 42.83 89:14  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-#39 42.83
-#39 42.83 info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules
-#39 53.87    Collecting page data ...
-#39 58.65    Generating static pages (0/70) ...
-#39 59.94    Generating static pages (17/70)
-#39 60.35    Generating static pages (34/70)
-#39 60.35    Generating static pages (52/70)
-#39 60.54  ✓ Generating static pages (70/70)
-#39 61.46    Finalizing page optimization ...
-#39 61.46    Collecting build traces ...
-#39 83.97
-#39 83.97 Route (app)                                        Size  First Load JS
-#39 83.97 ┌ ○ /                                           12.2 kB         152 kB
-#39 83.97 ├ ○ /_not-found                                   996 B         101 kB
-#39 83.97 ├ ○ /about                                      6.24 kB         142 kB
-#39 83.97 ├ ○ /admin-login                                2.67 kB         139 kB
-#39 83.97 ├ ƒ /api/contact                                  132 B        99.8 kB
-#39 83.97 ├ ƒ /api/health                                   132 B        99.8 kB
-#39 83.97 ├ ○ /blog                                       19.9 kB         128 kB
-#39 83.97 ├ ● /blog/[slug]                                  915 B         109 kB
-#39 83.97 ├   ├ /blog/lower-auto-insurance-premiums-2024
-#39 83.97 ├   ├ /blog/term-vs-whole-life-insurance-guide
-#39 83.97 ├   ├ /blog/home-insurance-claims-guide
-#39 83.97 ├   └ [+3 more paths]
-#39 83.97 ├ ○ /claims                                       179 B         103 kB
-#39 83.97 ├ ○ /contact                                    6.86 kB         143 kB
-#39 83.97 ├ ○ /dashboard                                  17.4 kB         153 kB
-#39 83.97 ├ ○ /dashboard/quotes                           5.95 kB         162 kB
-#39 83.97 ├ ○ /insurance                                    179 B         103 kB
-#39 83.97 ├ ○ /insurance/auto                               179 B         103 kB
-#39 83.97 ├ ○ /insurance/business/bop                     3.64 kB         143 kB
-#39 83.97 ├ ○ /insurance/business/general                 4.06 kB         143 kB
-#39 83.97 ├ ○ /insurance/business/workers-comp             3.5 kB         143 kB
-#39 83.97 ├ ○ /insurance/health/dental                    4.17 kB         144 kB
-#39 83.97 ├ ○ /insurance/health/individual                4.21 kB         144 kB
-#39 83.97 ├ ○ /insurance/health/medicare-advantage         4.3 kB         144 kB
-#39 83.97 ├ ○ /insurance/health/medicare-supplement       3.65 kB         143 kB
-#39 83.97 ├ ○ /insurance/health/vision                    3.85 kB         143 kB
-#39 83.97 ├ ○ /insurance/home                               179 B         103 kB
-#39 83.97 ├ ○ /insurance/life-financial/annuities           179 B         103 kB
-#39 83.97 ├ ○ /insurance/life-financial/disability        3.61 kB         143 kB
-#39 83.97 ├ ○ /insurance/life-financial/life              4.34 kB         144 kB
-#39 83.97 ├ ○ /insurance/life-financial/umbrella          3.65 kB         143 kB
-#39 83.97 ├ ○ /insurance/property/flood                   2.66 kB         142 kB
-#39 83.97 ├ ○ /insurance/property/home                    3.93 kB         143 kB
-#39 83.97 ├ ○ /insurance/property/landlords               2.72 kB         142 kB
-#39 83.97 ├ ○ /insurance/property/renters                 2.63 kB         142 kB
-#39 83.97 ├ ○ /insurance/vehicles/auto                    2.69 kB         142 kB
-#39 83.97 ├ ○ /insurance/vehicles/boat                       3 kB         142 kB
-#39 83.97 ├ ○ /insurance/vehicles/motorcycle              3.11 kB         142 kB
-#39 83.97 ├ ○ /quote                                      7.88 kB         147 kB
-#39 83.97 ├ ○ /quote/auto                                 8.13 kB         169 kB
-#39 83.97 ├ ○ /quote/boat                                 11.7 kB         172 kB
-#39 83.97 ├ ○ /quote/bop                                  4.91 kB         161 kB
-#39 83.97 ├ ○ /quote/business                             6.13 kB         163 kB
-#39 83.97 ├ ○ /quote/flood                                4.91 kB         161 kB
-#39 83.97 ├ ○ /quote/health                                5.5 kB         162 kB
-#39 83.97 ├ ○ /quote/home                                 8.57 kB         165 kB
-#39 83.97 ├ ○ /quote/landlords                            4.34 kB         161 kB
-#39 83.97 ├ ○ /quote/motorcycle                           6.98 kB         168 kB
-#39 83.97 ├ ○ /quote/renters                               6.6 kB         163 kB
-#39 83.97 ├ ○ /quote/workers-comp                         4.87 kB         161 kB
-#39 83.97 ├ ○ /quotes                                     6.89 kB         146 kB
-#39 83.97 ├ ○ /quotes/health/dental                       7.94 kB         164 kB
-#39 83.97 ├ ○ /quotes/health/medicare-advantage            7.6 kB         164 kB
-#39 83.97 ├ ○ /quotes/health/medicare-supplement          7.63 kB         164 kB
-#39 83.97 ├ ○ /quotes/health/vision                       7.81 kB         164 kB
-#39 83.97 ├ ○ /quotes/life-financial/annuity              7.68 kB         164 kB
-#39 83.97 ├ ○ /quotes/life-financial/disability           7.95 kB         164 kB
-#39 83.97 ├ ○ /quotes/life-financial/life                  8.7 kB         165 kB
-#39 83.97 ├ ○ /quotes/life-financial/umbrella             8.25 kB         165 kB
-#39 83.97 ├ ○ /services                                   1.71 kB         141 kB
-#39 83.97 ├ ○ /services/consultation                      3.58 kB         160 kB
-#39 83.97 ├ ○ /services/documents                         1.37 kB         141 kB
-#39 83.97 ├ ○ /services/policy-review                     3.31 kB         160 kB
-#39 83.97 ├ ○ /services/proof-insurance                   3.49 kB         160 kB
-#39 83.97 ├ ○ /services/report-claim                      3.86 kB         160 kB
-#39 83.97 └ ○ /services/update-contact                    3.29 kB         160 kB
-#39 83.97 + First Load JS shared by all                   99.7 kB
-#39 83.97   ├ chunks/4bd1b696-602635ee57868870.js         54.1 kB
-#39 83.97   ├ chunks/5964-2a1ddd40921d073b.js             43.5 kB
-#39 83.97   └ other shared chunks (total)                 2.03 kB
-#39 83.97
-#39 83.97
-#39 83.97 ○  (Static)   prerendered as static content
-#39 83.97 ●  (SSG)      prerendered as static HTML (uses generateStaticParams)
-#39 83.97 ƒ  (Dynamic)  server-rendered on demand
-#39 83.97
-#39 84.03 npm notice
-#39 84.03 npm notice New major version of npm available! 10.8.2 -> 11.6.2
-#39 84.03 npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.6.2
-#39 84.03 npm notice To update run: npm install -g npm@11.6.2
-#39 84.03 npm notice
-#39 DONE 84.1s
-#40 [jeca-frontend runner 6/8] COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
-#40 DONE 0.9s
-#41 [jeca-frontend runner 7/8] COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
-#41 DONE 0.1s
+#38 CACHED
+#39 [jeca-frontend runner 7/8] COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+#39 CACHED
+#40 [jeca-frontend runner 2/8] RUN addgroup --system --gid 1001 nodejs
+#40 CACHED
+#41 [jeca-frontend runner 5/8] RUN chown nextjs:nodejs .next
+#41 CACHED
 #42 [jeca-frontend runner 8/8] COPY --chown=nextjs:nodejs public ./public
-#42 DONE 0.0s
+#42 CACHED
 #43 [jeca-frontend] exporting to image
-#43 exporting layers
-#43 exporting layers 0.5s done
-#43 writing image sha256:5f3766a24263fd2c770c20ebea5d9aa86422e64dc6c3241d43b3ef5e1fec9082 done
+#43 exporting layers done
+#43 writing image sha256:ba81aa95c014bec30e94ca319ec5d2ee87347d2dcb4ba6e0634a530369023d45 done
 #43 naming to docker.io/library/jeca-full-stack-zwn3sg-jeca-frontend done
-#43 DONE 0.6s
+#43 DONE 0.0s
 #44 [jeca-frontend] resolving provenance for metadata file
 #44 DONE 0.0s
-jeca-full-stack-zwn3sg-jeca-api  Built
 jeca-full-stack-zwn3sg-jeca-frontend  Built
-Network jeca-full-stack-zwn3sg_jeca-network  Creating
-Network jeca-full-stack-zwn3sg_jeca-network  Error
-failed to create network jeca-full-stack-zwn3sg_jeca-network: Error response from daemon: invalid pool request: Pool overlaps with other one on this address space
-Error ❌ time="2025-10-09T16:25:34Z" level=warning msg="/etc/dokploy/compose/jeca-full-stack-zwn3sg/code/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
 jeca-full-stack-zwn3sg-jeca-api  Built
-jeca-full-stack-zwn3sg-jeca-frontend  Built
 Network jeca-full-stack-zwn3sg_jeca-network  Creating
-Network jeca-full-stack-zwn3sg_jeca-network  Error
-failed to create network jeca-full-stack-zwn3sg_jeca-network: Error response from daemon: invalid pool request: Pool overlaps with other one on this address space
+Network jeca-full-stack-zwn3sg_jeca-network  Created
+Volume "jeca-full-stack-zwn3sg_nginx_cache"  Creating
+Volume "jeca-full-stack-zwn3sg_nginx_cache"  Created
+Volume "jeca-full-stack-zwn3sg_jeca_sqldata"  Creating
+Volume "jeca-full-stack-zwn3sg_jeca_sqldata"  Created
+Container jeca-sqlserver  Creating
+Container jeca-sqlserver  Created
+Container jeca-api  Creating
+Container jeca-api  Created
+Container jeca-frontend  Creating
+Container jeca-frontend  Created
+Container jeca-nginx  Creating
+Container jeca-nginx  Created
+Container jeca-sqlserver  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint jeca-sqlserver (e1ac5c13401a2a4b25b8eda5b698a5c517aa28c5759702baa778e16055fd8c36): Bind for 0.0.0.0:1433 failed: port is already allocated
+Error ❌  jeca-full-stack-zwn3sg-jeca-frontend  Built
+jeca-full-stack-zwn3sg-jeca-api  Built
+Network jeca-full-stack-zwn3sg_jeca-network  Creating
+Network jeca-full-stack-zwn3sg_jeca-network  Created
+Volume "jeca-full-stack-zwn3sg_nginx_cache"  Creating
+Volume "jeca-full-stack-zwn3sg_nginx_cache"  Created
+Volume "jeca-full-stack-zwn3sg_jeca_sqldata"  Creating
+Volume "jeca-full-stack-zwn3sg_jeca_sqldata"  Created
+Container jeca-sqlserver  Creating
+Container jeca-sqlserver  Created
+Container jeca-api  Creating
+Container jeca-api  Created
+Container jeca-frontend  Creating
+Container jeca-frontend  Created
+Container jeca-nginx  Creating
+Container jeca-nginx  Created
+Container jeca-sqlserver  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint jeca-sqlserver (e1ac5c13401a2a4b25b8eda5b698a5c517aa28c5759702baa778e16055fd8c36): Bind for 0.0.0.0:1433 failed: port is already allocated
