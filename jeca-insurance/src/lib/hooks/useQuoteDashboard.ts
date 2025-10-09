@@ -72,7 +72,7 @@ interface UseQuoteDashboardReturn {
   filters: DashboardFilters
 }
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5149'
+const API_BASE_URL = (process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5149') + '/api'
 
 export function useQuoteDashboard(options: UseQuoteDashboardOptions = {}): UseQuoteDashboardReturn {
   const {
@@ -117,7 +117,7 @@ export function useQuoteDashboard(options: UseQuoteDashboardOptions = {}): UseQu
         ...(filters.sortOrder && { sortOrder: filters.sortOrder })
       })
 
-      const response = await fetch(`${API_BASE_URL}/api/dashboard/quotes?${params}`)
+      const response = await fetch(`${API_BASE_URL}/dashboard/quotes?${params}`)
       
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`)
@@ -142,7 +142,7 @@ export function useQuoteDashboard(options: UseQuoteDashboardOptions = {}): UseQu
   // Fetch statistics
   const fetchStatistics = useCallback(async () => {
     try {
-      const response = await fetch(`${API_BASE_URL}/api/dashboard/statistics`)
+      const response = await fetch(`${API_BASE_URL}/dashboard/statistics`)
       
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`)
@@ -158,7 +158,7 @@ export function useQuoteDashboard(options: UseQuoteDashboardOptions = {}): UseQu
   // Fetch recent activity
   const fetchRecentActivity = useCallback(async () => {
     try {
-      const response = await fetch(`${API_BASE_URL}/api/dashboard/recent-activity?limit=10`)
+      const response = await fetch(`${API_BASE_URL}/dashboard/recent-activity?limit=10`)
       
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`)
@@ -174,7 +174,7 @@ export function useQuoteDashboard(options: UseQuoteDashboardOptions = {}): UseQu
   // Update quote status
   const updateQuoteStatus = useCallback(async (id: string, status: string): Promise<boolean> => {
     try {
-      const response = await fetch(`${API_BASE_URL}/api/dashboard/quotes/${id}/status`, {
+      const response = await fetch(`${API_BASE_URL}/dashboard/quotes/${id}/status`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -200,7 +200,7 @@ export function useQuoteDashboard(options: UseQuoteDashboardOptions = {}): UseQu
   // Get quote details
   const getQuoteDetails = useCallback(async (id: string) => {
     try {
-      const response = await fetch(`${API_BASE_URL}/api/dashboard/quotes/${id}`)
+      const response = await fetch(`${API_BASE_URL}/dashboard/quotes/${id}`)
       
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`)

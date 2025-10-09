@@ -15,7 +15,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Forward the request to the .NET API
-    const response = await fetch(`${API_BASE_URL}/api/contact`, {
+    const response = await fetch(`${API_BASE_URL}/contact`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -50,7 +50,7 @@ export async function GET(request: NextRequest) {
     const pageSize = searchParams.get('pageSize') || '10'
     const status = searchParams.get('status')
 
-    let url = `${API_BASE_URL}/api/contact?page=${page}&pageSize=${pageSize}`
+    let url = `${API_BASE_URL}/contact?page=${page}&pageSize=${pageSize}`
     if (status) {
       url += `&status=${status}`
     }
