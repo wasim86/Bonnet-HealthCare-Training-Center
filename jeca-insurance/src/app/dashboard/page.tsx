@@ -39,6 +39,9 @@ export default function DashboardPage() {
   const [loadingQuoteDetails, setLoadingQuoteDetails] = useState(false)
   const [showAdminSettings, setShowAdminSettings] = useState(false)
 
+  // API base URL configuration
+  const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5149/api'
+
   // Management section state
   const [activeManagementSection, setActiveManagementSection] = useState('quotes') // 'quotes' or 'services'
 
@@ -257,7 +260,7 @@ export default function DashboardPage() {
   const testApiConnection = async () => {
     try {
       console.log('Testing API connection...')
-      const response = await fetch('http://localhost:5149/api/dashboard/statistics')
+      const response = await fetch(`${API_BASE_URL}/dashboard/statistics`)
       console.log('API Response status:', response.status)
       const data = await response.json()
       console.log('API Response data:', data)
@@ -273,12 +276,12 @@ export default function DashboardPage() {
     setLoadingServices(true)
     try {
       const [claimsRes, policyReviewsRes, contactUpdatesRes, proofInsuranceRes, consultationsRes, contactInquiriesRes] = await Promise.all([
-        fetch('http://localhost:5149/api/Claim?pageSize=20'),
-        fetch('http://localhost:5149/api/PolicyReview?pageSize=20'),
-        fetch('http://localhost:5149/api/ContactUpdate?pageSize=20'),
-        fetch('http://localhost:5149/api/ProofOfInsurance?pageSize=20'),
-        fetch('http://localhost:5149/api/Consultation?pageSize=20'),
-        fetch('http://localhost:5149/api/contact?pageSize=20')
+        fetch(`${API_BASE_URL}/Claim?pageSize=20`),
+        fetch(`${API_BASE_URL}/PolicyReview?pageSize=20`),
+        fetch(`${API_BASE_URL}/ContactUpdate?pageSize=20`),
+        fetch(`${API_BASE_URL}/ProofOfInsurance?pageSize=20`),
+        fetch(`${API_BASE_URL}/Consultation?pageSize=20`),
+        fetch(`${API_BASE_URL}/contact?pageSize=20`)
       ])
 
       const [claims, policyReviews, contactUpdates, proofOfInsuranceResponse, consultationsResponse, contactInquiries] = await Promise.all([
@@ -323,22 +326,22 @@ export default function DashboardPage() {
       let endpoint = ''
       switch (serviceType) {
         case 'claim':
-          endpoint = `http://localhost:5149/api/Claim/${id}`
+          endpoint = `${API_BASE_URL}/Claim/${id}`
           break
         case 'policyReview':
-          endpoint = `http://localhost:5149/api/PolicyReview/${id}`
+          endpoint = `${API_BASE_URL}/PolicyReview/${id}`
           break
         case 'contactUpdate':
-          endpoint = `http://localhost:5149/api/ContactUpdate/${id}`
+          endpoint = `${API_BASE_URL}/ContactUpdate/${id}`
           break
         case 'proofOfInsurance':
-          endpoint = `http://localhost:5149/api/ProofOfInsurance/${id}`
+          endpoint = `${API_BASE_URL}/ProofOfInsurance/${id}`
           break
         case 'consultation':
-          endpoint = `http://localhost:5149/api/Consultation/${id}`
+          endpoint = `${API_BASE_URL}/Consultation/${id}`
           break
         case 'contactInquiry':
-          endpoint = `http://localhost:5149/api/contact/${id}`
+          endpoint = `${API_BASE_URL}/contact/${id}`
           break
         default:
           throw new Error('Invalid service type')
@@ -367,7 +370,7 @@ export default function DashboardPage() {
 
       // Test direct fetch first
       console.log('Testing direct fetch...')
-      const directResponse = await fetch(`http://localhost:5149/api/dashboard/quotes/${id}`)
+      const directResponse = await fetch(`${API_BASE_URL}/dashboard/quotes/${id}`)
       console.log('Direct fetch response status:', directResponse.status)
       console.log('Direct fetch response headers:', Object.fromEntries(directResponse.headers.entries()))
 
