@@ -1,0 +1,106 @@
+version: '3.8'
+
+services:
+  # SQL Server Database
+  jeca-sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: jeca-sqlserver
+    environment:
+      - SA_PASSWORD=${SQL_SA_PASSWORD:-JecaInsurance2024!}
+      - ACCEPT_EULA=Y
+      - MSSQL_PID=Express
+    volumes:
+      - jeca_sqldata:/var/opt/mssql
+      - ./database-backup:/backup
+    ports:
+      - "1433:1433"
+    networks:
+      - jeca-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P ${SQL_SA_PASSWORD:-JecaInsurance2024!} -Q 'SELECT 1'"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  # .NET API Backend
+  jeca-api:
+    build: 
+      context: ./JecaInsurance.API
+      dockerfile: Dockerfile
+    container_name: jeca-api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=http://+:80
+      - ConnectionStrings__DefaultConnection=Server=jeca-sqlserver;Database=JecaInsurance;User Id=sa;Password=${SQL_SA_PASSWORD:-JecaInsurance2024!};TrustServerCertificate=true;MultipleActiveResultSets=true;
+      - CORS__AllowedOrigins=https://jecainsurancefl.com,http://localhost:3000
+    depends_on:
+      jeca-sqlserver:
+        condition: service_healthy
+    networks:
+      - jeca-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:80/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Next.js Frontend
+  jeca-frontend:
+    build:
+      context: ./jeca-insurance
+      dockerfile: Dockerfile
+      args:
+        - NEXT_PUBLIC_API_URL=https://jecainsurancefl.com/api
+    container_name: jeca-frontend
+    environment:
+      - NODE_ENV=production
+      - NEXT_PUBLIC_API_URL=https://jecainsurancefl.com/api
+    depends_on:
+      - jeca-api
+    networks:
+      - jeca-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Nginx Reverse Proxy
+  jeca-nginx:
+    image: nginx:alpine
+    container_name: jeca-nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/conf.d:/etc/nginx/conf.d:ro
+      - ./ssl:/etc/ssl/certs:ro
+      - nginx_cache:/var/cache/nginx
+    depends_on:
+      - jeca-frontend
+      - jeca-api
+    networks:
+      - jeca-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "nginx", "-t"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  jeca_sqldata:
+    driver: local
+  nginx_cache:
+    driver: local
+
+networks:
+  jeca-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
