@@ -1,0 +1,161 @@
+Initializing deployment
+Clonning Repo github.com/ketankapure1997/jecadocker.git to /etc/dokploy/compose/jeca-full-stack-zwn3sg/code: ✅
+Cloning into '/etc/dokploy/compose/jeca-full-stack-zwn3sg/code'...
+remote: Enumerating objects: 336, done.
+Cloned github.com/ketankapure1997/jecadocker.git: ✅
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                                                                              ║
+║ App Name: jeca-full-stack-zwn3sg                                             ║
+║ Build Compose 🐳                                                             ║
+║ Detected: 0 mounts 📂                                                        ║
+║ Command: docker compose -p jeca-full-stack-zwn3sg -f ./docker-compose.yml up ║
+║ -d --build --remove-orphans                                                  ║
+║ Source Type: docker github ✅                                                ║
+║ Compose Type: docker-compose ✅                                              ║
+║                                                                              ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+time="2025-10-09T16:13:37Z" level=warning msg="/etc/dokploy/compose/jeca-full-stack-zwn3sg/code/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+#1 [internal] load local bake definitions
+#1 reading from stdin 1.26kB done
+#1 DONE 0.0s
+#2 [jeca-api internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.24kB done
+#2 DONE 0.0s
+#3 [jeca-frontend internal] load build definition from Dockerfile
+#3 transferring dockerfile: 1.71kB done
+#3 DONE 0.0s
+#4 [jeca-api internal] load metadata for mcr.microsoft.com/dotnet/aspnet:8.0
+#4 DONE 0.1s
+#5 [jeca-api internal] load metadata for mcr.microsoft.com/dotnet/sdk:8.0
+#5 DONE 0.1s
+#6 [jeca-frontend internal] load metadata for docker.io/library/node:18-alpine
+#6 DONE 0.1s
+#7 [jeca-api internal] load .dockerignore
+#7 transferring context: 1.44kB done
+#7 DONE 0.0s
+#8 [jeca-api build 1/7] FROM mcr.microsoft.com/dotnet/sdk:8.0@sha256:ff8311847c54c04d1a14c488362807997d59b61372da5095a95f89cbcda7f9b7
+#8 DONE 0.0s
+#9 [jeca-api base 1/2] FROM mcr.microsoft.com/dotnet/aspnet:8.0@sha256:53f73fbe620361e5116f68752bf42958dfcda8699a94a785dcb4657bc571c8f3
+#9 DONE 0.0s
+#10 [jeca-api final 1/4] WORKDIR /app
+#10 CACHED
+#11 [jeca-api base 2/2] WORKDIR /app
+#11 CACHED
+#12 [jeca-api final 2/4] RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
+#12 CACHED
+#13 [jeca-frontend internal] load .dockerignore
+#13 transferring context: 1.83kB done
+#13 DONE 0.0s
+#14 [jeca-api internal] load build context
+#14 transferring context: 421.07kB 0.0s done
+#14 DONE 0.0s
+#15 [jeca-api build 2/7] WORKDIR /src
+#15 CACHED
+#16 [jeca-api build 3/7] COPY [JecaInsurance.API.csproj, .]
+#16 CACHED
+#17 [jeca-frontend base 1/1] FROM docker.io/library/node:18-alpine@sha256:8d6421d663b4c28fd3ebc498332f249011d118945588d0a35cb9bc4b8ca09d9e
+#17 DONE 0.0s
+#18 [jeca-frontend runner 2/8] RUN addgroup --system --gid 1001 nodejs
+#18 CACHED
+#19 [jeca-frontend builder 1/4] WORKDIR /app
+#19 CACHED
+#20 [jeca-frontend runner 3/8] RUN adduser --system --uid 1001 nextjs
+#20 CACHED
+#21 [jeca-frontend internal] load build context
+#21 transferring context: 2.14MB 0.1s done
+#21 DONE 0.1s
+#22 [jeca-frontend deps 3/4] COPY package.json package-lock.json* ./
+#22 CACHED
+#23 [jeca-frontend deps 4/4] RUN npm ci --only=production
+#23 CACHED
+#24 [jeca-frontend deps 1/4] RUN apk add --no-cache libc6-compat
+#24 CACHED
+#25 [jeca-frontend deps 2/4] WORKDIR /app
+#25 CACHED
+#26 [jeca-frontend builder 2/4] COPY --from=deps /app/node_modules ./node_modules
+#26 CACHED
+#27 [jeca-frontend builder 3/4] COPY . .
+#27 CACHED
+#28 [jeca-frontend builder 4/4] RUN npm run build
+#28 0.838
+#28 0.838 > jeca-insurance@0.1.0 build
+#28 0.838 > next build
+#28 0.838
+#28 1.770  ⚠ Installing TypeScript as it was not found while loading "next.config.ts".
+#28 1.783
+#28 1.783 Installing devDependencies (npm):
+#28 1.783 - typescript
+#28 1.783
+#28 9.309
+#28 9.309 added 295 packages, and audited 412 packages in 7s
+#28 9.309
+#28 9.309 146 packages are looking for funding
+#28 9.309   run `npm fund` for details
+#28 9.351
+#28 9.351 2 vulnerabilities (1 moderate, 1 high)
+#28 9.351
+#28 9.351 To address all issues possible, run:
+#28 9.351   npm audit fix --force
+#28 9.351
+#28 9.351 Some issues need review, and may require choosing
+#28 9.351 a different dependency.
+#28 9.351
+#28 9.351 Run `npm audit` for details.
+#28 9.371
+#28 9.371  ⨯ Failed to load next.config.ts, see more info here https://nextjs.org/docs/messages/next-config-error
+#28 9.415
+#28 9.415 > Build error occurred
+#28 9.423 [Error: Cannot find module 'typescript'
+#28 9.423 Require stack:
+#28 9.423 - /app/node_modules/next/dist/build/next-config-ts/transpile-config.js
+#28 9.423 - /app/node_modules/next/dist/server/config.js
+#28 9.423 - /app/node_modules/next/dist/cli/next-test.js
+#28 9.423 - /app/node_modules/next/dist/bin/next] {
+#28 9.423   code: 'MODULE_NOT_FOUND',
+#28 9.423   requireStack: [Array]
+#28 9.423 }
+#28 9.444 npm notice
+#28 9.444 npm notice New major version of npm available! 10.8.2 -> 11.6.2
+#28 9.444 npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.6.2
+#28 9.444 npm notice To update run: npm install -g npm@11.6.2
+#28 9.444 npm notice
+#28 ...
+#29 [jeca-api build 4/7] RUN dotnet restore "JecaInsurance.API.csproj"
+#29 1.362   Determining projects to restore...
+#29 ...
+#28 [jeca-frontend builder 4/4] RUN npm run build
+#28 ERROR: process "/bin/sh -c npm run build" did not complete successfully: exit code: 1
+#29 [jeca-api build 4/7] RUN dotnet restore "JecaInsurance.API.csproj"
+#29 CANCELED
+------
+> [jeca-frontend builder 4/4] RUN npm run build:
+9.423 - /app/node_modules/next/dist/cli/next-test.js
+9.423 - /app/node_modules/next/dist/bin/next] {
+9.423   code: 'MODULE_NOT_FOUND',
+9.423   requireStack: [Array]
+9.423 }
+9.444 npm notice
+9.444 npm notice New major version of npm available! 10.8.2 -> 11.6.2
+9.444 npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.6.2
+9.444 npm notice To update run: npm install -g npm@11.6.2
+9.444 npm notice
+------
+Dockerfile:25
+--------------------
+|
+|     # Build the application
+| >>> RUN npm run build
+|
+|     # Production image, copy all the files and run next
+--------------------
+target jeca-frontend: failed to solve: process "/bin/sh -c npm run build" did not complete successfully: exit code: 1
+Error ❌ time="2025-10-09T16:13:37Z" level=warning msg="/etc/dokploy/compose/jeca-full-stack-zwn3sg/code/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+Dockerfile:25
+--------------------
+|
+|     # Build the application
+| >>> RUN npm run build
+|
+|     # Production image, copy all the files and run next
+--------------------
+target jeca-frontend: failed to solve: process "/bin/sh -c npm run build" did not complete successfully: exit code: 1
