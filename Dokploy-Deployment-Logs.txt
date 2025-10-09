@@ -17,52 +17,52 @@ Cloned github.com/ketankapure1997/jecadocker.git: ✅
 #1 [internal] load local bake definitions
 #1 reading from stdin 1.26kB done
 #1 DONE 0.0s
-#2 [jeca-frontend internal] load build definition from Dockerfile
-#2 transferring dockerfile: 1.78kB done
+#2 [jeca-api internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.24kB done
 #2 DONE 0.0s
-#3 [jeca-api internal] load build definition from Dockerfile
-#3 transferring dockerfile: 1.24kB done
+#3 [jeca-frontend internal] load build definition from Dockerfile
+#3 transferring dockerfile: 1.78kB done
 #3 DONE 0.0s
 #4 [jeca-api internal] load metadata for mcr.microsoft.com/dotnet/sdk:8.0
 #4 DONE 0.1s
 #5 [jeca-api internal] load metadata for mcr.microsoft.com/dotnet/aspnet:8.0
 #5 DONE 0.1s
-#6 [jeca-api internal] load .dockerignore
-#6 transferring context: 1.44kB done
-#6 DONE 0.0s
-#7 [jeca-api build 1/7] FROM mcr.microsoft.com/dotnet/sdk:8.0@sha256:ff8311847c54c04d1a14c488362807997d59b61372da5095a95f89cbcda7f9b7
+#6 [jeca-frontend internal] load metadata for docker.io/library/node:18-alpine
+#6 DONE 0.1s
+#7 [jeca-api internal] load .dockerignore
+#7 transferring context: 1.44kB done
 #7 DONE 0.0s
-#8 [jeca-api base 1/2] FROM mcr.microsoft.com/dotnet/aspnet:8.0@sha256:53f73fbe620361e5116f68752bf42958dfcda8699a94a785dcb4657bc571c8f3
+#8 [jeca-frontend internal] load .dockerignore
+#8 transferring context: 1.89kB done
 #8 DONE 0.0s
-#9 [jeca-frontend internal] load metadata for docker.io/library/node:18-alpine
-#9 DONE 0.1s
-#10 [jeca-frontend internal] load .dockerignore
-#10 transferring context: 1.89kB done
+#9 [jeca-api build 1/7] FROM mcr.microsoft.com/dotnet/sdk:8.0@sha256:ff8311847c54c04d1a14c488362807997d59b61372da5095a95f89cbcda7f9b7
+#9 DONE 0.0s
+#10 [jeca-api base 1/2] FROM mcr.microsoft.com/dotnet/aspnet:8.0@sha256:53f73fbe620361e5116f68752bf42958dfcda8699a94a785dcb4657bc571c8f3
 #10 DONE 0.0s
-#11 [jeca-api internal] load build context
-#11 transferring context: 421.07kB 0.0s done
+#11 [jeca-frontend base 1/1] FROM docker.io/library/node:18-alpine@sha256:8d6421d663b4c28fd3ebc498332f249011d118945588d0a35cb9bc4b8ca09d9e
 #11 DONE 0.0s
-#12 [jeca-frontend base 1/1] FROM docker.io/library/node:18-alpine@sha256:8d6421d663b4c28fd3ebc498332f249011d118945588d0a35cb9bc4b8ca09d9e
+#12 [jeca-api internal] load build context
+#12 transferring context: 421.07kB 0.0s done
 #12 DONE 0.0s
 #13 [jeca-api final 3/4] COPY --from=publish /app/publish .
 #13 CACHED
-#14 [jeca-api final 1/4] WORKDIR /app
+#14 [jeca-api build 6/7] WORKDIR /src
 #14 CACHED
-#15 [jeca-api build 4/7] RUN dotnet restore "JecaInsurance.API.csproj"
+#15 [jeca-api build 7/7] RUN dotnet build "JecaInsurance.API.csproj" -c Release -o /app/build
 #15 CACHED
-#16 [jeca-api build 6/7] WORKDIR /src
+#16 [jeca-api build 3/7] COPY [JecaInsurance.API.csproj, .]
 #16 CACHED
-#17 [jeca-api build 3/7] COPY [JecaInsurance.API.csproj, .]
+#17 [jeca-api base 2/2] WORKDIR /app
 #17 CACHED
-#18 [jeca-api base 2/2] WORKDIR /app
+#18 [jeca-api final 1/4] WORKDIR /app
 #18 CACHED
-#19 [jeca-api final 2/4] RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
+#19 [jeca-api build 2/7] WORKDIR /src
 #19 CACHED
-#20 [jeca-api build 7/7] RUN dotnet build "JecaInsurance.API.csproj" -c Release -o /app/build
+#20 [jeca-api final 2/4] RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
 #20 CACHED
-#21 [jeca-api build 5/7] COPY . .
+#21 [jeca-api build 4/7] RUN dotnet restore "JecaInsurance.API.csproj"
 #21 CACHED
-#22 [jeca-api build 2/7] WORKDIR /src
+#22 [jeca-api build 5/7] COPY . .
 #22 CACHED
 #23 [jeca-api publish 1/1] RUN dotnet publish "JecaInsurance.API.csproj" -c Release -o /app/publish /p:UseAppHost=false
 #23 CACHED
@@ -70,84 +70,74 @@ Cloned github.com/ketankapure1997/jecadocker.git: ✅
 #24 CACHED
 #25 [jeca-api] exporting to image
 #25 exporting layers done
-#25 writing image sha256:c09548bf3d2f4777ec65ce69e49ecf2f345ca6a250e44c2db2e30e9bbd7046df done
+#25 writing image sha256:791d008a25bf2ae496229dda9929e9b2357ecf7fefceaee029ef88cc11fba1c5 done
 #25 naming to docker.io/library/jeca-full-stack-zwn3sg-jeca-api done
 #25 DONE 0.0s
 #26 [jeca-frontend internal] load build context
 #26 transferring context: 2.71MB 0.1s done
 #26 DONE 0.1s
-#27 [jeca-api] resolving provenance for metadata file
-#27 DONE 0.0s
+#27 [jeca-frontend deps 2/4] WORKDIR /app
+#27 CACHED
 #28 [jeca-frontend deps 4/4] RUN npm ci
 #28 CACHED
-#29 [jeca-frontend builder 2/4] COPY --from=deps /app/node_modules ./node_modules
+#29 [jeca-frontend runner 2/8] RUN addgroup --system --gid 1001 nodejs
 #29 CACHED
-#30 [jeca-frontend builder 4/4] RUN npm run build
+#30 [jeca-frontend runner 5/8] RUN chown nextjs:nodejs .next
 #30 CACHED
-#31 [jeca-frontend runner 6/8] COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+#31 [jeca-frontend builder 4/4] RUN npm run build
 #31 CACHED
 #32 [jeca-frontend builder 1/4] WORKDIR /app
 #32 CACHED
-#33 [jeca-frontend deps 1/4] RUN apk add --no-cache libc6-compat
+#33 [jeca-frontend builder 2/4] COPY --from=deps /app/node_modules ./node_modules
 #33 CACHED
-#34 [jeca-frontend deps 2/4] WORKDIR /app
+#34 [jeca-frontend runner 7/8] COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 #34 CACHED
 #35 [jeca-frontend runner 3/8] RUN adduser --system --uid 1001 nextjs
 #35 CACHED
-#36 [jeca-frontend runner 4/8] RUN mkdir .next
+#36 [jeca-frontend builder 3/4] COPY . .
 #36 CACHED
 #37 [jeca-frontend deps 3/4] COPY package.json package-lock.json* ./
 #37 CACHED
-#38 [jeca-frontend builder 3/4] COPY . .
+#38 [jeca-frontend runner 6/8] COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 #38 CACHED
-#39 [jeca-frontend runner 7/8] COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+#39 [jeca-frontend runner 4/8] RUN mkdir .next
 #39 CACHED
-#40 [jeca-frontend runner 2/8] RUN addgroup --system --gid 1001 nodejs
+#40 [jeca-frontend deps 1/4] RUN apk add --no-cache libc6-compat
 #40 CACHED
-#41 [jeca-frontend runner 5/8] RUN chown nextjs:nodejs .next
+#41 [jeca-frontend runner 8/8] COPY --chown=nextjs:nodejs public ./public
 #41 CACHED
-#42 [jeca-frontend runner 8/8] COPY --chown=nextjs:nodejs public ./public
-#42 CACHED
-#43 [jeca-frontend] exporting to image
-#43 exporting layers done
-#43 writing image sha256:ba81aa95c014bec30e94ca319ec5d2ee87347d2dcb4ba6e0634a530369023d45 done
-#43 naming to docker.io/library/jeca-full-stack-zwn3sg-jeca-frontend done
+#42 [jeca-frontend] exporting to image
+#42 exporting layers done
+#42 writing image sha256:ed3b46c8fec079d5723718de3f20f708edfb2fbd328e77b180107d1eecf7b411 done
+#42 naming to docker.io/library/jeca-full-stack-zwn3sg-jeca-frontend done
+#42 DONE 0.0s
+#43 [jeca-api] resolving provenance for metadata file
 #43 DONE 0.0s
 #44 [jeca-frontend] resolving provenance for metadata file
 #44 DONE 0.0s
 jeca-full-stack-zwn3sg-jeca-frontend  Built
 jeca-full-stack-zwn3sg-jeca-api  Built
-Network jeca-full-stack-zwn3sg_jeca-network  Creating
-Network jeca-full-stack-zwn3sg_jeca-network  Created
-Volume "jeca-full-stack-zwn3sg_nginx_cache"  Creating
-Volume "jeca-full-stack-zwn3sg_nginx_cache"  Created
-Volume "jeca-full-stack-zwn3sg_jeca_sqldata"  Creating
-Volume "jeca-full-stack-zwn3sg_jeca_sqldata"  Created
-Container jeca-sqlserver  Creating
-Container jeca-sqlserver  Created
-Container jeca-api  Creating
-Container jeca-api  Created
-Container jeca-frontend  Creating
-Container jeca-frontend  Created
-Container jeca-nginx  Creating
-Container jeca-nginx  Created
+Container jeca-sqlserver  Recreate
+Container jeca-sqlserver  Recreated
+Container jeca-api  Recreate
+Container jeca-api  Recreated
+Container jeca-frontend  Recreate
+Container jeca-frontend  Recreated
 Container jeca-sqlserver  Starting
-Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint jeca-sqlserver (e1ac5c13401a2a4b25b8eda5b698a5c517aa28c5759702baa778e16055fd8c36): Bind for 0.0.0.0:1433 failed: port is already allocated
+Container jeca-sqlserver  Started
+Container jeca-sqlserver  Waiting
+Container jeca-sqlserver  Error
+dependency failed to start: container jeca-sqlserver is unhealthy
 Error ❌  jeca-full-stack-zwn3sg-jeca-frontend  Built
 jeca-full-stack-zwn3sg-jeca-api  Built
-Network jeca-full-stack-zwn3sg_jeca-network  Creating
-Network jeca-full-stack-zwn3sg_jeca-network  Created
-Volume "jeca-full-stack-zwn3sg_nginx_cache"  Creating
-Volume "jeca-full-stack-zwn3sg_nginx_cache"  Created
-Volume "jeca-full-stack-zwn3sg_jeca_sqldata"  Creating
-Volume "jeca-full-stack-zwn3sg_jeca_sqldata"  Created
-Container jeca-sqlserver  Creating
-Container jeca-sqlserver  Created
-Container jeca-api  Creating
-Container jeca-api  Created
-Container jeca-frontend  Creating
-Container jeca-frontend  Created
-Container jeca-nginx  Creating
-Container jeca-nginx  Created
+Container jeca-sqlserver  Recreate
+Container jeca-sqlserver  Recreated
+Container jeca-api  Recreate
+Container jeca-api  Recreated
+Container jeca-frontend  Recreate
+Container jeca-frontend  Recreated
 Container jeca-sqlserver  Starting
-Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint jeca-sqlserver (e1ac5c13401a2a4b25b8eda5b698a5c517aa28c5759702baa778e16055fd8c36): Bind for 0.0.0.0:1433 failed: port is already allocated
+Container jeca-sqlserver  Started
+Container jeca-sqlserver  Waiting
+Container jeca-sqlserver  Error
+dependency failed to start: container jeca-sqlserver is unhealthy
