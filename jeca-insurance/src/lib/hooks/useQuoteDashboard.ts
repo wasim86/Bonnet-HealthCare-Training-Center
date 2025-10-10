@@ -72,7 +72,7 @@ interface UseQuoteDashboardReturn {
   filters: DashboardFilters
 }
 
-const API_BASE_URL = (process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5149') + '/api'
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5149/api'
 
 export function useQuoteDashboard(options: UseQuoteDashboardOptions = {}): UseQuoteDashboardReturn {
   const {
