@@ -14,64 +14,64 @@ Cloned github.com/ketankapure1997/jecadocker.git: ✅
 ║ Compose Type: docker-compose ✅                                              ║
 ║                                                                              ║
 ╚══════════════════════════════════════════════════════════════════════════════╝
-time="2025-10-24T11:19:38Z" level=warning msg="/etc/dokploy/compose/jeca-full-stack-zwn3sg/code/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+time="2025-10-24T11:25:29Z" level=warning msg="/etc/dokploy/compose/jeca-full-stack-zwn3sg/code/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
 #1 [internal] load local bake definitions
 #1 reading from stdin 1.26kB done
 #1 DONE 0.0s
-#2 [jeca-frontend internal] load build definition from Dockerfile
-#2 transferring dockerfile: 2.27kB done
+#2 [jeca-api internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.24kB done
 #2 DONE 0.0s
-#3 [jeca-api internal] load build definition from Dockerfile
-#3 transferring dockerfile: 1.24kB done
+#3 [jeca-frontend internal] load build definition from Dockerfile
+#3 transferring dockerfile: 2.27kB done
 #3 DONE 0.0s
 #4 [jeca-api internal] load metadata for mcr.microsoft.com/dotnet/aspnet:8.0
 #4 DONE 0.1s
-#5 [jeca-api internal] load metadata for mcr.microsoft.com/dotnet/sdk:8.0
+#5 [jeca-frontend internal] load metadata for docker.io/library/node:18-alpine
 #5 DONE 0.1s
-#6 [jeca-api internal] load .dockerignore
-#6 transferring context: 1.44kB done
-#6 DONE 0.0s
-#7 [jeca-api build 1/7] FROM mcr.microsoft.com/dotnet/sdk:8.0@sha256:f2f0cb3af991eb6959c8a20551b0152f10cce61354c089dd863a7b72c0f00fea
+#6 [jeca-api internal] load metadata for mcr.microsoft.com/dotnet/sdk:8.0
+#6 DONE 0.1s
+#7 [jeca-api internal] load .dockerignore
+#7 transferring context: 1.44kB done
 #7 DONE 0.0s
 #8 [jeca-api base 1/2] FROM mcr.microsoft.com/dotnet/aspnet:8.0@sha256:590a934508c35c2ef61203ded76f088f5ec6263b863b55d3deaea8fc2d6b55a6
 #8 DONE 0.0s
-#9 [jeca-frontend internal] load metadata for docker.io/library/node:18-alpine
-#9 DONE 0.1s
+#9 [jeca-api build 1/7] FROM mcr.microsoft.com/dotnet/sdk:8.0@sha256:f2f0cb3af991eb6959c8a20551b0152f10cce61354c089dd863a7b72c0f00fea
+#9 DONE 0.0s
 #10 [jeca-api internal] load build context
 #10 transferring context: 421.21kB 0.0s done
 #10 DONE 0.0s
-#11 [jeca-frontend internal] load .dockerignore
-#11 transferring context: 1.89kB done
-#11 DONE 0.0s
-#12 [jeca-api build 4/7] RUN dotnet restore "JecaInsurance.API.csproj"
+#11 [jeca-api base 2/2] WORKDIR /app
+#11 CACHED
+#12 [jeca-api build 6/7] WORKDIR /src
 #12 CACHED
-#13 [jeca-api build 3/7] COPY [JecaInsurance.API.csproj, .]
+#13 [jeca-api final 3/4] COPY --from=publish /app/publish .
 #13 CACHED
-#14 [jeca-api base 2/2] WORKDIR /app
+#14 [jeca-api publish 1/1] RUN dotnet publish "JecaInsurance.API.csproj" -c Release -o /app/publish /p:UseAppHost=false
 #14 CACHED
-#15 [jeca-api final 3/4] COPY --from=publish /app/publish .
+#15 [jeca-api build 4/7] RUN dotnet restore "JecaInsurance.API.csproj"
 #15 CACHED
-#16 [jeca-api build 2/7] WORKDIR /src
+#16 [jeca-api final 1/4] WORKDIR /app
 #16 CACHED
-#17 [jeca-api build 6/7] WORKDIR /src
+#17 [jeca-api final 2/4] RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
 #17 CACHED
 #18 [jeca-api build 5/7] COPY . .
 #18 CACHED
-#19 [jeca-api final 1/4] WORKDIR /app
+#19 [jeca-api build 2/7] WORKDIR /src
 #19 CACHED
-#20 [jeca-api build 7/7] RUN dotnet build "JecaInsurance.API.csproj" -c Release -o /app/build
+#20 [jeca-api build 3/7] COPY [JecaInsurance.API.csproj, .]
 #20 CACHED
-#21 [jeca-api publish 1/1] RUN dotnet publish "JecaInsurance.API.csproj" -c Release -o /app/publish /p:UseAppHost=false
+#21 [jeca-api build 7/7] RUN dotnet build "JecaInsurance.API.csproj" -c Release -o /app/build
 #21 CACHED
-#22 [jeca-api final 2/4] RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
+#22 [jeca-api final 4/4] RUN mkdir -p wwwroot/uploads
 #22 CACHED
-#23 [jeca-api final 4/4] RUN mkdir -p wwwroot/uploads
-#23 CACHED
+#23 [jeca-frontend internal] load .dockerignore
+#23 transferring context: 1.89kB done
+#23 DONE 0.0s
 #24 [jeca-frontend base 1/1] FROM docker.io/library/node:18-alpine@sha256:8d6421d663b4c28fd3ebc498332f249011d118945588d0a35cb9bc4b8ca09d9e
 #24 DONE 0.0s
 #25 [jeca-api] exporting to image
 #25 exporting layers done
-#25 writing image sha256:f3806c761fc39063f059272ee54ba13b2a494305cb67525037f4750ce6dc440c done
+#25 writing image sha256:67e2b43fa1f8580521e3b1eea878296d2cb3bb208c1c171ddda3809f6f8ec1dc done
 #25 naming to docker.io/library/jeca-full-stack-zwn3sg-jeca-api done
 #25 DONE 0.0s
 #26 [jeca-api] resolving provenance for metadata file
@@ -79,41 +79,41 @@ time="2025-10-24T11:19:38Z" level=warning msg="/etc/dokploy/compose/jeca-full-st
 #27 [jeca-frontend internal] load build context
 #27 transferring context: 2.71MB 0.1s done
 #27 DONE 0.1s
-#28 [jeca-frontend runner 6/9] RUN chown nextjs:nodejs .next
+#28 [jeca-frontend runner 7/9] COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 #28 CACHED
-#29 [jeca-frontend builder 2/4] COPY --from=deps /app/node_modules ./node_modules
+#29 [jeca-frontend deps 3/4] COPY package.json package-lock.json* ./
 #29 CACHED
-#30 [jeca-frontend builder 3/4] COPY . .
+#30 [jeca-frontend deps 1/4] RUN apk add --no-cache libc6-compat curl
 #30 CACHED
-#31 [jeca-frontend runner 4/9] RUN adduser --system --uid 1001 nextjs
+#31 [jeca-frontend runner 5/9] RUN mkdir .next
 #31 CACHED
-#32 [jeca-frontend runner 2/9] RUN apk add --no-cache curl
+#32 [jeca-frontend runner 3/9] RUN addgroup --system --gid 1001 nodejs
 #32 CACHED
-#33 [jeca-frontend deps 1/4] RUN apk add --no-cache libc6-compat curl
+#33 [jeca-frontend builder 3/4] COPY . .
 #33 CACHED
-#34 [jeca-frontend deps 2/4] WORKDIR /app
+#34 [jeca-frontend builder 1/4] WORKDIR /app
 #34 CACHED
 #35 [jeca-frontend deps 4/4] RUN npm ci
 #35 CACHED
-#36 [jeca-frontend runner 5/9] RUN mkdir .next
+#36 [jeca-frontend runner 8/9] COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 #36 CACHED
-#37 [jeca-frontend deps 3/4] COPY package.json package-lock.json* ./
+#37 [jeca-frontend runner 4/9] RUN adduser --system --uid 1001 nextjs
 #37 CACHED
-#38 [jeca-frontend builder 4/4] RUN npm run build
+#38 [jeca-frontend deps 2/4] WORKDIR /app
 #38 CACHED
-#39 [jeca-frontend runner 7/9] COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+#39 [jeca-frontend builder 2/4] COPY --from=deps /app/node_modules ./node_modules
 #39 CACHED
-#40 [jeca-frontend builder 1/4] WORKDIR /app
+#40 [jeca-frontend runner 2/9] RUN apk add --no-cache curl
 #40 CACHED
-#41 [jeca-frontend runner 3/9] RUN addgroup --system --gid 1001 nodejs
+#41 [jeca-frontend runner 6/9] RUN chown nextjs:nodejs .next
 #41 CACHED
-#42 [jeca-frontend runner 8/9] COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+#42 [jeca-frontend builder 4/4] RUN npm run build
 #42 CACHED
 #43 [jeca-frontend runner 9/9] COPY --chown=nextjs:nodejs public ./public
 #43 CACHED
 #44 [jeca-frontend] exporting to image
 #44 exporting layers done
-#44 writing image sha256:c0d9338b98e2b1e614f5fe0da3455703878867963b86390cb7c8c18e4ee8a8f3 done
+#44 writing image sha256:f8edbf93f9190328ca4cfe69ec70fe23c21858fafd6aff14fa05613dfe4a6eae done
 #44 naming to docker.io/library/jeca-full-stack-zwn3sg-jeca-frontend done
 #44 DONE 0.0s
 #45 [jeca-frontend] resolving provenance for metadata file
