@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations;
 namespace JecaInsurance.API.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/contact")]
     public class ContactController : ControllerBase
     {
         private readonly JecaInsuranceDbContext _context;

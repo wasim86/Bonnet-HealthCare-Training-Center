@@ -5,7 +5,7 @@ using JecaInsurance.API.Models;
 
 namespace JecaInsurance.API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/Consultation")]
     [ApiController]
     public class ConsultationController : ControllerBase
     {

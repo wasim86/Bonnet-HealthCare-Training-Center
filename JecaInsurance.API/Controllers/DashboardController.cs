@@ -9,7 +9,7 @@ namespace JecaInsurance.API.Controllers
     /// Dashboard controller for unified quote management and analytics
     /// </summary>
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/dashboard")]
     [Produces("application/json")]
     public class DashboardController : ControllerBase
     {
