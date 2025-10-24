@@ -80,6 +80,7 @@ services:
       - "9443:443"
     volumes:
       - ./ssl:/etc/ssl/certs:ro
+      - ./ssl:/etc/ssl/private:ro
       - nginx_cache:/var/cache/nginx
     depends_on:
       - jeca-frontend
