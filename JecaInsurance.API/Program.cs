@@ -114,6 +114,7 @@ try
 
     // Health Checks
     app.UseHealthChecks("/health");
+    app.UseHealthChecks("/api/health");
 
     // Controllers
     app.MapControllers();
