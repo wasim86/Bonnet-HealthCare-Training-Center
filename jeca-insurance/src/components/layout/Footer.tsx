@@ -70,7 +70,7 @@ export default function Footer() {
                 className="flex items-start space-x-3 text-sm text-gray-300 hover:text-white transition-colors justify-center lg:justify-start"
               >
                 <MapPinIcon className="h-5 w-5 text-blue-400 flex-shrink-0 mt-0.5" />
-                <span className="text-center lg:text-left">123 Insurance Blvd, Suite 100<br />New York, NY 10001</span>
+                <span className="text-center lg:text-left">1379 N. Nebraska Ave Suite 103<br />Tampa, FL 33613</span>
               </motion.div>
               <motion.div
                 whileHover={{ x: 5 }}
@@ -185,13 +185,8 @@ export default function Footer() {
           {/* Copyright and Company Info */}
           <div className="flex flex-col space-y-4 sm:space-y-0 sm:flex-row sm:items-center sm:justify-between text-center sm:text-left">
             <p className="text-xs leading-5 text-gray-400">
-              &copy; 2024 JECA Insurance Company. All rights reserved. Licensed in all 50 states.
+              &copy; 2024 JECA Insurance Company. All rights reserved.
             </p>
-            <div className="order-first sm:order-last">
-              <p className="text-xs leading-5 text-gray-400">
-                NAIC #12345 | AM Best Rating: A+ (Superior)
-              </p>
-            </div>
           </div>
         </div>
       </div>

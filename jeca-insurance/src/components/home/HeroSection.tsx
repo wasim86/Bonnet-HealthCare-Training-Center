@@ -2,14 +2,13 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { motion, AnimatePresence } from 'framer-motion'
-import { ChevronDownIcon, SparklesIcon } from '@heroicons/react/24/outline'
+import { motion } from 'framer-motion'
+import { SparklesIcon } from '@heroicons/react/24/outline'
 import {
   TruckIcon,
   HomeIcon,
   HeartIcon,
-  BuildingOfficeIcon,
-  CheckCircleIcon
+  BuildingOfficeIcon
 } from '@heroicons/react/24/solid'
 
 
@@ -21,8 +20,7 @@ const quoteCategories = [
     description: 'Vehicle protection for cars, trucks, motorcycles',
     icon: TruckIcon,
     color: 'from-blue-600 to-indigo-700',
-    href: 'https://www.agentinsure.com/compare/auto-insurance-home-insurance/jeca/quote.aspx',
-    features: ['Collision Coverage', 'Comprehensive', '24/7 Roadside Assistance']
+    href: 'https://www.agentinsure.com/compare/auto-insurance-home-insurance/jeca/quote.aspx'
   },
   {
     id: 'health',
@@ -30,8 +28,7 @@ const quoteCategories = [
     description: 'Medical coverage for individuals and families',
     icon: HeartIcon,
     color: 'from-green-600 to-emerald-700',
-    href: '/quote/health',
-    features: ['Medical Coverage', 'Dental & Vision', 'Medicare Options']
+    href: '/quote/health'
   },
   {
     id: 'life',
@@ -39,8 +36,7 @@ const quoteCategories = [
     description: 'Life insurance and financial protection',
     icon: HeartIcon,
     color: 'from-amber-600 to-red-600',
-    href: '/quotes/life-financial/life',
-    features: ['Term Life', 'Whole Life', 'Annuities']
+    href: '/quotes/life-financial/life'
   },
   {
     id: 'home',
@@ -48,8 +44,7 @@ const quoteCategories = [
     description: 'Protect your home and belongings',
     icon: HomeIcon,
     color: 'from-purple-600 to-pink-600',
-    href: 'https://www.agentinsure.com/compare/auto-insurance-home-insurance/jeca/quote.aspx',
-    features: ['Dwelling Coverage', 'Personal Property', 'Liability Protection']
+    href: 'https://www.agentinsure.com/compare/auto-insurance-home-insurance/jeca/quote.aspx'
   },
   {
     id: 'business',
@@ -57,20 +52,16 @@ const quoteCategories = [
     description: 'Coverage for your business needs',
     icon: BuildingOfficeIcon,
     color: 'from-gray-600 to-slate-700',
-    href: '/quote/business',
-    features: ['General Liability', 'Home Owner Insurance', 'Workers Comp']
+    href: '/quote/business'
   },
 ]
 
 export default function HeroSection() {
-  const [selectedCategory, setSelectedCategory] = useState('auto')
   const [isMounted, setIsMounted] = useState(false)
 
   useEffect(() => {
     setIsMounted(true)
   }, [])
-
-  const selectedType = quoteCategories.find(type => type.id === selectedCategory)
 
   return (
     <div className="relative isolate overflow-hidden bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 min-h-screen flex items-center">
@@ -202,79 +193,31 @@ export default function HeroSection() {
                 <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20 shadow-2xl max-w-md mx-auto lg:mx-0">
                   <div className="text-center mb-4 sm:mb-6">
                     <h3 className="text-lg sm:text-xl font-bold text-white mb-2">Choose Your Insurance</h3>
-                    <p className="text-sm text-gray-300">Select a category to get your quote</p>
+                    <p className="text-sm text-gray-300">Click on any category to get your quote instantly</p>
                   </div>
 
                   {/* Insurance Category Selector */}
                   <div className="grid grid-cols-2 gap-3 mb-4">
                     {quoteCategories.map((category) => (
-                      <motion.button
-                        key={category.id}
-                        onClick={() => setSelectedCategory(category.id)}
-                        className={`relative p-4 rounded-lg border-2 transition-all duration-300 touch-target min-h-[120px] ${
-                          selectedCategory === category.id
-                            ? 'border-blue-400 bg-blue-500/20'
-                            : 'border-white/20 bg-white/5 hover:bg-white/10'
-                        }`}
-                        whileHover={{ scale: 1.02 }}
-                        whileTap={{ scale: 0.98 }}
-                      >
-                        <div className="flex flex-col items-center space-y-2 text-center">
-                          <div className={`w-10 h-10 rounded-lg bg-gradient-to-r ${category.color} flex items-center justify-center`}>
-                            <category.icon className="h-5 w-5 text-white" />
+                      <Link key={category.id} href={category.href}>
+                        <motion.div
+                          className="relative p-4 rounded-lg border-2 border-white/20 bg-white/5 hover:bg-white/10 transition-all duration-300 touch-target min-h-[120px] cursor-pointer hover:border-blue-400 hover:bg-blue-500/20"
+                          whileHover={{ scale: 1.02 }}
+                          whileTap={{ scale: 0.98 }}
+                        >
+                          <div className="flex flex-col items-center space-y-2 text-center">
+                            <div className={`w-10 h-10 rounded-lg bg-gradient-to-r ${category.color} flex items-center justify-center`}>
+                              <category.icon className="h-5 w-5 text-white" />
+                            </div>
+                            <div>
+                              <div className="text-white text-sm font-medium leading-tight">{category.name}</div>
+                              <div className="text-gray-300 text-xs mt-1 leading-tight">{category.description}</div>
+                            </div>
                           </div>
-                          <div>
-                            <div className="text-white text-sm font-medium leading-tight">{category.name}</div>
-                            <div className="text-gray-300 text-xs mt-1 leading-tight">{category.description}</div>
-                          </div>
-                        </div>
-                      </motion.button>
+                        </motion.div>
+                      </Link>
                     ))}
                   </div>
-
-                  {/* Selected Category Info */}
-                  <AnimatePresence mode="wait">
-                    {selectedType && (
-                      <motion.div
-                        key={selectedCategory}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -20 }}
-                        className="mb-4 p-3 bg-white/5 rounded-xl border border-white/10"
-                      >
-                        <div className="flex items-center space-x-3 mb-2">
-                          <div className={`w-8 h-8 rounded-lg bg-gradient-to-r ${selectedType.color} flex items-center justify-center`}>
-                            <selectedType.icon className="h-4 w-4 text-white" />
-                          </div>
-                          <div>
-                            <h4 className="text-white font-semibold text-sm">{selectedType.name}</h4>
-                            <p className="text-gray-300 text-xs">{selectedType.description}</p>
-                          </div>
-                        </div>
-                        <div className="grid grid-cols-1 gap-1 mb-3">
-                          {selectedType.features.map((feature, index) => (
-                            <div key={index} className="flex items-center space-x-2">
-                              <CheckCircleIcon className="h-3 w-3 text-green-400" />
-                              <span className="text-gray-300 text-xs">{feature}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-
-                  {/* Get Quote Button */}
-                  {selectedType && (
-                    <Link href={selectedType.href}>
-                      <motion.button
-                        className="w-full py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 touch-target-comfortable text-sm"
-                        whileHover={{ scale: 1.02 }}
-                        whileTap={{ scale: 0.98 }}
-                      >
-                        Get {selectedType.name} Quote →
-                      </motion.button>
-                    </Link>
-                  )}
 
                   <div className="mt-4 text-center">
                     <Link
