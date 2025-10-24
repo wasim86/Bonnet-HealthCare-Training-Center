@@ -53,11 +53,11 @@ services:
       context: ./jeca-insurance
       dockerfile: Dockerfile
       args:
-        - NEXT_PUBLIC_API_URL=http://jecainsurancefl.com/api
+        - NEXT_PUBLIC_API_URL=https://jecainsurancefl.com/api
     container_name: jeca-frontend
     environment:
       - NODE_ENV=production
-      - NEXT_PUBLIC_API_URL=http://jecainsurancefl.com/api
+      - NEXT_PUBLIC_API_URL=https://jecainsurancefl.com/api
     depends_on:
       - jeca-api
     networks:

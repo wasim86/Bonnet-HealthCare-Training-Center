@@ -44,9 +44,7 @@ try
                 "https://jecainsurance.com", // Production domain
                 "https://www.jecainsurance.com", // Production www domain
                 "https://jecainsurancefl.com", // Production domain
-                "https://www.jecainsurancefl.com", // Production www domain
-                "http://jecainsurancefl.com", // Production domain HTTP
-                "http://www.jecainsurancefl.com" // Production www domain HTTP
+                "https://www.jecainsurancefl.com" // Production www domain
             )
             .AllowAnyMethod()
             .AllowAnyHeader()
