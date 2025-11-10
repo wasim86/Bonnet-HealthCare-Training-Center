@@ -21,19 +21,20 @@ interface Message {
 const initialMessages: Message[] = [
   {
     id: '1',
-    text: 'Hello! I\'m Sarah, your JECA Insurance assistant. How can I help you today?',
+    text: 'Hello! I\'m Sarah, your Bonnet HealthCare assistant. How can I help you today?',
     sender: 'agent',
     timestamp: new Date('2024-01-01T12:00:00Z') // Fixed timestamp to avoid hydration issues
   }
 ]
 
 const quickReplies = [
-  'Auto Quote',
-  'Health Quote',
-  'Life Insurance',
-  'Property Quote',
-  'Business Quote',
-  'File a claim'
+  'ACLS',
+  'BLS',
+  'Hands Only CPR',
+  'AED',
+  'Heart Savers First AID',
+  'Heimlich Maneuve',
+  'EPI-PEN'
 ]
 
 const autoResponses: { [key: string]: string } = {
@@ -243,7 +244,7 @@ export default function LiveChat() {
                 <UserIcon className="h-4 w-4 sm:h-6 sm:w-6" />
               </div>
               <div className="flex-1">
-                <h3 className="font-semibold text-sm sm:text-base">JECA Support</h3>
+                <h3 className="font-semibold text-sm sm:text-base">Bonnet HealthCare Support</h3>
                 <div className="flex items-center space-x-1">
                   <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-green-400 rounded-full"></div>
                   <span className="text-xs sm:text-sm opacity-90">Online now</span>

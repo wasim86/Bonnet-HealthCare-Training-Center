@@ -65,8 +65,8 @@ export default function CTASection() {
             viewport={{ once: true }}
             className="text-4xl font-bold tracking-tight text-white sm:text-6xl mb-6"
           >
-            Ready to Get
-            <span className="bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent"> Protected?</span>
+            Take a Step forward to join Our
+            <span className="bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent"> Training Courses</span>
           </motion.h2>
 
           <motion.p
@@ -76,8 +76,7 @@ export default function CTASection() {
             viewport={{ once: true }}
             className="mx-auto max-w-xl text-xl leading-8 text-gray-100 mb-10"
           >
-            Join millions of satisfied customers who trust JECA Insurance. Get your personalized quote in minutes
-            and start protecting what matters most today.
+            We lead emergency healthcare education because we know it saves lives. Our courses combine cutting-edge knowledge with hands-on, scenario-based learning through realistic medical simulations. Participants practice real-world emergency protocols in controlled environments, building confidence and proven competency. This immersive approach ensures you're genuinely prepared to apply your skills effectively when seconds count.
           </motion.p>
 
           <motion.div
@@ -92,22 +91,22 @@ export default function CTASection() {
               whileTap={{ scale: 0.95 }}
             >
               <Link
-                href="/quote"
-                className="rounded-2xl bg-white px-8 py-4 text-lg font-bold text-purple-600 shadow-2xl hover:bg-gray-50 transition-all duration-300 hover:shadow-3xl"
+                href="/contact"
+                className="rounded-2xl bg-blue-600 px-8 py-4  font-bold text-white shadow-2xl hover:bg-blue-800 transition-all duration-300 hover:shadow-3xl"
               >
-                Get Free Quote →
+                Contact Us
               </Link>
             </motion.div>
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Link
+              {/* <Link
                 href="/contact"
                 className="rounded-2xl border-2 border-white px-8 py-4 text-lg font-bold text-white hover:bg-white hover:text-purple-600 transition-all duration-300"
               >
                 Talk to an Agent
-              </Link>
+              </Link> */}
             </motion.div>
           </motion.div>
         </motion.div>
@@ -131,7 +130,7 @@ export default function CTASection() {
             </p>
           </motion.div>
 
-          <div className="mx-auto mt-12 grid max-w-lg grid-cols-1 gap-6 sm:max-w-4xl sm:grid-cols-3">
+          <div className="mx-auto mt-12 ml-80 grid max-w-lg grid-cols-1 gap-6 sm:max-w-4xl sm:grid-cols-3">
             {/* Phone */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -151,12 +150,12 @@ export default function CTASection() {
               <h4 className="mt-4 text-xl font-bold text-white">Call Us</h4>
               <p className="mt-2 text-gray-200">Speak with a licensed agent</p>
               <motion.a
-                href="tel:877-501-5460"
+                href="tel:954-709-8196"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="mt-3 block text-2xl font-bold text-yellow-300 hover:text-yellow-200 transition-colors cursor-pointer"
               >
-                877-501-5460
+                954-709-8196
               </motion.a>
               <p className="text-sm text-green-300 font-medium">Available 24/7</p>
             </motion.div>
@@ -190,7 +189,7 @@ export default function CTASection() {
             </motion.div>
 
             {/* Quote */}
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1.4 }}
@@ -218,7 +217,7 @@ export default function CTASection() {
                   Get Quote
                 </Link>
               </motion.div>
-            </motion.div>
+            </motion.div> */}
           </div>
         </div>
       </div>

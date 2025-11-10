@@ -11,16 +11,21 @@ import {
 
 const navigation = {
   insurance: [
-    { name: 'Auto Insurance', href: 'https://www.agentinsure.com/compare/auto-insurance-home-insurance/jeca/quote.aspx' },
-    { name: 'Home Insurance', href: 'https://www.agentinsure.com/compare/auto-insurance-home-insurance/jeca/quote.aspx' },
-    { name: 'Life Insurance', href: '/quotes/life-financial/life' },
-    { name: 'Business Insurance', href: '/quote/business' },
+    { name: 'Home', href: '/' },
+    { name: 'About Us', href: '/about ' },
+    { name: 'Services', href: '/services' },
+    { name: 'Education Services', href: '/Education-Services' },
+    { name: 'Contact Us', href: '/contact' },
   ],
   support: [
-    { name: 'About JECA', href: '/about' },
-    { name: 'File a Claim', href: '/services/report-claim' },
-    { name: 'Customer Support', href: '/contact' },
-    { name: 'Contact Us', href: '/contact' },
+    { name: 'ACLC', href: '/services/advanced-cardiovascular-life-support-acls' },
+    { name: 'BLS', href: '/services/basic-life-support-bls' },
+    { name: 'Hands Only CPR ', href: '/services/cardiopulmonary-resuscitation-cpr' },
+    { name: 'AED', href: '/services/automated-external-defibrillator-aed' },
+    { name: 'Heart Savers First AID', href: '/services/heart-savers-first-aid' },
+     { name: 'Heimlich Maneuve', href: '/services/heimlich-maneuve' },
+      { name: 'EPI-PEN Training', href: '/services/epi-pen' },
+
   ],
 }
 
@@ -53,10 +58,9 @@ export default function Footer() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              className="text-sm sm:text-base leading-6 text-gray-300 text-center lg:text-left max-w-md mx-auto lg:mx-0"
+              className="text-sm sm:text-base leading-6 text-white text-center lg:text-left max-w-md mx-auto lg:mx-0"
             >
-              Protecting what matters most to you and your family. JECA Insurance provides comprehensive coverage
-              with personalized service and competitive rates.
+              At Bonnet HealthCare, we believe that every individual has the potential to make a difference in their community by providing essential first aid and emergency response. That's why we offer comprehensive healthcare training and education solutions designed to empower individuals, families, and organizations with life-saving skills and better health outcomes.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -67,31 +71,32 @@ export default function Footer() {
             >
               <motion.div
                 whileHover={{ x: 5 }}
-                className="flex items-start space-x-3 text-sm text-gray-300 hover:text-white transition-colors justify-center lg:justify-start"
+                className="flex items-start space-x-3 text-sm text-white hover:text-white transition-colors justify-center lg:justify-start"
               >
                 <MapPinIcon className="h-5 w-5 text-blue-400 flex-shrink-0 mt-0.5" />
-                <span className="text-center lg:text-left">1379 N. Nebraska Ave Suite 103<br />Tampa, FL 33613</span>
+                <span className="text-center lg:text-left">7523 SW 8th CT<br />North Lauderdale, FL 33068</span>
               </motion.div>
               <motion.div
                 whileHover={{ x: 5 }}
-                className="flex items-center space-x-3 text-sm text-gray-300 hover:text-white transition-colors justify-center lg:justify-start"
+                className="flex items-center space-x-3 text-sm text-white hover:text-white transition-colors justify-center lg:justify-start"
               >
                 <PhoneIcon className="h-5 w-5 text-green-400 flex-shrink-0" />
-                <a href="tel:877-501-5460" className="hover:text-white transition-colors">877-501-5460</a>
+                <a href="tel:877-501-5460" className="text-white hover:text-white transition-colors">954-709-8196
+                </a>
               </motion.div>
               <motion.div
                 whileHover={{ x: 5 }}
-                className="flex items-center space-x-3 text-sm text-gray-300 hover:text-white transition-colors justify-center lg:justify-start"
+                className="flex items-center space-x-3 text-sm text-white hover:text-white transition-colors justify-center lg:justify-start"
               >
                 <EnvelopeIcon className="h-5 w-5 text-purple-400 flex-shrink-0" />
-                <a href="mailto:info@jecainsurance.com" className="hover:text-white transition-colors">info@jecainsurance.com</a>
+                <a href="mailto:info@jecainsurance.com" className="text-white hover:text-white transition-colors">contact@bonnethealthcare.com</a>
               </motion.div>
               <motion.div
                 whileHover={{ x: 5 }}
-                className="flex items-center space-x-3 text-sm text-gray-300 hover:text-white transition-colors justify-center lg:justify-start"
+                className="flex items-center space-x-3 text-sm text-white hover:text-white transition-colors justify-center lg:justify-start"
               >
                 <ClockIcon className="h-5 w-5 text-yellow-400 flex-shrink-0" />
-                <span>24/7 Claims Support</span>
+                <span>24/7 Support</span>
               </motion.div>
             </motion.div>
 
@@ -135,13 +140,13 @@ export default function Footer() {
               </div>
             </motion.div>
           </div>
-          <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:col-span-2 lg:mt-0 lg:grid-cols-3">
+          <div className="mt-12 grid grid-cols-1 gap-8 ml-40 sm:grid-cols-1 lg:col-span-2 lg:mt-0 lg:grid-cols-3">
             <div className="text-center sm:text-left">
-              <h3 className="text-sm font-semibold leading-6 text-white mb-4 lg:mb-6">Insurance Products</h3>
-              <ul role="list" className="space-y-3 lg:space-y-4">
+              <h2 className=" font-semibold leading-6  text-white mb-4 underline  decoration-0 underline-offset-5 lg:mb-6">Quick Links</h2>
+              <ul role="list" className="space-y-5 lg:space-y-4">
                 {navigation.insurance.map((item) => (
                   <li key={item.name}>
-                    <Link href={item.href} className="text-sm leading-6 text-gray-300 hover:text-white transition-colors block py-1">
+                    <Link href={item.href} className="text-sm leading-6 text-white hover:text-white transition-colors block py-1">
                       {item.name}
                     </Link>
                   </li>
@@ -149,19 +154,19 @@ export default function Footer() {
               </ul>
             </div>
             <div className="text-center sm:text-left">
-              <h3 className="text-sm font-semibold leading-6 text-white mb-4 lg:mb-6">Support</h3>
-              <ul role="list" className="space-y-3 lg:space-y-4">
+              <h2 className=" font-semibold leading-6 text-white mb-4 underline  decoration-0 underline-offset-5 lg:mb-6">Services</h2>
+              <ul role="list" className="space-y-5 lg:space-y-4">
                 {navigation.support.map((item) => (
                   <li key={item.name}>
-                    <Link href={item.href} className="text-sm leading-6 text-gray-300 hover:text-white transition-colors block py-1">
+                    <Link href={item.href} className="text-sm leading-6 text-white hover:text-white transition-colors block py-1">
                       {item.name}
                     </Link>
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="text-center sm:text-left">
-              <h3 className="text-sm font-semibold leading-6 text-white mb-4 lg:mb-6">Get Quote</h3>
+            {/* <div className="text-center sm:text-left">
+              <h3 className=" font-semibold leading-6 text-white mb-4 lg:mb-6">Get Quote</h3>
               <div className="space-y-4">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
@@ -174,18 +179,18 @@ export default function Footer() {
                     Get Your Quote
                   </Link>
                 </motion.div>
-                <p className="text-xs text-gray-400 max-w-xs mx-auto sm:mx-0">
-                  Get personalized insurance quotes in minutes. Compare rates and coverage options.
+                <p className="text-xs text-white max-w-xs mx-auto sm:mx-0">
+                  Access personalized care plans in minutes. Compare services and support options tailored to your health needs.
                 </p>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="mt-12 sm:mt-16 lg:mt-20 border-t border-white/10 pt-6 sm:pt-8">
           {/* Copyright and Company Info */}
           <div className="flex flex-col space-y-4 sm:space-y-0 sm:flex-row sm:items-center sm:justify-between text-center sm:text-left">
-            <p className="text-xs leading-5 text-gray-400">
-              &copy; 2024 JECA Insurance Company. All rights reserved.
+            <p className="text-xs leading-5 text-white">
+              &copy; 2025 Bonnet HealthCare. All rights reserved.
             </p>
           </div>
         </div>

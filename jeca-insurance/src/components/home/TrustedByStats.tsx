@@ -8,9 +8,9 @@ import {
 } from '@heroicons/react/24/solid'
 
 const stats = [
-  { id: 1, name: 'Customers Protected', value: '2M+', icon: UsersIcon },
-  { id: 2, name: 'Claims Processed', value: '500K+', icon: ShieldCheckIcon },
-  { id: 3, name: 'Customer Rating', value: '4.9/5', icon: StarIcon },
+  { id: 1, name: 'Happy Clients', value: '500+', icon: UsersIcon },
+  { id: 2, name: 'Years experiance', value: '20+', icon: ShieldCheckIcon },
+  { id: 3, name: 'Customer Rating', value: '4.7/5', icon: StarIcon },
 ]
 
 export default function TrustedByStats() {
@@ -30,10 +30,10 @@ export default function TrustedByStats() {
           className="text-center mb-12 lg:mb-16"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 lg:mb-6">
-            Trusted by millions worldwide
+            Trusted by hundreds worldwide
           </h2>
           <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
-            Join the millions who trust JECA Insurance to protect what matters most
+            Join the hundreds of happy clients who trust Bonnet HealthCare with their health and safety.
           </p>
         </motion.div>
 

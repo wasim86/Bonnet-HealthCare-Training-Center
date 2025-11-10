@@ -3,91 +3,126 @@
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import {
-  TruckIcon,
-  HomeIcon,
+  LifebuoyIcon,
+  PlusCircleIcon,
+  
+  AcademicCapIcon,
   HeartIcon,
-  BuildingOfficeIcon,
+  UserGroupIcon,
+  BeakerIcon,
+  BellAlertIcon,
   ShieldCheckIcon,
   ClockIcon,
   PhoneIcon,
+  UsersIcon,
   CurrencyDollarIcon,
   SparklesIcon,
   ArrowRightIcon
 } from '@heroicons/react/24/outline'
 
 const insuranceTypes = [
-  {
-    name: 'Auto Insurance',
-    description: 'Vehicle protection for cars, trucks, motorcycles',
-    href: '/insurance/vehicles/auto',
-    quoteHref: 'https://www.agentinsure.com/compare/auto-insurance-home-insurance/jeca/quote.aspx',
-    icon: TruckIcon,
-    features: ['Collision Coverage', 'Comprehensive', '24/7 Roadside Assistance'],
+   {
+    name: 'ACLS',
+    subtitle: 'Advanced cardiac life support algorithms and skills',
+    description: 'Practice ACLS algorithms, ECG interpretation, and emergency pharmacology to manage cardiac arrest and peri-arrest conditions.',
+    href: '/services/advanced-cardiovascular-life-support-acls',
+    // quoteHref: '/quote/training/acls',
+    icon: HeartIcon,
+    features: ['Cardiac Arrest Care', 'ECG Interpretation', 'Pharmacology'],
+    color: 'from-purple-600 to-fuchsia-600',
+    bgColor: 'from-purple-50 to-fuchsia-100',
+  },
+   {
+    name: 'BLS',
+    subtitle: 'Basic Life Support for healthcare professionals',
+    description: 'Develop high-quality CPR, team dynamics, airway management, and bag-mask ventilation skills required for clinical environments.',
+    href: '/services/basic-life-support-bls',
+    // quoteHref: '/quote/training/bls',
+    icon: AcademicCapIcon,
+    features: ['Team Resuscitation', 'Airway Management', 'Bag-Mask Ventilation'],
     color: 'from-blue-600 to-indigo-700',
-    bgColor: 'from-blue-50 to-blue-100',
+    bgColor: 'from-blue-50 to-indigo-100',
   },
   {
-    name: 'Health Insurance',
-    description: 'Medical coverage for individuals and families',
-    href: '/insurance/health/individual',
-    quoteHref: '/quote/health',
-    icon: HeartIcon,
-    features: ['Medical Coverage', 'Dental & Vision', 'Medicare Options'],
-    color: 'from-green-600 to-emerald-700',
-    bgColor: 'from-green-50 to-green-100',
+    name: 'Hands Only CPR',
+    subtitle: 'Hands-on CPR skills for emergencies',
+    description: 'Learn adult and child CPR techniques, and how to evaluate scene safety to respond effectively in urgent situations.',
+    href: '/services/cardiopulmonary-resuscitation-cpr',
+    // quoteHref: '/quote/training/cpr-aed',
+    icon: LifebuoyIcon,
+    features: ['Adult & Child CPR', 'Basic Life Support (BLS)', 'Scene Safety'],
+    color: 'from-red-600 to-orange-600',
+    bgColor: 'from-red-50 to-orange-100',
   },
   {
-    name: 'Life & Financial',
-    description: 'Life insurance and financial protection',
-    href: '/insurance/life-financial/life',
-    quoteHref: '/quotes/life-financial/life',
-    icon: HeartIcon,
-    features: ['Term Life', 'Whole Life', 'Annuities'],
-    color: 'from-amber-600 to-red-600',
-    bgColor: 'from-red-50 to-red-100',
+    name: 'AED',
+    subtitle: 'AEDs are critical tools in the chain of survival for cardiac arrest victims.',
+    description: 'We believe that AED Training is crucial for building a community of empowered first responders.',
+    href: '/services/automated-external-defibrillator-aed',
+    // quoteHref: '/quote/training/pals',
+    icon: UserGroupIcon,
+    features: ['Safety Considerations', 'Automated External Defibrillator (AED) Usage', 'Electrode Pad Placement'],
+    color: 'from-pink-600 to-rose-600',
+    bgColor: 'from-pink-50 to-rose-100',
   },
   {
-    name: 'Home Owner Insurance',
-    description: 'Protect your home and belongings',
-    href: '/insurance/property/home',
-    quoteHref: 'https://www.agentinsure.com/compare/auto-insurance-home-insurance/jeca/quote.aspx',
-    icon: HomeIcon,
-    features: ['Dwelling Coverage', 'Personal Property', 'Liability Protection'],
-    color: 'from-purple-600 to-pink-600',
-    bgColor: 'from-purple-50 to-purple-100',
+    name: 'Heart Savers First Aid',
+    subtitle: 'Essential first aid skills and certification for all ages',
+    description: 'Master foundational first aid including bleeding control, wound care, and splinting for common injuries at home and work.',
+    href: '/services/heart-savers-first-aid',
+    // quoteHref: '/quote/training/first-aid',
+    icon: PlusCircleIcon,
+    features: ['Bleeding Control', 'Wound Care', 'Burns & Splints'],
+    color: 'from-emerald-600 to-teal-700',
+    bgColor: 'from-emerald-50 to-teal-100',
+  },
+ 
+ 
+  
+  {
+    name: 'Heimlich Maneuve',
+    subtitle: 'Choking is a potentially life-threatening situation that requires immediate intervention.',
+    description: 'We believe that everyone should have access to Heimlich Maneuver Training.',
+    href: '/services/heimlich-maneuve',
+    // quoteHref: '/quote/training/bloodborne-pathogens',
+    icon: BeakerIcon,
+    features: ['Understanding Choking Emergencies', 'Performing the Heimlich Maneuver on Children & Adults', 'Recognizing when to Seek Further Medical Assistance'],
+    color: 'from-yellow-600 to-amber-700',
+    bgColor: 'from-yellow-50 to-amber-100',
   },
   {
-    name: 'Business Insurance',
-    description: 'Coverage for your business needs',
-    href: '/insurance/business/general',
-    quoteHref: '/quote/business',
-    icon: BuildingOfficeIcon,
-    features: ['General Liability', 'Home Owner Insurance', 'Workers Comp'],
-    color: 'from-gray-600 to-slate-700',
-    bgColor: 'from-gray-50 to-gray-100',
+    name: 'EPI-PEN',
+    subtitle: 'Severe allergic reactions, also known as anaphylaxis, can be life-threatening and require immediate intervention.',
+    description: 'we believe that Epi-Pen Training is essential for individuals who may encounter severe allergic reactions.',
+    href: '/services/epi-pen',
+    // quoteHref: '/quote/training/emergency-response',
+    icon: BellAlertIcon,
+    features: ['Understanding Anaphylaxis', 'Administration Techniques', 'Recognizing Side Effects and Seeking Further Medical Assistance'],
+    color: 'from-slate-600 to-gray-700',
+    bgColor: 'from-slate-50 to-gray-100',
   },
 ]
 
 const features = [
   {
-    name: '24/7 Claims Support',
-    description: 'File and track claims anytime, anywhere with our dedicated support team.',
-    icon: ClockIcon,
+    name: 'Expert Instructors',
+    description: 'Each training course includes comprehensive hands-on exercises and simulation-based learning activities. Participants work with medical mannequins, practice emergency protocols, perform life-saving techniques, and engage in scenario-based training that allows them to apply theoretical knowledge to realistic clinical situations before earning certification.',
+    icon: HeartIcon,
   },
   {
-    name: 'Instant Quotes',
-    description: 'Get personalized quotes in minutes with our easy online process.',
+    name: 'Hands-On Experience',
+    description: 'Our trainers are certified healthcare professionals with extensive experience in emergency response training and clinical education. Each trainer holds recognized industry certifications such as BLS, ACLS, and First Aid credentials, and brings years of hands-on expertise from clinical practice. They are passionate educators committed to transforming theoretical knowledge into practical, life-saving skills during every training session.',
     icon: ShieldCheckIcon,
   },
   {
-    name: 'Expert Agents',
-    description: 'Speak with licensed insurance professionals who understand your needs.',
-    icon: PhoneIcon,
+    name: 'Customized Solutions',
+    description: 'We offer tailored training solutions specifically designed to meet your unique needs and learning goals. Whether you are an individual seeking certification, a healthcare team requiring specialized training, or an organization needing workforce development, we customize programs to enhance your skills and address your specific challenges.',
+    icon: UsersIcon,
   },
   {
-    name: 'Competitive Rates',
-    description: 'Save money with our competitive pricing and available discounts.',
-    icon: CurrencyDollarIcon,
+    name: 'Ongoing Support',
+    description: 'We provide ongoing support and resources long after your initial training ends. Through access to updated training materials, continuing education resources, refresher courses, and expert consultation, we ensure you stay current with the latest emergency response techniques, evidence-based practices, and healthcare guidelines—so your skills remain sharp and relevant.',
+    icon:  PhoneIcon,
   },
 ]
 
@@ -143,11 +178,11 @@ export default function ServicesSection() {
             </span>
           </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 mb-4 sm:mb-6">
-            Comprehensive Insurance
+            Comprehensive HealthCare
             <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> Solutions</span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl leading-7 sm:leading-8 text-gray-600">
-            From auto to life insurance, we provide comprehensive coverage options tailored to your unique needs and budget.
+            From CPR to emergency care, we provide comprehensive training programs tailored to your needs and skill level.
           </p>
         </motion.div>
 
@@ -180,7 +215,7 @@ export default function ServicesSection() {
                     </motion.div>
                     <div>
                       <h3 className="text-lg sm:text-xl font-bold leading-6 sm:leading-8 text-gray-900">{insurance.name}</h3>
-                      <p className="text-xs sm:text-sm text-gray-600">{insurance.description}</p>
+                      <p className="text-xs sm:text-sm text-gray-600">{insurance.subtitle}</p>
                     </div>
                   </div>
                   <motion.div
@@ -234,12 +269,12 @@ export default function ServicesSection() {
                     whileTap={{ scale: 0.95 }}
                     className="flex-1"
                   >
-                    <Link
+                    {/* <Link
                       href={insurance.quoteHref}
                       className="block w-full rounded-lg sm:rounded-xl bg-white px-4 py-3 text-center text-sm font-semibold text-gray-900 shadow-lg ring-1 ring-inset ring-gray-300 hover:bg-gray-50 hover:shadow-xl transition-all duration-300 touch-target"
                     >
                       Get Quote
-                    </Link>
+                    </Link> */}
                   </motion.div>
                 </div>
               </div>
@@ -247,37 +282,49 @@ export default function ServicesSection() {
           ))}
         </div>
 
-        {/* Features Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="mx-auto mt-20 sm:mt-24 md:mt-28 lg:mt-32 max-w-7xl"
-        >
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 mb-4 sm:mb-6">
+        {/* Values */}
+      <div className="py-24 sm:py-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="mx-auto max-w-2xl text-center"
+          >
+            <div className="flex items-center justify-center space-x-2 mb-4">
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+              >
+                {/* <HeartIcon className="h-6 w-6 text-blue-600" /> */}
+              </motion.div>
+              {/* <span className="text-blue-600 font-semibold text-sm tracking-wider uppercase">
+                What Drives Us
+              </span> */}
+            </div>
+            <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl mb-6">
               Why Choose
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> JECA Insurance?</span>
+              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> Bonnet HealthCare?</span>
             </h2>
-            <p className="text-base sm:text-lg md:text-xl leading-7 sm:leading-8 text-gray-600">
-              Experience the difference with our customer-first approach and comprehensive coverage options.
+            <p className="text-xl leading-8 text-gray-600">
+             Bonnet HealthCare Training Center is a trusted provider of evidence‑based life‑support education. Our programs translate current guidelines into rigorous, hands‑on instruction designed to build competence, confidence, and reliable performance in time‑critical situations. Select Bonnet HealthCare as your training partner to develop practitioners who respond effectively when seconds matter. Here’s why:
             </p>
-          </div>
-          <div className="mx-auto mt-12 sm:mt-16 md:mt-20 lg:mt-24 max-w-2xl lg:max-w-4xl">
-            <dl className="grid max-w-xl grid-cols-1 gap-x-6 gap-y-8 sm:gap-x-8 sm:gap-y-10 md:gap-y-12 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
-              {features.map((feature, index) => (
+          </motion.div>
+          <div className="mx-auto mt-20 max-w-2xl sm:mt-24 lg:mt-28 lg:max-w-4xl">
+            <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-12 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
+              {features.map((value, index) => (
                 <motion.div
-                  key={feature.name}
+                  key={value.name}
                   initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.2 }}
                   viewport={{ once: true }}
-                  className="relative pl-12 sm:pl-14 md:pl-16 group"
+                  className="group relative pl-16"
                 >
-                  <dt className="text-base sm:text-lg font-bold leading-6 sm:leading-7 text-gray-900">
+                  <dt className="text-lg font-bold leading-7 text-gray-900 group-hover:text-blue-600 transition-colors">
                     <motion.div
-                      className="absolute left-0 top-0 flex h-10 w-10 sm:h-11 sm:w-11 md:h-12 md:w-12 items-center justify-center rounded-lg sm:rounded-xl bg-gradient-to-r from-blue-500 to-purple-600 shadow-lg"
+                      className="absolute left-0 top-0 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-r from-blue-500 to-purple-600 shadow-lg"
                       whileHover={{
                         scale: 1.1,
                         rotate: 5,
@@ -285,19 +332,21 @@ export default function ServicesSection() {
                       }}
                       transition={{ type: "spring", stiffness: 300 }}
                     >
-                      <feature.icon className="h-5 w-5 sm:h-6 sm:w-6 text-white" aria-hidden="true" />
+                      <value.icon className="h-6 w-6 text-white" aria-hidden="true" />
                     </motion.div>
-                    {feature.name}
+                    {value.name}
                   </dt>
-                  <dd className="mt-2 sm:mt-3 text-sm sm:text-base leading-6 sm:leading-7 text-gray-600 group-hover:text-gray-700 transition-colors">
-                    {feature.description}
+                  <dd className="mt-3 text-base leading-7 text-gray-600 group-hover:text-gray-700 transition-colors">
+                    {value.description}
                   </dd>
                 </motion.div>
               ))}
             </dl>
           </div>
-        </motion.div>
+        </div>
+      </div>
       </div>
     </div>
   )
 }
+

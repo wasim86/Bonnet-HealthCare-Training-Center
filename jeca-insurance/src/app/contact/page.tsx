@@ -20,7 +20,7 @@ const contactMethods = [
   {
     name: 'Phone Support',
     description: 'Speak with a licensed agent',
-    contact: '877-501-5460',
+    contact: '954-709-8196',
     availability: '24/7 Available',
     icon: PhoneIcon,
     color: 'blue',
@@ -28,7 +28,7 @@ const contactMethods = [
   {
     name: 'Email Support',
     description: 'Send us your questions',
-    contact: 'support@jecainsurance.com',
+    contact: 'contact@bonnethealthcare.com',
     availability: 'Response within 24 hours',
     icon: EnvelopeIcon,
     color: 'green',
@@ -41,14 +41,14 @@ const contactMethods = [
     icon: ChatBubbleLeftRightIcon,
     color: 'purple',
   },
-  {
-    name: 'Claims Support',
-    description: 'File or check claim status',
-    contact: '877-501-5460',
-    availability: '24/7 Emergency Claims',
-    icon: QuestionMarkCircleIcon,
-    color: 'red',
-  },
+  // {
+  //   name: 'Claims Support',
+  //   description: 'File or check claim status',
+  //   contact: '954-709-8196',
+  //   availability: '24/7 Emergency Claims',
+  //   icon: QuestionMarkCircleIcon,
+  //   color: 'red',
+  // },
 ]
 
 const offices = [
@@ -249,7 +249,7 @@ export default function ContactPage() {
               className="text-5xl font-bold tracking-tight text-white sm:text-7xl mb-6"
             >
               Contact
-              <span className="bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent"> JECA</span>
+              <span className="bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent"> Bonnet HealthCare</span>
             </motion.h1>
 
             <motion.p
@@ -258,8 +258,7 @@ export default function ContactPage() {
               transition={{ duration: 0.8, delay: 0.5 }}
               className="mx-auto max-w-2xl text-xl leading-8 text-blue-100 mb-12"
             >
-              We&apos;re here to help with all your insurance needs. Get in touch with our expert team
-              for quotes, claims, or any questions about your coverage.
+              Have questions about our training programs? Connect with Bonnet Healthcare Training Center's expert team for course information, registration assistance, and certification guidance.
             </motion.p>
 
             {/* Quick Contact Cards */}
@@ -277,7 +276,7 @@ export default function ContactPage() {
                 <h3 className="text-lg font-semibold text-white mb-2">Call Us</h3>
                 <p className="text-blue-100 text-sm mb-3">24/7 Support Available</p>
                 <a href="tel:877-501-5460" className="text-yellow-300 font-semibold hover:text-yellow-200 transition-colors">
-                  877-501-5460
+                  954-709-8196
                 </a>
               </motion.div>
 
@@ -289,7 +288,7 @@ export default function ContactPage() {
                 <h3 className="text-lg font-semibold text-white mb-2">Email Us</h3>
                 <p className="text-blue-100 text-sm mb-3">Response within 24 hours</p>
                 <a href="mailto:support@jecainsurance.com" className="text-yellow-300 font-semibold hover:text-yellow-200 transition-colors">
-                  support@jecainsurance.com
+                  contact@bonnethealthcare.com
                 </a>
               </motion.div>
 
@@ -366,7 +365,7 @@ export default function ContactPage() {
               <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> Reach Us</span>
             </h2>
             <p className="text-xl leading-8 text-gray-600">
-              Choose the contact method that works best for you.
+              Select the contact method most convenient for you
             </p>
           </motion.div>
 
@@ -441,7 +440,7 @@ export default function ContactPage() {
         </div>
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto grid max-w-2xl grid-cols-1 gap-16 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+          <div className="mx-auto grid max-w-2xl grid-cols-1 gap-16 lg:mx-0 lg:max-w-none lg:grid-cols-1">
             {/* Contact Form */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -467,15 +466,15 @@ export default function ContactPage() {
                     <PhoneIcon className="h-4 w-4 text-gray-800" />
                   </div>
                   <div>
-                    <a href="tel:877-501-5460" className="text-lg font-bold text-gray-900 hover:text-blue-600 transition-colors cursor-pointer">
-                      877-501-5460
+                    <a href="tel:954-709-8196" className="text-lg font-bold text-gray-900 hover:text-blue-600 transition-colors cursor-pointer">
+                      954-709-8196
                     </a>
-                    <p className="text-sm text-gray-600">info@jecainsurancefl.com</p>
+                    <p className="text-sm text-gray-600">contact@bonnethealthcare.com</p>
                   </div>
                 </div>
                 <div className="text-sm text-gray-600 space-y-1">
-                  <p>Fax: (913) 615-0150</p>
-                  <p>1379 N. Nebraska Ave Suite 103 Tampa, FL 33613</p>
+                  <p>Fax: ( 954) 709-8196</p>
+                  <p>7523 SW 8th CT North Lauderdale, FL 33068</p>
                 </div>
               </div>
               <motion.form
@@ -574,11 +573,13 @@ export default function ContactPage() {
                       className="block w-full rounded-lg border border-gray-300 bg-gray-50 px-4 py-3 text-gray-900 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all duration-300"
                     >
                       <option value="">Select inquiry type (optional)</option>
-                      <option value="General Inquiry">General Inquiry</option>
-                      <option value="Quote Request">Quote Request</option>
-                      <option value="Claim Question">Claim Question</option>
-                      <option value="Policy Question">Policy Question</option>
-                      <option value="Billing Question">Billing Question</option>
+                      <option value="ACLC">ACLC</option>
+                      <option value="BLS ">BLS</option>
+                      <option value="Hands only CPR">Hands only CPR</option>
+                      <option value="AED">AED</option>
+                      <option value="Heart Savers First AID">Heart Savers First AID</option>
+                      <option value="Heimlich Maneuve">Heimlich Maneuve</option>
+                       <option value="EPI-PEN">EPI-PEN</option>
                       <option value="Technical Support">Technical Support</option>
                       <option value="Complaint">Complaint</option>
                       <option value="Compliment">Compliment</option>
@@ -685,7 +686,7 @@ export default function ContactPage() {
                     <div>
                       <h4 className="text-red-800 font-semibold">Error Sending Message</h4>
                       <p className="text-red-700 text-sm">
-                        Sorry, there was an error sending your message. Please try again or call us directly at <a href="tel:877-501-5460" className="underline hover:text-red-800 transition-colors">877-501-5460</a>.
+                        Sorry, there was an error sending your message. Please try again or call us directly at <a href="tel:954-709-8196" className="underline hover:text-red-800 transition-colors">954-709-8196</a>.
                       </p>
                     </div>
                   </div>
@@ -702,12 +703,12 @@ export default function ContactPage() {
               className="relative"
             >
               {/* Office Hours */}
-              <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-8 mb-8 border border-blue-100">
+              {/* <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-8 mb-8 border border-blue-100">
                 <div className="flex items-center space-x-2 mb-6">
                   <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
                     <ClockIcon className="h-4 w-4 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900">Office Hours</h3>
+                  <h3 className="text-xl font-bold text-gray-900">Training Center Hours</h3>
                 </div>
                 <div className="space-y-3">
                   <div className="flex justify-between items-center">
@@ -723,7 +724,7 @@ export default function ContactPage() {
                     <span className="text-gray-900 font-semibold">Closed</span>
                   </div>
                 </div>
-              </div>
+              </div> */}
 
               {/* Why Choose Us */}
               <div className="bg-gradient-to-br from-yellow-50 to-orange-50 rounded-2xl p-8 mb-8 border border-yellow-100">
@@ -731,24 +732,24 @@ export default function ContactPage() {
                   <div className="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center">
                     <StarIcon className="h-4 w-4 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900">Why Choose JECA?</h3>
+                  <h3 className="text-xl font-bold text-gray-900">Why Choose Bonnet Healthcare Training Center?</h3>
                 </div>
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3">
                     <div className="w-2 h-2 bg-yellow-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <p className="text-gray-700">Expert insurance professionals with 20+ years experience</p>
+                    <p className="text-gray-700">Expert Instructors with 20+ Years Experience</p>
                   </div>
                   <div className="flex items-start space-x-3">
                     <div className="w-2 h-2 bg-yellow-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <p className="text-gray-700">Personalized coverage solutions for your unique needs</p>
+                    <p className="text-gray-700">Personalized Training Programs</p>
                   </div>
                   <div className="flex items-start space-x-3">
                     <div className="w-2 h-2 bg-yellow-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <p className="text-gray-700">24/7 claims support and customer service</p>
+                    <p className="text-gray-700">24/7 Support and Guidance</p>
                   </div>
                   <div className="flex items-start space-x-3">
                     <div className="w-2 h-2 bg-yellow-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <p className="text-gray-700">Competitive rates from top-rated insurance carriers</p>
+                    <p className="text-gray-700">Industry-Recognized Certifications</p>
                   </div>
                 </div>
               </div>
@@ -759,11 +760,11 @@ export default function ContactPage() {
                   <div className="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center">
                     <MapPinIcon className="h-4 w-4 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900">Visit Our Office</h3>
+                  <h3 className="text-xl font-bold text-gray-900">Visit Our Training Center</h3>
                 </div>
                 <div className="space-y-4">
                   <div className="bg-white rounded-lg p-4 border border-green-200">
-                    <p className="text-gray-900 font-semibold mb-2">Tampa Office</p>
+                    <p className="text-gray-900 font-semibold mb-2">Bonnet HealthCare Training Center</p>
                     <p className="text-gray-700 text-sm leading-relaxed">
                       1379 N. Nebraska Ave Suite 103<br />
                       Tampa, FL 33613
@@ -789,7 +790,7 @@ export default function ContactPage() {
       </div>
 
       {/* Emergency Contact */}
-      <div className="relative bg-gradient-to-br from-red-600 via-red-700 to-pink-700 overflow-hidden">
+      <div className="relative bg-blue-600 overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0">
           <motion.div
@@ -859,7 +860,7 @@ export default function ContactPage() {
               className="text-4xl font-bold tracking-tight text-white sm:text-5xl mb-6"
             >
               24/7 Emergency
-              <span className="bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent"> Claims</span>
+              <span className="bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent"> Care Training with Compassion at Heart</span>
             </motion.h2>
 
             <motion.p
@@ -869,8 +870,7 @@ export default function ContactPage() {
               viewport={{ once: true }}
               className="mx-auto max-w-xl text-xl leading-8 text-red-100 mb-10"
             >
-              If you need to file an emergency claim or need immediate assistance,
-              our 24/7 claims hotline is always available.
+             At Bonnet Healthcare Training Center, our 24/7 hotline is always available for anyone needing to file an emergency requiring immediate assistance.
             </motion.p>
 
             <motion.div
@@ -882,7 +882,7 @@ export default function ContactPage() {
             >
               <motion.a
                 href="tel:877-501-5460"
-                className="rounded-2xl bg-white px-8 py-4 text-lg font-bold text-red-600 shadow-2xl hover:bg-red-50 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-red-600 transition-all duration-300"
+                className="rounded-2xl bg-white px-8 py-4 text-lg font-bold text-blue-600 shadow-2xl hover:bg-red-50 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-red-600 transition-all duration-300"
                 whileHover={{
                   scale: 1.05,
                   y: -3,
@@ -890,7 +890,7 @@ export default function ContactPage() {
                 }}
                 whileTap={{ scale: 0.95 }}
               >
-                📞 Call Emergency Claims: 877-501-5460
+                📞 Call Emergency: 954-709-8196
               </motion.a>
             </motion.div>
           </motion.div>

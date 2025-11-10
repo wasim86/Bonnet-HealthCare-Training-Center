@@ -1,0 +1,807 @@
+2025-09-25 17:30:13.595 +05:30 [INF] Executed DbCommand (42ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-09-25 17:30:13.710 +05:30 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-09-25 17:30:13.717 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-09-25 17:30:13.721 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-09-25 17:30:13.752 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-09-25 17:30:13.793 +05:30 [INF] No migrations were applied. The database is already up to date.
+2025-09-25 17:30:13.804 +05:30 [INF] JECA Insurance API starting up...
+2025-09-25 17:30:13.971 +05:30 [ERR] Hosting failed to start
+System.IO.IOException: Failed to bind to address http://127.0.0.1:5149: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+ ---> System.Net.Sockets.SocketException (10048): Only one usage of each socket address (protocol/network address/port) is normally permitted.
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2025-09-25 17:30:14.120 +05:30 [FTL] Application terminated unexpectedly
+System.IO.IOException: Failed to bind to address http://127.0.0.1:5149: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+ ---> System.Net.Sockets.SocketException (10048): Only one usage of each socket address (protocol/network address/port) is normally permitted.
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.Run(IHost host)
+   at Program.<Main>$(String[] args) in D:\Insurance\JecaInsurance.API\Program.cs:line 130
+2025-09-25 17:47:57.623 +05:30 [INF] Executed DbCommand (29ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-09-25 17:47:57.742 +05:30 [INF] Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-09-25 17:47:57.753 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-09-25 17:47:57.758 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-09-25 17:47:57.795 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-09-25 17:47:57.826 +05:30 [INF] No migrations were applied. The database is already up to date.
+2025-09-25 17:47:57.838 +05:30 [INF] JECA Insurance API starting up...
+2025-09-25 17:47:57.907 +05:30 [ERR] Hosting failed to start
+System.IO.IOException: Failed to bind to address http://127.0.0.1:5149: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+ ---> System.Net.Sockets.SocketException (10048): Only one usage of each socket address (protocol/network address/port) is normally permitted.
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2025-09-25 17:47:57.938 +05:30 [FTL] Application terminated unexpectedly
+System.IO.IOException: Failed to bind to address http://127.0.0.1:5149: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+ ---> System.Net.Sockets.SocketException (10048): Only one usage of each socket address (protocol/network address/port) is normally permitted.
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.Run(IHost host)
+   at Program.<Main>$(String[] args) in D:\Insurance\JecaInsurance.API\Program.cs:line 130
+2025-09-25 17:52:32.946 +05:30 [INF] Executed DbCommand (34ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-09-25 17:52:33.065 +05:30 [INF] Executed DbCommand (33ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-09-25 17:52:33.077 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-09-25 17:52:33.080 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-09-25 17:52:33.115 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-09-25 17:52:33.146 +05:30 [INF] No migrations were applied. The database is already up to date.
+2025-09-25 17:52:33.153 +05:30 [INF] JECA Insurance API starting up...
+2025-09-25 17:52:33.244 +05:30 [INF] Now listening on: http://localhost:5149
+2025-09-25 17:52:33.247 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-25 17:52:33.248 +05:30 [INF] Hosting environment: Development
+2025-09-25 17:52:33.250 +05:30 [INF] Content root path: D:\Insurance\JecaInsurance.API
+2025-09-25 17:52:51.340 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5149/api/AutoQuote?page=1&pageSize=1 - null null
+2025-09-25 17:52:51.396 +05:30 [INF] CORS policy execution successful.
+2025-09-25 17:52:51.406 +05:30 [INF] Executing endpoint 'JecaInsurance.API.Controllers.AutoQuoteController.GetAutoQuotes (JecaInsurance.API)'
+2025-09-25 17:52:51.431 +05:30 [INF] Route matched with {action = "GetAutoQuotes", controller = "AutoQuote"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[JecaInsurance.API.Models.Quote]]] GetAutoQuotes(Int32, Int32) on controller JecaInsurance.API.Controllers.AutoQuoteController (JecaInsurance.API).
+2025-09-25 17:52:51.766 +05:30 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2025-09-25 17:52:51.883 +05:30 [INF] Executed DbCommand (67ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AdditionalComments], [t].[Address], [t].[City], [t].[ClaimsIn3Years], [t].[ContinuousCoverage], [t].[Country], [t].[CoverageDesired], [t].[CreatedDate], [t].[CurrentInsuranceCompany], [t].[Email], [t].[FirstName], [t].[InformationSecure], [t].[LastName], [t].[PhoneNumber], [t].[PolicyExpiresIn], [t].[QuoteNumber], [t].[QuoteType], [t].[State], [t].[Status], [t].[TicketsIn3Years], [t].[UpdatedDate], [t].[WhenToStart], [t].[ZipCode], [a].[QuoteId], [t0].[Id], [t0].[AnnualMileage], [t0].[BoatUse], [t0].[CollisionDeductible], [t0].[ComprehensiveDeductible], [t0].[CreatedDate], [t0].[Deductible], [t0].[DriveToWorkSchool], [t0].[EngineType], [t0].[HullMaterial], [t0].[IsLeased], [t0].[IsPrimary], [t0].[Length], [t0].[Make], [t0].[Manufacturer], [t0].[MarketValue], [t0].[Model], [t0].[MoreThanTwoVehicles], [t0].[NumberOfEngines], [t0].[QuoteId], [t0].[StorageLocation], [t0].[StructuralModifications], [t0].[TotalHorsepower], [t0].[TrailerCoverage], [t0].[VehicleType], [t0].[WatercraftType], [t0].[WorkSchoolDistance], [t0].[Year], [t1].[Id], [t1].[AccidentsTickets], [t1].[CreatedDate], [t1].[DateOfBirth], [t1].[DriverType], [t1].[Gender], [t1].[IsPrimary], [t1].[Married], [t1].[Name], [t1].[QuoteId], [t1].[Status]
+FROM (
+    SELECT [q].[Id], [q].[AdditionalComments], [q].[Address], [q].[City], [q].[ClaimsIn3Years], [q].[ContinuousCoverage], [q].[Country], [q].[CoverageDesired], [q].[CreatedDate], [q].[CurrentInsuranceCompany], [q].[Email], [q].[FirstName], [q].[InformationSecure], [q].[LastName], [q].[PhoneNumber], [q].[PolicyExpiresIn], [q].[QuoteNumber], [q].[QuoteType], [q].[State], [q].[Status], [q].[TicketsIn3Years], [q].[UpdatedDate], [q].[WhenToStart], [q].[ZipCode]
+    FROM [Quotes] AS [q]
+    WHERE [q].[QuoteType] = N'Auto'
+    ORDER BY [q].[CreatedDate] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+LEFT JOIN [AutoQuotes] AS [a] ON [t].[Id] = [a].[QuoteId]
+LEFT JOIN (
+    SELECT [v].[Id], [v].[AnnualMileage], [v].[BoatUse], [v].[CollisionDeductible], [v].[ComprehensiveDeductible], [v].[CreatedDate], [v].[Deductible], [v].[DriveToWorkSchool], [v].[EngineType], [v].[HullMaterial], [v].[IsLeased], [v].[IsPrimary], [v].[Length], [v].[Make], [v].[Manufacturer], [v].[MarketValue], [v].[Model], [v].[MoreThanTwoVehicles], [v].[NumberOfEngines], [v].[QuoteId], [v].[StorageLocation], [v].[StructuralModifications], [v].[TotalHorsepower], [v].[TrailerCoverage], [v].[VehicleType], [v].[WatercraftType], [v].[WorkSchoolDistance], [v].[Year]
+    FROM [Vehicles] AS [v]
+    WHERE [v].[VehicleType] = N'Auto'
+) AS [t0] ON [t].[Id] = [t0].[QuoteId]
+LEFT JOIN (
+    SELECT [d].[Id], [d].[AccidentsTickets], [d].[CreatedDate], [d].[DateOfBirth], [d].[DriverType], [d].[Gender], [d].[IsPrimary], [d].[Married], [d].[Name], [d].[QuoteId], [d].[Status]
+    FROM [Drivers] AS [d]
+    WHERE [d].[DriverType] = N'Auto'
+) AS [t1] ON [t].[Id] = [t1].[QuoteId]
+ORDER BY [t].[CreatedDate] DESC, [t].[Id], [a].[QuoteId], [t0].[Id]
+2025-09-25 17:52:51.942 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Quotes] AS [q]
+WHERE [q].[QuoteType] = N'Auto'
+2025-09-25 17:52:51.966 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[JecaInsurance.API.Models.Quote, JecaInsurance.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-25 17:52:52.044 +05:30 [INF] Executed action JecaInsurance.API.Controllers.AutoQuoteController.GetAutoQuotes (JecaInsurance.API) in 603.3844ms
+2025-09-25 17:52:52.054 +05:30 [INF] Executed endpoint 'JecaInsurance.API.Controllers.AutoQuoteController.GetAutoQuotes (JecaInsurance.API)'
+2025-09-25 17:52:52.061 +05:30 [INF] HTTP GET /api/AutoQuote responded 200 in 656.5674 ms
+2025-09-25 17:52:52.080 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5149/api/AutoQuote?page=1&pageSize=1 - 200 null application/json; charset=utf-8 743.8926ms
+2025-09-25 17:53:51.278 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5149/api/AutoQuote?page=1&pageSize=1 - null null
+2025-09-25 17:53:51.291 +05:30 [INF] CORS policy execution successful.
+2025-09-25 17:53:51.293 +05:30 [INF] Executing endpoint 'JecaInsurance.API.Controllers.AutoQuoteController.GetAutoQuotes (JecaInsurance.API)'
+2025-09-25 17:53:51.294 +05:30 [INF] Route matched with {action = "GetAutoQuotes", controller = "AutoQuote"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[JecaInsurance.API.Models.Quote]]] GetAutoQuotes(Int32, Int32) on controller JecaInsurance.API.Controllers.AutoQuoteController (JecaInsurance.API).
+2025-09-25 17:53:51.435 +05:30 [INF] Executed DbCommand (37ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AdditionalComments], [t].[Address], [t].[City], [t].[ClaimsIn3Years], [t].[ContinuousCoverage], [t].[Country], [t].[CoverageDesired], [t].[CreatedDate], [t].[CurrentInsuranceCompany], [t].[Email], [t].[FirstName], [t].[InformationSecure], [t].[LastName], [t].[PhoneNumber], [t].[PolicyExpiresIn], [t].[QuoteNumber], [t].[QuoteType], [t].[State], [t].[Status], [t].[TicketsIn3Years], [t].[UpdatedDate], [t].[WhenToStart], [t].[ZipCode], [a].[QuoteId], [t0].[Id], [t0].[AnnualMileage], [t0].[BoatUse], [t0].[CollisionDeductible], [t0].[ComprehensiveDeductible], [t0].[CreatedDate], [t0].[Deductible], [t0].[DriveToWorkSchool], [t0].[EngineType], [t0].[HullMaterial], [t0].[IsLeased], [t0].[IsPrimary], [t0].[Length], [t0].[Make], [t0].[Manufacturer], [t0].[MarketValue], [t0].[Model], [t0].[MoreThanTwoVehicles], [t0].[NumberOfEngines], [t0].[QuoteId], [t0].[StorageLocation], [t0].[StructuralModifications], [t0].[TotalHorsepower], [t0].[TrailerCoverage], [t0].[VehicleType], [t0].[WatercraftType], [t0].[WorkSchoolDistance], [t0].[Year], [t1].[Id], [t1].[AccidentsTickets], [t1].[CreatedDate], [t1].[DateOfBirth], [t1].[DriverType], [t1].[Gender], [t1].[IsPrimary], [t1].[Married], [t1].[Name], [t1].[QuoteId], [t1].[Status]
+FROM (
+    SELECT [q].[Id], [q].[AdditionalComments], [q].[Address], [q].[City], [q].[ClaimsIn3Years], [q].[ContinuousCoverage], [q].[Country], [q].[CoverageDesired], [q].[CreatedDate], [q].[CurrentInsuranceCompany], [q].[Email], [q].[FirstName], [q].[InformationSecure], [q].[LastName], [q].[PhoneNumber], [q].[PolicyExpiresIn], [q].[QuoteNumber], [q].[QuoteType], [q].[State], [q].[Status], [q].[TicketsIn3Years], [q].[UpdatedDate], [q].[WhenToStart], [q].[ZipCode]
+    FROM [Quotes] AS [q]
+    WHERE [q].[QuoteType] = N'Auto'
+    ORDER BY [q].[CreatedDate] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+LEFT JOIN [AutoQuotes] AS [a] ON [t].[Id] = [a].[QuoteId]
+LEFT JOIN (
+    SELECT [v].[Id], [v].[AnnualMileage], [v].[BoatUse], [v].[CollisionDeductible], [v].[ComprehensiveDeductible], [v].[CreatedDate], [v].[Deductible], [v].[DriveToWorkSchool], [v].[EngineType], [v].[HullMaterial], [v].[IsLeased], [v].[IsPrimary], [v].[Length], [v].[Make], [v].[Manufacturer], [v].[MarketValue], [v].[Model], [v].[MoreThanTwoVehicles], [v].[NumberOfEngines], [v].[QuoteId], [v].[StorageLocation], [v].[StructuralModifications], [v].[TotalHorsepower], [v].[TrailerCoverage], [v].[VehicleType], [v].[WatercraftType], [v].[WorkSchoolDistance], [v].[Year]
+    FROM [Vehicles] AS [v]
+    WHERE [v].[VehicleType] = N'Auto'
+) AS [t0] ON [t].[Id] = [t0].[QuoteId]
+LEFT JOIN (
+    SELECT [d].[Id], [d].[AccidentsTickets], [d].[CreatedDate], [d].[DateOfBirth], [d].[DriverType], [d].[Gender], [d].[IsPrimary], [d].[Married], [d].[Name], [d].[QuoteId], [d].[Status]
+    FROM [Drivers] AS [d]
+    WHERE [d].[DriverType] = N'Auto'
+) AS [t1] ON [t].[Id] = [t1].[QuoteId]
+ORDER BY [t].[CreatedDate] DESC, [t].[Id], [a].[QuoteId], [t0].[Id]
+2025-09-25 17:53:51.479 +05:30 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Quotes] AS [q]
+WHERE [q].[QuoteType] = N'Auto'
+2025-09-25 17:53:51.482 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[JecaInsurance.API.Models.Quote, JecaInsurance.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-25 17:53:51.488 +05:30 [INF] Executed action JecaInsurance.API.Controllers.AutoQuoteController.GetAutoQuotes (JecaInsurance.API) in 190.8062ms
+2025-09-25 17:53:51.491 +05:30 [INF] Executed endpoint 'JecaInsurance.API.Controllers.AutoQuoteController.GetAutoQuotes (JecaInsurance.API)'
+2025-09-25 17:53:51.493 +05:30 [INF] HTTP GET /api/AutoQuote responded 200 in 200.3608 ms
+2025-09-25 17:53:51.496 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5149/api/AutoQuote?page=1&pageSize=1 - 200 null application/json; charset=utf-8 218.2829ms
+2025-09-25 17:54:51.298 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5149/api/AutoQuote?page=1&pageSize=1 - null null
+2025-09-25 17:54:51.312 +05:30 [INF] CORS policy execution successful.
+2025-09-25 17:54:51.315 +05:30 [INF] Executing endpoint 'JecaInsurance.API.Controllers.AutoQuoteController.GetAutoQuotes (JecaInsurance.API)'
+2025-09-25 17:54:51.319 +05:30 [INF] Route matched with {action = "GetAutoQuotes", controller = "AutoQuote"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[JecaInsurance.API.Models.Quote]]] GetAutoQuotes(Int32, Int32) on controller JecaInsurance.API.Controllers.AutoQuoteController (JecaInsurance.API).
+2025-09-25 17:54:51.387 +05:30 [INF] Executed DbCommand (52ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AdditionalComments], [t].[Address], [t].[City], [t].[ClaimsIn3Years], [t].[ContinuousCoverage], [t].[Country], [t].[CoverageDesired], [t].[CreatedDate], [t].[CurrentInsuranceCompany], [t].[Email], [t].[FirstName], [t].[InformationSecure], [t].[LastName], [t].[PhoneNumber], [t].[PolicyExpiresIn], [t].[QuoteNumber], [t].[QuoteType], [t].[State], [t].[Status], [t].[TicketsIn3Years], [t].[UpdatedDate], [t].[WhenToStart], [t].[ZipCode], [a].[QuoteId], [t0].[Id], [t0].[AnnualMileage], [t0].[BoatUse], [t0].[CollisionDeductible], [t0].[ComprehensiveDeductible], [t0].[CreatedDate], [t0].[Deductible], [t0].[DriveToWorkSchool], [t0].[EngineType], [t0].[HullMaterial], [t0].[IsLeased], [t0].[IsPrimary], [t0].[Length], [t0].[Make], [t0].[Manufacturer], [t0].[MarketValue], [t0].[Model], [t0].[MoreThanTwoVehicles], [t0].[NumberOfEngines], [t0].[QuoteId], [t0].[StorageLocation], [t0].[StructuralModifications], [t0].[TotalHorsepower], [t0].[TrailerCoverage], [t0].[VehicleType], [t0].[WatercraftType], [t0].[WorkSchoolDistance], [t0].[Year], [t1].[Id], [t1].[AccidentsTickets], [t1].[CreatedDate], [t1].[DateOfBirth], [t1].[DriverType], [t1].[Gender], [t1].[IsPrimary], [t1].[Married], [t1].[Name], [t1].[QuoteId], [t1].[Status]
+FROM (
+    SELECT [q].[Id], [q].[AdditionalComments], [q].[Address], [q].[City], [q].[ClaimsIn3Years], [q].[ContinuousCoverage], [q].[Country], [q].[CoverageDesired], [q].[CreatedDate], [q].[CurrentInsuranceCompany], [q].[Email], [q].[FirstName], [q].[InformationSecure], [q].[LastName], [q].[PhoneNumber], [q].[PolicyExpiresIn], [q].[QuoteNumber], [q].[QuoteType], [q].[State], [q].[Status], [q].[TicketsIn3Years], [q].[UpdatedDate], [q].[WhenToStart], [q].[ZipCode]
+    FROM [Quotes] AS [q]
+    WHERE [q].[QuoteType] = N'Auto'
+    ORDER BY [q].[CreatedDate] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+LEFT JOIN [AutoQuotes] AS [a] ON [t].[Id] = [a].[QuoteId]
+LEFT JOIN (
+    SELECT [v].[Id], [v].[AnnualMileage], [v].[BoatUse], [v].[CollisionDeductible], [v].[ComprehensiveDeductible], [v].[CreatedDate], [v].[Deductible], [v].[DriveToWorkSchool], [v].[EngineType], [v].[HullMaterial], [v].[IsLeased], [v].[IsPrimary], [v].[Length], [v].[Make], [v].[Manufacturer], [v].[MarketValue], [v].[Model], [v].[MoreThanTwoVehicles], [v].[NumberOfEngines], [v].[QuoteId], [v].[StorageLocation], [v].[StructuralModifications], [v].[TotalHorsepower], [v].[TrailerCoverage], [v].[VehicleType], [v].[WatercraftType], [v].[WorkSchoolDistance], [v].[Year]
+    FROM [Vehicles] AS [v]
+    WHERE [v].[VehicleType] = N'Auto'
+) AS [t0] ON [t].[Id] = [t0].[QuoteId]
+LEFT JOIN (
+    SELECT [d].[Id], [d].[AccidentsTickets], [d].[CreatedDate], [d].[DateOfBirth], [d].[DriverType], [d].[Gender], [d].[IsPrimary], [d].[Married], [d].[Name], [d].[QuoteId], [d].[Status]
+    FROM [Drivers] AS [d]
+    WHERE [d].[DriverType] = N'Auto'
+) AS [t1] ON [t].[Id] = [t1].[QuoteId]
+ORDER BY [t].[CreatedDate] DESC, [t].[Id], [a].[QuoteId], [t0].[Id]
+2025-09-25 17:54:51.407 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Quotes] AS [q]
+WHERE [q].[QuoteType] = N'Auto'
+2025-09-25 17:54:51.414 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[JecaInsurance.API.Models.Quote, JecaInsurance.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-25 17:54:51.419 +05:30 [INF] Executed action JecaInsurance.API.Controllers.AutoQuoteController.GetAutoQuotes (JecaInsurance.API) in 94.5637ms
+2025-09-25 17:54:51.424 +05:30 [INF] Executed endpoint 'JecaInsurance.API.Controllers.AutoQuoteController.GetAutoQuotes (JecaInsurance.API)'
+2025-09-25 17:54:51.425 +05:30 [INF] HTTP GET /api/AutoQuote responded 200 in 111.5422 ms
+2025-09-25 17:54:51.430 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5149/api/AutoQuote?page=1&pageSize=1 - 200 null application/json; charset=utf-8 132.4878ms
+2025-09-25 17:55:51.274 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5149/api/AutoQuote?page=1&pageSize=1 - null null
+2025-09-25 17:55:51.281 +05:30 [INF] CORS policy execution successful.
+2025-09-25 17:55:51.285 +05:30 [INF] Executing endpoint 'JecaInsurance.API.Controllers.AutoQuoteController.GetAutoQuotes (JecaInsurance.API)'
+2025-09-25 17:55:51.288 +05:30 [INF] Route matched with {action = "GetAutoQuotes", controller = "AutoQuote"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[JecaInsurance.API.Models.Quote]]] GetAutoQuotes(Int32, Int32) on controller JecaInsurance.API.Controllers.AutoQuoteController (JecaInsurance.API).
+2025-09-25 17:55:51.351 +05:30 [INF] Executed DbCommand (51ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AdditionalComments], [t].[Address], [t].[City], [t].[ClaimsIn3Years], [t].[ContinuousCoverage], [t].[Country], [t].[CoverageDesired], [t].[CreatedDate], [t].[CurrentInsuranceCompany], [t].[Email], [t].[FirstName], [t].[InformationSecure], [t].[LastName], [t].[PhoneNumber], [t].[PolicyExpiresIn], [t].[QuoteNumber], [t].[QuoteType], [t].[State], [t].[Status], [t].[TicketsIn3Years], [t].[UpdatedDate], [t].[WhenToStart], [t].[ZipCode], [a].[QuoteId], [t0].[Id], [t0].[AnnualMileage], [t0].[BoatUse], [t0].[CollisionDeductible], [t0].[ComprehensiveDeductible], [t0].[CreatedDate], [t0].[Deductible], [t0].[DriveToWorkSchool], [t0].[EngineType], [t0].[HullMaterial], [t0].[IsLeased], [t0].[IsPrimary], [t0].[Length], [t0].[Make], [t0].[Manufacturer], [t0].[MarketValue], [t0].[Model], [t0].[MoreThanTwoVehicles], [t0].[NumberOfEngines], [t0].[QuoteId], [t0].[StorageLocation], [t0].[StructuralModifications], [t0].[TotalHorsepower], [t0].[TrailerCoverage], [t0].[VehicleType], [t0].[WatercraftType], [t0].[WorkSchoolDistance], [t0].[Year], [t1].[Id], [t1].[AccidentsTickets], [t1].[CreatedDate], [t1].[DateOfBirth], [t1].[DriverType], [t1].[Gender], [t1].[IsPrimary], [t1].[Married], [t1].[Name], [t1].[QuoteId], [t1].[Status]
+FROM (
+    SELECT [q].[Id], [q].[AdditionalComments], [q].[Address], [q].[City], [q].[ClaimsIn3Years], [q].[ContinuousCoverage], [q].[Country], [q].[CoverageDesired], [q].[CreatedDate], [q].[CurrentInsuranceCompany], [q].[Email], [q].[FirstName], [q].[InformationSecure], [q].[LastName], [q].[PhoneNumber], [q].[PolicyExpiresIn], [q].[QuoteNumber], [q].[QuoteType], [q].[State], [q].[Status], [q].[TicketsIn3Years], [q].[UpdatedDate], [q].[WhenToStart], [q].[ZipCode]
+    FROM [Quotes] AS [q]
+    WHERE [q].[QuoteType] = N'Auto'
+    ORDER BY [q].[CreatedDate] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+LEFT JOIN [AutoQuotes] AS [a] ON [t].[Id] = [a].[QuoteId]
+LEFT JOIN (
+    SELECT [v].[Id], [v].[AnnualMileage], [v].[BoatUse], [v].[CollisionDeductible], [v].[ComprehensiveDeductible], [v].[CreatedDate], [v].[Deductible], [v].[DriveToWorkSchool], [v].[EngineType], [v].[HullMaterial], [v].[IsLeased], [v].[IsPrimary], [v].[Length], [v].[Make], [v].[Manufacturer], [v].[MarketValue], [v].[Model], [v].[MoreThanTwoVehicles], [v].[NumberOfEngines], [v].[QuoteId], [v].[StorageLocation], [v].[StructuralModifications], [v].[TotalHorsepower], [v].[TrailerCoverage], [v].[VehicleType], [v].[WatercraftType], [v].[WorkSchoolDistance], [v].[Year]
+    FROM [Vehicles] AS [v]
+    WHERE [v].[VehicleType] = N'Auto'
+) AS [t0] ON [t].[Id] = [t0].[QuoteId]
+LEFT JOIN (
+    SELECT [d].[Id], [d].[AccidentsTickets], [d].[CreatedDate], [d].[DateOfBirth], [d].[DriverType], [d].[Gender], [d].[IsPrimary], [d].[Married], [d].[Name], [d].[QuoteId], [d].[Status]
+    FROM [Drivers] AS [d]
+    WHERE [d].[DriverType] = N'Auto'
+) AS [t1] ON [t].[Id] = [t1].[QuoteId]
+ORDER BY [t].[CreatedDate] DESC, [t].[Id], [a].[QuoteId], [t0].[Id]
+2025-09-25 17:55:51.370 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Quotes] AS [q]
+WHERE [q].[QuoteType] = N'Auto'
+2025-09-25 17:55:51.377 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[JecaInsurance.API.Models.Quote, JecaInsurance.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-25 17:55:51.385 +05:30 [INF] Executed action JecaInsurance.API.Controllers.AutoQuoteController.GetAutoQuotes (JecaInsurance.API) in 93.8109ms
+2025-09-25 17:55:51.389 +05:30 [INF] Executed endpoint 'JecaInsurance.API.Controllers.AutoQuoteController.GetAutoQuotes (JecaInsurance.API)'
+2025-09-25 17:55:51.393 +05:30 [INF] HTTP GET /api/AutoQuote responded 200 in 107.5771 ms
+2025-09-25 17:55:51.401 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5149/api/AutoQuote?page=1&pageSize=1 - 200 null application/json; charset=utf-8 127.0737ms
+2025-09-25 17:56:51.286 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5149/api/AutoQuote?page=1&pageSize=1 - null null
+2025-09-25 17:56:51.293 +05:30 [INF] CORS policy execution successful.
+2025-09-25 17:56:51.298 +05:30 [INF] Executing endpoint 'JecaInsurance.API.Controllers.AutoQuoteController.GetAutoQuotes (JecaInsurance.API)'
+2025-09-25 17:56:51.302 +05:30 [INF] Route matched with {action = "GetAutoQuotes", controller = "AutoQuote"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[JecaInsurance.API.Models.Quote]]] GetAutoQuotes(Int32, Int32) on controller JecaInsurance.API.Controllers.AutoQuoteController (JecaInsurance.API).
+2025-09-25 17:56:51.377 +05:30 [INF] Executed DbCommand (61ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AdditionalComments], [t].[Address], [t].[City], [t].[ClaimsIn3Years], [t].[ContinuousCoverage], [t].[Country], [t].[CoverageDesired], [t].[CreatedDate], [t].[CurrentInsuranceCompany], [t].[Email], [t].[FirstName], [t].[InformationSecure], [t].[LastName], [t].[PhoneNumber], [t].[PolicyExpiresIn], [t].[QuoteNumber], [t].[QuoteType], [t].[State], [t].[Status], [t].[TicketsIn3Years], [t].[UpdatedDate], [t].[WhenToStart], [t].[ZipCode], [a].[QuoteId], [t0].[Id], [t0].[AnnualMileage], [t0].[BoatUse], [t0].[CollisionDeductible], [t0].[ComprehensiveDeductible], [t0].[CreatedDate], [t0].[Deductible], [t0].[DriveToWorkSchool], [t0].[EngineType], [t0].[HullMaterial], [t0].[IsLeased], [t0].[IsPrimary], [t0].[Length], [t0].[Make], [t0].[Manufacturer], [t0].[MarketValue], [t0].[Model], [t0].[MoreThanTwoVehicles], [t0].[NumberOfEngines], [t0].[QuoteId], [t0].[StorageLocation], [t0].[StructuralModifications], [t0].[TotalHorsepower], [t0].[TrailerCoverage], [t0].[VehicleType], [t0].[WatercraftType], [t0].[WorkSchoolDistance], [t0].[Year], [t1].[Id], [t1].[AccidentsTickets], [t1].[CreatedDate], [t1].[DateOfBirth], [t1].[DriverType], [t1].[Gender], [t1].[IsPrimary], [t1].[Married], [t1].[Name], [t1].[QuoteId], [t1].[Status]
+FROM (
+    SELECT [q].[Id], [q].[AdditionalComments], [q].[Address], [q].[City], [q].[ClaimsIn3Years], [q].[ContinuousCoverage], [q].[Country], [q].[CoverageDesired], [q].[CreatedDate], [q].[CurrentInsuranceCompany], [q].[Email], [q].[FirstName], [q].[InformationSecure], [q].[LastName], [q].[PhoneNumber], [q].[PolicyExpiresIn], [q].[QuoteNumber], [q].[QuoteType], [q].[State], [q].[Status], [q].[TicketsIn3Years], [q].[UpdatedDate], [q].[WhenToStart], [q].[ZipCode]
+    FROM [Quotes] AS [q]
+    WHERE [q].[QuoteType] = N'Auto'
+    ORDER BY [q].[CreatedDate] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+LEFT JOIN [AutoQuotes] AS [a] ON [t].[Id] = [a].[QuoteId]
+LEFT JOIN (
+    SELECT [v].[Id], [v].[AnnualMileage], [v].[BoatUse], [v].[CollisionDeductible], [v].[ComprehensiveDeductible], [v].[CreatedDate], [v].[Deductible], [v].[DriveToWorkSchool], [v].[EngineType], [v].[HullMaterial], [v].[IsLeased], [v].[IsPrimary], [v].[Length], [v].[Make], [v].[Manufacturer], [v].[MarketValue], [v].[Model], [v].[MoreThanTwoVehicles], [v].[NumberOfEngines], [v].[QuoteId], [v].[StorageLocation], [v].[StructuralModifications], [v].[TotalHorsepower], [v].[TrailerCoverage], [v].[VehicleType], [v].[WatercraftType], [v].[WorkSchoolDistance], [v].[Year]
+    FROM [Vehicles] AS [v]
+    WHERE [v].[VehicleType] = N'Auto'
+) AS [t0] ON [t].[Id] = [t0].[QuoteId]
+LEFT JOIN (
+    SELECT [d].[Id], [d].[AccidentsTickets], [d].[CreatedDate], [d].[DateOfBirth], [d].[DriverType], [d].[Gender], [d].[IsPrimary], [d].[Married], [d].[Name], [d].[QuoteId], [d].[Status]
+    FROM [Drivers] AS [d]
+    WHERE [d].[DriverType] = N'Auto'
+) AS [t1] ON [t].[Id] = [t1].[QuoteId]
+ORDER BY [t].[CreatedDate] DESC, [t].[Id], [a].[QuoteId], [t0].[Id]
+2025-09-25 17:56:51.396 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Quotes] AS [q]
+WHERE [q].[QuoteType] = N'Auto'
+2025-09-25 17:56:51.404 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[JecaInsurance.API.Models.Quote, JecaInsurance.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-25 17:56:51.408 +05:30 [INF] Executed action JecaInsurance.API.Controllers.AutoQuoteController.GetAutoQuotes (JecaInsurance.API) in 100.5528ms
+2025-09-25 17:56:51.417 +05:30 [INF] Executed endpoint 'JecaInsurance.API.Controllers.AutoQuoteController.GetAutoQuotes (JecaInsurance.API)'
+2025-09-25 17:56:51.421 +05:30 [INF] HTTP GET /api/AutoQuote responded 200 in 122.8121 ms
+2025-09-25 17:56:51.426 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5149/api/AutoQuote?page=1&pageSize=1 - 200 null application/json; charset=utf-8 140.6148ms
+2025-09-25 17:57:51.317 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5149/api/AutoQuote?page=1&pageSize=1 - null null
+2025-09-25 17:57:51.354 +05:30 [INF] CORS policy execution successful.
+2025-09-25 17:57:51.399 +05:30 [INF] Executing endpoint 'JecaInsurance.API.Controllers.AutoQuoteController.GetAutoQuotes (JecaInsurance.API)'
+2025-09-25 17:57:51.454 +05:30 [INF] Route matched with {action = "GetAutoQuotes", controller = "AutoQuote"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[JecaInsurance.API.Models.Quote]]] GetAutoQuotes(Int32, Int32) on controller JecaInsurance.API.Controllers.AutoQuoteController (JecaInsurance.API).
+2025-09-25 17:57:51.569 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AdditionalComments], [t].[Address], [t].[City], [t].[ClaimsIn3Years], [t].[ContinuousCoverage], [t].[Country], [t].[CoverageDesired], [t].[CreatedDate], [t].[CurrentInsuranceCompany], [t].[Email], [t].[FirstName], [t].[InformationSecure], [t].[LastName], [t].[PhoneNumber], [t].[PolicyExpiresIn], [t].[QuoteNumber], [t].[QuoteType], [t].[State], [t].[Status], [t].[TicketsIn3Years], [t].[UpdatedDate], [t].[WhenToStart], [t].[ZipCode], [a].[QuoteId], [t0].[Id], [t0].[AnnualMileage], [t0].[BoatUse], [t0].[CollisionDeductible], [t0].[ComprehensiveDeductible], [t0].[CreatedDate], [t0].[Deductible], [t0].[DriveToWorkSchool], [t0].[EngineType], [t0].[HullMaterial], [t0].[IsLeased], [t0].[IsPrimary], [t0].[Length], [t0].[Make], [t0].[Manufacturer], [t0].[MarketValue], [t0].[Model], [t0].[MoreThanTwoVehicles], [t0].[NumberOfEngines], [t0].[QuoteId], [t0].[StorageLocation], [t0].[StructuralModifications], [t0].[TotalHorsepower], [t0].[TrailerCoverage], [t0].[VehicleType], [t0].[WatercraftType], [t0].[WorkSchoolDistance], [t0].[Year], [t1].[Id], [t1].[AccidentsTickets], [t1].[CreatedDate], [t1].[DateOfBirth], [t1].[DriverType], [t1].[Gender], [t1].[IsPrimary], [t1].[Married], [t1].[Name], [t1].[QuoteId], [t1].[Status]
+FROM (
+    SELECT [q].[Id], [q].[AdditionalComments], [q].[Address], [q].[City], [q].[ClaimsIn3Years], [q].[ContinuousCoverage], [q].[Country], [q].[CoverageDesired], [q].[CreatedDate], [q].[CurrentInsuranceCompany], [q].[Email], [q].[FirstName], [q].[InformationSecure], [q].[LastName], [q].[PhoneNumber], [q].[PolicyExpiresIn], [q].[QuoteNumber], [q].[QuoteType], [q].[State], [q].[Status], [q].[TicketsIn3Years], [q].[UpdatedDate], [q].[WhenToStart], [q].[ZipCode]
+    FROM [Quotes] AS [q]
+    WHERE [q].[QuoteType] = N'Auto'
+    ORDER BY [q].[CreatedDate] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+LEFT JOIN [AutoQuotes] AS [a] ON [t].[Id] = [a].[QuoteId]
+LEFT JOIN (
+    SELECT [v].[Id], [v].[AnnualMileage], [v].[BoatUse], [v].[CollisionDeductible], [v].[ComprehensiveDeductible], [v].[CreatedDate], [v].[Deductible], [v].[DriveToWorkSchool], [v].[EngineType], [v].[HullMaterial], [v].[IsLeased], [v].[IsPrimary], [v].[Length], [v].[Make], [v].[Manufacturer], [v].[MarketValue], [v].[Model], [v].[MoreThanTwoVehicles], [v].[NumberOfEngines], [v].[QuoteId], [v].[StorageLocation], [v].[StructuralModifications], [v].[TotalHorsepower], [v].[TrailerCoverage], [v].[VehicleType], [v].[WatercraftType], [v].[WorkSchoolDistance], [v].[Year]
+    FROM [Vehicles] AS [v]
+    WHERE [v].[VehicleType] = N'Auto'
+) AS [t0] ON [t].[Id] = [t0].[QuoteId]
+LEFT JOIN (
+    SELECT [d].[Id], [d].[AccidentsTickets], [d].[CreatedDate], [d].[DateOfBirth], [d].[DriverType], [d].[Gender], [d].[IsPrimary], [d].[Married], [d].[Name], [d].[QuoteId], [d].[Status]
+    FROM [Drivers] AS [d]
+    WHERE [d].[DriverType] = N'Auto'
+) AS [t1] ON [t].[Id] = [t1].[QuoteId]
+ORDER BY [t].[CreatedDate] DESC, [t].[Id], [a].[QuoteId], [t0].[Id]
+2025-09-25 17:57:51.632 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Quotes] AS [q]
+WHERE [q].[QuoteType] = N'Auto'
+2025-09-25 17:57:51.651 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[JecaInsurance.API.Models.Quote, JecaInsurance.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-25 17:57:51.670 +05:30 [INF] Executed action JecaInsurance.API.Controllers.AutoQuoteController.GetAutoQuotes (JecaInsurance.API) in 125.9212ms
+2025-09-25 17:57:51.688 +05:30 [INF] Executed endpoint 'JecaInsurance.API.Controllers.AutoQuoteController.GetAutoQuotes (JecaInsurance.API)'
+2025-09-25 17:57:51.703 +05:30 [INF] HTTP GET /api/AutoQuote responded 200 in 304.0518 ms
+2025-09-25 17:57:51.727 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5149/api/AutoQuote?page=1&pageSize=1 - 200 null application/json; charset=utf-8 401.284ms
+2025-09-25 17:58:51.269 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5149/api/AutoQuote?page=1&pageSize=1 - null null
+2025-09-25 17:58:51.273 +05:30 [INF] CORS policy execution successful.
+2025-09-25 17:58:51.274 +05:30 [INF] Executing endpoint 'JecaInsurance.API.Controllers.AutoQuoteController.GetAutoQuotes (JecaInsurance.API)'
+2025-09-25 17:58:51.276 +05:30 [INF] Route matched with {action = "GetAutoQuotes", controller = "AutoQuote"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[JecaInsurance.API.Models.Quote]]] GetAutoQuotes(Int32, Int32) on controller JecaInsurance.API.Controllers.AutoQuoteController (JecaInsurance.API).
+2025-09-25 17:58:51.328 +05:30 [INF] Executed DbCommand (45ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AdditionalComments], [t].[Address], [t].[City], [t].[ClaimsIn3Years], [t].[ContinuousCoverage], [t].[Country], [t].[CoverageDesired], [t].[CreatedDate], [t].[CurrentInsuranceCompany], [t].[Email], [t].[FirstName], [t].[InformationSecure], [t].[LastName], [t].[PhoneNumber], [t].[PolicyExpiresIn], [t].[QuoteNumber], [t].[QuoteType], [t].[State], [t].[Status], [t].[TicketsIn3Years], [t].[UpdatedDate], [t].[WhenToStart], [t].[ZipCode], [a].[QuoteId], [t0].[Id], [t0].[AnnualMileage], [t0].[BoatUse], [t0].[CollisionDeductible], [t0].[ComprehensiveDeductible], [t0].[CreatedDate], [t0].[Deductible], [t0].[DriveToWorkSchool], [t0].[EngineType], [t0].[HullMaterial], [t0].[IsLeased], [t0].[IsPrimary], [t0].[Length], [t0].[Make], [t0].[Manufacturer], [t0].[MarketValue], [t0].[Model], [t0].[MoreThanTwoVehicles], [t0].[NumberOfEngines], [t0].[QuoteId], [t0].[StorageLocation], [t0].[StructuralModifications], [t0].[TotalHorsepower], [t0].[TrailerCoverage], [t0].[VehicleType], [t0].[WatercraftType], [t0].[WorkSchoolDistance], [t0].[Year], [t1].[Id], [t1].[AccidentsTickets], [t1].[CreatedDate], [t1].[DateOfBirth], [t1].[DriverType], [t1].[Gender], [t1].[IsPrimary], [t1].[Married], [t1].[Name], [t1].[QuoteId], [t1].[Status]
+FROM (
+    SELECT [q].[Id], [q].[AdditionalComments], [q].[Address], [q].[City], [q].[ClaimsIn3Years], [q].[ContinuousCoverage], [q].[Country], [q].[CoverageDesired], [q].[CreatedDate], [q].[CurrentInsuranceCompany], [q].[Email], [q].[FirstName], [q].[InformationSecure], [q].[LastName], [q].[PhoneNumber], [q].[PolicyExpiresIn], [q].[QuoteNumber], [q].[QuoteType], [q].[State], [q].[Status], [q].[TicketsIn3Years], [q].[UpdatedDate], [q].[WhenToStart], [q].[ZipCode]
+    FROM [Quotes] AS [q]
+    WHERE [q].[QuoteType] = N'Auto'
+    ORDER BY [q].[CreatedDate] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+LEFT JOIN [AutoQuotes] AS [a] ON [t].[Id] = [a].[QuoteId]
+LEFT JOIN (
+    SELECT [v].[Id], [v].[AnnualMileage], [v].[BoatUse], [v].[CollisionDeductible], [v].[ComprehensiveDeductible], [v].[CreatedDate], [v].[Deductible], [v].[DriveToWorkSchool], [v].[EngineType], [v].[HullMaterial], [v].[IsLeased], [v].[IsPrimary], [v].[Length], [v].[Make], [v].[Manufacturer], [v].[MarketValue], [v].[Model], [v].[MoreThanTwoVehicles], [v].[NumberOfEngines], [v].[QuoteId], [v].[StorageLocation], [v].[StructuralModifications], [v].[TotalHorsepower], [v].[TrailerCoverage], [v].[VehicleType], [v].[WatercraftType], [v].[WorkSchoolDistance], [v].[Year]
+    FROM [Vehicles] AS [v]
+    WHERE [v].[VehicleType] = N'Auto'
+) AS [t0] ON [t].[Id] = [t0].[QuoteId]
+LEFT JOIN (
+    SELECT [d].[Id], [d].[AccidentsTickets], [d].[CreatedDate], [d].[DateOfBirth], [d].[DriverType], [d].[Gender], [d].[IsPrimary], [d].[Married], [d].[Name], [d].[QuoteId], [d].[Status]
+    FROM [Drivers] AS [d]
+    WHERE [d].[DriverType] = N'Auto'
+) AS [t1] ON [t].[Id] = [t1].[QuoteId]
+ORDER BY [t].[CreatedDate] DESC, [t].[Id], [a].[QuoteId], [t0].[Id]
+2025-09-25 17:58:51.338 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Quotes] AS [q]
+WHERE [q].[QuoteType] = N'Auto'
+2025-09-25 17:58:51.343 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[JecaInsurance.API.Models.Quote, JecaInsurance.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-25 17:58:51.351 +05:30 [INF] Executed action JecaInsurance.API.Controllers.AutoQuoteController.GetAutoQuotes (JecaInsurance.API) in 70.6943ms
+2025-09-25 17:58:51.375 +05:30 [INF] Executed endpoint 'JecaInsurance.API.Controllers.AutoQuoteController.GetAutoQuotes (JecaInsurance.API)'
+2025-09-25 17:58:51.377 +05:30 [INF] HTTP GET /api/AutoQuote responded 200 in 103.4159 ms
+2025-09-25 17:58:51.385 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5149/api/AutoQuote?page=1&pageSize=1 - 200 null application/json; charset=utf-8 116.3711ms
+2025-09-25 17:59:51.280 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5149/api/AutoQuote?page=1&pageSize=1 - null null
+2025-09-25 17:59:51.292 +05:30 [INF] CORS policy execution successful.
+2025-09-25 17:59:51.295 +05:30 [INF] Executing endpoint 'JecaInsurance.API.Controllers.AutoQuoteController.GetAutoQuotes (JecaInsurance.API)'
+2025-09-25 17:59:51.296 +05:30 [INF] Route matched with {action = "GetAutoQuotes", controller = "AutoQuote"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[JecaInsurance.API.Models.Quote]]] GetAutoQuotes(Int32, Int32) on controller JecaInsurance.API.Controllers.AutoQuoteController (JecaInsurance.API).
+2025-09-25 17:59:51.350 +05:30 [INF] Executed DbCommand (48ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AdditionalComments], [t].[Address], [t].[City], [t].[ClaimsIn3Years], [t].[ContinuousCoverage], [t].[Country], [t].[CoverageDesired], [t].[CreatedDate], [t].[CurrentInsuranceCompany], [t].[Email], [t].[FirstName], [t].[InformationSecure], [t].[LastName], [t].[PhoneNumber], [t].[PolicyExpiresIn], [t].[QuoteNumber], [t].[QuoteType], [t].[State], [t].[Status], [t].[TicketsIn3Years], [t].[UpdatedDate], [t].[WhenToStart], [t].[ZipCode], [a].[QuoteId], [t0].[Id], [t0].[AnnualMileage], [t0].[BoatUse], [t0].[CollisionDeductible], [t0].[ComprehensiveDeductible], [t0].[CreatedDate], [t0].[Deductible], [t0].[DriveToWorkSchool], [t0].[EngineType], [t0].[HullMaterial], [t0].[IsLeased], [t0].[IsPrimary], [t0].[Length], [t0].[Make], [t0].[Manufacturer], [t0].[MarketValue], [t0].[Model], [t0].[MoreThanTwoVehicles], [t0].[NumberOfEngines], [t0].[QuoteId], [t0].[StorageLocation], [t0].[StructuralModifications], [t0].[TotalHorsepower], [t0].[TrailerCoverage], [t0].[VehicleType], [t0].[WatercraftType], [t0].[WorkSchoolDistance], [t0].[Year], [t1].[Id], [t1].[AccidentsTickets], [t1].[CreatedDate], [t1].[DateOfBirth], [t1].[DriverType], [t1].[Gender], [t1].[IsPrimary], [t1].[Married], [t1].[Name], [t1].[QuoteId], [t1].[Status]
+FROM (
+    SELECT [q].[Id], [q].[AdditionalComments], [q].[Address], [q].[City], [q].[ClaimsIn3Years], [q].[ContinuousCoverage], [q].[Country], [q].[CoverageDesired], [q].[CreatedDate], [q].[CurrentInsuranceCompany], [q].[Email], [q].[FirstName], [q].[InformationSecure], [q].[LastName], [q].[PhoneNumber], [q].[PolicyExpiresIn], [q].[QuoteNumber], [q].[QuoteType], [q].[State], [q].[Status], [q].[TicketsIn3Years], [q].[UpdatedDate], [q].[WhenToStart], [q].[ZipCode]
+    FROM [Quotes] AS [q]
+    WHERE [q].[QuoteType] = N'Auto'
+    ORDER BY [q].[CreatedDate] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+LEFT JOIN [AutoQuotes] AS [a] ON [t].[Id] = [a].[QuoteId]
+LEFT JOIN (
+    SELECT [v].[Id], [v].[AnnualMileage], [v].[BoatUse], [v].[CollisionDeductible], [v].[ComprehensiveDeductible], [v].[CreatedDate], [v].[Deductible], [v].[DriveToWorkSchool], [v].[EngineType], [v].[HullMaterial], [v].[IsLeased], [v].[IsPrimary], [v].[Length], [v].[Make], [v].[Manufacturer], [v].[MarketValue], [v].[Model], [v].[MoreThanTwoVehicles], [v].[NumberOfEngines], [v].[QuoteId], [v].[StorageLocation], [v].[StructuralModifications], [v].[TotalHorsepower], [v].[TrailerCoverage], [v].[VehicleType], [v].[WatercraftType], [v].[WorkSchoolDistance], [v].[Year]
+    FROM [Vehicles] AS [v]
+    WHERE [v].[VehicleType] = N'Auto'
+) AS [t0] ON [t].[Id] = [t0].[QuoteId]
+LEFT JOIN (
+    SELECT [d].[Id], [d].[AccidentsTickets], [d].[CreatedDate], [d].[DateOfBirth], [d].[DriverType], [d].[Gender], [d].[IsPrimary], [d].[Married], [d].[Name], [d].[QuoteId], [d].[Status]
+    FROM [Drivers] AS [d]
+    WHERE [d].[DriverType] = N'Auto'
+) AS [t1] ON [t].[Id] = [t1].[QuoteId]
+ORDER BY [t].[CreatedDate] DESC, [t].[Id], [a].[QuoteId], [t0].[Id]
+2025-09-25 17:59:51.357 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Quotes] AS [q]
+WHERE [q].[QuoteType] = N'Auto'
+2025-09-25 17:59:51.362 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[JecaInsurance.API.Models.Quote, JecaInsurance.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-25 17:59:51.364 +05:30 [INF] Executed action JecaInsurance.API.Controllers.AutoQuoteController.GetAutoQuotes (JecaInsurance.API) in 65.509ms
+2025-09-25 17:59:51.366 +05:30 [INF] Executed endpoint 'JecaInsurance.API.Controllers.AutoQuoteController.GetAutoQuotes (JecaInsurance.API)'
+2025-09-25 17:59:51.367 +05:30 [INF] HTTP GET /api/AutoQuote responded 200 in 72.6588 ms
+2025-09-25 17:59:51.370 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5149/api/AutoQuote?page=1&pageSize=1 - 200 null application/json; charset=utf-8 89.3796ms
+2025-09-25 18:00:51.267 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5149/api/AutoQuote?page=1&pageSize=1 - null null
+2025-09-25 18:00:51.272 +05:30 [INF] CORS policy execution successful.
+2025-09-25 18:00:51.276 +05:30 [INF] Executing endpoint 'JecaInsurance.API.Controllers.AutoQuoteController.GetAutoQuotes (JecaInsurance.API)'
+2025-09-25 18:00:51.278 +05:30 [INF] Route matched with {action = "GetAutoQuotes", controller = "AutoQuote"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[JecaInsurance.API.Models.Quote]]] GetAutoQuotes(Int32, Int32) on controller JecaInsurance.API.Controllers.AutoQuoteController (JecaInsurance.API).
+2025-09-25 18:00:51.327 +05:30 [INF] Executed DbCommand (43ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AdditionalComments], [t].[Address], [t].[City], [t].[ClaimsIn3Years], [t].[ContinuousCoverage], [t].[Country], [t].[CoverageDesired], [t].[CreatedDate], [t].[CurrentInsuranceCompany], [t].[Email], [t].[FirstName], [t].[InformationSecure], [t].[LastName], [t].[PhoneNumber], [t].[PolicyExpiresIn], [t].[QuoteNumber], [t].[QuoteType], [t].[State], [t].[Status], [t].[TicketsIn3Years], [t].[UpdatedDate], [t].[WhenToStart], [t].[ZipCode], [a].[QuoteId], [t0].[Id], [t0].[AnnualMileage], [t0].[BoatUse], [t0].[CollisionDeductible], [t0].[ComprehensiveDeductible], [t0].[CreatedDate], [t0].[Deductible], [t0].[DriveToWorkSchool], [t0].[EngineType], [t0].[HullMaterial], [t0].[IsLeased], [t0].[IsPrimary], [t0].[Length], [t0].[Make], [t0].[Manufacturer], [t0].[MarketValue], [t0].[Model], [t0].[MoreThanTwoVehicles], [t0].[NumberOfEngines], [t0].[QuoteId], [t0].[StorageLocation], [t0].[StructuralModifications], [t0].[TotalHorsepower], [t0].[TrailerCoverage], [t0].[VehicleType], [t0].[WatercraftType], [t0].[WorkSchoolDistance], [t0].[Year], [t1].[Id], [t1].[AccidentsTickets], [t1].[CreatedDate], [t1].[DateOfBirth], [t1].[DriverType], [t1].[Gender], [t1].[IsPrimary], [t1].[Married], [t1].[Name], [t1].[QuoteId], [t1].[Status]
+FROM (
+    SELECT [q].[Id], [q].[AdditionalComments], [q].[Address], [q].[City], [q].[ClaimsIn3Years], [q].[ContinuousCoverage], [q].[Country], [q].[CoverageDesired], [q].[CreatedDate], [q].[CurrentInsuranceCompany], [q].[Email], [q].[FirstName], [q].[InformationSecure], [q].[LastName], [q].[PhoneNumber], [q].[PolicyExpiresIn], [q].[QuoteNumber], [q].[QuoteType], [q].[State], [q].[Status], [q].[TicketsIn3Years], [q].[UpdatedDate], [q].[WhenToStart], [q].[ZipCode]
+    FROM [Quotes] AS [q]
+    WHERE [q].[QuoteType] = N'Auto'
+    ORDER BY [q].[CreatedDate] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+LEFT JOIN [AutoQuotes] AS [a] ON [t].[Id] = [a].[QuoteId]
+LEFT JOIN (
+    SELECT [v].[Id], [v].[AnnualMileage], [v].[BoatUse], [v].[CollisionDeductible], [v].[ComprehensiveDeductible], [v].[CreatedDate], [v].[Deductible], [v].[DriveToWorkSchool], [v].[EngineType], [v].[HullMaterial], [v].[IsLeased], [v].[IsPrimary], [v].[Length], [v].[Make], [v].[Manufacturer], [v].[MarketValue], [v].[Model], [v].[MoreThanTwoVehicles], [v].[NumberOfEngines], [v].[QuoteId], [v].[StorageLocation], [v].[StructuralModifications], [v].[TotalHorsepower], [v].[TrailerCoverage], [v].[VehicleType], [v].[WatercraftType], [v].[WorkSchoolDistance], [v].[Year]
+    FROM [Vehicles] AS [v]
+    WHERE [v].[VehicleType] = N'Auto'
+) AS [t0] ON [t].[Id] = [t0].[QuoteId]
+LEFT JOIN (
+    SELECT [d].[Id], [d].[AccidentsTickets], [d].[CreatedDate], [d].[DateOfBirth], [d].[DriverType], [d].[Gender], [d].[IsPrimary], [d].[Married], [d].[Name], [d].[QuoteId], [d].[Status]
+    FROM [Drivers] AS [d]
+    WHERE [d].[DriverType] = N'Auto'
+) AS [t1] ON [t].[Id] = [t1].[QuoteId]
+ORDER BY [t].[CreatedDate] DESC, [t].[Id], [a].[QuoteId], [t0].[Id]
+2025-09-25 18:00:51.335 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Quotes] AS [q]
+WHERE [q].[QuoteType] = N'Auto'
+2025-09-25 18:00:51.339 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[JecaInsurance.API.Models.Quote, JecaInsurance.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-25 18:00:51.345 +05:30 [INF] Executed action JecaInsurance.API.Controllers.AutoQuoteController.GetAutoQuotes (JecaInsurance.API) in 64.4576ms
+2025-09-25 18:00:51.347 +05:30 [INF] Executed endpoint 'JecaInsurance.API.Controllers.AutoQuoteController.GetAutoQuotes (JecaInsurance.API)'
+2025-09-25 18:00:51.348 +05:30 [INF] HTTP GET /api/AutoQuote responded 200 in 71.8372 ms
+2025-09-25 18:00:51.350 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5149/api/AutoQuote?page=1&pageSize=1 - 200 null application/json; charset=utf-8 82.8929ms
+2025-09-25 18:01:51.279 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5149/api/AutoQuote?page=1&pageSize=1 - null null
+2025-09-25 18:01:51.284 +05:30 [INF] CORS policy execution successful.
+2025-09-25 18:01:51.286 +05:30 [INF] Executing endpoint 'JecaInsurance.API.Controllers.AutoQuoteController.GetAutoQuotes (JecaInsurance.API)'
+2025-09-25 18:01:51.290 +05:30 [INF] Route matched with {action = "GetAutoQuotes", controller = "AutoQuote"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[JecaInsurance.API.Models.Quote]]] GetAutoQuotes(Int32, Int32) on controller JecaInsurance.API.Controllers.AutoQuoteController (JecaInsurance.API).
+2025-09-25 18:01:51.345 +05:30 [INF] Executed DbCommand (49ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AdditionalComments], [t].[Address], [t].[City], [t].[ClaimsIn3Years], [t].[ContinuousCoverage], [t].[Country], [t].[CoverageDesired], [t].[CreatedDate], [t].[CurrentInsuranceCompany], [t].[Email], [t].[FirstName], [t].[InformationSecure], [t].[LastName], [t].[PhoneNumber], [t].[PolicyExpiresIn], [t].[QuoteNumber], [t].[QuoteType], [t].[State], [t].[Status], [t].[TicketsIn3Years], [t].[UpdatedDate], [t].[WhenToStart], [t].[ZipCode], [a].[QuoteId], [t0].[Id], [t0].[AnnualMileage], [t0].[BoatUse], [t0].[CollisionDeductible], [t0].[ComprehensiveDeductible], [t0].[CreatedDate], [t0].[Deductible], [t0].[DriveToWorkSchool], [t0].[EngineType], [t0].[HullMaterial], [t0].[IsLeased], [t0].[IsPrimary], [t0].[Length], [t0].[Make], [t0].[Manufacturer], [t0].[MarketValue], [t0].[Model], [t0].[MoreThanTwoVehicles], [t0].[NumberOfEngines], [t0].[QuoteId], [t0].[StorageLocation], [t0].[StructuralModifications], [t0].[TotalHorsepower], [t0].[TrailerCoverage], [t0].[VehicleType], [t0].[WatercraftType], [t0].[WorkSchoolDistance], [t0].[Year], [t1].[Id], [t1].[AccidentsTickets], [t1].[CreatedDate], [t1].[DateOfBirth], [t1].[DriverType], [t1].[Gender], [t1].[IsPrimary], [t1].[Married], [t1].[Name], [t1].[QuoteId], [t1].[Status]
+FROM (
+    SELECT [q].[Id], [q].[AdditionalComments], [q].[Address], [q].[City], [q].[ClaimsIn3Years], [q].[ContinuousCoverage], [q].[Country], [q].[CoverageDesired], [q].[CreatedDate], [q].[CurrentInsuranceCompany], [q].[Email], [q].[FirstName], [q].[InformationSecure], [q].[LastName], [q].[PhoneNumber], [q].[PolicyExpiresIn], [q].[QuoteNumber], [q].[QuoteType], [q].[State], [q].[Status], [q].[TicketsIn3Years], [q].[UpdatedDate], [q].[WhenToStart], [q].[ZipCode]
+    FROM [Quotes] AS [q]
+    WHERE [q].[QuoteType] = N'Auto'
+    ORDER BY [q].[CreatedDate] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+LEFT JOIN [AutoQuotes] AS [a] ON [t].[Id] = [a].[QuoteId]
+LEFT JOIN (
+    SELECT [v].[Id], [v].[AnnualMileage], [v].[BoatUse], [v].[CollisionDeductible], [v].[ComprehensiveDeductible], [v].[CreatedDate], [v].[Deductible], [v].[DriveToWorkSchool], [v].[EngineType], [v].[HullMaterial], [v].[IsLeased], [v].[IsPrimary], [v].[Length], [v].[Make], [v].[Manufacturer], [v].[MarketValue], [v].[Model], [v].[MoreThanTwoVehicles], [v].[NumberOfEngines], [v].[QuoteId], [v].[StorageLocation], [v].[StructuralModifications], [v].[TotalHorsepower], [v].[TrailerCoverage], [v].[VehicleType], [v].[WatercraftType], [v].[WorkSchoolDistance], [v].[Year]
+    FROM [Vehicles] AS [v]
+    WHERE [v].[VehicleType] = N'Auto'
+) AS [t0] ON [t].[Id] = [t0].[QuoteId]
+LEFT JOIN (
+    SELECT [d].[Id], [d].[AccidentsTickets], [d].[CreatedDate], [d].[DateOfBirth], [d].[DriverType], [d].[Gender], [d].[IsPrimary], [d].[Married], [d].[Name], [d].[QuoteId], [d].[Status]
+    FROM [Drivers] AS [d]
+    WHERE [d].[DriverType] = N'Auto'
+) AS [t1] ON [t].[Id] = [t1].[QuoteId]
+ORDER BY [t].[CreatedDate] DESC, [t].[Id], [a].[QuoteId], [t0].[Id]
+2025-09-25 18:01:51.358 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Quotes] AS [q]
+WHERE [q].[QuoteType] = N'Auto'
+2025-09-25 18:01:51.362 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[JecaInsurance.API.Models.Quote, JecaInsurance.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-25 18:01:51.365 +05:30 [INF] Executed action JecaInsurance.API.Controllers.AutoQuoteController.GetAutoQuotes (JecaInsurance.API) in 72.2212ms
+2025-09-25 18:01:51.366 +05:30 [INF] Executed endpoint 'JecaInsurance.API.Controllers.AutoQuoteController.GetAutoQuotes (JecaInsurance.API)'
+2025-09-25 18:01:51.370 +05:30 [INF] HTTP GET /api/AutoQuote responded 200 in 83.7942 ms
+2025-09-25 18:01:51.374 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5149/api/AutoQuote?page=1&pageSize=1 - 200 null application/json; charset=utf-8 95.4012ms
+2025-09-25 18:02:51.281 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5149/api/AutoQuote?page=1&pageSize=1 - null null
+2025-09-25 18:02:51.288 +05:30 [INF] CORS policy execution successful.
+2025-09-25 18:02:51.292 +05:30 [INF] Executing endpoint 'JecaInsurance.API.Controllers.AutoQuoteController.GetAutoQuotes (JecaInsurance.API)'
+2025-09-25 18:02:51.296 +05:30 [INF] Route matched with {action = "GetAutoQuotes", controller = "AutoQuote"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[JecaInsurance.API.Models.Quote]]] GetAutoQuotes(Int32, Int32) on controller JecaInsurance.API.Controllers.AutoQuoteController (JecaInsurance.API).
+2025-09-25 18:02:51.356 +05:30 [INF] Executed DbCommand (47ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AdditionalComments], [t].[Address], [t].[City], [t].[ClaimsIn3Years], [t].[ContinuousCoverage], [t].[Country], [t].[CoverageDesired], [t].[CreatedDate], [t].[CurrentInsuranceCompany], [t].[Email], [t].[FirstName], [t].[InformationSecure], [t].[LastName], [t].[PhoneNumber], [t].[PolicyExpiresIn], [t].[QuoteNumber], [t].[QuoteType], [t].[State], [t].[Status], [t].[TicketsIn3Years], [t].[UpdatedDate], [t].[WhenToStart], [t].[ZipCode], [a].[QuoteId], [t0].[Id], [t0].[AnnualMileage], [t0].[BoatUse], [t0].[CollisionDeductible], [t0].[ComprehensiveDeductible], [t0].[CreatedDate], [t0].[Deductible], [t0].[DriveToWorkSchool], [t0].[EngineType], [t0].[HullMaterial], [t0].[IsLeased], [t0].[IsPrimary], [t0].[Length], [t0].[Make], [t0].[Manufacturer], [t0].[MarketValue], [t0].[Model], [t0].[MoreThanTwoVehicles], [t0].[NumberOfEngines], [t0].[QuoteId], [t0].[StorageLocation], [t0].[StructuralModifications], [t0].[TotalHorsepower], [t0].[TrailerCoverage], [t0].[VehicleType], [t0].[WatercraftType], [t0].[WorkSchoolDistance], [t0].[Year], [t1].[Id], [t1].[AccidentsTickets], [t1].[CreatedDate], [t1].[DateOfBirth], [t1].[DriverType], [t1].[Gender], [t1].[IsPrimary], [t1].[Married], [t1].[Name], [t1].[QuoteId], [t1].[Status]
+FROM (
+    SELECT [q].[Id], [q].[AdditionalComments], [q].[Address], [q].[City], [q].[ClaimsIn3Years], [q].[ContinuousCoverage], [q].[Country], [q].[CoverageDesired], [q].[CreatedDate], [q].[CurrentInsuranceCompany], [q].[Email], [q].[FirstName], [q].[InformationSecure], [q].[LastName], [q].[PhoneNumber], [q].[PolicyExpiresIn], [q].[QuoteNumber], [q].[QuoteType], [q].[State], [q].[Status], [q].[TicketsIn3Years], [q].[UpdatedDate], [q].[WhenToStart], [q].[ZipCode]
+    FROM [Quotes] AS [q]
+    WHERE [q].[QuoteType] = N'Auto'
+    ORDER BY [q].[CreatedDate] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+LEFT JOIN [AutoQuotes] AS [a] ON [t].[Id] = [a].[QuoteId]
+LEFT JOIN (
+    SELECT [v].[Id], [v].[AnnualMileage], [v].[BoatUse], [v].[CollisionDeductible], [v].[ComprehensiveDeductible], [v].[CreatedDate], [v].[Deductible], [v].[DriveToWorkSchool], [v].[EngineType], [v].[HullMaterial], [v].[IsLeased], [v].[IsPrimary], [v].[Length], [v].[Make], [v].[Manufacturer], [v].[MarketValue], [v].[Model], [v].[MoreThanTwoVehicles], [v].[NumberOfEngines], [v].[QuoteId], [v].[StorageLocation], [v].[StructuralModifications], [v].[TotalHorsepower], [v].[TrailerCoverage], [v].[VehicleType], [v].[WatercraftType], [v].[WorkSchoolDistance], [v].[Year]
+    FROM [Vehicles] AS [v]
+    WHERE [v].[VehicleType] = N'Auto'
+) AS [t0] ON [t].[Id] = [t0].[QuoteId]
+LEFT JOIN (
+    SELECT [d].[Id], [d].[AccidentsTickets], [d].[CreatedDate], [d].[DateOfBirth], [d].[DriverType], [d].[Gender], [d].[IsPrimary], [d].[Married], [d].[Name], [d].[QuoteId], [d].[Status]
+    FROM [Drivers] AS [d]
+    WHERE [d].[DriverType] = N'Auto'
+) AS [t1] ON [t].[Id] = [t1].[QuoteId]
+ORDER BY [t].[CreatedDate] DESC, [t].[Id], [a].[QuoteId], [t0].[Id]
+2025-09-25 18:02:51.363 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Quotes] AS [q]
+WHERE [q].[QuoteType] = N'Auto'
+2025-09-25 18:02:51.365 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[JecaInsurance.API.Models.Quote, JecaInsurance.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-25 18:02:51.368 +05:30 [INF] Executed action JecaInsurance.API.Controllers.AutoQuoteController.GetAutoQuotes (JecaInsurance.API) in 62.3126ms
+2025-09-25 18:02:51.374 +05:30 [INF] Executed endpoint 'JecaInsurance.API.Controllers.AutoQuoteController.GetAutoQuotes (JecaInsurance.API)'
+2025-09-25 18:02:51.376 +05:30 [INF] HTTP GET /api/AutoQuote responded 200 in 83.6888 ms
+2025-09-25 18:02:51.378 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5149/api/AutoQuote?page=1&pageSize=1 - 200 null application/json; charset=utf-8 96.3085ms
+2025-09-25 18:03:51.281 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5149/api/AutoQuote?page=1&pageSize=1 - null null
+2025-09-25 18:03:51.288 +05:30 [INF] CORS policy execution successful.
+2025-09-25 18:03:51.290 +05:30 [INF] Executing endpoint 'JecaInsurance.API.Controllers.AutoQuoteController.GetAutoQuotes (JecaInsurance.API)'
+2025-09-25 18:03:51.292 +05:30 [INF] Route matched with {action = "GetAutoQuotes", controller = "AutoQuote"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[JecaInsurance.API.Models.Quote]]] GetAutoQuotes(Int32, Int32) on controller JecaInsurance.API.Controllers.AutoQuoteController (JecaInsurance.API).
+2025-09-25 18:03:51.343 +05:30 [INF] Executed DbCommand (43ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AdditionalComments], [t].[Address], [t].[City], [t].[ClaimsIn3Years], [t].[ContinuousCoverage], [t].[Country], [t].[CoverageDesired], [t].[CreatedDate], [t].[CurrentInsuranceCompany], [t].[Email], [t].[FirstName], [t].[InformationSecure], [t].[LastName], [t].[PhoneNumber], [t].[PolicyExpiresIn], [t].[QuoteNumber], [t].[QuoteType], [t].[State], [t].[Status], [t].[TicketsIn3Years], [t].[UpdatedDate], [t].[WhenToStart], [t].[ZipCode], [a].[QuoteId], [t0].[Id], [t0].[AnnualMileage], [t0].[BoatUse], [t0].[CollisionDeductible], [t0].[ComprehensiveDeductible], [t0].[CreatedDate], [t0].[Deductible], [t0].[DriveToWorkSchool], [t0].[EngineType], [t0].[HullMaterial], [t0].[IsLeased], [t0].[IsPrimary], [t0].[Length], [t0].[Make], [t0].[Manufacturer], [t0].[MarketValue], [t0].[Model], [t0].[MoreThanTwoVehicles], [t0].[NumberOfEngines], [t0].[QuoteId], [t0].[StorageLocation], [t0].[StructuralModifications], [t0].[TotalHorsepower], [t0].[TrailerCoverage], [t0].[VehicleType], [t0].[WatercraftType], [t0].[WorkSchoolDistance], [t0].[Year], [t1].[Id], [t1].[AccidentsTickets], [t1].[CreatedDate], [t1].[DateOfBirth], [t1].[DriverType], [t1].[Gender], [t1].[IsPrimary], [t1].[Married], [t1].[Name], [t1].[QuoteId], [t1].[Status]
+FROM (
+    SELECT [q].[Id], [q].[AdditionalComments], [q].[Address], [q].[City], [q].[ClaimsIn3Years], [q].[ContinuousCoverage], [q].[Country], [q].[CoverageDesired], [q].[CreatedDate], [q].[CurrentInsuranceCompany], [q].[Email], [q].[FirstName], [q].[InformationSecure], [q].[LastName], [q].[PhoneNumber], [q].[PolicyExpiresIn], [q].[QuoteNumber], [q].[QuoteType], [q].[State], [q].[Status], [q].[TicketsIn3Years], [q].[UpdatedDate], [q].[WhenToStart], [q].[ZipCode]
+    FROM [Quotes] AS [q]
+    WHERE [q].[QuoteType] = N'Auto'
+    ORDER BY [q].[CreatedDate] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+LEFT JOIN [AutoQuotes] AS [a] ON [t].[Id] = [a].[QuoteId]
+LEFT JOIN (
+    SELECT [v].[Id], [v].[AnnualMileage], [v].[BoatUse], [v].[CollisionDeductible], [v].[ComprehensiveDeductible], [v].[CreatedDate], [v].[Deductible], [v].[DriveToWorkSchool], [v].[EngineType], [v].[HullMaterial], [v].[IsLeased], [v].[IsPrimary], [v].[Length], [v].[Make], [v].[Manufacturer], [v].[MarketValue], [v].[Model], [v].[MoreThanTwoVehicles], [v].[NumberOfEngines], [v].[QuoteId], [v].[StorageLocation], [v].[StructuralModifications], [v].[TotalHorsepower], [v].[TrailerCoverage], [v].[VehicleType], [v].[WatercraftType], [v].[WorkSchoolDistance], [v].[Year]
+    FROM [Vehicles] AS [v]
+    WHERE [v].[VehicleType] = N'Auto'
+) AS [t0] ON [t].[Id] = [t0].[QuoteId]
+LEFT JOIN (
+    SELECT [d].[Id], [d].[AccidentsTickets], [d].[CreatedDate], [d].[DateOfBirth], [d].[DriverType], [d].[Gender], [d].[IsPrimary], [d].[Married], [d].[Name], [d].[QuoteId], [d].[Status]
+    FROM [Drivers] AS [d]
+    WHERE [d].[DriverType] = N'Auto'
+) AS [t1] ON [t].[Id] = [t1].[QuoteId]
+ORDER BY [t].[CreatedDate] DESC, [t].[Id], [a].[QuoteId], [t0].[Id]
+2025-09-25 18:03:51.357 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Quotes] AS [q]
+WHERE [q].[QuoteType] = N'Auto'
+2025-09-25 18:03:51.359 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[JecaInsurance.API.Models.Quote, JecaInsurance.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-25 18:03:51.361 +05:30 [INF] Executed action JecaInsurance.API.Controllers.AutoQuoteController.GetAutoQuotes (JecaInsurance.API) in 65.4223ms
+2025-09-25 18:03:51.363 +05:30 [INF] Executed endpoint 'JecaInsurance.API.Controllers.AutoQuoteController.GetAutoQuotes (JecaInsurance.API)'
+2025-09-25 18:03:51.364 +05:30 [INF] HTTP GET /api/AutoQuote responded 200 in 73.8590 ms
+2025-09-25 18:03:51.369 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5149/api/AutoQuote?page=1&pageSize=1 - 200 null application/json; charset=utf-8 88.292ms
+2025-09-25 18:04:51.286 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5149/api/AutoQuote?page=1&pageSize=1 - null null
+2025-09-25 18:04:51.291 +05:30 [INF] CORS policy execution successful.
+2025-09-25 18:04:51.293 +05:30 [INF] Executing endpoint 'JecaInsurance.API.Controllers.AutoQuoteController.GetAutoQuotes (JecaInsurance.API)'
+2025-09-25 18:04:51.296 +05:30 [INF] Route matched with {action = "GetAutoQuotes", controller = "AutoQuote"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[JecaInsurance.API.Models.Quote]]] GetAutoQuotes(Int32, Int32) on controller JecaInsurance.API.Controllers.AutoQuoteController (JecaInsurance.API).
+2025-09-25 18:04:51.359 +05:30 [INF] Executed DbCommand (54ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AdditionalComments], [t].[Address], [t].[City], [t].[ClaimsIn3Years], [t].[ContinuousCoverage], [t].[Country], [t].[CoverageDesired], [t].[CreatedDate], [t].[CurrentInsuranceCompany], [t].[Email], [t].[FirstName], [t].[InformationSecure], [t].[LastName], [t].[PhoneNumber], [t].[PolicyExpiresIn], [t].[QuoteNumber], [t].[QuoteType], [t].[State], [t].[Status], [t].[TicketsIn3Years], [t].[UpdatedDate], [t].[WhenToStart], [t].[ZipCode], [a].[QuoteId], [t0].[Id], [t0].[AnnualMileage], [t0].[BoatUse], [t0].[CollisionDeductible], [t0].[ComprehensiveDeductible], [t0].[CreatedDate], [t0].[Deductible], [t0].[DriveToWorkSchool], [t0].[EngineType], [t0].[HullMaterial], [t0].[IsLeased], [t0].[IsPrimary], [t0].[Length], [t0].[Make], [t0].[Manufacturer], [t0].[MarketValue], [t0].[Model], [t0].[MoreThanTwoVehicles], [t0].[NumberOfEngines], [t0].[QuoteId], [t0].[StorageLocation], [t0].[StructuralModifications], [t0].[TotalHorsepower], [t0].[TrailerCoverage], [t0].[VehicleType], [t0].[WatercraftType], [t0].[WorkSchoolDistance], [t0].[Year], [t1].[Id], [t1].[AccidentsTickets], [t1].[CreatedDate], [t1].[DateOfBirth], [t1].[DriverType], [t1].[Gender], [t1].[IsPrimary], [t1].[Married], [t1].[Name], [t1].[QuoteId], [t1].[Status]
+FROM (
+    SELECT [q].[Id], [q].[AdditionalComments], [q].[Address], [q].[City], [q].[ClaimsIn3Years], [q].[ContinuousCoverage], [q].[Country], [q].[CoverageDesired], [q].[CreatedDate], [q].[CurrentInsuranceCompany], [q].[Email], [q].[FirstName], [q].[InformationSecure], [q].[LastName], [q].[PhoneNumber], [q].[PolicyExpiresIn], [q].[QuoteNumber], [q].[QuoteType], [q].[State], [q].[Status], [q].[TicketsIn3Years], [q].[UpdatedDate], [q].[WhenToStart], [q].[ZipCode]
+    FROM [Quotes] AS [q]
+    WHERE [q].[QuoteType] = N'Auto'
+    ORDER BY [q].[CreatedDate] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+LEFT JOIN [AutoQuotes] AS [a] ON [t].[Id] = [a].[QuoteId]
+LEFT JOIN (
+    SELECT [v].[Id], [v].[AnnualMileage], [v].[BoatUse], [v].[CollisionDeductible], [v].[ComprehensiveDeductible], [v].[CreatedDate], [v].[Deductible], [v].[DriveToWorkSchool], [v].[EngineType], [v].[HullMaterial], [v].[IsLeased], [v].[IsPrimary], [v].[Length], [v].[Make], [v].[Manufacturer], [v].[MarketValue], [v].[Model], [v].[MoreThanTwoVehicles], [v].[NumberOfEngines], [v].[QuoteId], [v].[StorageLocation], [v].[StructuralModifications], [v].[TotalHorsepower], [v].[TrailerCoverage], [v].[VehicleType], [v].[WatercraftType], [v].[WorkSchoolDistance], [v].[Year]
+    FROM [Vehicles] AS [v]
+    WHERE [v].[VehicleType] = N'Auto'
+) AS [t0] ON [t].[Id] = [t0].[QuoteId]
+LEFT JOIN (
+    SELECT [d].[Id], [d].[AccidentsTickets], [d].[CreatedDate], [d].[DateOfBirth], [d].[DriverType], [d].[Gender], [d].[IsPrimary], [d].[Married], [d].[Name], [d].[QuoteId], [d].[Status]
+    FROM [Drivers] AS [d]
+    WHERE [d].[DriverType] = N'Auto'
+) AS [t1] ON [t].[Id] = [t1].[QuoteId]
+ORDER BY [t].[CreatedDate] DESC, [t].[Id], [a].[QuoteId], [t0].[Id]
+2025-09-25 18:04:51.375 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Quotes] AS [q]
+WHERE [q].[QuoteType] = N'Auto'
+2025-09-25 18:04:51.384 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[JecaInsurance.API.Models.Quote, JecaInsurance.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-25 18:04:51.388 +05:30 [INF] Executed action JecaInsurance.API.Controllers.AutoQuoteController.GetAutoQuotes (JecaInsurance.API) in 88.1679ms
+2025-09-25 18:04:51.391 +05:30 [INF] Executed endpoint 'JecaInsurance.API.Controllers.AutoQuoteController.GetAutoQuotes (JecaInsurance.API)'
+2025-09-25 18:04:51.394 +05:30 [INF] HTTP GET /api/AutoQuote responded 200 in 101.3219 ms
+2025-09-25 18:04:51.399 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5149/api/AutoQuote?page=1&pageSize=1 - 200 null application/json; charset=utf-8 112.677ms
+2025-09-25 18:05:51.277 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5149/api/AutoQuote?page=1&pageSize=1 - null null
+2025-09-25 18:05:51.283 +05:30 [INF] CORS policy execution successful.
+2025-09-25 18:05:51.285 +05:30 [INF] Executing endpoint 'JecaInsurance.API.Controllers.AutoQuoteController.GetAutoQuotes (JecaInsurance.API)'
+2025-09-25 18:05:51.287 +05:30 [INF] Route matched with {action = "GetAutoQuotes", controller = "AutoQuote"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[JecaInsurance.API.Models.Quote]]] GetAutoQuotes(Int32, Int32) on controller JecaInsurance.API.Controllers.AutoQuoteController (JecaInsurance.API).
+2025-09-25 18:05:51.338 +05:30 [INF] Executed DbCommand (44ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AdditionalComments], [t].[Address], [t].[City], [t].[ClaimsIn3Years], [t].[ContinuousCoverage], [t].[Country], [t].[CoverageDesired], [t].[CreatedDate], [t].[CurrentInsuranceCompany], [t].[Email], [t].[FirstName], [t].[InformationSecure], [t].[LastName], [t].[PhoneNumber], [t].[PolicyExpiresIn], [t].[QuoteNumber], [t].[QuoteType], [t].[State], [t].[Status], [t].[TicketsIn3Years], [t].[UpdatedDate], [t].[WhenToStart], [t].[ZipCode], [a].[QuoteId], [t0].[Id], [t0].[AnnualMileage], [t0].[BoatUse], [t0].[CollisionDeductible], [t0].[ComprehensiveDeductible], [t0].[CreatedDate], [t0].[Deductible], [t0].[DriveToWorkSchool], [t0].[EngineType], [t0].[HullMaterial], [t0].[IsLeased], [t0].[IsPrimary], [t0].[Length], [t0].[Make], [t0].[Manufacturer], [t0].[MarketValue], [t0].[Model], [t0].[MoreThanTwoVehicles], [t0].[NumberOfEngines], [t0].[QuoteId], [t0].[StorageLocation], [t0].[StructuralModifications], [t0].[TotalHorsepower], [t0].[TrailerCoverage], [t0].[VehicleType], [t0].[WatercraftType], [t0].[WorkSchoolDistance], [t0].[Year], [t1].[Id], [t1].[AccidentsTickets], [t1].[CreatedDate], [t1].[DateOfBirth], [t1].[DriverType], [t1].[Gender], [t1].[IsPrimary], [t1].[Married], [t1].[Name], [t1].[QuoteId], [t1].[Status]
+FROM (
+    SELECT [q].[Id], [q].[AdditionalComments], [q].[Address], [q].[City], [q].[ClaimsIn3Years], [q].[ContinuousCoverage], [q].[Country], [q].[CoverageDesired], [q].[CreatedDate], [q].[CurrentInsuranceCompany], [q].[Email], [q].[FirstName], [q].[InformationSecure], [q].[LastName], [q].[PhoneNumber], [q].[PolicyExpiresIn], [q].[QuoteNumber], [q].[QuoteType], [q].[State], [q].[Status], [q].[TicketsIn3Years], [q].[UpdatedDate], [q].[WhenToStart], [q].[ZipCode]
+    FROM [Quotes] AS [q]
+    WHERE [q].[QuoteType] = N'Auto'
+    ORDER BY [q].[CreatedDate] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+LEFT JOIN [AutoQuotes] AS [a] ON [t].[Id] = [a].[QuoteId]
+LEFT JOIN (
+    SELECT [v].[Id], [v].[AnnualMileage], [v].[BoatUse], [v].[CollisionDeductible], [v].[ComprehensiveDeductible], [v].[CreatedDate], [v].[Deductible], [v].[DriveToWorkSchool], [v].[EngineType], [v].[HullMaterial], [v].[IsLeased], [v].[IsPrimary], [v].[Length], [v].[Make], [v].[Manufacturer], [v].[MarketValue], [v].[Model], [v].[MoreThanTwoVehicles], [v].[NumberOfEngines], [v].[QuoteId], [v].[StorageLocation], [v].[StructuralModifications], [v].[TotalHorsepower], [v].[TrailerCoverage], [v].[VehicleType], [v].[WatercraftType], [v].[WorkSchoolDistance], [v].[Year]
+    FROM [Vehicles] AS [v]
+    WHERE [v].[VehicleType] = N'Auto'
+) AS [t0] ON [t].[Id] = [t0].[QuoteId]
+LEFT JOIN (
+    SELECT [d].[Id], [d].[AccidentsTickets], [d].[CreatedDate], [d].[DateOfBirth], [d].[DriverType], [d].[Gender], [d].[IsPrimary], [d].[Married], [d].[Name], [d].[QuoteId], [d].[Status]
+    FROM [Drivers] AS [d]
+    WHERE [d].[DriverType] = N'Auto'
+) AS [t1] ON [t].[Id] = [t1].[QuoteId]
+ORDER BY [t].[CreatedDate] DESC, [t].[Id], [a].[QuoteId], [t0].[Id]
+2025-09-25 18:05:51.350 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Quotes] AS [q]
+WHERE [q].[QuoteType] = N'Auto'
+2025-09-25 18:05:51.357 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[JecaInsurance.API.Models.Quote, JecaInsurance.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-25 18:05:51.363 +05:30 [INF] Executed action JecaInsurance.API.Controllers.AutoQuoteController.GetAutoQuotes (JecaInsurance.API) in 70.5845ms
+2025-09-25 18:05:51.366 +05:30 [INF] Executed endpoint 'JecaInsurance.API.Controllers.AutoQuoteController.GetAutoQuotes (JecaInsurance.API)'
+2025-09-25 18:05:51.369 +05:30 [INF] HTTP GET /api/AutoQuote responded 200 in 84.2076 ms
+2025-09-25 18:05:51.373 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5149/api/AutoQuote?page=1&pageSize=1 - 200 null application/json; charset=utf-8 96.7034ms
+2025-09-25 18:06:51.280 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5149/api/AutoQuote?page=1&pageSize=1 - null null
+2025-09-25 18:06:51.285 +05:30 [INF] CORS policy execution successful.
+2025-09-25 18:06:51.286 +05:30 [INF] Executing endpoint 'JecaInsurance.API.Controllers.AutoQuoteController.GetAutoQuotes (JecaInsurance.API)'
+2025-09-25 18:06:51.288 +05:30 [INF] Route matched with {action = "GetAutoQuotes", controller = "AutoQuote"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[JecaInsurance.API.Models.Quote]]] GetAutoQuotes(Int32, Int32) on controller JecaInsurance.API.Controllers.AutoQuoteController (JecaInsurance.API).
+2025-09-25 18:06:51.336 +05:30 [INF] Executed DbCommand (41ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AdditionalComments], [t].[Address], [t].[City], [t].[ClaimsIn3Years], [t].[ContinuousCoverage], [t].[Country], [t].[CoverageDesired], [t].[CreatedDate], [t].[CurrentInsuranceCompany], [t].[Email], [t].[FirstName], [t].[InformationSecure], [t].[LastName], [t].[PhoneNumber], [t].[PolicyExpiresIn], [t].[QuoteNumber], [t].[QuoteType], [t].[State], [t].[Status], [t].[TicketsIn3Years], [t].[UpdatedDate], [t].[WhenToStart], [t].[ZipCode], [a].[QuoteId], [t0].[Id], [t0].[AnnualMileage], [t0].[BoatUse], [t0].[CollisionDeductible], [t0].[ComprehensiveDeductible], [t0].[CreatedDate], [t0].[Deductible], [t0].[DriveToWorkSchool], [t0].[EngineType], [t0].[HullMaterial], [t0].[IsLeased], [t0].[IsPrimary], [t0].[Length], [t0].[Make], [t0].[Manufacturer], [t0].[MarketValue], [t0].[Model], [t0].[MoreThanTwoVehicles], [t0].[NumberOfEngines], [t0].[QuoteId], [t0].[StorageLocation], [t0].[StructuralModifications], [t0].[TotalHorsepower], [t0].[TrailerCoverage], [t0].[VehicleType], [t0].[WatercraftType], [t0].[WorkSchoolDistance], [t0].[Year], [t1].[Id], [t1].[AccidentsTickets], [t1].[CreatedDate], [t1].[DateOfBirth], [t1].[DriverType], [t1].[Gender], [t1].[IsPrimary], [t1].[Married], [t1].[Name], [t1].[QuoteId], [t1].[Status]
+FROM (
+    SELECT [q].[Id], [q].[AdditionalComments], [q].[Address], [q].[City], [q].[ClaimsIn3Years], [q].[ContinuousCoverage], [q].[Country], [q].[CoverageDesired], [q].[CreatedDate], [q].[CurrentInsuranceCompany], [q].[Email], [q].[FirstName], [q].[InformationSecure], [q].[LastName], [q].[PhoneNumber], [q].[PolicyExpiresIn], [q].[QuoteNumber], [q].[QuoteType], [q].[State], [q].[Status], [q].[TicketsIn3Years], [q].[UpdatedDate], [q].[WhenToStart], [q].[ZipCode]
+    FROM [Quotes] AS [q]
+    WHERE [q].[QuoteType] = N'Auto'
+    ORDER BY [q].[CreatedDate] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+LEFT JOIN [AutoQuotes] AS [a] ON [t].[Id] = [a].[QuoteId]
+LEFT JOIN (
+    SELECT [v].[Id], [v].[AnnualMileage], [v].[BoatUse], [v].[CollisionDeductible], [v].[ComprehensiveDeductible], [v].[CreatedDate], [v].[Deductible], [v].[DriveToWorkSchool], [v].[EngineType], [v].[HullMaterial], [v].[IsLeased], [v].[IsPrimary], [v].[Length], [v].[Make], [v].[Manufacturer], [v].[MarketValue], [v].[Model], [v].[MoreThanTwoVehicles], [v].[NumberOfEngines], [v].[QuoteId], [v].[StorageLocation], [v].[StructuralModifications], [v].[TotalHorsepower], [v].[TrailerCoverage], [v].[VehicleType], [v].[WatercraftType], [v].[WorkSchoolDistance], [v].[Year]
+    FROM [Vehicles] AS [v]
+    WHERE [v].[VehicleType] = N'Auto'
+) AS [t0] ON [t].[Id] = [t0].[QuoteId]
+LEFT JOIN (
+    SELECT [d].[Id], [d].[AccidentsTickets], [d].[CreatedDate], [d].[DateOfBirth], [d].[DriverType], [d].[Gender], [d].[IsPrimary], [d].[Married], [d].[Name], [d].[QuoteId], [d].[Status]
+    FROM [Drivers] AS [d]
+    WHERE [d].[DriverType] = N'Auto'
+) AS [t1] ON [t].[Id] = [t1].[QuoteId]
+ORDER BY [t].[CreatedDate] DESC, [t].[Id], [a].[QuoteId], [t0].[Id]
+2025-09-25 18:06:51.352 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Quotes] AS [q]
+WHERE [q].[QuoteType] = N'Auto'
+2025-09-25 18:06:51.357 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[JecaInsurance.API.Models.Quote, JecaInsurance.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-25 18:06:51.358 +05:30 [INF] Executed action JecaInsurance.API.Controllers.AutoQuoteController.GetAutoQuotes (JecaInsurance.API) in 69.1836ms
+2025-09-25 18:06:51.363 +05:30 [INF] Executed endpoint 'JecaInsurance.API.Controllers.AutoQuoteController.GetAutoQuotes (JecaInsurance.API)'
+2025-09-25 18:06:51.367 +05:30 [INF] HTTP GET /api/AutoQuote responded 200 in 81.2091 ms
+2025-09-25 18:06:51.372 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5149/api/AutoQuote?page=1&pageSize=1 - 200 null application/json; charset=utf-8 91.0571ms
+2025-09-25 18:07:51.273 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5149/api/AutoQuote?page=1&pageSize=1 - null null
+2025-09-25 18:07:51.281 +05:30 [INF] CORS policy execution successful.
+2025-09-25 18:07:51.283 +05:30 [INF] Executing endpoint 'JecaInsurance.API.Controllers.AutoQuoteController.GetAutoQuotes (JecaInsurance.API)'
+2025-09-25 18:07:51.287 +05:30 [INF] Route matched with {action = "GetAutoQuotes", controller = "AutoQuote"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[JecaInsurance.API.Models.Quote]]] GetAutoQuotes(Int32, Int32) on controller JecaInsurance.API.Controllers.AutoQuoteController (JecaInsurance.API).
+2025-09-25 18:07:51.345 +05:30 [INF] Executed DbCommand (47ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AdditionalComments], [t].[Address], [t].[City], [t].[ClaimsIn3Years], [t].[ContinuousCoverage], [t].[Country], [t].[CoverageDesired], [t].[CreatedDate], [t].[CurrentInsuranceCompany], [t].[Email], [t].[FirstName], [t].[InformationSecure], [t].[LastName], [t].[PhoneNumber], [t].[PolicyExpiresIn], [t].[QuoteNumber], [t].[QuoteType], [t].[State], [t].[Status], [t].[TicketsIn3Years], [t].[UpdatedDate], [t].[WhenToStart], [t].[ZipCode], [a].[QuoteId], [t0].[Id], [t0].[AnnualMileage], [t0].[BoatUse], [t0].[CollisionDeductible], [t0].[ComprehensiveDeductible], [t0].[CreatedDate], [t0].[Deductible], [t0].[DriveToWorkSchool], [t0].[EngineType], [t0].[HullMaterial], [t0].[IsLeased], [t0].[IsPrimary], [t0].[Length], [t0].[Make], [t0].[Manufacturer], [t0].[MarketValue], [t0].[Model], [t0].[MoreThanTwoVehicles], [t0].[NumberOfEngines], [t0].[QuoteId], [t0].[StorageLocation], [t0].[StructuralModifications], [t0].[TotalHorsepower], [t0].[TrailerCoverage], [t0].[VehicleType], [t0].[WatercraftType], [t0].[WorkSchoolDistance], [t0].[Year], [t1].[Id], [t1].[AccidentsTickets], [t1].[CreatedDate], [t1].[DateOfBirth], [t1].[DriverType], [t1].[Gender], [t1].[IsPrimary], [t1].[Married], [t1].[Name], [t1].[QuoteId], [t1].[Status]
+FROM (
+    SELECT [q].[Id], [q].[AdditionalComments], [q].[Address], [q].[City], [q].[ClaimsIn3Years], [q].[ContinuousCoverage], [q].[Country], [q].[CoverageDesired], [q].[CreatedDate], [q].[CurrentInsuranceCompany], [q].[Email], [q].[FirstName], [q].[InformationSecure], [q].[LastName], [q].[PhoneNumber], [q].[PolicyExpiresIn], [q].[QuoteNumber], [q].[QuoteType], [q].[State], [q].[Status], [q].[TicketsIn3Years], [q].[UpdatedDate], [q].[WhenToStart], [q].[ZipCode]
+    FROM [Quotes] AS [q]
+    WHERE [q].[QuoteType] = N'Auto'
+    ORDER BY [q].[CreatedDate] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+LEFT JOIN [AutoQuotes] AS [a] ON [t].[Id] = [a].[QuoteId]
+LEFT JOIN (
+    SELECT [v].[Id], [v].[AnnualMileage], [v].[BoatUse], [v].[CollisionDeductible], [v].[ComprehensiveDeductible], [v].[CreatedDate], [v].[Deductible], [v].[DriveToWorkSchool], [v].[EngineType], [v].[HullMaterial], [v].[IsLeased], [v].[IsPrimary], [v].[Length], [v].[Make], [v].[Manufacturer], [v].[MarketValue], [v].[Model], [v].[MoreThanTwoVehicles], [v].[NumberOfEngines], [v].[QuoteId], [v].[StorageLocation], [v].[StructuralModifications], [v].[TotalHorsepower], [v].[TrailerCoverage], [v].[VehicleType], [v].[WatercraftType], [v].[WorkSchoolDistance], [v].[Year]
+    FROM [Vehicles] AS [v]
+    WHERE [v].[VehicleType] = N'Auto'
+) AS [t0] ON [t].[Id] = [t0].[QuoteId]
+LEFT JOIN (
+    SELECT [d].[Id], [d].[AccidentsTickets], [d].[CreatedDate], [d].[DateOfBirth], [d].[DriverType], [d].[Gender], [d].[IsPrimary], [d].[Married], [d].[Name], [d].[QuoteId], [d].[Status]
+    FROM [Drivers] AS [d]
+    WHERE [d].[DriverType] = N'Auto'
+) AS [t1] ON [t].[Id] = [t1].[QuoteId]
+ORDER BY [t].[CreatedDate] DESC, [t].[Id], [a].[QuoteId], [t0].[Id]
+2025-09-25 18:07:51.354 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Quotes] AS [q]
+WHERE [q].[QuoteType] = N'Auto'
+2025-09-25 18:07:51.356 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[JecaInsurance.API.Models.Quote, JecaInsurance.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-25 18:07:51.359 +05:30 [INF] Executed action JecaInsurance.API.Controllers.AutoQuoteController.GetAutoQuotes (JecaInsurance.API) in 68.743ms
+2025-09-25 18:07:51.362 +05:30 [INF] Executed endpoint 'JecaInsurance.API.Controllers.AutoQuoteController.GetAutoQuotes (JecaInsurance.API)'
+2025-09-25 18:07:51.365 +05:30 [INF] HTTP GET /api/AutoQuote responded 200 in 81.8209 ms
+2025-09-25 18:07:51.367 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5149/api/AutoQuote?page=1&pageSize=1 - 200 null application/json; charset=utf-8 94.025ms
+2025-09-25 18:08:51.278 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5149/api/AutoQuote?page=1&pageSize=1 - null null
+2025-09-25 18:08:51.290 +05:30 [INF] CORS policy execution successful.
+2025-09-25 18:08:51.292 +05:30 [INF] Executing endpoint 'JecaInsurance.API.Controllers.AutoQuoteController.GetAutoQuotes (JecaInsurance.API)'
+2025-09-25 18:08:51.295 +05:30 [INF] Route matched with {action = "GetAutoQuotes", controller = "AutoQuote"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[JecaInsurance.API.Models.Quote]]] GetAutoQuotes(Int32, Int32) on controller JecaInsurance.API.Controllers.AutoQuoteController (JecaInsurance.API).
+2025-09-25 18:08:51.341 +05:30 [INF] Executed DbCommand (39ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AdditionalComments], [t].[Address], [t].[City], [t].[ClaimsIn3Years], [t].[ContinuousCoverage], [t].[Country], [t].[CoverageDesired], [t].[CreatedDate], [t].[CurrentInsuranceCompany], [t].[Email], [t].[FirstName], [t].[InformationSecure], [t].[LastName], [t].[PhoneNumber], [t].[PolicyExpiresIn], [t].[QuoteNumber], [t].[QuoteType], [t].[State], [t].[Status], [t].[TicketsIn3Years], [t].[UpdatedDate], [t].[WhenToStart], [t].[ZipCode], [a].[QuoteId], [t0].[Id], [t0].[AnnualMileage], [t0].[BoatUse], [t0].[CollisionDeductible], [t0].[ComprehensiveDeductible], [t0].[CreatedDate], [t0].[Deductible], [t0].[DriveToWorkSchool], [t0].[EngineType], [t0].[HullMaterial], [t0].[IsLeased], [t0].[IsPrimary], [t0].[Length], [t0].[Make], [t0].[Manufacturer], [t0].[MarketValue], [t0].[Model], [t0].[MoreThanTwoVehicles], [t0].[NumberOfEngines], [t0].[QuoteId], [t0].[StorageLocation], [t0].[StructuralModifications], [t0].[TotalHorsepower], [t0].[TrailerCoverage], [t0].[VehicleType], [t0].[WatercraftType], [t0].[WorkSchoolDistance], [t0].[Year], [t1].[Id], [t1].[AccidentsTickets], [t1].[CreatedDate], [t1].[DateOfBirth], [t1].[DriverType], [t1].[Gender], [t1].[IsPrimary], [t1].[Married], [t1].[Name], [t1].[QuoteId], [t1].[Status]
+FROM (
+    SELECT [q].[Id], [q].[AdditionalComments], [q].[Address], [q].[City], [q].[ClaimsIn3Years], [q].[ContinuousCoverage], [q].[Country], [q].[CoverageDesired], [q].[CreatedDate], [q].[CurrentInsuranceCompany], [q].[Email], [q].[FirstName], [q].[InformationSecure], [q].[LastName], [q].[PhoneNumber], [q].[PolicyExpiresIn], [q].[QuoteNumber], [q].[QuoteType], [q].[State], [q].[Status], [q].[TicketsIn3Years], [q].[UpdatedDate], [q].[WhenToStart], [q].[ZipCode]
+    FROM [Quotes] AS [q]
+    WHERE [q].[QuoteType] = N'Auto'
+    ORDER BY [q].[CreatedDate] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+LEFT JOIN [AutoQuotes] AS [a] ON [t].[Id] = [a].[QuoteId]
+LEFT JOIN (
+    SELECT [v].[Id], [v].[AnnualMileage], [v].[BoatUse], [v].[CollisionDeductible], [v].[ComprehensiveDeductible], [v].[CreatedDate], [v].[Deductible], [v].[DriveToWorkSchool], [v].[EngineType], [v].[HullMaterial], [v].[IsLeased], [v].[IsPrimary], [v].[Length], [v].[Make], [v].[Manufacturer], [v].[MarketValue], [v].[Model], [v].[MoreThanTwoVehicles], [v].[NumberOfEngines], [v].[QuoteId], [v].[StorageLocation], [v].[StructuralModifications], [v].[TotalHorsepower], [v].[TrailerCoverage], [v].[VehicleType], [v].[WatercraftType], [v].[WorkSchoolDistance], [v].[Year]
+    FROM [Vehicles] AS [v]
+    WHERE [v].[VehicleType] = N'Auto'
+) AS [t0] ON [t].[Id] = [t0].[QuoteId]
+LEFT JOIN (
+    SELECT [d].[Id], [d].[AccidentsTickets], [d].[CreatedDate], [d].[DateOfBirth], [d].[DriverType], [d].[Gender], [d].[IsPrimary], [d].[Married], [d].[Name], [d].[QuoteId], [d].[Status]
+    FROM [Drivers] AS [d]
+    WHERE [d].[DriverType] = N'Auto'
+) AS [t1] ON [t].[Id] = [t1].[QuoteId]
+ORDER BY [t].[CreatedDate] DESC, [t].[Id], [a].[QuoteId], [t0].[Id]
+2025-09-25 18:08:51.417 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Quotes] AS [q]
+WHERE [q].[QuoteType] = N'Auto'
+2025-09-25 18:08:51.420 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[JecaInsurance.API.Models.Quote, JecaInsurance.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-25 18:08:51.432 +05:30 [INF] Executed action JecaInsurance.API.Controllers.AutoQuoteController.GetAutoQuotes (JecaInsurance.API) in 132.5124ms
+2025-09-25 18:08:51.433 +05:30 [INF] Executed endpoint 'JecaInsurance.API.Controllers.AutoQuoteController.GetAutoQuotes (JecaInsurance.API)'
+2025-09-25 18:08:51.434 +05:30 [INF] HTTP GET /api/AutoQuote responded 200 in 142.0058 ms
+2025-09-25 18:08:51.436 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5149/api/AutoQuote?page=1&pageSize=1 - 200 null application/json; charset=utf-8 157.7213ms
+2025-09-25 18:09:51.276 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5149/api/AutoQuote?page=1&pageSize=1 - null null
+2025-09-25 18:09:51.291 +05:30 [INF] CORS policy execution successful.
+2025-09-25 18:09:51.293 +05:30 [INF] Executing endpoint 'JecaInsurance.API.Controllers.AutoQuoteController.GetAutoQuotes (JecaInsurance.API)'
+2025-09-25 18:09:51.299 +05:30 [INF] Route matched with {action = "GetAutoQuotes", controller = "AutoQuote"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[JecaInsurance.API.Models.Quote]]] GetAutoQuotes(Int32, Int32) on controller JecaInsurance.API.Controllers.AutoQuoteController (JecaInsurance.API).
+2025-09-25 18:09:51.351 +05:30 [INF] Executed DbCommand (42ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AdditionalComments], [t].[Address], [t].[City], [t].[ClaimsIn3Years], [t].[ContinuousCoverage], [t].[Country], [t].[CoverageDesired], [t].[CreatedDate], [t].[CurrentInsuranceCompany], [t].[Email], [t].[FirstName], [t].[InformationSecure], [t].[LastName], [t].[PhoneNumber], [t].[PolicyExpiresIn], [t].[QuoteNumber], [t].[QuoteType], [t].[State], [t].[Status], [t].[TicketsIn3Years], [t].[UpdatedDate], [t].[WhenToStart], [t].[ZipCode], [a].[QuoteId], [t0].[Id], [t0].[AnnualMileage], [t0].[BoatUse], [t0].[CollisionDeductible], [t0].[ComprehensiveDeductible], [t0].[CreatedDate], [t0].[Deductible], [t0].[DriveToWorkSchool], [t0].[EngineType], [t0].[HullMaterial], [t0].[IsLeased], [t0].[IsPrimary], [t0].[Length], [t0].[Make], [t0].[Manufacturer], [t0].[MarketValue], [t0].[Model], [t0].[MoreThanTwoVehicles], [t0].[NumberOfEngines], [t0].[QuoteId], [t0].[StorageLocation], [t0].[StructuralModifications], [t0].[TotalHorsepower], [t0].[TrailerCoverage], [t0].[VehicleType], [t0].[WatercraftType], [t0].[WorkSchoolDistance], [t0].[Year], [t1].[Id], [t1].[AccidentsTickets], [t1].[CreatedDate], [t1].[DateOfBirth], [t1].[DriverType], [t1].[Gender], [t1].[IsPrimary], [t1].[Married], [t1].[Name], [t1].[QuoteId], [t1].[Status]
+FROM (
+    SELECT [q].[Id], [q].[AdditionalComments], [q].[Address], [q].[City], [q].[ClaimsIn3Years], [q].[ContinuousCoverage], [q].[Country], [q].[CoverageDesired], [q].[CreatedDate], [q].[CurrentInsuranceCompany], [q].[Email], [q].[FirstName], [q].[InformationSecure], [q].[LastName], [q].[PhoneNumber], [q].[PolicyExpiresIn], [q].[QuoteNumber], [q].[QuoteType], [q].[State], [q].[Status], [q].[TicketsIn3Years], [q].[UpdatedDate], [q].[WhenToStart], [q].[ZipCode]
+    FROM [Quotes] AS [q]
+    WHERE [q].[QuoteType] = N'Auto'
+    ORDER BY [q].[CreatedDate] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+LEFT JOIN [AutoQuotes] AS [a] ON [t].[Id] = [a].[QuoteId]
+LEFT JOIN (
+    SELECT [v].[Id], [v].[AnnualMileage], [v].[BoatUse], [v].[CollisionDeductible], [v].[ComprehensiveDeductible], [v].[CreatedDate], [v].[Deductible], [v].[DriveToWorkSchool], [v].[EngineType], [v].[HullMaterial], [v].[IsLeased], [v].[IsPrimary], [v].[Length], [v].[Make], [v].[Manufacturer], [v].[MarketValue], [v].[Model], [v].[MoreThanTwoVehicles], [v].[NumberOfEngines], [v].[QuoteId], [v].[StorageLocation], [v].[StructuralModifications], [v].[TotalHorsepower], [v].[TrailerCoverage], [v].[VehicleType], [v].[WatercraftType], [v].[WorkSchoolDistance], [v].[Year]
+    FROM [Vehicles] AS [v]
+    WHERE [v].[VehicleType] = N'Auto'
+) AS [t0] ON [t].[Id] = [t0].[QuoteId]
+LEFT JOIN (
+    SELECT [d].[Id], [d].[AccidentsTickets], [d].[CreatedDate], [d].[DateOfBirth], [d].[DriverType], [d].[Gender], [d].[IsPrimary], [d].[Married], [d].[Name], [d].[QuoteId], [d].[Status]
+    FROM [Drivers] AS [d]
+    WHERE [d].[DriverType] = N'Auto'
+) AS [t1] ON [t].[Id] = [t1].[QuoteId]
+ORDER BY [t].[CreatedDate] DESC, [t].[Id], [a].[QuoteId], [t0].[Id]
+2025-09-25 18:09:51.363 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Quotes] AS [q]
+WHERE [q].[QuoteType] = N'Auto'
+2025-09-25 18:09:51.367 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[JecaInsurance.API.Models.Quote, JecaInsurance.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-25 18:09:51.369 +05:30 [INF] Executed action JecaInsurance.API.Controllers.AutoQuoteController.GetAutoQuotes (JecaInsurance.API) in 63.8674ms
+2025-09-25 18:09:51.371 +05:30 [INF] Executed endpoint 'JecaInsurance.API.Controllers.AutoQuoteController.GetAutoQuotes (JecaInsurance.API)'
+2025-09-25 18:09:51.373 +05:30 [INF] HTTP GET /api/AutoQuote responded 200 in 79.8885 ms
+2025-09-25 18:09:51.376 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5149/api/AutoQuote?page=1&pageSize=1 - 200 null application/json; charset=utf-8 99.5376ms
+2025-09-25 18:10:51.278 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5149/api/AutoQuote?page=1&pageSize=1 - null null
+2025-09-25 18:10:51.280 +05:30 [INF] CORS policy execution successful.
+2025-09-25 18:10:51.281 +05:30 [INF] Executing endpoint 'JecaInsurance.API.Controllers.AutoQuoteController.GetAutoQuotes (JecaInsurance.API)'
+2025-09-25 18:10:51.283 +05:30 [INF] Route matched with {action = "GetAutoQuotes", controller = "AutoQuote"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[JecaInsurance.API.Models.Quote]]] GetAutoQuotes(Int32, Int32) on controller JecaInsurance.API.Controllers.AutoQuoteController (JecaInsurance.API).
+2025-09-25 18:10:51.331 +05:30 [INF] Executed DbCommand (38ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AdditionalComments], [t].[Address], [t].[City], [t].[ClaimsIn3Years], [t].[ContinuousCoverage], [t].[Country], [t].[CoverageDesired], [t].[CreatedDate], [t].[CurrentInsuranceCompany], [t].[Email], [t].[FirstName], [t].[InformationSecure], [t].[LastName], [t].[PhoneNumber], [t].[PolicyExpiresIn], [t].[QuoteNumber], [t].[QuoteType], [t].[State], [t].[Status], [t].[TicketsIn3Years], [t].[UpdatedDate], [t].[WhenToStart], [t].[ZipCode], [a].[QuoteId], [t0].[Id], [t0].[AnnualMileage], [t0].[BoatUse], [t0].[CollisionDeductible], [t0].[ComprehensiveDeductible], [t0].[CreatedDate], [t0].[Deductible], [t0].[DriveToWorkSchool], [t0].[EngineType], [t0].[HullMaterial], [t0].[IsLeased], [t0].[IsPrimary], [t0].[Length], [t0].[Make], [t0].[Manufacturer], [t0].[MarketValue], [t0].[Model], [t0].[MoreThanTwoVehicles], [t0].[NumberOfEngines], [t0].[QuoteId], [t0].[StorageLocation], [t0].[StructuralModifications], [t0].[TotalHorsepower], [t0].[TrailerCoverage], [t0].[VehicleType], [t0].[WatercraftType], [t0].[WorkSchoolDistance], [t0].[Year], [t1].[Id], [t1].[AccidentsTickets], [t1].[CreatedDate], [t1].[DateOfBirth], [t1].[DriverType], [t1].[Gender], [t1].[IsPrimary], [t1].[Married], [t1].[Name], [t1].[QuoteId], [t1].[Status]
+FROM (
+    SELECT [q].[Id], [q].[AdditionalComments], [q].[Address], [q].[City], [q].[ClaimsIn3Years], [q].[ContinuousCoverage], [q].[Country], [q].[CoverageDesired], [q].[CreatedDate], [q].[CurrentInsuranceCompany], [q].[Email], [q].[FirstName], [q].[InformationSecure], [q].[LastName], [q].[PhoneNumber], [q].[PolicyExpiresIn], [q].[QuoteNumber], [q].[QuoteType], [q].[State], [q].[Status], [q].[TicketsIn3Years], [q].[UpdatedDate], [q].[WhenToStart], [q].[ZipCode]
+    FROM [Quotes] AS [q]
+    WHERE [q].[QuoteType] = N'Auto'
+    ORDER BY [q].[CreatedDate] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+LEFT JOIN [AutoQuotes] AS [a] ON [t].[Id] = [a].[QuoteId]
+LEFT JOIN (
+    SELECT [v].[Id], [v].[AnnualMileage], [v].[BoatUse], [v].[CollisionDeductible], [v].[ComprehensiveDeductible], [v].[CreatedDate], [v].[Deductible], [v].[DriveToWorkSchool], [v].[EngineType], [v].[HullMaterial], [v].[IsLeased], [v].[IsPrimary], [v].[Length], [v].[Make], [v].[Manufacturer], [v].[MarketValue], [v].[Model], [v].[MoreThanTwoVehicles], [v].[NumberOfEngines], [v].[QuoteId], [v].[StorageLocation], [v].[StructuralModifications], [v].[TotalHorsepower], [v].[TrailerCoverage], [v].[VehicleType], [v].[WatercraftType], [v].[WorkSchoolDistance], [v].[Year]
+    FROM [Vehicles] AS [v]
+    WHERE [v].[VehicleType] = N'Auto'
+) AS [t0] ON [t].[Id] = [t0].[QuoteId]
+LEFT JOIN (
+    SELECT [d].[Id], [d].[AccidentsTickets], [d].[CreatedDate], [d].[DateOfBirth], [d].[DriverType], [d].[Gender], [d].[IsPrimary], [d].[Married], [d].[Name], [d].[QuoteId], [d].[Status]
+    FROM [Drivers] AS [d]
+    WHERE [d].[DriverType] = N'Auto'
+) AS [t1] ON [t].[Id] = [t1].[QuoteId]
+ORDER BY [t].[CreatedDate] DESC, [t].[Id], [a].[QuoteId], [t0].[Id]
+2025-09-25 18:10:51.340 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Quotes] AS [q]
+WHERE [q].[QuoteType] = N'Auto'
+2025-09-25 18:10:51.344 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[JecaInsurance.API.Models.Quote, JecaInsurance.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-25 18:10:51.346 +05:30 [INF] Executed action JecaInsurance.API.Controllers.AutoQuoteController.GetAutoQuotes (JecaInsurance.API) in 58.1901ms
+2025-09-25 18:10:51.347 +05:30 [INF] Executed endpoint 'JecaInsurance.API.Controllers.AutoQuoteController.GetAutoQuotes (JecaInsurance.API)'
+2025-09-25 18:10:51.348 +05:30 [INF] HTTP GET /api/AutoQuote responded 200 in 66.8354 ms
+2025-09-25 18:10:51.351 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5149/api/AutoQuote?page=1&pageSize=1 - 200 null application/json; charset=utf-8 72.8776ms

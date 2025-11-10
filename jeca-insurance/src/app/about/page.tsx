@@ -10,7 +10,8 @@ import {
   GlobeAmericasIcon,
   SparklesIcon,
   StarIcon,
-  CheckCircleIcon
+  CheckCircleIcon,
+  ClipboardDocumentCheckIcon
 } from '@heroicons/react/24/outline'
 
 const stats = [
@@ -22,23 +23,23 @@ const stats = [
 
 const values = [
   {
-    name: 'Customer First',
-    description: 'We put our customers at the center of everything we do, providing personalized service and support.',
+    name: 'Expert Instructors',
+    description: 'Our training courses incorporate hands-on exercises and simulations, allowing participants to apply their skills.',
     icon: HeartIcon,
   },
   {
-    name: 'Integrity',
-    description: 'We operate with honesty, transparency, and ethical business practices in all our interactions.',
+    name: 'Hands-On Experience',
+    description: 'Our trainers are certified professionals with extensive experience.',
     icon: ShieldCheckIcon,
   },
   {
-    name: 'Excellence',
-    description: 'We strive for excellence in our products, services, and customer experience.',
+    name: 'Customized Solutions',
+    description: 'We offer tailored training solutions to meet your specific needs to enhance your skills.',
     icon: TrophyIcon,
   },
   {
-    name: 'Community',
-    description: 'We\'re committed to supporting the communities where our customers live and work.',
+    name: 'Ongoing Support',
+    description: 'We provide ongoing support and resources to help you stay updated on the latest techniques and guidelines.',
     icon: UsersIcon,
   },
 ]
@@ -172,7 +173,7 @@ export default function AboutPage() {
                 className="text-5xl font-bold tracking-tight text-white sm:text-7xl mb-6"
               >
                 About
-                <span className="bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent"> JECA</span>
+                <span className="bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent"> BONNET HEALTHCARE</span>
               </motion.h1>
 
               <motion.p
@@ -181,13 +182,11 @@ export default function AboutPage() {
                 transition={{ duration: 0.8, delay: 0.5 }}
                 className="text-xl leading-8 text-blue-100 mb-8"
               >
-                For over 50 years, JECA Insurance has been protecting families and businesses
-                with comprehensive coverage, competitive rates, and exceptional service.
-                We're more than an insurance company – we're your trusted partner in protection.
+                For over 20 years, Bonnet HealthCare has been safeguarding families and businesses with comprehensive health solutions, cost-effective plans, and superior service. We're more than a healthcare provider – we're your trusted partner in better health outcomes.
               </motion.p>
 
               {/* Trust Indicators */}
-              <motion.div
+              {/* <motion.div
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.7 }}
@@ -209,7 +208,7 @@ export default function AboutPage() {
                   <div className="text-2xl font-bold text-yellow-300">98%</div>
                   <div className="text-sm text-blue-100">Retention Rate</div>
                 </div>
-              </motion.div>
+              </motion.div> */}
             </motion.div>
           </div>
         </div>
@@ -266,7 +265,7 @@ export default function AboutPage() {
             </div>
 
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl mb-8">
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">JECA</span> Resources & Services
+              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">BONNET HEALTHCARE</span> 
             </h2>
 
             <motion.div
@@ -279,7 +278,7 @@ export default function AboutPage() {
             >
               <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 shadow-xl border border-gray-100">
                 <img
-                  src="/images/jeca-logo.png"
+                  src="/images/jeca-resources-logo.png"
                   alt="JECA Resources & Services Logo"
                   className="w-full h-auto max-w-sm mx-auto"
                 />
@@ -293,7 +292,7 @@ export default function AboutPage() {
               viewport={{ once: true }}
               className="mt-8 text-lg leading-8 text-gray-600 max-w-2xl mx-auto"
             >
-              Creating a better future for your loved ones through comprehensive insurance solutions and exceptional service.
+              Building a healthier future for your loved ones through comprehensive healthcare solutions and compassionate service.
             </motion.p>
           </motion.div>
         </div>
@@ -357,39 +356,46 @@ export default function AboutPage() {
                 Our track record speaks for itself
               </p>
             </div>
-            <dl className="mt-20 grid grid-cols-1 gap-8 overflow-hidden text-center sm:grid-cols-2 lg:grid-cols-4">
-              {stats.map((stat, index) => (
-                <motion.div
-                  key={stat.id}
-                  initial={{ opacity: 0, y: 50, scale: 0.8 }}
-                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  whileHover={{
-                    scale: 1.05,
-                    y: -5,
-                    boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)"
-                  }}
-                  className="group flex flex-col bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/20 hover:shadow-2xl transition-all duration-300"
-                >
-                  <motion.dd
-                    initial={{ scale: 0 }}
-                    whileInView={{ scale: 1 }}
-                    transition={{ type: "spring", stiffness: 200, delay: index * 0.1 + 0.3 }}
-                    viewport={{ once: true }}
-                    className="order-first text-4xl font-bold tracking-tight bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300"
-                  >
-                    {stat.value}
-                  </motion.dd>
-                  <dt className="text-sm font-semibold leading-6 text-gray-600 group-hover:text-blue-600 transition-colors">
-                    {stat.name}
-                  </dt>
-
-                  {/* Hover effect overlay */}
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </motion.div>
-              ))}
-            </dl>
+            <div className="mt-20">
+              <div className="flex items-stretch overflow-hidden rounded-2xl bg-white shadow-lg ring-1 ring-black/5">
+                {/* Rating Card (Left) */}
+                <div className="bg-blue-600 text-white w-full md:w-80 p-8 md:p-10 flex flex-col justify-center">
+                  <div className="text-5xl font-bold leading-none">4.7</div>
+                  <div className="mt-1 text-sm">of 5</div>
+                  <div className="mt-3 flex items-center gap-1">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <StarIcon key={i} className={`${i < 4 ? 'text-white' : 'text-white/60'} h-5 w-5`} />
+                    ))}
+                  </div>
+                </div>
+                {/* Achievements (Right) */}
+                <div className="flex-1 bg-white">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-8 md:p-10">
+                    <div className="flex items-center gap-4">
+                      <UsersIcon className="h-8 w-8 text-red-600" />
+                      <div>
+                        <div className="text-4xl font-bold text-gray-900">500+</div>
+                        <div className="text-sm text-gray-600">Happy Clients</div>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-4">
+                      <ClipboardDocumentCheckIcon className="h-8 w-8 text-red-600" />
+                      <div>
+                        <div className="text-4xl font-bold text-gray-900">20+</div>
+                        <div className="text-sm text-gray-600">Years experience</div>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-4">
+                      <TrophyIcon className="h-8 w-8 text-red-600" />
+                      <div>
+                        <div className="text-4xl font-bold text-gray-900">10+</div>
+                        <div className="text-sm text-gray-600">Awards Winners</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </motion.div>
         </div>
       </div>
@@ -416,11 +422,11 @@ export default function AboutPage() {
               </span>
             </div>
             <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl mb-6">
-              Our Core
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> Values</span>
+              Why Choose
+              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> Us</span>
             </h2>
             <p className="text-xl leading-8 text-gray-600">
-              These core values guide everything we do and shape how we serve our customers.
+             Bonnet HealthCare Training Center is a trusted provider of evidence‑based life‑support education. Our programs translate current guidelines into rigorous, hands‑on instruction designed to build competence, confidence, and reliable performance in time‑critical situations. Select Bonnet HealthCare as your training partner to develop practitioners who respond effectively when seconds matter. Here’s why:
             </p>
           </motion.div>
           <div className="mx-auto mt-20 max-w-2xl sm:mt-24 lg:mt-28 lg:max-w-4xl">
@@ -512,7 +518,7 @@ export default function AboutPage() {
               <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> Customers Say</span>
             </h2>
             <p className="text-xl leading-8 text-gray-600">
-              Real stories from real customers who trust JECA Insurance
+              Real stories from real customers who trust BONNET HealthCare
             </p>
           </motion.div>
 
@@ -522,7 +528,7 @@ export default function AboutPage() {
                 name: "Kevin Martin",
                 role: "Homeowner",
                 location: "Austin, TX",
-                content: "JECA Insurance made the claims process so easy when our home was damaged in a storm. Their team was responsive, professional, and got us back on our feet quickly. I couldn't be happier with their service.",
+                content: "Bonnet HealthCare delivered a high‑impact Mental Health Awareness program. The facilitator created psychological safety, encouraged thoughtful dialogue, and translated evidence‑based concepts into actionable skills. I left with clear frameworks to recognize warning signs and respond effectively, with greater empathy and confidence to support others.",
                 rating: 5,
                 image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
               },
@@ -530,7 +536,7 @@ export default function AboutPage() {
                 name: "Michael Rodriguez",
                 role: "Business Owner",
                 location: "Denver, CO",
-                content: "As a small business owner, I need insurance I can trust. JECA has been protecting my business for over 10 years. Their rates are competitive and their service is outstanding.",
+                content: "I recently completed the Safety Training program with Bonnet HealthCare , and it was outstanding from start to finish. The instructor’s deep expertise and engaging style made complex topics clear and memorable. I now confidently spot hazards and implement preventive measures—highly recommended for anyone serious about creating a safe, secure environment.",
                 rating: 5,
                 image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
               },
@@ -538,7 +544,7 @@ export default function AboutPage() {
                 name: "Jennifer Chen",
                 role: "Family Protection",
                 location: "Seattle, WA",
-                content: "When I needed life insurance for my growing family, JECA's agents took the time to explain all my options. They helped me find the perfect coverage at a price I could afford. Highly recommended!",
+                content: "This life skills program from Bonnet HealthCare Training Center exceeded expectations. CPR was taught in a way that truly sticks, learning the Heimlich maneuver felt empowering, and the Epi‑Pen training removed the fear of responding during severe allergic reactions. I’m grateful for the practical skills and the confidence to protect my family, colleagues, and community.  ",
                 rating: 5,
                 image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
               }
@@ -614,7 +620,7 @@ export default function AboutPage() {
                 whileHover={{ scale: 1.05 }}
                 className="text-center"
               >
-                <div className="text-3xl font-bold text-blue-600 mb-2">4.9/5</div>
+                <div className="text-3xl font-bold text-blue-600 mb-2">4.7/5</div>
                 <div className="text-sm text-gray-600">Customer Rating</div>
               </motion.div>
               <motion.div
@@ -644,7 +650,7 @@ export default function AboutPage() {
       </div>
 
       {/* Community Commitment */}
-      <div className="relative py-24 sm:py-32 bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700 overflow-hidden">
+      <div >
         {/* Animated Background Elements */}
         <div className="absolute inset-0">
           <motion.div
@@ -673,7 +679,7 @@ export default function AboutPage() {
           />
         </div>
 
-        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+        {/* <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-4xl text-center">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
@@ -750,7 +756,58 @@ export default function AboutPage() {
               </motion.div>
             </motion.div>
           </div>
+      </div> */}
+      {/* Our Vision Section */}
+      <div className="py-20 sm:py-24 bg-gray-50">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="text-center">
+            <div className="flex items-center justify-center gap-2 mb-3">
+              <GlobeAmericasIcon className="h-7 w-7 text-blue-600" />
+              <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-900">Our Vision</h1>
+            </div>
+            <p className=" font-semibold text-sm md:text-base">
+              To Globally change the way we think about saving lives.
+            </p>
+            <p className="mt-4 text-base md:text-lg leading-7 text-gray-600 max-w-3xl mx-auto">
+              Bonnet HealthCare Training Center is a safe and trusted organization with a proven track record of providing high-quality, evidence-based healthcare education to communities globally. Our tailored strategies and effective training solutions help participants build confidence and competence through programs backed by leading healthcare standards, where our goal is to raise awareness, improve health outcomes, and save lives.
+            </p>
+          </div>
+
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                name: 'Venice Gamble',
+                role: 'Instructor',
+                image: 'https://picsum.photos/seed/venice-gamble/1200/800',
+              },
+              {
+                name: 'Michelle Clark',
+                role: 'Trainer',
+                image: 'https://picsum.photos/seed/michelle-clark/1200/800',
+              },
+              {
+                name: 'Betty Gray',
+                role: 'RNC-BC, PMHN, CCAP',
+                image: 'https://picsum.photos/seed/betty-gray/1200/800',
+              },
+            ].map((person) => (
+              <div key={person.name} className="space-y-3">
+                <div className="rounded-2xl overflow-hidden shadow-md bg-white">
+                  <img
+                    src={person.image}
+                    alt={person.name}
+                    className="w-full h-72 md:h-80 object-cover"
+                  />
+                </div>
+                <div>
+                  <div className="text-gray-900 font-semibold">{person.name}</div>
+                  <div className="text-xs text-gray-500">{person.role}</div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
+      </div>
       </div>
     </div>
   )

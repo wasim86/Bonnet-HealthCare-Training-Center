@@ -8,42 +8,42 @@ import { ChevronLeftIcon, ChevronRightIcon, SparklesIcon } from '@heroicons/reac
 const testimonials = [
   {
     id: 1,
-    content: "JECA Insurance made the claims process so easy after my car accident. Their customer service team was incredibly helpful and responsive throughout the entire process.",
-    author: "Sarah Johnson",
-    role: "Auto Insurance Customer",
-    location: "Austin, TX",
+    content: "Bonnet HealthCare Training Center completely transformed my understanding of CPR and BLS protocols. The instructors are not just knowledgeable—they're passionate about ensuring every participant truly understands the techniques. The hands-on practice with mannequins and real-scenario simulations made all the difference. I felt genuinely prepared when I returned to the ED. Highly recommended for all healthcare professionals!",
+    author: "Sarah Mitchell, RN",
+    role: "Emergency Department Nurse",
+    location: "Miami, FL",
     rating: 5,
   },
   {
     id: 2,
-    content: "I've been with JECA for over 10 years and they've consistently provided excellent coverage at competitive rates. When I had a house fire, they handled everything professionally.",
-    author: "Michael Chen",
-    role: "Home & Auto Insurance Customer",
+    content: "I've taken CPR training at multiple centers over my 15-year career. Bonnet HealthCare Training Center is hands-down the best. The trainers make complex emergency protocols easy to understand, the practice scenarios feel incredibly realistic, and the supportive learning environment builds real confidence. I'm recommending Bonnet to our entire department. This is the standard all training centers should aspire to.",
+    author: "James Rodriguez",
+    role: "Paramedic",
     location: "Seattle, WA",
     rating: 5,
   },
   {
     id: 3,
-    content: "As a small business owner, finding the right insurance was crucial. JECA's business insurance gave me peace of mind and their agents really understood my industry needs.",
-    author: "Emily Rodriguez",
-    role: "Business Insurance Customer",
-    location: "Miami, FL",
+    content: "Before Bonnet HealthCare Training Center, I was nervous about emergency response. After completing the First Aid and CPR course, I feel genuinely confident in my abilities. The trainers created a safe learning environment where asking questions was encouraged. The real-life case studies and practical demonstrations made everything click. This training changed my entire perspective on being prepared to save lives.",
+    author: "Maria Santos",
+    role: "Nursing Student",
+    location: "Broward County Schools, FL",
     rating: 5,
   },
   {
     id: 4,
-    content: "The life insurance process was straightforward and the agent explained everything clearly. I feel confident that my family is protected with JECA's coverage.",
-    author: "David Thompson",
-    role: "Life Insurance Customer",
+    content: "I was worried about fitting training into my busy schedule as a working single mom. Bonnet HealthCare Training Center was incredibly accommodating and flexible with scheduling options. The evening and weekend classes worked perfectly for me, and the training exceeded my expectations. The instructors were professional, patient, and engaging. I left feeling genuinely prepared and certified. Highly recommend!",
+    author: "Jessica Thompsonn",
+    role: "Dental Assistant",
     location: "Denver, CO",
     rating: 5,
   },
   {
     id: 5,
-    content: "Switching to JECA saved me hundreds on my auto insurance without sacrificing coverage. Their online tools make managing my policy incredibly convenient.",
-    author: "Lisa Park",
-    role: "Auto Insurance Customer",
-    location: "Phoenix, AZ",
+    content: "Bonnet HealthCare Training Center stays current with the latest American Heart Association guidelines and evidence-based practices. We attended their updated BLS and ACLS certification courses last month, and the content reflected the newest 2024 protocols perfectly. The trainers clearly have deep clinical expertise and real-world experience. We'll be sending all our providers and staff here for recurring training and recertification.",
+    author: "Dr. Rajesh Patel, DO",
+    role: "Medical Director",
+    location: "CareNow Urgent Care, Plantation, FL",
     rating: 5,
   },
 ]
@@ -115,7 +115,7 @@ export default function TestimonialsSection() {
             <span className="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent"> Say</span>
           </h2>
           <p className="text-xl leading-8 text-gray-300">
-            Don't just take our word for it. Here's what real customers have to say about their experience with JECA Insurance.
+            See the real impact of our training. Here are testimonials from healthcare professionals, nurses, physicians, and organizations who have trusted Bonnet HealthCare Training Center to enhance their emergency response capabilities and save lives.
           </p>
         </motion.div>
 
@@ -239,7 +239,7 @@ export default function TestimonialsSection() {
                 transition={{ type: "spring", stiffness: 200, delay: 0.6 }}
                 viewport={{ once: true }}
               >
-                4.9/5
+                4.7/5
               </motion.div>
               <div className="text-white font-medium mb-2">Customer Rating</div>
               <div className="flex justify-center space-x-1">
@@ -292,7 +292,7 @@ export default function TestimonialsSection() {
               >
                 24/7
               </motion.div>
-              <div className="text-white font-medium">Claims Support</div>
+              <div className="text-white font-medium"> Support</div>
             </motion.div>
           </div>
         </motion.div>

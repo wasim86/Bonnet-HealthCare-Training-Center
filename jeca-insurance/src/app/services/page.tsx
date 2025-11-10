@@ -81,90 +81,240 @@ export default function ServicesPage() {
               Our Services
             </h1>
             <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-              Comprehensive insurance services designed to make your life easier. From claims to consultations, we're here to help.
+             Explore our comprehensive training programs: CPR, AED, ACLS, BLS, Heart Savers First Aid, and more.
             </p>
           </motion.div>
         </div>
       </div>
+      {/* Three Service Cards - Exact Replica */}
+      <div className="bg-gradient-to-r from-rose-50 to-fuchsia-50 py-14">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+            {/* ACLS */}
+            <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+              <img
+                src="https://www.emrsafetyandhealth.com/wp-content/uploads/2020/05/aha-button-acls-768x453.jpg"
+                alt="ACLS training"
+                className="w-full h-44 md:h-48 object-cover"
+              />
+              <div className="p-5 md:p-6">
+                <h3 className="text-gray-900 font-semibold text-lg mb-2">ACLS</h3>
+                <p className="text-gray-600 text-sm leading-6 mb-4">
+                  We provide specialized ACLS training for physicians, nurses, paramedics, and other healthcare professionals.
+                </p>
+                <a href="/services/advanced-cardiovascular-life-support-acls" className="inline-flex items-center text-red-600 font-semibold text-sm">
+                  Learn More
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="h-4 w-4 ml-2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                  </svg>
+                </a>
+              </div>
+            </div>
 
-      {/* Featured Services */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Featured Services</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Our most popular services to help you manage your insurance needs efficiently.
-          </p>
-        </motion.div>
+            {/* BLS  */}
+            <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+              <img
+                src="https://nationalcprfoundation.com/wp-content/uploads/2019/12/Who-needs-BLS-certification-814x308.jpg"
+                alt="BLS"
+                className="w-full h-44 md:h-48 object-cover"
+              />
+              <div className="p-5 md:p-6">
+                <h3 className="text-gray-900 font-semibold text-lg mb-2">BLS  </h3>
+                <p className="text-gray-600 text-sm leading-6 mb-4">
+                  We offer BLS training for healthcare workers, first responders, and individuals in high-risk environments.
+                </p>
+                <a href="/services/basic-life-support-bls" className="inline-flex items-center text-red-600 font-semibold text-sm">
+                  Learn More
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="h-4 w-4 ml-2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                  </svg>
+                </a>
+              </div>
+            </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-          {featuredServices.map((service, index) => (
-            <motion.div
-              key={service.title}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 + 0.3 }}
-            >
-              <Link
-                href={service.href}
-                className="block bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 p-6 h-full group border-l-4 border-blue-500"
-              >
-                <div className="text-4xl mb-4">{service.icon}</div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600 mb-4 text-sm">{service.description}</p>
-                <div className="text-blue-600 font-medium group-hover:text-blue-700 transition-colors text-sm">
-                  Learn More →
-                </div>
-              </Link>
-            </motion.div>
-          ))}
-        </div>
+             {/* Hands only CPR */}
+            <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+              <img
+                src="https://www.tfp1.com/wp-content/uploads/2024/03/tfp-cpr-06-450x300.jpg"
+                alt="Hands only CPR"
+                className="w-full h-44 md:h-48 object-cover"
+              />
+              <div className="p-5 md:p-6">
+                <h3 className="text-gray-900 font-semibold text-lg mb-2">Hands only CPR</h3>
+                <p className="text-gray-600 text-sm leading-6 mb-4">
+                  Our CPR program serves healthcare professionals, first responders, and individuals committed to emergency preparedness.
+                </p>
+                <a href="/services/cardiopulmonary-resuscitation-cpr" className="inline-flex items-center text-red-600 font-semibold text-sm">
+                  Learn More
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="h-4 w-4 ml-2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                  </svg>
+                </a>
+              </div>
+            </div>
 
-        {/* Other Services */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.7 }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Additional Services</h2>
-        </motion.div>
+             {/* AED */}
+            <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+              <img
+                src="https://www.c2cfirstaidaquatics.com/wp-content/uploads/2017/02/How-to-Handle-Medical-Emergencies-1536x864.jpg"
+                alt="AED"
+                className="w-full h-44 md:h-48 object-cover"
+              />
+              <div className="p-5 md:p-6">
+                <h3 className="text-gray-900 font-semibold text-lg mb-2">AED</h3>
+                <p className="text-gray-600 text-sm leading-6 mb-4">
+                 Our comprehensive AED certification program is designed for healthcare workers, first responders, and individuals who want to be fully prepared for critical life-threatening situations.
+                </p>
+                <a href="/services/automated-external-defibrillator-aed" className="inline-flex items-center text-red-600 font-semibold text-sm">
+                  Learn More
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="h-4 w-4 ml-2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                  </svg>
+                </a>
+              </div>
+            </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {otherServices.map((service, index) => (
-            <motion.div
-              key={service.title}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 + 0.8 }}
-            >
-              <Link
-                href={service.href}
-                className="block bg-white rounded-lg shadow hover:shadow-lg transition-all duration-300 p-4 h-full group"
-              >
-                <div className="text-3xl mb-3">{service.icon}</div>
-                <h3 className="text-md font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600 text-sm">{service.description}</p>
-              </Link>
-            </motion.div>
-          ))}
+             {/* Heart Savers First AID */}
+            <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+              <img
+                src="https://every1heartmatters.com/wp-content/uploads/2023/06/240_F_196212215_mlHrA2B0sSyNz12pcxKRuNIJ6WVllVXN.jpg"
+                alt="Heart Savers First AID"
+                className="w-full h-44 md:h-48 object-cover"
+              />
+              <div className="p-5 md:p-6">
+                <h3 className="text-gray-900 font-semibold text-lg mb-2">Heart Savers First AID</h3>
+                <p className="text-gray-600 text-sm leading-6 mb-4">
+                  Our Heart Savers First Aid program serves workplace personnel, educators, parents, caregivers, and anyone committed to first aid readiness.
+                </p>
+                <a href="/services/heart-savers-first-aid" className="inline-flex items-center text-red-600 font-semibold text-sm">
+                  Learn More
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="h-4 w-4 ml-2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+             {/* Heimlich Maneuver */}
+            <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+              <img
+                src="https://i0.wp.com/aeromd.com/wp-content/uploads/2016/01/bigstock-195171445.jpg"
+                alt="Heimlich Maneuver"
+                className="w-full h-44 md:h-48 object-cover"
+              />
+              <div className="p-5 md:p-6">
+                <h3 className="text-gray-900 font-semibold text-lg mb-2">Heimlich Maneuver</h3>
+                <p className="text-gray-600 text-sm leading-6 mb-4">
+                  ur Heimlich Maneuver training is for anyone wanting to learn this vital technique—healthcare professionals, educators, parents, caregivers, and more.
+                </p>
+                <a href="/services/heimlich-maneuve" className="inline-flex items-center text-red-600 font-semibold text-sm">
+                  Learn More
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="h-4 w-4 ml-2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            {/* EPI-PEN Training */}
+            <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+              <img
+                src="https://www.scnsc.org/sites/default/files/styles/resources_image/public/images/products/EpiPen.jpeg.webp?itok=aVlArPl8"
+                alt="EPI-PEN Training"
+                className="w-full h-44 md:h-48 object-cover"
+              />
+              <div className="p-5 md:p-6">
+                <h3 className="text-gray-900 font-semibold text-lg mb-2">EPI-PEN Training</h3>
+                <p className="text-gray-600 text-sm leading-6 mb-4">
+                  Bonnet Healthcare Training Center provides comprehensive Epi-Pen certification for healthcare professionals, caregivers, and individuals across all backgrounds.
+                </p>
+                <a href="/services/epi-pen" className="inline-flex items-center text-red-600 font-semibold text-sm">
+                  Learn More
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="h-4 w-4 ml-2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+     
+      {/* Latest Training Courses */}
+      <section aria-labelledby="latest-courses" className="bg-white py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2 id="latest-courses" className="text-3xl md:text-4xl font-bold text-gray-900">Current Professional Training Offerings</h2>
+            <p className="mt-4 max-w-3xl mx-auto text-gray-600">
+              At Bonnet Healthcare Training Center, we're excited to share our newest training programs that teach you the latest life-saving techniques in an easy-to-understand way.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Course 1 */}
+            <Link href="#" aria-label="Professional classroom training" className="group focus:outline-none focus:ring-2 focus:ring-blue-600 rounded-2xl">
+              <img
+                src="https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                alt="Participants in a classroom training with laptops"
+                className="w-full h-48 object-cover rounded-2xl shadow-sm ring-1 ring-gray-200 group-hover:shadow-md transition"
+              />
+            </Link>
+
+            {/* Course 2 */}
+            <Link href="#" aria-label="Corporate training session" className="group focus:outline-none focus:ring-2 focus:ring-blue-600 rounded-2xl">
+              <img
+                src="https://every1heartmatters.com/wp-content/uploads/2023/06/240_F_195067848_mZ18wn4KUYYkI1BvGNtDrbD8GTGC7GZk.jpg"
+                alt="Corporate training group discussion"
+                className="w-full h-48 object-cover rounded-2xl shadow-sm ring-1 ring-gray-200 group-hover:shadow-md transition"
+              />
+            </Link>
+
+            {/* Course 3 */}
+            <Link href="#" aria-label="Mental health awareness training" className="group focus:outline-none focus:ring-2 focus:ring-blue-600 rounded-2xl">
+              <img
+                src="https://images.pexels.com/photos/3810756/pexels-photo-3810756.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                alt="Instructor presenting health awareness on a whiteboard"
+                className="w-full h-48 object-cover rounded-2xl shadow-sm ring-1 ring-gray-200 group-hover:shadow-md transition"
+              />
+            </Link>
+
+            {/* Course 4 */}
+            <Link href="#" aria-label="Hands-on CPR training with manikins" className="group focus:outline-none focus:ring-2 focus:ring-blue-600 rounded-2xl">
+              <img
+                src="https://every1heartmatters.com/wp-content/uploads/2023/06/Untitled-design-16.png"
+                alt="Hands-on CPR practice with manikins"
+                className="w-full h-48 object-cover rounded-2xl shadow-sm ring-1 ring-gray-200 group-hover:shadow-md transition"
+              />
+            </Link>
+
+            {/* Course 5 */}
+            <Link href="#" aria-label="First aid bandaging practice" className="group focus:outline-none focus:ring-2 focus:ring-blue-600 rounded-2xl">
+              <img
+                src="https://images.pexels.com/photos/3763873/pexels-photo-3763873.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                alt="First aid bandaging practice session"
+                className="w-full h-48 object-cover rounded-2xl shadow-sm ring-1 ring-gray-200 group-hover:shadow-md transition"
+              />
+            </Link>
+
+            {/* Course 6 */}
+            <Link href="#" aria-label="On-site safety training for workers" className="group focus:outline-none focus:ring-2 focus:ring-blue-600 rounded-2xl">
+              <img
+                src="https://every1heartmatters.com/wp-content/uploads/2023/06/240_F_603239501_8HbTZsqORNHxgohTgLKFsWoDfsVE0hAR.jpg"
+                alt="On-site safety training for industrial workers"
+                className="w-full h-48 object-cover rounded-2xl shadow-sm ring-1 ring-gray-200 group-hover:shadow-md transition"
+              />
+            </Link>
+          </div>
+        </div>
+      </section>
+
 
       {/* Contact Section */}
       <div className="bg-blue-600 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-6">Need Immediate Assistance?</h2>
+          <h2 className="text-3xl font-bold mb-6">Require Urgent Support?</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Our customer service team is available 24/7 to help with your insurance needs.
+            Our team is available 24/7 to support your healthcare training journey.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -174,10 +324,10 @@ export default function ServicesPage() {
               Contact Us
             </Link>
             <Link
-              href="tel:877-501-5460"
+              href="tel:954-709-8196"
               className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors"
             >
-              Call 877-501-5460
+              Call 954-709-8196
             </Link>
           </div>
         </div>
@@ -185,3 +335,4 @@ export default function ServicesPage() {
     </div>
   )
 }
+

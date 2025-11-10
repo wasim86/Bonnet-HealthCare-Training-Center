@@ -16,44 +16,60 @@ import {
 const quoteCategories = [
   {
     id: 'auto',
-    name: 'Auto Insurance',
-    description: 'Vehicle protection for cars, trucks, motorcycles',
+    name: 'ACLS',
+    description: 'ACLS training empowers healthcare professionals to manage cardiac...',
     icon: TruckIcon,
     color: 'from-blue-600 to-indigo-700',
-    href: 'https://www.agentinsure.com/compare/auto-insurance-home-insurance/jeca/quote.aspx'
+    href: '/services/advanced-cardiovascular-life-support-acls'
   },
   {
     id: 'health',
-    name: 'Health Insurance',
-    description: 'Medical coverage for individuals and families',
+    name: 'BLS',
+    description: 'BLS training turns individuals into capable first responders.',
     icon: HeartIcon,
     color: 'from-green-600 to-emerald-700',
-    href: '/quote/health'
+    href: '/services/basic-life-support-bls'
   },
   {
     id: 'life',
-    name: 'Life & Financial',
-    description: 'Life insurance and financial protection',
+    name: 'Hands Only CPR',
+    description: 'Our CPR courses provide practical, hands-on training through simulations.',
     icon: HeartIcon,
     color: 'from-amber-600 to-red-600',
-    href: '/quotes/life-financial/life'
+    href: '/services/cardiopulmonary-resuscitation-cpr'
   },
   {
     id: 'home',
-    name: 'Home Owner Insurance',
-    description: 'Protect your home and belongings',
+    name: 'AED',
+    description: 'Our AED training provides hands-on, confidence-building experience.',
     icon: HomeIcon,
     color: 'from-purple-600 to-pink-600',
-    href: 'https://www.agentinsure.com/compare/auto-insurance-home-insurance/jeca/quote.aspx'
+    href: '/services/automated-external-defibrillator-aed'
   },
   {
-    id: 'business',
-    name: 'Business Insurance',
-    description: 'Coverage for your business needs',
+    id: 'first-aid',
+    name: 'Heart Savers First AID',
+    description: 'Everyone deserves access to comprehensive first aid training.',
     icon: BuildingOfficeIcon,
     color: 'from-gray-600 to-slate-700',
-    href: '/quote/business'
+    href: '/services/heart-savers-first-aid'
   },
+   {
+    id: 'heimlich',
+    name: 'Heimlich Maneuve',
+    description: 'Heimlich training: step-by-step abdominal thrusts to clear airways.',
+    icon: BuildingOfficeIcon,
+    color: 'from-gray-600 to-slate-700',
+    href: '/services/heimlich-maneuve'
+  },
+  //  {
+  //   id: 'first-aid',
+  //   name: 'EPI-PEN',
+  //   description: 'Epi‑Pen training is essential for at‑risk individuals.',
+  //   icon: TruckIcon,
+  //   color: 'from-blue-600 to-slate-700',
+  //   href: '/quote/business'
+  // },
 ]
 
 export default function HeroSection() {
@@ -126,8 +142,8 @@ export default function HeroSection() {
                 >
                   <SparklesIcon className="h-5 w-5 sm:h-6 sm:w-6 text-yellow-400" />
                 </motion.div>
-                <span className="text-yellow-400 font-semibold text-xs sm:text-sm tracking-wider uppercase">
-                  Premium Protection
+                <span className="text-yellow-400 font-semibold text-lg lg:text-lg tracking-wider">
+                  Welcome to Bonnet Healthcare Training Center – Committed to Lifesaving Skills and Compassionate Care Education.
                 </span>
               </div>
 
@@ -137,7 +153,7 @@ export default function HeroSection() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 }}
                 >
-                  Get Your Perfect
+                  Building Hope, 
                 </motion.span>
                 <br />
                 <motion.span
@@ -146,7 +162,8 @@ export default function HeroSection() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}
                 >
-                  Insurance Quote
+                  Shaping Tomorrow
+
                 </motion.span>
               </h1>
 
@@ -156,8 +173,7 @@ export default function HeroSection() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6 }}
               >
-                Compare rates from top insurers and find comprehensive coverage tailored to your needs.
-                Quick, easy, and personalized quotes available in minutes.
+                At Bonnet Healthcare Training Center, we truly believe that taking care of your mental health is just as important as taking care of your physical health. Our mission is to make mental health education accessible to everyone by offering hands-on training and learning opportunities. We’re here to help people gain the confidence and knowledge they need to understand, support, and strengthen mental well-being in their own lives and in their communities.
               </motion.p>
 
               <motion.div
@@ -166,12 +182,12 @@ export default function HeroSection() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8 }}
               >
-                <div className="bg-black bg-opacity-20 backdrop-blur-sm rounded-xl px-4 py-2 border border-white border-opacity-30">
-                  <span className="text-white font-semibold text-xs sm:text-sm">✓ Instant Quotes</span>
+                {/* <div className="bg-black bg-opacity-20 backdrop-blur-sm rounded-xl px-4 py-2 border border-white border-opacity-30">
+                  <span className="text-white font-semibold text-xs sm:text-sm">Make An Appointment</span>
                 </div>
                 <div className="bg-black bg-opacity-20 backdrop-blur-sm rounded-xl px-4 py-2 border border-white border-opacity-30">
-                  <span className="text-white font-semibold text-xs sm:text-sm">✓ Best Rates</span>
-                </div>
+                  <span className="text-white font-semibold text-xs sm:text-sm">Learn More</span>
+                </div> */}
                 <div className="bg-black bg-opacity-20 backdrop-blur-sm rounded-xl px-4 py-2 border border-white border-opacity-30">
                   <span className="text-white font-semibold text-xs sm:text-sm">✓ Expert Support</span>
                 </div>
@@ -190,10 +206,10 @@ export default function HeroSection() {
                 className="relative"
               >
                 {/* Categories Container */}
-                <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20 shadow-2xl max-w-md mx-auto lg:mx-0">
+                <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20 shadow-2xl max-w-md mx-auto ml-30">
                   <div className="text-center mb-4 sm:mb-6">
-                    <h3 className="text-lg sm:text-xl font-bold text-white mb-2">Choose Your Insurance</h3>
-                    <p className="text-sm text-gray-300">Click on any category to get your quote instantly</p>
+                    <h3 className="text-lg sm:text-xl font-bold text-white mb-2">Choose Our Services</h3>
+                    <p className="text-sm text-gray-300">Click on Services to get more details about it</p>
                   </div>
 
                   {/* Insurance Category Selector */}
@@ -221,16 +237,16 @@ export default function HeroSection() {
 
                   <div className="mt-4 text-center">
                     <Link
-                      href="/quotes"
+                      href="/services"
                       className="text-blue-300 hover:text-blue-200 text-sm font-medium transition-colors duration-200"
                     >
-                      View All Quote Options →
+                      View All Services Options →
                     </Link>
                   </div>
 
-                  <p className="text-center text-gray-400 text-xs mt-3">
-                    Instant quotes, no hidden fees. Compare rates in under 2 minutes.
-                  </p>
+                  {/* <p className="text-center text-gray-400 text-xs mt-3">
+                    Instant services, no hidden fees. Compare rates in under 2 minutes.
+                  </p> */}
                 </div>
               </motion.div>
 
@@ -242,3 +258,4 @@ export default function HeroSection() {
     </div>
   )
 }
+

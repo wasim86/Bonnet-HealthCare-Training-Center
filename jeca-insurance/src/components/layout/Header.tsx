@@ -28,142 +28,95 @@ interface NavigationItem {
 
 const navigation: NavigationItem[] = [
   { name: 'Home', href: '/' },
-  {
-    name: 'Quotes',
-    href: '/quotes',
-    dropdown: [
-      {
-        name: 'Auto Quotes',
-        href: '#',
-        hasSubmenu: true,
-        submenu: [
-          { name: 'Auto Insurance Quote', href: 'https://www.agentinsure.com/compare/auto-insurance-home-insurance/jeca/quote.aspx', external: true },
-          { name: 'Boat Insurance Quote', href: 'https://www.agentinsure.com/compare/auto-insurance-home-insurance/jeca/quote.aspx', external: true },
-          { name: 'Motorcycle Insurance Quote', href: 'https://www.agentinsure.com/compare/auto-insurance-home-insurance/jeca/quote.aspx', external: true },
-        ]
-      },
-      {
-        name: 'Home Owner Quotes',
-        href: '#',
-        hasSubmenu: true,
-        submenu: [
-          { name: 'Home Insurance Quote', href: 'https://www.agentinsure.com/compare/auto-insurance-home-insurance/jeca/quote.aspx', external: true },
-          { name: 'Flood Insurance Quote', href: 'https://www.agentinsure.com/compare/auto-insurance-home-insurance/jeca/quote.aspx', external: true },
-          { name: 'Landlords Insurance Quote', href: 'https://www.agentinsure.com/compare/auto-insurance-home-insurance/jeca/quote.aspx', external: true },
-          { name: 'Renters Insurance Quote', href: 'https://www.agentinsure.com/compare/auto-insurance-home-insurance/jeca/quote.aspx', external: true },
-        ]
-      },
-      {
-        name: 'Business Quotes',
-        href: '#',
-        hasSubmenu: true,
-        submenu: [
-          { name: 'Business Insurance Quote', href: '/quote/business' },
-          { name: 'Business Owner Package(BOP)', href: '/quote/bop' },
-          { name: 'Workers Compensation Quote', href: '/quote/workers-comp' },
-        ]
-      },
-      {
-        name: 'Health Quotes',
-        href: '#',
-        hasSubmenu: true,
-        submenu: [
-          { name: 'Health Insurance Quote', href: '/quote/health' },
-          { name: 'Dental Insurance quote', href: '/quotes/health/dental' },
-          { name: 'Medicare Advantage Plan Quote', href: '/quotes/health/medicare-advantage' },
-          { name: 'Medicare Supplement Coverage Quote', href: '/quotes/health/medicare-supplement' },
-          { name: 'Vision Insurance Quote', href: '/quotes/health/vision' },
-        ]
-      },
-      {
-        name: 'Life & Financial Quotes',
-        href: '#',
-        hasSubmenu: true,
-        submenu: [
-          { name: 'Life Insurance Quote', href: '/quotes/life-financial/life' },
-          { name: 'Annuity Quote', href: '/quotes/life-financial/annuity' },
-          { name: 'Disability Insurance Quote', href: '/quotes/life-financial/disability' },
-          { name: 'Umbrella Insurance Quote', href: '/quotes/life-financial/umbrella' },
-        ]
-      }
-      //{ name: 'Other Quotes', href: '/quotes/other' },
-    ]
-  },
+  { name: 'About Us', href: '/about' },
+  
   {
     name: 'Services',
     href: '/services',
     dropdown: [
-      { name: 'Report A Claim', href: '/services/report-claim' },
-      { name: 'Policy Review', href: '/services/policy-review' },
-      { name: 'Update Contact Info', href: '/services/update-contact' },
-      { name: 'Proof of Insurance', href: '/services/proof-insurance' },
-      { name: 'Free Consultation', href: '/services/consultation' },
-      { name: 'Online Documents', href: '/services/documents' },
-      { name: 'JECA Tax Services', href: 'https://www.jecataxservices.com/', external: true },
-      { name: 'Blog', href: '/blog' },
+      { name: 'ACLS', href: '/services/advanced-cardiovascular-life-support-acls/' },
+      { name: 'BLS', href: '/services/basic-life-support-bls/' },
+      { name: 'Hands only CPR', href: '/services/cardiopulmonary-resuscitation-cpr/' },
+      { name: 'AED', href: '/services/automated-external-defibrillator-aed/' },
+      { name: 'Heart Savers First AID', href: '/services/heart-savers-first-aid/' },
+      { name: 'Heimlich Maneuve', href: '/services/heimlich-maneuve/' },
+      // { name: 'JECA Tax Services', href: 'https://www.jecataxservices.com/', external: true },
+      { name: 'EPI-PEN', href: '/services/epi-pen/' },
     ]
   },
+  
   {
-    name: 'Insurance',
-    href: '/insurance',
+    name: 'Education Services',
+    href: '/Education-Services',
     dropdown: [
       {
-        name: 'Vehicles',
-        href: '#',
-        hasSubmenu: true,
-        submenu: [
-          { name: 'Auto Insurance', href: '/insurance/vehicles/auto' },
-          { name: 'Boat Insurance', href: '/insurance/vehicles/boat' },
-          { name: 'Motorcycle Insurance', href: '/insurance/vehicles/motorcycle' },
-        ]
+        name: 'Life Skills Education',
+        href: '/Education-Services/life-skills-education/',
+        hasSubmenu: false,
+        // submenu: [
+        //   { name: 'Life Skills Education', href: '/insurance/vehicles/auto' },
+        //   { name: 'Boat Insurance', href: '/insurance/vehicles/boat' },
+        //   { name: 'Motorcycle Insurance', href: '/insurance/vehicles/motorcycle' },
+        // ]
       },
       {
-        name: 'Home Owner',
-        href: '#',
-        hasSubmenu: true,
-        submenu: [
-          { name: 'Home Insurance', href: '/insurance/property/home' },
-          { name: 'Flood Insurance', href: '/insurance/property/flood' },
-          { name: 'Landlords\' Insurance', href: '/insurance/property/landlords' },
-          { name: 'Renters Insurance', href: '/insurance/property/renters' },
-        ]
+        name: 'Infection Control',
+        href: '/Education-Services/infection-control/',
+        hasSubmenu: false,
+        // submenu: [
+        //   { name: 'Home Insurance', href: '/insurance/property/home' },
+        //   { name: 'Flood Insurance', href: '/insurance/property/flood' },
+        //   { name: 'Landlords\' Insurance', href: '/insurance/property/landlords' },
+        //   { name: 'Renters Insurance', href: '/insurance/property/renters' },
+        // ]
       },
       {
-        name: 'Business',
-        href: '#',
-        hasSubmenu: true,
-        submenu: [
-          { name: 'Business Insurance', href: '/insurance/business/general' },
-          { name: 'Business Owner\'s Package (BOP)', href: '/insurance/business/bop' },
-          { name: 'Workers Compensation', href: '/insurance/business/workers-comp' },
-        ]
+        name: 'Safety',
+        href: '/Education-Services/safety/',
+        hasSubmenu: false,
+        // submenu: [
+        //   { name: 'Business Insurance', href: '/insurance/business/general' },
+        //   { name: 'Business Owner\'s Package (BOP)', href: '/insurance/business/bop' },
+        //   { name: 'Workers Compensation', href: '/insurance/business/workers-comp' },
+        // ]
       },
       {
-        name: 'Health',
-        href: '#',
-        hasSubmenu: true,
-        submenu: [
-          { name: 'Health Insurance', href: '/insurance/health/individual' },
-          { name: 'Dental Insurance', href: '/insurance/health/dental' },
-          { name: 'Medicare Advantage Plans', href: '/insurance/health/medicare-advantage' },
-          { name: 'Medicare Supplement Insurance', href: '/insurance/health/medicare-supplement' },
-          { name: 'Vision Insurance', href: '/insurance/health/vision' },
-        ]
+        name: 'Medication Safety',
+        href: '/Education-Services/medication-safety/',
+        hasSubmenu: false,
+        // submenu: [
+        //   { name: 'Health Insurance', href: '/insurance/health/individual' },
+        //   { name: 'Dental Insurance', href: '/insurance/health/dental' },
+        //   { name: 'Medicare Advantage Plans', href: '/insurance/health/medicare-advantage' },
+        //   { name: 'Medicare Supplement Insurance', href: '/insurance/health/medicare-supplement' },
+        //   { name: 'Vision Insurance', href: '/insurance/health/vision' },
+        // ]
       },
       {
-        name: 'Life/Financial',
-        href: '#',
-        hasSubmenu: true,
-        submenu: [
-          { name: 'Life Insurance', href: '/insurance/life-financial/life' },
-          { name: 'Annuities', href: '/insurance/life-financial/annuities' },
-          { name: 'Disability Insurance', href: '/insurance/life-financial/disability' },
-          { name: 'Umbrella Insurance', href: '/insurance/life-financial/umbrella' },
-        ]
+        name: 'Mental Health awareness',
+        href: '/Education-Services/mental-health-awareness/',
+        hasSubmenu: false,
+        // submenu: [
+        //   { name: 'Life Insurance', href: '/insurance/life-financial/life' },
+        //   { name: 'Annuities', href: '/insurance/life-financial/annuities' },
+        //   { name: 'Disability Insurance', href: '/insurance/life-financial/disability' },
+        //   { name: 'Umbrella Insurance', href: '/insurance/life-financial/umbrella' },
+        // ]
+      },
+      {
+        name: 'Stress Relief Training',
+        href: '/Education-Services/stress-relief-training/',
+        hasSubmenu: false,
+        // submenu: [
+        //   { name: 'Life Insurance', href: '/insurance/life-financial/life' },
+        //   { name: 'Annuities', href: '/insurance/life-financial/annuities' },
+        //   { name: 'Disability Insurance', href: '/insurance/life-financial/disability' },
+        //   { name: 'Umbrella Insurance', href: '/insurance/life-financial/umbrella' },
+        // ]
       },
     ]
   },
-  { name: 'About Us', href: '/about' },
+  // { name: 'About Us', href: '/about' },
   { name: 'Contact Us', href: '/contact' },
 ]
 
@@ -191,13 +144,13 @@ export default function Header() {
 
   return (
     <header className="bg-white shadow-lg sticky top-0 z-50">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between p-4 sm:p-6 lg:px-8" aria-label="Global">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between p-4 sm:p-6 lg:px-0" aria-label="Global">
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
             <img
               src="/images/jeca-resources-logo.png"
               alt="JECA Resources & Services"
-              className="h-14 w-auto"
+              className="h-18 w-auto"
             />
           </Link>
         </div>
@@ -214,7 +167,7 @@ export default function Header() {
           </button>
         </div>
 
-        <div className="hidden lg:flex lg:gap-x-6 xl:gap-x-8">
+        <div className="hidden lg:flex lg:gap-x-6 xl:gap-x-3">
           {navigation.map((item, index) => (
             <motion.div
               key={item.name}
@@ -336,19 +289,27 @@ export default function Header() {
             Log in
           </Link>*/}
           <a
-            href="https://customerservice.agentinsure.com/EzlynxCustomerService/jeca/Account/LogIn"
-            target="_blank"
+            href="/contact"
+            // target="_blank"
             rel="noopener noreferrer"
-            className="rounded-md bg-gray-600 px-4 py-2.5 lg:px-3.5 lg:py-2.5 xl:px-4 xl:py-3 text-sm lg:text-sm xl:text-base font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600 transition-all duration-200 hover:shadow-md"
+            className="rounded-md bg-blue-600 px-4 py-2.5 lg:px-3.5 lg:py-2.5 xl:px-4 xl:py-3 text-sm lg:text-sm xl:text-base font-semibold text-white shadow-sm hover:bg-blue-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600 transition-all duration-200 hover:shadow-md"
           >
-            Client Portal
+           Make An Appointment
           </a>
-          <Link
-            href="/quote"
-            className="rounded-md bg-blue-600 px-4 py-2.5 lg:px-3.5 lg:py-2.5 xl:px-4 xl:py-3 text-sm lg:text-sm xl:text-base font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transition-all duration-200 hover:shadow-md"
-          >
-            Get Quote
-          </Link>
+          {/* Right: contact information */}
+            <div className="flex flex-col items-start md:items-end justify-center">
+              {/* <h6 className="  font-semibold text-gray-900">Get in Touch! Call or Text</h6> */}
+              <div className="mt-2 flex items-center gap-2">
+                <PhoneIcon className="h-6 w-6 ml-2 text-green-700" aria-hidden="true" />
+                <a
+                  href="tel:9547098196"
+                  className="text-blue-800 text-lg hover:text-blue-400 font-medium tracking-wide"
+                  aria-label="Call 954-709-8196"
+                >
+                  954-709-8196
+                </a>
+              </div>
+            </div>
         </div>
       </nav>
       

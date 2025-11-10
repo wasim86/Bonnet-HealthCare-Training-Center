@@ -215,7 +215,7 @@ export default function HomeInsurancePage() {
                   <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-green-600">
                     <FireIcon className="h-6 w-6 text-white" aria-hidden="true" />
                   </div>
-                  24/7 Claims Support
+                  24/7 Support
                 </dt>
                 <dd className="mt-2 text-base leading-7 text-gray-600">
                   File and track claims anytime with our dedicated support team and mobile app.
