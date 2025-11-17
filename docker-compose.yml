@@ -1,26 +1,69 @@
 version: "3.8"
 
 services:
-  bhc-frontend:
+  jeca-frontend:
     build:
       context: ./jeca-insurance
       dockerfile: Dockerfile
       args:
-        - NEXT_PUBLIC_API_URL=https://api.bonnethealthcare.com/api
-    container_name: bhc-frontend
+        - NEXT_PUBLIC_API_URL=https://bonnethealthcare.com/api
+    container_name: jeca-frontend
     environment:
       - NODE_ENV=production
       - PORT=3000
-      - NEXT_PUBLIC_API_URL=https://api.bonnethealthcare.com/api
+      - NEXT_PUBLIC_API_URL=https://bonnethealthcare.com/api
+    depends_on:
+      - jeca-api
     restart: unless-stopped
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:3000/api/health"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
     networks:
-      - bhc-network
+      - jeca-network
+
+  jeca-api:
+    build:
+      context: ./JecaInsurance.API
+      dockerfile: Dockerfile
+    container_name: jeca-api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - DOTNET_RUNNING_IN_CONTAINER=true
+      - ConnectionStrings__DefaultConnection=Server=jeca-sqlserver,1433;Database=BonnetHealthcare;User Id=sa;Password=${SA_PASSWORD};TrustServerCertificate=True;
+    depends_on:
+      - jeca-sqlserver
+    restart: unless-stopped
+    networks:
+      - jeca-network
+
+  jeca-sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: jeca-sqlserver
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=${SA_PASSWORD}
+    volumes:
+      - sqlserver-data:/var/opt/mssql
+    ports:
+      - "1433:1433"
+    restart: unless-stopped
+    networks:
+      - jeca-network
+
+  jeca-nginx:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    container_name: jeca-nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - jeca-frontend
+      - jeca-api
+    restart: unless-stopped
+    networks:
+      - jeca-network
 
 networks:
-  bhc-network:
+  jeca-network:
     driver: bridge
+
+volumes:
+  sqlserver-data:
