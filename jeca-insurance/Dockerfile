@@ -1,11 +1,10 @@
 # syntax=docker/dockerfile:1
 FROM node:20 AS builder
 WORKDIR /app
-ENV NODE_ENV=production
 ARG NEXT_PUBLIC_API_URL
 ENV NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL
 COPY package*.json ./
-RUN npm install --legacy-peer-deps
+RUN npm ci
 COPY . .
 RUN npm run build
 
