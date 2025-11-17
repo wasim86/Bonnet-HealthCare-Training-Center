@@ -1878,35 +1878,47 @@ export default function DashboardPage() {
                             </td>
                             <td className="px-6 py-4 whitespace-nowrap">
                               <div className="flex flex-col">
-                                <select
-                                  value={inquiry.status}
-                                  onChange={async (e) => {
-                                    const next = e.target.value
-                                    try {
-                                      const res = await fetch(`${API_BASE_URL}/contact/${inquiry.id}`, {
-                                        method: 'PUT',
-                                        headers: { 'Content-Type': 'application/json' },
-                                        body: JSON.stringify({ status: next })
-                                      })
-                                      if (res.ok) {
-                                        const updated = await res.json()
-                                        setServiceData((prev: any) => ({
-                                          ...prev,
-                                          contactInquiries: (prev.contactInquiries || []).map((c: any) => c.id === inquiry.id ? { ...c, status: updated.status } : c)
-                                        }))
-                                      } else {
+                                {inquiry.status === 'New' ? (
+                                  <select
+                                    value={inquiry.status}
+                                    onChange={async (e) => {
+                                      const next = e.target.value
+                                      try {
+                                        const res = await fetch(`${API_BASE_URL}/contact/${inquiry.id}`, {
+                                          method: 'PUT',
+                                          headers: { 'Content-Type': 'application/json' },
+                                          body: JSON.stringify({ status: next })
+                                        })
+                                        if (res.ok) {
+                                          const updated = await res.json()
+                                          setServiceData((prev: any) => ({
+                                            ...prev,
+                                            contactInquiries: (prev.contactInquiries || []).map((c: any) => c.id === inquiry.id ? { ...c, status: updated.status } : c)
+                                          }))
+                                        } else {
+                                          alert('Failed to update status')
+                                        }
+                                      } catch {
                                         alert('Failed to update status')
                                       }
-                                    } catch {
-                                      alert('Failed to update status')
-                                    }
-                                  }}
-                                  className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full mb-1 bg-blue-100 text-blue-800 focus:outline-none`}
-                                >
-                                  {availableStatuses.map((s) => (
-                                    <option key={s} value={s}>{s}</option>
-                                  ))}
-                                </select>
+                                    }}
+                                    className="px-2 py-1 text-xs font-semibold rounded-full mb-1 bg-green-100 text-green-800 border border-green-300 focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 w-fit cursor-pointer"
+                                  >
+                                    {availableStatuses.map((s) => (
+                                      <option key={s} value={s}>{s}</option>
+                                    ))}
+                                  </select>
+                                ) : (
+                                  <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full mb-1 ${
+                                    inquiry.status === 'New' ? 'bg-blue-100 text-blue-800' :
+                                    inquiry.status === 'In Progress' ? 'bg-yellow-100 text-yellow-800' :
+                                    inquiry.status === 'Resolved' ? 'bg-green-100 text-green-800' :
+                                    inquiry.status === 'Closed' ? 'bg-gray-100 text-gray-800' :
+                                    'bg-red-100 text-red-800'
+                                  }`}>
+                                    {inquiry.status}
+                                  </span>
+                                )}
                                 {new Date(inquiry.createdDate).toLocaleDateString()}
                               </div>
                             </td>
