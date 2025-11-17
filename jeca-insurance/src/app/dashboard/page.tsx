@@ -488,6 +488,45 @@ export default function DashboardPage() {
   const filteredConsultations = React.useMemo(() => (serviceData.consultations || []).filter((i: any) => typeMatch(i) && statusMatch(i) && searchMatch(i)), [serviceData.consultations, serviceQuoteType, serviceStatus, serviceSearch])
   const filteredContactInquiries = React.useMemo(() => (serviceData.contactInquiries || []).filter((i: any) => typeMatch(i) && statusMatch(i) && searchMatch(i)), [serviceData.contactInquiries, serviceQuoteType, serviceStatus, serviceSearch])
 
+  const allServiceItems = React.useMemo(() => {
+    const a = [
+      ...(serviceData.claims || []),
+      ...(serviceData.policyReviews || []),
+      ...(serviceData.contactUpdates || []),
+      ...(serviceData.proofOfInsurance || []),
+      ...(serviceData.consultations || []),
+      ...(serviceData.contactInquiries || [])
+    ]
+    return a
+  }, [serviceData])
+
+  const serviceAnalytics = React.useMemo(() => {
+    const now = new Date()
+    const year = now.getFullYear()
+    const month = now.getMonth()
+    const startOfWeek = new Date(now)
+    const day = startOfWeek.getDay()
+    const diffToMonday = (day + 6) % 7
+    startOfWeek.setDate(startOfWeek.getDate() - diffToMonday)
+    startOfWeek.setHours(0, 0, 0, 0)
+    const isMonth = (d: any) => {
+      const dt = new Date(d)
+      return dt.getFullYear() === year && dt.getMonth() === month
+    }
+    const isWeek = (d: any) => {
+      const dt = new Date(d)
+      const endOfWeek = new Date(startOfWeek)
+      endOfWeek.setDate(endOfWeek.getDate() + 7)
+      return dt >= startOfWeek && dt < endOfWeek
+    }
+    const total = allServiceItems.length
+    const thisMonth = allServiceItems.filter((i: any) => isMonth(i.createdDate)).length
+    const thisWeek = allServiceItems.filter((i: any) => isWeek(i.createdDate)).length
+    const dayOfMonth = now.getDate()
+    const dailyAverage = dayOfMonth > 0 ? Math.round(thisMonth / dayOfMonth) : 0
+    return { total, thisMonth, thisWeek, dailyAverage }
+  }, [allServiceItems])
+
   return (
     <ProtectedRoute>
       <div className="min-h-screen bg-gray-50">
@@ -582,7 +621,7 @@ export default function DashboardPage() {
               <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg shadow-sm p-6 text-white">
                 <div className="flex items-center justify-between">
                   <div>
-                    <div className="text-3xl font-bold">{statistics.totalQuotes}</div>
+                    <div className="text-3xl font-bold">{serviceAnalytics.total}</div>
                     <div className="text-blue-100">Total Service Request</div>
                   </div>
                   <DocumentTextIcon className="h-8 w-8 text-blue-200" />
@@ -591,7 +630,7 @@ export default function DashboardPage() {
               <div className="bg-gradient-to-br from-green-500 to-green-600 rounded-lg shadow-sm p-6 text-white">
                 <div className="flex items-center justify-between">
                   <div>
-                    <div className="text-3xl font-bold">{statistics.quotesThisMonth}</div>
+                    <div className="text-3xl font-bold">{serviceAnalytics.thisMonth}</div>
                     <div className="text-green-100">Request This Month</div>
                   </div>
                   <ArrowTrendingUpIcon className="h-8 w-8 text-green-200" />
@@ -600,7 +639,7 @@ export default function DashboardPage() {
               <div className="bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-lg shadow-sm p-6 text-white">
                 <div className="flex items-center justify-between">
                   <div>
-                    <div className="text-3xl font-bold">{statistics.quotesThisWeek}</div>
+                    <div className="text-3xl font-bold">{serviceAnalytics.thisWeek}</div>
                     <div className="text-yellow-100">This Week</div>
                   </div>
                   <CalendarIcon className="h-8 w-8 text-yellow-200" />
@@ -609,7 +648,7 @@ export default function DashboardPage() {
               <div className="bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg shadow-sm p-6 text-white">
                 <div className="flex items-center justify-between">
                   <div>
-                    <div className="text-3xl font-bold">{statistics.averageQuotesPerDay}</div>
+                    <div className="text-3xl font-bold">{serviceAnalytics.dailyAverage}</div>
                     <div className="text-purple-100">Daily Average</div>
                   </div>
                   <ChartBarIcon className="h-8 w-8 text-purple-200" />
@@ -1878,47 +1917,15 @@ export default function DashboardPage() {
                             </td>
                             <td className="px-6 py-4 whitespace-nowrap">
                               <div className="flex flex-col">
-                                {inquiry.status === 'New' ? (
-                                  <select
-                                    value={inquiry.status}
-                                    onChange={async (e) => {
-                                      const next = e.target.value
-                                      try {
-                                        const res = await fetch(`${API_BASE_URL}/contact/${inquiry.id}`, {
-                                          method: 'PUT',
-                                          headers: { 'Content-Type': 'application/json' },
-                                          body: JSON.stringify({ status: next })
-                                        })
-                                        if (res.ok) {
-                                          const updated = await res.json()
-                                          setServiceData((prev: any) => ({
-                                            ...prev,
-                                            contactInquiries: (prev.contactInquiries || []).map((c: any) => c.id === inquiry.id ? { ...c, status: updated.status } : c)
-                                          }))
-                                        } else {
-                                          alert('Failed to update status')
-                                        }
-                                      } catch {
-                                        alert('Failed to update status')
-                                      }
-                                    }}
-                                    className="px-2 py-1 text-xs font-semibold rounded-full mb-1 bg-green-100 text-green-800 border border-green-300 focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 w-fit cursor-pointer"
-                                  >
-                                    {availableStatuses.map((s) => (
-                                      <option key={s} value={s}>{s}</option>
-                                    ))}
-                                  </select>
-                                ) : (
-                                  <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full mb-1 ${
-                                    inquiry.status === 'New' ? 'bg-blue-100 text-blue-800' :
-                                    inquiry.status === 'In Progress' ? 'bg-yellow-100 text-yellow-800' :
-                                    inquiry.status === 'Resolved' ? 'bg-green-100 text-green-800' :
-                                    inquiry.status === 'Closed' ? 'bg-gray-100 text-gray-800' :
-                                    'bg-red-100 text-red-800'
-                                  }`}>
-                                    {inquiry.status}
-                                  </span>
-                                )}
+                                <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full mb-1 ${
+                                  inquiry.status === 'New' ? 'bg-blue-100 text-blue-800' :
+                                  inquiry.status === 'In Progress' ? 'bg-yellow-100 text-yellow-800' :
+                                  inquiry.status === 'Resolved' ? 'bg-green-100 text-green-800' :
+                                  inquiry.status === 'Closed' ? 'bg-gray-100 text-gray-800' :
+                                  'bg-red-100 text-red-800'
+                                }`}>
+                                  {inquiry.status}
+                                </span>
                                 {new Date(inquiry.createdDate).toLocaleDateString()}
                               </div>
                             </td>
