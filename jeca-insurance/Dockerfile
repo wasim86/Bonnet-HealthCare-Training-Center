@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-FROM node:20-alpine AS builder
+FROM node:20 AS builder
 WORKDIR /app
 ENV NODE_ENV=production
 ARG NEXT_PUBLIC_API_URL
@@ -9,7 +9,7 @@ RUN npm install --legacy-peer-deps
 COPY . .
 RUN npm run build
 
-FROM node:20-alpine AS runner
+FROM node:20 AS runner
 WORKDIR /app
 ENV NODE_ENV=production
 ENV PORT=3000
