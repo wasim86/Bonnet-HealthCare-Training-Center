@@ -59,6 +59,26 @@ export default function DashboardPage() {
   const [serviceQuoteType, setServiceQuoteType] = useState<string>('All')
   const [serviceStatus, setServiceStatus] = useState<string>('All')
   const [serviceSearch, setServiceSearch] = useState('')
+  const availableStatuses = React.useMemo(() => {
+    const set = new Set<string>()
+    const buckets = ['claims','policyReviews','contactUpdates','proofOfInsurance','consultations','contactInquiries'] as const
+    buckets.forEach((k) => {
+      (serviceData[k] || []).forEach((i: any) => {
+        const s = (i.status || '').trim()
+        if (s) set.add(s)
+      })
+    })
+    const order = ['New','Pending','Under Review','Approved','Active','Rejected','Scheduled','Processing','In Progress','Completed','Cancelled','Canceled','Closed','Resolved','Spam']
+    if (set.size === 0) order.forEach(s => set.add(s))
+    return Array.from(set).sort((a, b) => {
+      const ai = order.indexOf(a)
+      const bi = order.indexOf(b)
+      const aa = ai === -1 ? 999 : ai
+      const bb = bi === -1 ? 999 : bi
+      if (aa === bb) return a.localeCompare(b)
+      return aa - bb
+    })
+  }, [serviceData])
 
   // Service Details Modal State
   const [selectedServiceDetails, setSelectedServiceDetails] = useState<any>(null)
@@ -1917,15 +1937,52 @@ export default function DashboardPage() {
                             </td>
                             <td className="px-6 py-4 whitespace-nowrap">
                               <div className="flex flex-col">
-                                <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full mb-1 ${
-                                  inquiry.status === 'New' ? 'bg-blue-100 text-blue-800' :
-                                  inquiry.status === 'In Progress' ? 'bg-yellow-100 text-yellow-800' :
-                                  inquiry.status === 'Resolved' ? 'bg-green-100 text-green-800' :
-                                  inquiry.status === 'Closed' ? 'bg-gray-100 text-gray-800' :
-                                  'bg-red-100 text-red-800'
-                                }`}>
-                                  {inquiry.status}
-                                </span>
+                                {inquiry.status === 'New' ? (
+                                  <select
+                                    value={inquiry.status}
+                                    onChange={async (e) => {
+                                      const next = e.target.value
+                                      try {
+                                        const res = await fetch(`${API_BASE_URL}/contact/${inquiry.id}`, {
+                                          method: 'PUT',
+                                          headers: { 'Content-Type': 'application/json' },
+                                          body: JSON.stringify({ status: next })
+                                        })
+                                        if (res.ok) {
+                                          const updated = await res.json()
+                                          setServiceData((prev: any) => ({
+                                            ...prev,
+                                            contactInquiries: (prev.contactInquiries || []).map((c: any) => c.id === inquiry.id ? { ...c, status: updated.status } : c)
+                                          }))
+                                        } else {
+                                          alert('Failed to update status')
+                                        }
+                                      } catch {
+                                        alert('Failed to update status')
+                                      }
+                                    }}
+                                    className="px-2 py-1 text-xs font-semibold rounded-full mb-1 bg-green-100 text-green-800 border border-green-300 focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 w-fit cursor-pointer"
+                                  >
+                                    {availableStatuses.map((s) => (
+                                      <option key={s} value={s}>{s}</option>
+                                    ))}
+                                  </select>
+                                ) : (
+                                  <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full mb-1 ${
+                                    inquiry.status === 'New' ? 'bg-blue-100 text-blue-800' :
+                                    inquiry.status === 'In Progress' ? 'bg-yellow-100 text-yellow-800' :
+                                    inquiry.status === 'Resolved' ? 'bg-green-100 text-green-800' :
+                                    inquiry.status === 'Closed' ? 'bg-gray-100 text-gray-800' :
+                                    inquiry.status?.toLowerCase() === 'active' ? 'bg-green-100 text-green-800' :
+                                    inquiry.status?.toLowerCase() === 'approved' ? 'bg-green-100 text-green-800' :
+                                    inquiry.status?.toLowerCase() === 'under review' ? 'bg-blue-100 text-blue-800' :
+                                    inquiry.status?.toLowerCase() === 'rejected' ? 'bg-red-100 text-red-800' :
+                                    inquiry.status?.toLowerCase().includes('cancel') ? 'bg-red-100 text-red-800' :
+                                    'bg-gray-100 text-gray-800'
+                                  }`}>
+                                    {inquiry.status}
+                                  </span>
+                                )}
                                 {new Date(inquiry.createdDate).toLocaleDateString()}
                               </div>
                             </td>
