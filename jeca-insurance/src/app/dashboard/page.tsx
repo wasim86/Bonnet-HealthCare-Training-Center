@@ -80,6 +80,19 @@ export default function DashboardPage() {
     })
   }, [serviceData])
 
+  const rowStatuses = React.useMemo(() => {
+    const priority = ['Scheduled','Completed','Cancelled','Spam','New','Pending','Under Review','Approved','Active','Rejected','Processing','In Progress','Closed','Resolved','Canceled']
+    const merged = [...priority, ...availableStatuses.filter((s) => !priority.includes(s))]
+    // Deduplicate while preserving order
+    const seen = new Set<string>()
+    return merged.filter((s) => {
+      const k = s
+      if (seen.has(k)) return false
+      seen.add(k)
+      return true
+    })
+  }, [availableStatuses])
+
   // Service Details Modal State
   const [selectedServiceDetails, setSelectedServiceDetails] = useState<any>(null)
   const [serviceDetailsModalOpen, setServiceDetailsModalOpen] = useState(false)
@@ -1963,7 +1976,8 @@ export default function DashboardPage() {
                                     }}
                                     className="px-2 py-1 text-xs font-semibold rounded-full mb-1 bg-green-100 text-green-800 border border-green-300 focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 w-fit cursor-pointer"
                                   >
-                                    {availableStatuses.map((s) => (
+                                    <option value="All" disabled>All Statuses</option>
+                                    {rowStatuses.map((s) => (
                                       <option key={s} value={s}>{s}</option>
                                     ))}
                                   </select>
