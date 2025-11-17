@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 
-export async function GET(_req: Request, context: { params: { id: string } }) {
-  const { id } = context.params
+export async function GET(_req: Request, context: { params: Promise<{ id: string }> }) {
+  const { id } = await context.params
   const base = {
     id,
     quoteNumber: `QT-2025-${id.slice(-4).padStart(4, '0')}`,

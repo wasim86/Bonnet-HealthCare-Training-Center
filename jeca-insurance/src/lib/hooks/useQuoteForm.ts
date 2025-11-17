@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react';
 import { quoteService } from '../services/quoteService';
-import { BaseQuote, QuoteType } from '../types';
+import { BaseQuote, QuoteType, QUOTE_TYPES } from '../types';
 
 interface UseQuoteFormOptions {
   onSuccess?: (quote: BaseQuote) => void;
@@ -81,59 +81,59 @@ export function useQuoteForm(
 
 // Specific hooks for common quote types
 export const useAutoQuoteForm = (options?: UseQuoteFormOptions) =>
-  useQuoteForm('Auto', options);
+  useQuoteForm(QUOTE_TYPES.AUTO, options);
 
 export const useHomeQuoteForm = (options?: UseQuoteFormOptions) =>
-  useQuoteForm('Home', options);
+  useQuoteForm(QUOTE_TYPES.HOME, options);
 
 export const useHealthQuoteForm = (options?: UseQuoteFormOptions) =>
-  useQuoteForm('Health', options);
+  useQuoteForm(QUOTE_TYPES.HEALTH, options);
 
 export const useBusinessQuoteForm = (options?: UseQuoteFormOptions) =>
-  useQuoteForm('Business', options);
+  useQuoteForm(QUOTE_TYPES.BUSINESS, options);
 
 export const useLifeInsuranceQuoteForm = (options?: UseQuoteFormOptions) =>
-  useQuoteForm('LifeInsurance', options);
+  useQuoteForm(QUOTE_TYPES.LIFE, options);
 
 // Additional quote form hooks
 export const useBoatQuoteForm = (options?: UseQuoteFormOptions) =>
-  useQuoteForm('Boat', options);
+  useQuoteForm(QUOTE_TYPES.BOAT, options);
 
 export const useMotorcycleQuoteForm = (options?: UseQuoteFormOptions) =>
-  useQuoteForm('Motorcycle', options);
+  useQuoteForm(QUOTE_TYPES.MOTORCYCLE, options);
 
 export const useRentersQuoteForm = (options?: UseQuoteFormOptions) =>
-  useQuoteForm('Renters', options);
+  useQuoteForm(QUOTE_TYPES.RENTERS, options);
 
 export const useDentalQuoteForm = (options?: UseQuoteFormOptions) =>
-  useQuoteForm('Dental', options);
+  useQuoteForm(QUOTE_TYPES.DENTAL, options);
 
 export const useVisionQuoteForm = (options?: UseQuoteFormOptions) =>
-  useQuoteForm('Vision', options);
+  useQuoteForm(QUOTE_TYPES.VISION, options);
 
 export const useDisabilityInsuranceQuoteForm = (options?: UseQuoteFormOptions) =>
-  useQuoteForm('DisabilityInsurance', options);
+  useQuoteForm(QUOTE_TYPES.DISABILITY, options);
 
 export const useUmbrellaInsuranceQuoteForm = (options?: UseQuoteFormOptions) =>
-  useQuoteForm('UmbrellaInsurance', options);
+  useQuoteForm(QUOTE_TYPES.UMBRELLA, options);
 
 export const useFloodQuoteForm = (options?: UseQuoteFormOptions) =>
-  useQuoteForm('Flood', options);
+  useQuoteForm(QUOTE_TYPES.FLOOD, options);
 
 export const useLandlordsQuoteForm = (options?: UseQuoteFormOptions) =>
-  useQuoteForm('Landlords', options);
+  useQuoteForm(QUOTE_TYPES.LANDLORDS, options);
 
 export const useWorkersCompQuoteForm = (options?: UseQuoteFormOptions) =>
-  useQuoteForm('WorkersComp', options);
+  useQuoteForm(QUOTE_TYPES.WORKERS_COMP, options);
 
 export const useBOPQuoteForm = (options?: UseQuoteFormOptions) =>
-  useQuoteForm('BOP', options);
+  useQuoteForm(QUOTE_TYPES.BOP, options);
 
 export const useMedicareAdvantageQuoteForm = (options?: UseQuoteFormOptions) =>
-  useQuoteForm('MedicareAdvantage', options);
+  useQuoteForm(QUOTE_TYPES.MEDICARE_ADVANTAGE, options);
 
 export const useMedicareSupplementQuoteForm = (options?: UseQuoteFormOptions) =>
-  useQuoteForm('MedicareSupplement', options);
+  useQuoteForm(QUOTE_TYPES.MEDICARE_SUPPLEMENT, options);
 
 export const useAnnuityQuoteForm = (options?: UseQuoteFormOptions) =>
-  useQuoteForm('Annuity', options);
+  useQuoteForm(QUOTE_TYPES.ANNUITY, options);

@@ -6,8 +6,7 @@ import {
   ChatBubbleLeftRightIcon,
   XMarkIcon,
   PaperAirplaneIcon,
-  UserIcon,
-  ComputerDesktopIcon
+  UserIcon
 } from '@heroicons/react/24/outline'
 import { useLiveChat } from '@/contexts/LiveChatContext'
 
@@ -21,9 +20,9 @@ interface Message {
 const initialMessages: Message[] = [
   {
     id: '1',
-    text: 'Hello! I\'m Sarah, your Bonnet HealthCare assistant. How can I help you today?',
+    text: 'Hello! I\'m Sarah from Bonnet Healthcare Training Center. Which training or service can I help you with today?',
     sender: 'agent',
-    timestamp: new Date('2024-01-01T12:00:00Z') // Fixed timestamp to avoid hydration issues
+    timestamp: new Date('2024-01-01T12:00:00Z')
   }
 ]
 
@@ -32,29 +31,29 @@ const quickReplies = [
   'BLS',
   'Hands Only CPR',
   'AED',
-  'Heart Savers First AID',
+  'Heart Savers First Aid',
   'Heimlich Maneuve',
   'EPI-PEN'
 ]
 
 const autoResponses: { [key: string]: string } = {
-  'auto quote': 'Great! I can help you get an auto insurance quote. We offer coverage for cars, motorcycles, and boats. Would you like to start with a specific vehicle type? You can get quotes at: https://www.agentinsure.com/compare/auto-insurance-home-insurance/jeca/quote.aspx',
-  'health quote': 'I\'d be happy to help with health insurance! We offer individual health plans, dental, vision, Medicare Advantage, and Medicare Supplement. Which type interests you? Visit /quotes/health to see all options.',
-  'life insurance': 'Life insurance is a great way to protect your family\'s future. We offer life insurance, annuities, disability insurance, and umbrella coverage. You can explore options at /quotes/life-financial/life',
-  'property quote': 'Perfect! For property insurance, we cover homes, flood protection, landlord insurance, and renters insurance. What type of property do you need to protect? Start at https://www.agentinsure.com/compare/auto-insurance-home-insurance/jeca/quote.aspx',
-  'business quote': 'Business insurance is essential! We offer general liability, business owner packages (BOP), and workers compensation. What size business do you have? Get started at /quote/business',
-  'file a claim': 'I can help you file a claim. For immediate assistance with claims, please call our 24/7 claims hotline at 877-501-5460, or I can guide you through our online claims process at /services/report-claim',
-  'get a quote': 'I\'d be happy to help you get a quote! We offer 5 main categories: Auto (cars, motorcycles, boats), Health (individual, dental, vision, Medicare), Life & Financial (life, annuities, disability), Property (home, flood, landlord, renters), and Business insurance. Which interests you?',
-  'policy questions': 'I\'m here to help with any policy questions you have. What would you like to know about your current policy or our coverage options?',
-  'payment help': 'I can assist you with payment-related questions. Are you looking to make a payment, set up autopay, or have questions about your billing?',
-  'contact agent': 'I can connect you with one of our licensed agents. Would you prefer to schedule a call back at /contact or call us directly at 877-501-5460?',
-  'hello': 'Hello! Welcome to JECA Insurance. I\'m here to help you with quotes for auto, health, life, property, and business insurance, plus claims and policy questions. What can I assist you with today?',
-  'hi': 'Hi there! How can I help you with your insurance needs today? We offer comprehensive quotes for all types of coverage.',
-  'help': 'I\'m here to help! I can assist you with getting quotes (auto, health, life, property, business), filing claims, answering policy questions, payment assistance, or connecting you with an agent. What would you like to do?'
+  'acls': 'ACLS training details: /services/advanced-cardiovascular-life-support-acls. Would you like to schedule an appointment?',
+  'bls': 'BLS training details: /services/basic-life-support-bls. Would you like to schedule an appointment?',
+  'hands only cpr': 'Hands-Only CPR details: /services/cardiopulmonary-resuscitation-cpr. Would you like to schedule an appointment?',
+  'cpr': 'CPR training details: /services/cardiopulmonary-resuscitation-cpr. Would you like to schedule an appointment?',
+  'aed': 'AED training details: /services/automated-external-defibrillator-aed. Would you like to schedule an appointment?',
+  'heart savers first aid': 'Heart Savers First Aid details: /services/heart-savers-first-aid. Would you like to schedule an appointment?',
+  'heimlich': 'Heimlich Maneuver details: /services/heimlich-maneuve. Would you like to schedule an appointment?',
+  'epi-pen': 'EPI-PEN training details: /services/epi-pen. Would you like to schedule an appointment?',
+  'appointment': 'You can book directly from any service page via Make An Appointment, or visit /services to choose a course.',
+  'contact': 'Reach us at /contact for any questions or scheduling assistance.',
+  'hello': 'Hello! Welcome to Bonnet Healthcare Training Center. I can help with ACLS, BLS, CPR, AED, First Aid, Heimlich, and EPI-PEN. What can I assist you with today?',
+  'hi': 'Hi! How can I help you with training today? We offer ACLS, BLS, CPR, AED, First Aid, Heimlich, and EPI-PEN.',
+  'help': 'I can assist with course selection, schedules, bookings, certification renewals, pricing, and group or onsite training. What would you like to do?'
 }
 
 export default function LiveChat() {
-  const { isOpen, openChat, closeChat, toggleChat } = useLiveChat()
+  const { isOpen, closeChat, toggleChat } = useLiveChat()
   const [messages, setMessages] = useState<Message[]>(initialMessages)
   const [inputValue, setInputValue] = useState('')
   const [isTyping, setIsTyping] = useState(false)
@@ -79,50 +78,19 @@ export default function LiveChat() {
       }
     }
 
-    // Default responses based on keywords
-    if (lowerMessage.includes('price') || lowerMessage.includes('cost') || lowerMessage.includes('rate')) {
-      return 'Our rates are very competitive! The exact price depends on several factors. I can help you get a personalized quote in just a few minutes. We offer quotes for auto, health, life & financial, property, and business insurance. Which interests you?'
+    if (lowerMessage.includes('price') || lowerMessage.includes('cost') || lowerMessage.includes('fee')) {
+      return 'Course fees vary by training type. See details on each service page under Make An Appointment.'
     }
 
-    if (lowerMessage.includes('coverage') || lowerMessage.includes('protect')) {
-      return 'We offer comprehensive coverage options for all your protection needs. Our policies include auto (cars, motorcycles, boats), health (individual, dental, vision, Medicare), life & financial (life, annuities, disability), property (home, flood, landlord, renters), and business insurance. What specific coverage are you looking for?'
+    if (lowerMessage.includes('schedule') || lowerMessage.includes('appointment')) {
+      return 'Use the Make An Appointment button on the service page to schedule your session.'
     }
 
-    if (lowerMessage.includes('discount') || lowerMessage.includes('save')) {
-      return 'Great question! We offer many ways to save, including multi-policy discounts, safe driver discounts, and more. I can help you find all the discounts you qualify for!'
+    if (lowerMessage.includes('location') || lowerMessage.includes('where')) {
+      return 'Training locations and availability are shown on each service page. Visit /services to select your course.'
     }
 
-    // Specific insurance type responses
-    if (lowerMessage.includes('auto') || lowerMessage.includes('car') || lowerMessage.includes('vehicle')) {
-      return 'Auto insurance is one of our specialties! We cover cars, motorcycles, and boats. Get your personalized quote at /quote/auto, /quote/motorcycle, or /quote/boat'
-    }
-
-    if (lowerMessage.includes('health') || lowerMessage.includes('medical') || lowerMessage.includes('dental') || lowerMessage.includes('vision')) {
-      return 'We offer comprehensive health coverage including individual plans, dental, vision, Medicare Advantage, and Medicare Supplement. Explore all options at /quotes/health'
-    }
-
-    if (lowerMessage.includes('life') || lowerMessage.includes('annuity') || lowerMessage.includes('disability')) {
-      return 'Life and financial protection is crucial! We offer life insurance, annuities, disability insurance, and umbrella coverage. Learn more at /quotes/life-financial/life'
-    }
-
-    if (lowerMessage.includes('home') || lowerMessage.includes('house') || lowerMessage.includes('property') || lowerMessage.includes('flood') || lowerMessage.includes('rent')) {
-      return 'Property protection is essential! We cover homes, provide flood insurance, landlord coverage, and renters insurance. Start your quote at /quote/home'
-    }
-
-    if (lowerMessage.includes('business') || lowerMessage.includes('commercial') || lowerMessage.includes('liability') || lowerMessage.includes('workers comp')) {
-      return 'Business insurance protects your company! We offer general liability, business owner packages (BOP), and workers compensation. Get started at /quote/business'
-    }
-
-    if (lowerMessage.includes('motorcycle') || lowerMessage.includes('bike')) {
-      return 'Motorcycle insurance is important for your safety and protection! Get a personalized quote for your bike at /quote/motorcycle'
-    }
-
-    if (lowerMessage.includes('boat') || lowerMessage.includes('marine')) {
-      return 'Boat insurance protects your watercraft investment! Get comprehensive marine coverage at /quote/boat'
-    }
-
-    // Default response
-    return 'Thank you for your message! I want to make sure I give you the most accurate information. Could you please provide a bit more detail about what you\'re looking for, or would you like me to connect you with one of our licensed agents?'
+    return 'Thanks! Tell me which training you need: ACLS, BLS, CPR, AED, First Aid, Heimlich, or EPI-PEN. I can share details or help you schedule.'
   }
 
   const handleSendMessage = async (text: string) => {

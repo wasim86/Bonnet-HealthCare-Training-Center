@@ -81,7 +81,7 @@ export default function DashboardPage() {
   }, [serviceData])
 
   const rowStatuses = React.useMemo(() => {
-    const priority = ['Scheduled','Completed','Cancelled','Spam','New','Pending','Under Review','Approved','Active','Rejected','Processing','In Progress','Closed','Resolved','Canceled']
+    const priority = ['New','Scheduled','Completed','Cancelled','Spam']
     const merged = [...priority, ...availableStatuses.filter((s) => !priority.includes(s))]
     // Deduplicate while preserving order
     const seen = new Set<string>()

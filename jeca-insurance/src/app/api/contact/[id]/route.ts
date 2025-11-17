@@ -34,8 +34,8 @@ function writeContacts(contacts: any[]) {
   } catch {}
 }
 
-export async function GET(_req: Request, context: { params: { id: string } }) {
-  const { id } = context.params
+export async function GET(_req: Request, context: { params: Promise<{ id: string }> }) {
+  const { id } = await context.params
   const contacts = readContacts()
   const found = contacts.find((c: any) => c.id === id)
   if (!found) {
@@ -44,8 +44,8 @@ export async function GET(_req: Request, context: { params: { id: string } }) {
   return NextResponse.json(found)
 }
 
-export async function PUT(req: Request, context: { params: { id: string } }) {
-  const { id } = context.params
+export async function PUT(req: Request, context: { params: Promise<{ id: string }> }) {
+  const { id } = await context.params
   try {
     const payload = await req.json()
     const status = typeof payload.status === 'string' ? payload.status.trim() : ''

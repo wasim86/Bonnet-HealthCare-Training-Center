@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  bhc-frontend:
+    build:
+      context: ./jeca-insurance
+      dockerfile: Dockerfile
+      args:
+        - NEXT_PUBLIC_API_URL=https://api.bonnethealthcare.com/api
+    container_name: bhc-frontend
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - NEXT_PUBLIC_API_URL=https://api.bonnethealthcare.com/api
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    networks:
+      - bhc-network
+
+networks:
+  bhc-network:
+    driver: bridge

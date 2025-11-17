@@ -2,8 +2,8 @@ import { NextResponse } from 'next/server'
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5149/api'
 
-export async function GET(_req: Request, context: { params: { id: string } }) {
-  const { id } = context.params
+export async function GET(_req: Request, context: { params: Promise<{ id: string }> }) {
+  const { id } = await context.params
   try {
     const response = await fetch(`${API_BASE_URL}/Consultation/${id}`, { headers: { 'Content-Type': 'application/json' } })
     if (!response.ok) return NextResponse.json({ error: 'Not found' }, { status: response.status })
