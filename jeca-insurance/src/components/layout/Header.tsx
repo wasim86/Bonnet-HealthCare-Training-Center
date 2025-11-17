@@ -413,33 +413,26 @@ export default function Header() {
               <div className="py-6 space-y-4">
                 <div className="flex items-center space-x-2 text-sm text-gray-600 px-3 py-2">
                   <PhoneIcon className="h-5 w-5 text-blue-600" />
-                  <a href="tel:1-800-JECA-INS" className="font-medium hover:text-blue-600 transition-colors">
-                    1-800-JECA-INS
+                  <a href="tel:954-709-8196" className="font-medium hover:text-blue-600 transition-colors">
+                    954-709-8196
                   </a>
                 </div>
                 <Link
-                  href="/login"
+                  href="/admin-login"
                   className="-mx-3 block rounded-lg px-3 py-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 touch-target transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Log in
                 </Link>
+                
                 <a
-                  href="https://customerservice.agentinsure.com/EzlynxCustomerService/jeca/Account/LogIn"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mx-3 block rounded-lg bg-gray-600 px-4 py-3 text-center text-base font-semibold text-white hover:bg-gray-500 touch-target-comfortable transition-all duration-200 shadow-md hover:shadow-lg"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Client Portal
-                </a>
-                <Link
-                  href="/quote"
-                  className="mx-3 block rounded-lg bg-blue-600 px-4 py-3 text-center text-base font-semibold text-white hover:bg-blue-500 touch-target-comfortable transition-all duration-200 shadow-md hover:shadow-lg"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Get Quote
-                </Link>
+            href="/contact"
+            // target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-md bg-blue-600 px-4 py-2.5 lg:px-3.5 lg:py-2.5 xl:px-4 xl:py-3 text-sm lg:text-sm xl:text-base font-semibold text-white shadow-sm hover:bg-blue-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600 transition-all duration-200 hover:shadow-md"
+          >
+           Make An Appointment
+          </a>
               </div>
             </div>
           </div>

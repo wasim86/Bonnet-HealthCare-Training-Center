@@ -1,9 +1,10 @@
 'use client'
 
-import React from 'react'
-import Link from 'next/link'
+import React, { useState } from 'react'
+import AppointmentModal from '@/components/ui/AppointmentModal'
 
 export default function AEDPage() {
+  const [open, setOpen] = useState(false)
   return (
     <main className=" ">
       {/* Top Banner Image */}
@@ -48,12 +49,12 @@ export default function AEDPage() {
                 </p>
               </div>
               <div className="mt-6">
-                <Link
-                  href="/contact"
+                <button
+                  onClick={() => setOpen(true)}
                   className="inline-flex items-center rounded-lg bg-blue-600 px-5 py-3 text-white font-semibold shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-[#E84545] focus:ring-offset-2 transition-colors"
                 >
                   Make An Appointment
-                </Link>
+                </button>
               </div>
             </div>
 
@@ -169,15 +170,16 @@ export default function AEDPage() {
           </ul>
 
           <div className="mt-8">
-            <Link
-              href="/contact"
+            <button
+              onClick={() => setOpen(true)}
               className="inline-flex items-center rounded-lg bg-blue-600 px-5 py-3 text-white font-semibold shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-offset-2 transition-colors"
             >
               Make An Appointment
-            </Link>
+            </button>
           </div>
         </div>
       </section>
+      <AppointmentModal open={open} onClose={() => setOpen(false)} defaultService="AED" />
     </main>
   )
 }

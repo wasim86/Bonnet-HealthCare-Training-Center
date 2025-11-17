@@ -572,17 +572,17 @@ export default function ContactPage() {
                       onChange={handleChange}
                       className="block w-full rounded-lg border border-gray-300 bg-gray-50 px-4 py-3 text-gray-900 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all duration-300"
                     >
-                      <option value="">Select inquiry type (optional)</option>
-                      <option value="ACLC">ACLC</option>
+                      <option value="">Select Service type (optional)</option>
+                      <option value="ACLC">ACLS</option>
                       <option value="BLS ">BLS</option>
                       <option value="Hands only CPR">Hands only CPR</option>
                       <option value="AED">AED</option>
                       <option value="Heart Savers First AID">Heart Savers First AID</option>
                       <option value="Heimlich Maneuve">Heimlich Maneuve</option>
                        <option value="EPI-PEN">EPI-PEN</option>
-                      <option value="Technical Support">Technical Support</option>
+                      {/* <option value="Technical Support">Technical Support</option>
                       <option value="Complaint">Complaint</option>
-                      <option value="Compliment">Compliment</option>
+                      <option value="Compliment">Compliment</option> */}
                     </select>
                   </motion.div>
                   <motion.div

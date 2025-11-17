@@ -25,7 +25,7 @@ const quoteCategories = [
   {
     id: 'health',
     name: 'BLS',
-    description: 'BLS training turns individuals into capable first responders.',
+    description: 'We believe that comprehensive BLS training should be accessible to...',
     icon: HeartIcon,
     color: 'from-green-600 to-emerald-700',
     href: '/services/basic-life-support-bls'
@@ -173,7 +173,7 @@ export default function HeroSection() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6 }}
               >
-                At Bonnet Healthcare Training Center, we truly believe that taking care of your mental health is just as important as taking care of your physical health. Our mission is to make mental health education accessible to everyone by offering hands-on training and learning opportunities. We’re here to help people gain the confidence and knowledge they need to understand, support, and strengthen mental well-being in their own lives and in their communities.
+                At BONNET Healthcare Training Center, We truly believe that taking care of your mental health is just as important as taking care of your physical health. Our mission is to make mental health education accessible to everyone by offering hands-on training and learning opportunities. We’re here to help people gain the confidence and knowledge they need to understand, support, and strengthen mental well-being in their own lives and in their communities.
               </motion.p>
 
               <motion.div
@@ -209,7 +209,7 @@ export default function HeroSection() {
                 <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20 shadow-2xl max-w-md mx-auto ml-30">
                   <div className="text-center mb-4 sm:mb-6">
                     <h3 className="text-lg sm:text-xl font-bold text-white mb-2">Choose Our Services</h3>
-                    <p className="text-sm text-gray-300">Click on Services to get more details about it</p>
+                    <p className="text-base text-gray-300">Click on Services to get more details about it</p>
                   </div>
 
                   {/* Insurance Category Selector */}
@@ -223,11 +223,11 @@ export default function HeroSection() {
                         >
                           <div className="flex flex-col items-center space-y-2 text-center">
                             <div className={`w-10 h-10 rounded-lg bg-gradient-to-r ${category.color} flex items-center justify-center`}>
-                              <category.icon className="h-5 w-5 text-white" />
+                              <category.icon className="h-7 w-7 text-white" />
                             </div>
                             <div>
-                              <div className="text-white text-sm font-medium leading-tight">{category.name}</div>
-                              <div className="text-gray-300 text-xs mt-1 leading-tight">{category.description}</div>
+                              <div className="text-white text-base font-medium leading-tight">{category.name}</div>
+                              <div className="text-gray-300 text-sm mt-1 leading-tight">{category.description}</div>
                             </div>
                           </div>
                         </motion.div>
@@ -238,7 +238,7 @@ export default function HeroSection() {
                   <div className="mt-4 text-center">
                     <Link
                       href="/services"
-                      className="text-blue-300 hover:text-blue-200 text-sm font-medium transition-colors duration-200"
+                      className="text-blue-300 hover:text-blue-200 text-base font-medium transition-colors duration-200"
                     >
                       View All Services Options →
                     </Link>

@@ -153,7 +153,7 @@ export default function AboutPage() {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="flex items-center space-x-2 mb-6"
+                className="flex items-center  space-x-2  mb-6 ml-90"
               >
                 <motion.div
                   animate={{ rotate: 360 }}

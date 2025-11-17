@@ -1,9 +1,11 @@
 'use client'
 
 import Link from 'next/link'
-import React from 'react'
+import React, { useState } from 'react'
+import AppointmentModal from '@/components/ui/AppointmentModal'
 
 export default function ACLSPage() {
+  const [open, setOpen] = useState(false)
   return (
     <main className=" ">
       {/* Top Banner Image */}
@@ -46,12 +48,7 @@ export default function ACLSPage() {
                 </p>
               </div>
               <div className="mt-6">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center rounded-lg bg-blue-600 px-5 py-3 text-white font-semibold shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-[#E84545] focus:ring-offset-2 transition-colors"
-                >
-                  Make An Appointment
-                </Link>
+                <button onClick={() => setOpen(true)} className="inline-flex items-center rounded-lg bg-blue-600 px-5 py-3 text-white font-semibold shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-[#E84545] focus:ring-offset-2 transition-colors">Make An Appointment</button>
               </div>
             </div>
 
@@ -156,15 +153,11 @@ export default function ACLSPage() {
           </ul>
 
           <div className="mt-8">
-            <Link
-              href="/contact"
-              className="inline-flex items-center rounded-lg bg-blue-600 px-5 py-3 text-white font-semibold shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-offset-2 transition-colors"
-            >
-              Make An Appointment
-            </Link>
+            <button onClick={() => setOpen(true)} className="inline-flex items-center rounded-lg bg-blue-600 px-5 py-3 text-white font-semibold shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-offset-2 transition-colors">Make An Appointment</button>
           </div>
         </div>
       </section>
+      <AppointmentModal open={open} onClose={() => setOpen(false)} defaultService="ACLS" />
     </main>
   )
 }

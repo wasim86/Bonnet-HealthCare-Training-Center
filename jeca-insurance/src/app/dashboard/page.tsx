@@ -40,13 +40,13 @@ export default function DashboardPage() {
   const [showAdminSettings, setShowAdminSettings] = useState(false)
 
   // API base URL configuration
-  const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5149/api'
+  const API_BASE_URL = '/api'
 
   // Management section state
-  const [activeManagementSection, setActiveManagementSection] = useState('quotes') // 'quotes' or 'services'
+  const [activeManagementSection, setActiveManagementSection] = useState('services')
 
   // Service Management State
-  const [activeServiceTab, setActiveServiceTab] = useState<string>('claims')
+  const [activeServiceTab, setActiveServiceTab] = useState<string>('contactInquiries')
   const [serviceData, setServiceData] = useState<any>({
     claims: [],
     policyReviews: [],
@@ -56,6 +56,9 @@ export default function DashboardPage() {
     contactInquiries: []
   })
   const [loadingServices, setLoadingServices] = useState(false)
+  const [serviceQuoteType, setServiceQuoteType] = useState<string>('All')
+  const [serviceStatus, setServiceStatus] = useState<string>('All')
+  const [serviceSearch, setServiceSearch] = useState('')
 
   // Service Details Modal State
   const [selectedServiceDetails, setSelectedServiceDetails] = useState<any>(null)
@@ -82,14 +85,14 @@ export default function DashboardPage() {
 
   // Admin quick actions with real statistics
   const adminQuickActions = [
-    {
-      name: 'Customer Quotes Management',
-      description: 'Manage all customer quotes',
-      icon: DocumentTextIcon,
-      action: () => setActiveManagementSection('quotes'),
-      color: 'blue',
-      count: totalCount || 0
-    },
+    // {
+    //   name: 'Customer Quotes Management',
+    //   description: 'Manage all customer quotes',
+    //   icon: DocumentTextIcon,
+    //   action: () => setActiveManagementSection('quotes'),
+    //   color: 'blue',
+    //   count: totalCount || 0
+    // },
     {
       name: 'Service Management',
       description: 'Manage customer service requests',
@@ -276,11 +279,11 @@ export default function DashboardPage() {
     setLoadingServices(true)
     try {
       const [claimsRes, policyReviewsRes, contactUpdatesRes, proofInsuranceRes, consultationsRes, contactInquiriesRes] = await Promise.all([
-        fetch(`${API_BASE_URL}/Claim?pageSize=20`),
-        fetch(`${API_BASE_URL}/PolicyReview?pageSize=20`),
-        fetch(`${API_BASE_URL}/ContactUpdate?pageSize=20`),
-        fetch(`${API_BASE_URL}/ProofOfInsurance?pageSize=20`),
-        fetch(`${API_BASE_URL}/Consultation?pageSize=20`),
+        fetch(`${API_BASE_URL}/services/claim?pageSize=20`),
+        fetch(`${API_BASE_URL}/services/policy-review?pageSize=20`),
+        fetch(`${API_BASE_URL}/services/contact-update?pageSize=20`),
+        fetch(`${API_BASE_URL}/services/proof-of-insurance?pageSize=20`),
+        fetch(`${API_BASE_URL}/services/consultation?pageSize=20`),
         fetch(`${API_BASE_URL}/contact?pageSize=20`)
       ])
 
@@ -326,19 +329,19 @@ export default function DashboardPage() {
       let endpoint = ''
       switch (serviceType) {
         case 'claim':
-          endpoint = `${API_BASE_URL}/Claim/${id}`
+          endpoint = `${API_BASE_URL}/services/claim/${id}`
           break
         case 'policyReview':
-          endpoint = `${API_BASE_URL}/PolicyReview/${id}`
+          endpoint = `${API_BASE_URL}/services/policy-review/${id}`
           break
         case 'contactUpdate':
-          endpoint = `${API_BASE_URL}/ContactUpdate/${id}`
+          endpoint = `${API_BASE_URL}/services/contact-update/${id}`
           break
         case 'proofOfInsurance':
-          endpoint = `${API_BASE_URL}/ProofOfInsurance/${id}`
+          endpoint = `${API_BASE_URL}/services/proof-of-insurance/${id}`
           break
         case 'consultation':
-          endpoint = `${API_BASE_URL}/Consultation/${id}`
+          endpoint = `${API_BASE_URL}/services/consultation/${id}`
           break
         case 'contactInquiry':
           endpoint = `${API_BASE_URL}/contact/${id}`
@@ -448,6 +451,43 @@ export default function DashboardPage() {
     }
   }
 
+  const normalize = (v: string | undefined) => (v || '').toLowerCase()
+  const typeMatch = (item: any) => {
+    if (serviceQuoteType === 'All') return true
+    const t = normalize(item.insuranceType) || normalize(item.inquiryType) || normalize(item.claimType) || normalize(item.consultationType) || normalize(item.reviewMethod) || normalize(item.changeType)
+    return t === serviceQuoteType.toLowerCase()
+  }
+  const statusMatch = (item: any) => {
+    if (serviceStatus === 'All') return true
+    return normalize(item.status) === serviceStatus.toLowerCase()
+  }
+  const searchMatch = (item: any) => {
+    const q = serviceSearch.trim().toLowerCase()
+    if (!q) return true
+    const fields = [
+      item.firstName,
+      item.lastName,
+      item.email,
+      item.phoneNumber,
+      item.claimNumber,
+      item.policyNumber,
+      item.updateNumber,
+      item.requestNumber,
+      item.consultationNumber,
+      item.contactNumber,
+      item.subject
+    ]
+      .map(normalize)
+      .join(' ')
+    return fields.includes(q)
+  }
+  const filteredClaims = React.useMemo(() => (serviceData.claims || []).filter((i: any) => typeMatch(i) && statusMatch(i) && searchMatch(i)), [serviceData.claims, serviceQuoteType, serviceStatus, serviceSearch])
+  const filteredPolicyReviews = React.useMemo(() => (serviceData.policyReviews || []).filter((i: any) => typeMatch(i) && statusMatch(i) && searchMatch(i)), [serviceData.policyReviews, serviceQuoteType, serviceStatus, serviceSearch])
+  const filteredContactUpdates = React.useMemo(() => (serviceData.contactUpdates || []).filter((i: any) => typeMatch(i) && statusMatch(i) && searchMatch(i)), [serviceData.contactUpdates, serviceQuoteType, serviceStatus, serviceSearch])
+  const filteredProofOfInsurance = React.useMemo(() => (serviceData.proofOfInsurance || []).filter((i: any) => typeMatch(i) && statusMatch(i) && searchMatch(i)), [serviceData.proofOfInsurance, serviceQuoteType, serviceStatus, serviceSearch])
+  const filteredConsultations = React.useMemo(() => (serviceData.consultations || []).filter((i: any) => typeMatch(i) && statusMatch(i) && searchMatch(i)), [serviceData.consultations, serviceQuoteType, serviceStatus, serviceSearch])
+  const filteredContactInquiries = React.useMemo(() => (serviceData.contactInquiries || []).filter((i: any) => typeMatch(i) && statusMatch(i) && searchMatch(i)), [serviceData.contactInquiries, serviceQuoteType, serviceStatus, serviceSearch])
+
   return (
     <ProtectedRoute>
       <div className="min-h-screen bg-gray-50">
@@ -457,7 +497,8 @@ export default function DashboardPage() {
           <div className="flex justify-between items-center py-6">
             <div>
               <h1 className="text-2xl font-bold text-gray-900">Admin Dashboard</h1>
-              <p className="text-sm text-gray-600">Manage all customer quotes and insurance applications</p>
+              <p className="text-sm text-gray-600">Manage all HealthCare Services
+</p>
             </div>
             <div className="flex items-center space-x-4">
               <button
@@ -542,7 +583,7 @@ export default function DashboardPage() {
                 <div className="flex items-center justify-between">
                   <div>
                     <div className="text-3xl font-bold">{statistics.totalQuotes}</div>
-                    <div className="text-blue-100">Total Customer Quotes</div>
+                    <div className="text-blue-100">Total Service Request</div>
                   </div>
                   <DocumentTextIcon className="h-8 w-8 text-blue-200" />
                 </div>
@@ -551,7 +592,7 @@ export default function DashboardPage() {
                 <div className="flex items-center justify-between">
                   <div>
                     <div className="text-3xl font-bold">{statistics.quotesThisMonth}</div>
-                    <div className="text-green-100">Quotes This Month</div>
+                    <div className="text-green-100">Request This Month</div>
                   </div>
                   <ArrowTrendingUpIcon className="h-8 w-8 text-green-200" />
                 </div>
@@ -578,333 +619,7 @@ export default function DashboardPage() {
           </motion.div>
         )}
 
-        {/* Customer Quotes Management */}
-        {activeManagementSection === 'quotes' && (
-          <motion.div
-            id="quotes-section"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
-            className="mb-8"
-          >
-          <div className="bg-white rounded-lg shadow-sm">
-            <div className="px-6 py-4 border-b border-gray-200">
-              <div className="flex items-center justify-between">
-                <h2 className="text-lg font-medium text-gray-900">Customer Quotes Management</h2>
-                <div className="flex items-center space-x-4">
-                  <button
-                    onClick={exportQuotesToExcel}
-                    className="inline-flex items-center px-3 py-2 border border-gray-300 shadow-sm text-sm leading-4 font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
-                  >
-                    <DocumentTextIcon className="h-4 w-4 mr-2" />
-                    Export to Excel
-                  </button>
-                  <button
-                    onClick={refresh}
-                    className="inline-flex items-center px-3 py-2 border border-gray-300 shadow-sm text-sm leading-4 font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-                  >
-                    <ArrowPathIcon className="h-4 w-4 mr-2" />
-                    Refresh
-                  </button>
-                </div>
-              </div>
-
-              {/* Filters and Search */}
-              <div className="mt-4 grid grid-cols-1 md:grid-cols-4 gap-4">
-                {/* Quote Type Filter */}
-                <div>
-                  <label htmlFor="quote-type" className="block text-sm font-medium text-gray-700 mb-1">
-                    Quote Type
-                  </label>
-                  <select
-                    id="quote-type"
-                    value={selectedQuoteType}
-                    onChange={(e) => setSelectedQuoteType(e.target.value)}
-                    className="block w-full px-3 py-2 border border-gray-300 rounded-md leading-5 bg-white focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                  >
-                    <option value="All">All Quote Types</option>
-                    {Object.values(QUOTE_TYPES).map((type) => (
-                      <option key={type} value={type}>
-                        {getQuoteTypeDisplayName(type)}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-
-                {/* Status Filter */}
-                <div>
-                  <label htmlFor="status" className="block text-sm font-medium text-gray-700 mb-1">
-                    Status
-                  </label>
-                  <select
-                    id="status"
-                    value={selectedStatus}
-                    onChange={(e) => setSelectedStatus(e.target.value)}
-                    className="block w-full px-3 py-2 border border-gray-300 rounded-md leading-5 bg-white focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                  >
-                    <option value="All">All Statuses</option>
-                    <option value="Pending">Pending</option>
-                    <option value="Under Review">Under Review</option>
-                    <option value="Approved">Approved</option>
-                    <option value="Active">Active</option>
-                    <option value="Rejected">Rejected</option>
-                    <option value="Cancelled">Cancelled</option>
-                  </select>
-                </div>
-
-                {/* Search */}
-                <div className="md:col-span-2">
-                  <label htmlFor="search" className="block text-sm font-medium text-gray-700 mb-1">
-                    Search
-                  </label>
-                  <div className="relative">
-                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                      <MagnifyingGlassIcon className="h-5 w-5 text-gray-400" />
-                    </div>
-                    <input
-                      type="text"
-                      id="search"
-                      value={searchTerm}
-                      onChange={(e) => setSearchTerm(e.target.value)}
-                      placeholder="Search by name, email, phone, quote number..."
-                      className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Quotes Table */}
-            <div className="overflow-x-auto">
-              {loading ? (
-                <div className="flex items-center justify-center py-12">
-                  <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
-                  <span className="ml-2 text-gray-600">Loading quotes...</span>
-                </div>
-              ) : error ? (
-                <div className="flex items-center justify-center py-12">
-                  <div className="text-red-600">Error loading quotes: {error}</div>
-                </div>
-              ) : quotes.length === 0 ? (
-                <div className="flex items-center justify-center py-12">
-                  <div className="text-gray-500">No quotes found matching your criteria.</div>
-                </div>
-              ) : (
-                <table className="min-w-full divide-y divide-gray-200">
-                  <thead className="bg-gray-50">
-                    <tr>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                        Quote Details
-                      </th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                        Customer Information
-                      </th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                        Contact & Location
-                      </th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                        Insurance Details
-                      </th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                        Status & Date
-                      </th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                        Actions
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody className="bg-white divide-y divide-gray-200">
-                    {quotes.map((quote) => (
-                      <tr key={quote.id} className="hover:bg-gray-50 transition-colors">
-                        <td className="px-6 py-4 whitespace-nowrap">
-                          <div className="flex items-center">
-                            <div className="flex-shrink-0 h-10 w-10">
-                              <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center">
-                                <DocumentTextIcon className="h-5 w-5 text-blue-600" />
-                              </div>
-                            </div>
-                            <div className="ml-4">
-                              <div className="text-sm font-medium text-gray-900">
-                                {quote.quoteNumber}
-                              </div>
-                              <div className="text-sm text-gray-500">
-                                {getQuoteTypeDisplayName(quote.quoteType || '')}
-                              </div>
-                            </div>
-                          </div>
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap">
-                          <div className="text-sm font-medium text-gray-900">
-                            {quote.firstName} {quote.lastName}
-                          </div>
-                          <div className="text-sm text-gray-500">
-                            {quote.currentInsuranceCompany && (
-                              <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-gray-100 text-gray-800 mt-1">
-                                Current: {quote.currentInsuranceCompany}
-                              </span>
-                            )}
-                          </div>
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap">
-                          <div className="text-sm text-gray-900">{quote.email}</div>
-                          <div className="text-sm text-gray-500">{quote.phoneNumber}</div>
-                          <div className="text-sm text-gray-500">
-                            {quote.city && quote.state && `${quote.city}, ${quote.state}`}
-                            {quote.zipCode && ` ${quote.zipCode}`}
-                          </div>
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap">
-                          <div className="text-sm text-gray-900">
-                            {quote.coverageDesired && (
-                              <div className="mb-1">
-                                <span className="font-medium">Coverage:</span> {quote.coverageDesired}
-                              </div>
-                            )}
-                            {quote.continuousCoverage && (
-                              <div className="text-xs text-gray-500">
-                                Continuous: {quote.continuousCoverage}
-                              </div>
-                            )}
-                            {quote.policyExpiresIn && (
-                              <div className="text-xs text-gray-500">
-                                Expires: {quote.policyExpiresIn}
-                              </div>
-                            )}
-                          </div>
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap">
-                          <div className="mb-2">
-                            <select
-                              value={quote.status || 'Pending'}
-                              onChange={(e) => handleStatusUpdate(quote.id || '', e.target.value)}
-                              className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border-0 focus:ring-2 focus:ring-blue-500 cursor-pointer ${getStatusColor(quote.status || 'Pending')}`}
-                            >
-                              <option value="New">New</option>
-                              <option value="Pending">Pending</option>
-                              <option value="Under Review">Under Review</option>
-                              <option value="Approved">Approved</option>
-                              <option value="Active">Active</option>
-                              <option value="Rejected">Rejected</option>
-                              <option value="Cancelled">Cancelled</option>
-                            </select>
-                          </div>
-                          <div className="text-xs text-gray-500">
-                            {quote.createdDate && formatDate(quote.createdDate)}
-                          </div>
-                          {quote.updatedDate && quote.updatedDate !== quote.createdDate && (
-                            <div className="text-xs text-gray-400">
-                              Updated: {formatDate(quote.updatedDate)}
-                            </div>
-                          )}
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                          <div className="flex flex-col space-y-2">
-                            <button
-                              onClick={() => handleViewQuote(quote.id || '')}
-                              disabled={loadingQuoteDetails}
-                              className="inline-flex items-center px-3 py-1 border border-transparent text-xs font-medium rounded-md text-blue-700 bg-blue-100 hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed"
-                            >
-                              {loadingQuoteDetails ? (
-                                <>
-                                  <svg className="animate-spin h-3 w-3 mr-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                                  </svg>
-                                  Loading...
-                                </>
-                              ) : (
-                                <>
-                                  <EyeIcon className="h-3 w-3 mr-1" />
-                                  View Details
-                                </>
-                              )}
-                            </button>
-                            <button
-                              onClick={() => window.open(`mailto:${quote.email}?subject=Regarding Your Quote ${quote.quoteNumber}`, '_blank')}
-                              className="inline-flex items-center px-3 py-1 border border-transparent text-xs font-medium rounded-md text-green-700 bg-green-100 hover:bg-green-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
-                            >
-                              <PhoneIcon className="h-3 w-3 mr-1" />
-                              Contact
-                            </button>
-                          </div>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              )}
-            </div>
-
-            {/* Pagination */}
-            {totalPages > 1 && (
-              <div className="bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6">
-                <div className="flex-1 flex justify-between sm:hidden">
-                  <button
-                    onClick={() => setPage(Math.max(1, page - 1))}
-                    disabled={page === 1}
-                    className="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
-                  >
-                    Previous
-                  </button>
-                  <button
-                    onClick={() => setPage(Math.min(totalPages, page + 1))}
-                    disabled={page === totalPages}
-                    className="ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
-                  >
-                    Next
-                  </button>
-                </div>
-                <div className="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
-                  <div>
-                    <p className="text-sm text-gray-700">
-                      Showing <span className="font-medium">{((page - 1) * pageSize) + 1}</span> to{' '}
-                      <span className="font-medium">{Math.min(page * pageSize, totalCount)}</span> of{' '}
-                      <span className="font-medium">{totalCount}</span> results
-                    </p>
-                  </div>
-                  <div>
-                    <nav className="relative z-0 inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
-                      <button
-                        onClick={() => setPage(Math.max(1, page - 1))}
-                        disabled={page === 1}
-                        className="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
-                      >
-                        <ChevronLeftIcon className="h-5 w-5" />
-                      </button>
-
-                      {/* Page numbers */}
-                      {Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
-                        const pageNum = Math.max(1, Math.min(totalPages - 4, page - 2)) + i;
-                        return (
-                          <button
-                            key={pageNum}
-                            onClick={() => setPage(pageNum)}
-                            className={`relative inline-flex items-center px-4 py-2 border text-sm font-medium ${
-                              pageNum === page
-                                ? 'z-10 bg-blue-50 border-blue-500 text-blue-600'
-                                : 'bg-white border-gray-300 text-gray-500 hover:bg-gray-50'
-                            }`}
-                          >
-                            {pageNum}
-                          </button>
-                        );
-                      })}
-
-                      <button
-                        onClick={() => setPage(Math.min(totalPages, page + 1))}
-                        disabled={page === totalPages}
-                        className="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
-                      >
-                        <ChevronRightIcon className="h-5 w-5" />
-                      </button>
-                    </nav>
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
-        </motion.div>
-        )}
+        
 
         {/* Service Details Modal */}
         {serviceDetailsModalOpen && selectedServiceDetails && (
@@ -1672,6 +1387,15 @@ export default function DashboardPage() {
                 <h2 className="text-lg font-medium text-gray-900">Service Management</h2>
                 <p className="text-sm text-gray-600">Manage customer service requests and inquiries</p>
               </div>
+              <div className="flex items-center ml-143 space-x-4">
+                  <button
+                    onClick={exportQuotesToExcel}
+                    className="inline-flex items-center px-3 py-2 border border-gray-300 shadow-sm text-sm leading-4 font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+                  >
+                    <DocumentTextIcon className="h-4 w-4 mr-2" />
+                    Export to Excel
+                  </button>
+                  </div>
               <button
                 onClick={fetchServiceData}
                 className="inline-flex items-center px-3 py-2 border border-gray-300 shadow-sm text-sm leading-4 font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
@@ -1685,12 +1409,12 @@ export default function DashboardPage() {
             <div className="border-b border-gray-200 mb-6">
               <nav className="-mb-px flex space-x-8">
                 {[
-                  { id: 'claims', name: 'Claims', count: serviceData.claims?.length || 0 },
-                  { id: 'policyReviews', name: 'Policy Reviews', count: serviceData.policyReviews?.length || 0 },
-                  { id: 'contactUpdates', name: 'Contact Updates', count: serviceData.contactUpdates?.length || 0 },
-                  { id: 'proofInsurance', name: 'Proof of Insurance', count: serviceData.proofOfInsurance?.length || 0 },
-                  { id: 'consultations', name: 'Consultations', count: serviceData.consultations?.length || 0 },
-                  { id: 'contactInquiries', name: 'Contact Inquiries', count: serviceData.contactInquiries?.length || 0 }
+                  // { id: 'claims', name: 'Claims', count: serviceData.claims?.length || 0 },
+                  // { id: 'policyReviews', name: 'Policy Reviews', count: serviceData.policyReviews?.length || 0 },
+                  // { id: 'contactUpdates', name: 'Contact Updates', count: serviceData.contactUpdates?.length || 0 },
+                  // { id: 'proofInsurance', name: 'Proof of Insurance', count: serviceData.proofOfInsurance?.length || 0 },
+                  // { id: 'consultations', name: 'Consultations', count: serviceData.consultations?.length || 0 },
+                  { id: 'contactInquiries', name: 'Service Inquiries', count: serviceData.contactInquiries?.length || 0 }
                 ].map((tab) => (
                   <button
                     key={tab.id}
@@ -1710,6 +1434,58 @@ export default function DashboardPage() {
                   </button>
                 ))}
               </nav>
+            </div>
+
+            <div className="mt-4 grid grid-cols-1 md:grid-cols-4 gap-4">
+              <div>
+                <label htmlFor="service-quote-type" className="block text-sm font-medium text-gray-700 mb-1">Services Type</label>
+                <select
+                  id="service-quote-type"
+                  value={serviceQuoteType}
+                  onChange={(e) => setServiceQuoteType(e.target.value)}
+                  className="block w-full px-3 py-2 border border-gray-300 rounded-md leading-5 bg-white focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                >
+                  <option value="All">All Service Types</option>
+                  {Object.values(QUOTE_TYPES).map((type) => (
+                    <option key={type} value={type}>{getQuoteTypeDisplayName(type)}</option>
+                  ))}
+                </select>
+              </div>
+              <div>
+                <label htmlFor="service-status" className="block text-sm font-medium text-gray-700 mb-1">Status</label>
+                <select
+                  id="service-status"
+                  value={serviceStatus}
+                  onChange={(e) => setServiceStatus(e.target.value)}
+                  className="block w-full px-3 py-2 border border-gray-300 rounded-md leading-5 bg-white focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                >
+                  <option value="All">All Statuses</option>
+                  <option value="New">New</option>
+                  <option value="Requested">Requested</option>
+                  <option value="Scheduled">Scheduled</option>
+                  <option value="Processing">Processing</option>
+                  <option value="In Progress">In Progress</option>
+                  <option value="Resolved">Resolved</option>
+                  <option value="Completed">Completed</option>
+                  <option value="Closed">Closed</option>
+                </select>
+              </div>
+              <div className="md:col-span-2">
+                <label htmlFor="service-search" className="block text-sm font-medium text-gray-700 mb-1">Search</label>
+                <div className="relative">
+                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <MagnifyingGlassIcon className="h-5 w-5 text-gray-400" />
+                  </div>
+                  <input
+                    type="text"
+                    id="service-search"
+                    value={serviceSearch}
+                    onChange={(e) => setServiceSearch(e.target.value)}
+                    placeholder="Search by name, email, phone, number, subject..."
+                    className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  />
+                </div>
+              </div>
             </div>
 
             {/* Service Content */}
@@ -1739,7 +1515,7 @@ export default function DashboardPage() {
                         </tr>
                       </thead>
                       <tbody className="bg-white divide-y divide-gray-200">
-                        {serviceData.claims?.length > 0 ? serviceData.claims.map((claim: any) => (
+                        {filteredClaims.length > 0 ? filteredClaims.map((claim: any) => (
                           <tr key={claim.id} className="hover:bg-gray-50">
                             <td className="px-6 py-4 whitespace-nowrap">
                               <div className="flex items-center">
@@ -1807,7 +1583,7 @@ export default function DashboardPage() {
                         </tr>
                       </thead>
                       <tbody className="bg-white divide-y divide-gray-200">
-                        {serviceData.policyReviews?.length > 0 ? serviceData.policyReviews.map((review: any) => (
+                        {filteredPolicyReviews.length > 0 ? filteredPolicyReviews.map((review: any) => (
                           <tr key={review.id} className="hover:bg-gray-50">
                             <td className="px-6 py-4 whitespace-nowrap">
                               <div className="flex items-center">
@@ -1874,7 +1650,7 @@ export default function DashboardPage() {
                         </tr>
                       </thead>
                       <tbody className="bg-white divide-y divide-gray-200">
-                        {serviceData.contactUpdates?.length > 0 ? serviceData.contactUpdates.map((update: any) => (
+                        {filteredContactUpdates.length > 0 ? filteredContactUpdates.map((update: any) => (
                           <tr key={update.id} className="hover:bg-gray-50">
                             <td className="px-6 py-4 whitespace-nowrap">
                               <div className="flex items-center">
@@ -1941,7 +1717,7 @@ export default function DashboardPage() {
                         </tr>
                       </thead>
                       <tbody className="bg-white divide-y divide-gray-200">
-                        {serviceData.proofOfInsurance?.length > 0 ? serviceData.proofOfInsurance.map((proof: any) => (
+                        {filteredProofOfInsurance.length > 0 ? filteredProofOfInsurance.map((proof: any) => (
                           <tr key={proof.id} className="hover:bg-gray-50">
                             <td className="px-6 py-4 whitespace-nowrap">
                               <div className="flex items-center">
@@ -2008,7 +1784,7 @@ export default function DashboardPage() {
                         </tr>
                       </thead>
                       <tbody className="bg-white divide-y divide-gray-200">
-                        {serviceData.consultations?.length > 0 ? serviceData.consultations.map((consultation: any) => (
+                        {filteredConsultations.length > 0 ? filteredConsultations.map((consultation: any) => (
                           <tr key={consultation.id} className="hover:bg-gray-50">
                             <td className="px-6 py-4 whitespace-nowrap">
                               <div className="flex items-center">
@@ -2063,7 +1839,7 @@ export default function DashboardPage() {
                 )}
 
                 {activeServiceTab === 'contactInquiries' && (
-                  <div className="overflow-x-auto">
+                  <div className="overflow-x-auto ">
                     <table className="min-w-full divide-y divide-gray-200">
                       <thead className="bg-gray-50">
                         <tr>
@@ -2075,7 +1851,7 @@ export default function DashboardPage() {
                         </tr>
                       </thead>
                       <tbody className="bg-white divide-y divide-gray-200">
-                        {serviceData.contactInquiries?.length > 0 ? serviceData.contactInquiries.map((inquiry: any) => (
+                        {filteredContactInquiries.length > 0 ? filteredContactInquiries.map((inquiry: any) => (
                           <tr key={inquiry.id} className="hover:bg-gray-50">
                             <td className="px-6 py-4 whitespace-nowrap">
                               <div className="flex items-center">

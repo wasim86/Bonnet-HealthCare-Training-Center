@@ -12,19 +12,19 @@ import {
 const navigation = {
   insurance: [
     { name: 'Home', href: '/' },
-    { name: 'About Us', href: '/about ' },
+    { name: 'About Us', href: '/about' },
     { name: 'Services', href: '/services' },
     { name: 'Education Services', href: '/Education-Services' },
     { name: 'Contact Us', href: '/contact' },
   ],
   support: [
-    { name: 'ACLC', href: '/services/advanced-cardiovascular-life-support-acls' },
+    { name: 'ACLS', href: '/services/advanced-cardiovascular-life-support-acls' },
     { name: 'BLS', href: '/services/basic-life-support-bls' },
-    { name: 'Hands Only CPR ', href: '/services/cardiopulmonary-resuscitation-cpr' },
+    { name: 'Hands Only CPR', href: '/services/cardiopulmonary-resuscitation-cpr' },
     { name: 'AED', href: '/services/automated-external-defibrillator-aed' },
-    { name: 'Heart Savers First AID', href: '/services/heart-savers-first-aid' },
-     { name: 'Heimlich Maneuve', href: '/services/heimlich-maneuve' },
-      { name: 'EPI-PEN Training', href: '/services/epi-pen' },
+    { name: 'Heart Savers First Aid', href: '/services/heart-savers-first-aid' },
+    { name: 'Heimlich Maneuver', href: '/services/heimlich-maneuve' },
+    { name: 'EPI-PEN', href: '/services/epi-pen' },
 
   ],
 }
@@ -58,7 +58,7 @@ export default function Footer() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              className="text-sm sm:text-base leading-6 text-white text-center lg:text-left max-w-md mx-auto lg:mx-0"
+              className="text-base sm:text-base leading-6 text-white text-center lg:text-left max-w-md mx-auto lg:mx-0"
             >
               At Bonnet HealthCare, we believe that every individual has the potential to make a difference in their community by providing essential first aid and emergency response. That's why we offer comprehensive healthcare training and education solutions designed to empower individuals, families, and organizations with life-saving skills and better health outcomes.
             </motion.p>
@@ -140,50 +140,43 @@ export default function Footer() {
               </div>
             </motion.div>
           </div>
-          <div className="mt-12 grid grid-cols-1 gap-8 ml-40 sm:grid-cols-1 lg:col-span-2 lg:mt-0 lg:grid-cols-3">
-            <div className="text-center sm:text-left">
-              <h2 className=" font-semibold leading-6  text-white mb-4 underline  decoration-0 underline-offset-5 lg:mb-6">Quick Links</h2>
+          <div className="mt-12 grid  grid-cols-1  sm:grid-cols-1 lg:col-span-2 lg:mt-0 lg:grid-cols-3">
+            <div className="text-center ml-40 w-50 sm:text-left">
+              <h2 className=" font-bold leading-7  text-white mb-4 underline  decoration-0 underline-offset-5 lg:mb-6">Quick Links</h2>
               <ul role="list" className="space-y-5 lg:space-y-4">
                 {navigation.insurance.map((item) => (
                   <li key={item.name}>
-                    <Link href={item.href} className="text-sm leading-6 text-white hover:text-white transition-colors block py-1">
+                    <Link href={item.href} className="text-sm leading-6 text-white hover:text-gray-500 transition-colors block py-1">
                       {item.name}
                     </Link>
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="text-center sm:text-left">
-              <h2 className=" font-semibold leading-6 text-white mb-4 underline  decoration-0 underline-offset-5 lg:mb-6">Services</h2>
-              <ul role="list" className="space-y-5 lg:space-y-4">
-                {navigation.support.map((item) => (
-                  <li key={item.name}>
-                    <Link href={item.href} className="text-sm leading-6 text-white hover:text-white transition-colors block py-1">
-                      {item.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            {/* <div className="text-center sm:text-left">
-              <h3 className=" font-semibold leading-6 text-white mb-4 lg:mb-6">Get Quote</h3>
-              <div className="space-y-4">
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <Link
-                    href="/quotes"
-                    className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-sm font-medium rounded-lg text-white bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl"
-                  >
-                    Get Your Quote
-                  </Link>
-                </motion.div>
-                <p className="text-xs text-white max-w-xs mx-auto sm:mx-0">
-                  Access personalized care plans in minutes. Compare services and support options tailored to your health needs.
-                </p>
+            <div className="text-center ml-50 w-73 sm:text-left">
+              <h2 className="ml-14 font-bold text-base leading-7 text-white underline decoration-0 underline-offset-5 lg:mb-6">Services</h2>
+              <div className="grid grid-cols-2">
+                <ul role="list" className="space-y-5 lg:space-y-4">
+                  {navigation.support.slice(0, 5).map((item) => (
+                    <li key={item.name}>
+                      <Link href={item.href} className="text-sm leading-6 text-white hover:text-gray-500 transition-colors block py-1">
+                        {item.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+                <ul role="list" className="space-y-5 lg:space-y-3">
+                  {navigation.support.slice(5).map((item) => (
+                    <li key={item.name}>
+                      <Link href={item.href} className="text-sm leading-6 text-white hover:text-gray-500 transition-colors block py-1">
+                        {item.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
               </div>
-            </div> */}
+            </div>
+           
           </div>
         </div>
         <div className="mt-12 sm:mt-16 lg:mt-20 border-t border-white/10 pt-6 sm:pt-8">
