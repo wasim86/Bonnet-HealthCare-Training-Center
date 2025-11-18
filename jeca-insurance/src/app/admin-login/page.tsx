@@ -55,7 +55,7 @@ export default function AdminLoginPage() {
             transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
             className="w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4"
           >
-            <LockClosedIcon className="h-8 w-8 text-white" />
+            <img src="/images/blue.png" alt="Bonnet HealthCare" className="h-8 w-8" />
           </motion.div>
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Admin Login</h1>
           <p className="text-gray-600">Access Bonnet HealthCare Dashboard</p>
@@ -132,7 +132,7 @@ export default function AdminLoginPage() {
 
         <div className="mt-6 text-center">
           <p className="text-sm text-gray-500">
-            Default Password: <span className="font-mono bg-gray-100 px-2 py-1 rounded">JecaAdmin2024!@#</span>
+            Default Password: <span className="font-mono bg-gray-100 px-2 py-1 rounded">BonnetAdmin2025!@#</span>
           </p>
         </div>
       </motion.div>
