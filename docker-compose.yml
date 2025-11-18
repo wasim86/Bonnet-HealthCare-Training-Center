@@ -24,7 +24,8 @@ services:
       dockerfile: Dockerfile
     
     environment:
-      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=http://0.0.0.0:80
       - DOTNET_RUNNING_IN_CONTAINER=true
       - ConnectionStrings__DefaultConnection=Server=jeca-sqlserver,1433;Database=BonnetHealthcare;User Id=sa;Password=${SA_PASSWORD:?Set SA_PASSWORD in Dokploy};TrustServerCertificate=True;
     depends_on:
