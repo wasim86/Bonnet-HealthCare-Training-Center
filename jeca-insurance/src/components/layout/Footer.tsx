@@ -111,7 +111,7 @@ export default function Footer() {
               <h4 className="text-sm font-semibold text-white mb-3 text-center lg:text-left">Follow Us</h4>
               <div className="flex space-x-4 justify-center lg:justify-start">
                 <motion.a
-                  href="https://www.facebook.com/JecaResourcesAndServices/"
+                  href="https://www.facebook.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, y: -2 }}
@@ -125,7 +125,7 @@ export default function Footer() {
                 </motion.a>
 
                 <motion.a
-                  href="https://www.instagram.com/jecaresourcesandservices/#"
+                  href="https://www.instagram.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, y: -2 }}
