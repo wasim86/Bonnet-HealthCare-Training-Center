@@ -206,28 +206,28 @@ export default function HeroSection() {
                 className="relative"
               >
                 {/* Categories Container */}
-                <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20 shadow-2xl max-w-md mx-auto ml-30">
-                  <div className="text-center mb-4 sm:mb-6">
-                    <h3 className="text-lg sm:text-xl font-bold text-white mb-2">Choose Our Services</h3>
-                    <p className="text-base text-gray-300">Click on Services to get more details about it</p>
+                <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-4 sm:p-6 border border-white/20 shadow-2xl max-w-sm sm:max-w-md mx-auto">
+                  <div className="text-center mb-3 sm:mb-6">
+                    <h3 className="text-base sm:text-xl font-bold text-white mb-1 sm:mb-2">Choose Our Services</h3>
+                    <p className="text-sm sm:text-base text-gray-300">Click on Services to get more details about it</p>
                   </div>
 
                   {/* Insurance Category Selector */}
-                  <div className="grid grid-cols-2 gap-3 mb-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-3 sm:mb-4">
                     {quoteCategories.map((category) => (
                       <Link key={category.id} href={category.href}>
                         <motion.div
-                          className="relative p-4 rounded-lg border-2 border-white/20 bg-white/5 hover:bg-white/10 transition-all duration-300 touch-target min-h-[120px] cursor-pointer hover:border-blue-400 hover:bg-blue-500/20"
+                          className="relative p-3 sm:p-4 rounded-lg border-2 border-white/20 bg-white/5 hover:bg-white/10 transition-all duration-300 touch-target min-h-[100px] sm:min-h-[120px] cursor-pointer hover:border-blue-400 hover:bg-blue-500/20"
                           whileHover={{ scale: 1.02 }}
                           whileTap={{ scale: 0.98 }}
                         >
                           <div className="flex flex-col items-center space-y-2 text-center">
-                            <div className={`w-10 h-10 rounded-lg bg-gradient-to-r ${category.color} flex items-center justify-center`}>
-                              <category.icon className="h-7 w-7 text-white" />
+                            <div className={`w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-r ${category.color} flex items-center justify-center`}>
+                              <category.icon className="h-6 w-6 sm:h-7 sm:w-7 text-white" />
                             </div>
                             <div>
-                              <div className="text-white text-base font-medium leading-tight">{category.name}</div>
-                              <div className="text-gray-300 text-sm mt-1 leading-tight">{category.description}</div>
+                              <div className="text-white text-sm sm:text-base font-medium leading-tight">{category.name}</div>
+                              <div className=" sm:block text-gray-300 text-sm mt-1 leading-tight">{category.description}</div>
                             </div>
                           </div>
                         </motion.div>

@@ -140,10 +140,10 @@ export default function Footer() {
               </div>
             </motion.div>
           </div>
-          <div className="mt-12 grid  grid-cols-1  sm:grid-cols-1 lg:col-span-2 lg:mt-0 lg:grid-cols-3">
-            <div className="text-center ml-40 w-50 sm:text-left">
-              <h2 className=" font-bold leading-7  text-white mb-4 underline  decoration-0 underline-offset-5 lg:mb-6">Quick Links</h2>
-              <ul role="list" className="space-y-5 lg:space-y-4">
+          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:col-span-2 lg:mt-0 lg:grid-cols-3 gap-2">
+            <div className="text-center sm:text-left">
+              <h2 className="text-lg sm:text-xl font-bold leading-7 text-white mb-4 underline underline-offset-4 lg:mb-6">Quick Links</h2>
+              <ul role="list" className="space-y-4">  
                 {navigation.insurance.map((item) => (
                   <li key={item.name}>
                     <Link href={item.href} className="text-sm leading-6 text-white hover:text-gray-500 transition-colors block py-1">
@@ -153,10 +153,10 @@ export default function Footer() {
                 ))}
               </ul>
             </div>
-            <div className="text-center ml-50 w-73 sm:text-left">
-              <h2 className="ml-14 font-bold text-base leading-7 text-white underline decoration-0 underline-offset-5 lg:mb-6">Services</h2>
-              <div className="grid grid-cols-2">
-                <ul role="list" className="space-y-5 lg:space-y-4">
+            <div className="text-center sm:text-left">
+              <h2 className="text-lg sm:text-xl font-bold leading-7 text-white mb-4 underline underline-offset-4 lg:mb-6">Services</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8">
+                <ul role="list" className="space-y-3">
                   {navigation.support.slice(0, 5).map((item) => (
                     <li key={item.name}>
                       <Link href={item.href} className="text-sm leading-6 text-white hover:text-gray-500 transition-colors block py-1">
@@ -165,7 +165,7 @@ export default function Footer() {
                     </li>
                   ))}
                 </ul>
-                <ul role="list" className="space-y-5 lg:space-y-3">
+                <ul role="list" className="space-y-3">
                   {navigation.support.slice(5).map((item) => (
                     <li key={item.name}>
                       <Link href={item.href} className="text-sm leading-6 text-white hover:text-gray-500 transition-colors block py-1">

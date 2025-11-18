@@ -130,7 +130,7 @@ export default function CTASection() {
             </p>
           </motion.div>
 
-          <div className="mx-auto mt-12 ml-80 grid max-w-lg grid-cols-1 gap-6 sm:max-w-4xl sm:grid-cols-3">
+          <div className="mx-auto mt-12 grid max-w-sm sm:max-w-3xl grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             {/* Phone */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -138,26 +138,26 @@ export default function CTASection() {
               transition={{ duration: 0.6, delay: 1 }}
               viewport={{ once: true }}
               whileHover={{ y: -10, scale: 1.02 }}
-              className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 text-center hover:bg-white/20 transition-all duration-300 border border-white/20"
+              className="bg-white/10 backdrop-blur-lg rounded-2xl p-4 sm:p-6 text-center hover:bg-white/20 transition-all duration-300 border border-white/20"
             >
               <motion.div
-                className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-r from-blue-400 to-purple-500 shadow-lg"
+                className="mx-auto flex h-12 w-12 sm:h-16 sm:w-16 items-center justify-center rounded-2xl bg-gradient-to-r from-blue-400 to-purple-500 shadow-lg"
                 whileHover={{ rotate: 5, scale: 1.1 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <PhoneIcon className="h-8 w-8 text-white" />
+                <PhoneIcon className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
               </motion.div>
-              <h4 className="mt-4 text-xl font-bold text-white">Call Us</h4>
-              <p className="mt-2 text-gray-200">Speak with a licensed agent</p>
+              <h4 className="mt-3 sm:mt-4 text-lg sm:text-xl font-bold text-white">Call Us</h4>
+              <p className="mt-1 sm:mt-2 text-sm sm:text-base text-gray-200">Speak with a licensed agent</p>
               <motion.a
                 href="tel:954-709-8196"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="mt-3 block text-2xl font-bold text-yellow-300 hover:text-yellow-200 transition-colors cursor-pointer"
+                className="mt-2 sm:mt-3 block text-xl sm:text-2xl font-bold text-yellow-300 hover:text-yellow-200 transition-colors cursor-pointer"
               >
                 954-709-8196
               </motion.a>
-              <p className="text-sm text-green-300 font-medium">Available 24/7</p>
+              <p className="text-xs sm:text-sm text-green-300 font-medium">Available 24/7</p>
             </motion.div>
 
             {/* Chat */}
@@ -167,22 +167,22 @@ export default function CTASection() {
               transition={{ duration: 0.6, delay: 1.2 }}
               viewport={{ once: true }}
               whileHover={{ y: -10, scale: 1.02 }}
-              className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 text-center hover:bg-white/20 transition-all duration-300 border border-white/20"
+              className="bg-white/10 backdrop-blur-lg rounded-2xl p-4 sm:p-6 text-center hover:bg-white/20 transition-all duration-300 border border-white/20"
             >
               <motion.div
-                className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-r from-green-400 to-blue-500 shadow-lg"
+                className="mx-auto flex h-12 w-12 sm:h-16 sm:w-16 items-center justify-center rounded-2xl bg-gradient-to-r from-green-400 to-blue-500 shadow-lg"
                 whileHover={{ rotate: 5, scale: 1.1 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <ChatBubbleLeftRightIcon className="h-8 w-8 text-white" />
+                <ChatBubbleLeftRightIcon className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
               </motion.div>
-              <h4 className="mt-4 text-xl font-bold text-white">Live Chat</h4>
-              <p className="mt-2 text-gray-200">Get instant help online</p>
+              <h4 className="mt-3 sm:mt-4 text-lg sm:text-xl font-bold text-white">Live Chat</h4>
+              <p className="mt-1 sm:mt-2 text-sm sm:text-base text-gray-200">Get instant help online</p>
               <motion.button
                 onClick={openChat}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="mt-4 rounded-xl bg-white px-6 py-3 text-sm font-bold text-purple-600 hover:bg-gray-100 transition-colors shadow-lg"
+                className="mt-3 sm:mt-4 w-full sm:w-auto rounded-xl bg-white px-5 sm:px-6 py-2.5 sm:py-3 text-sm font-bold text-purple-600 hover:bg-gray-100 transition-colors shadow-lg"
               >
                 Start Chat
               </motion.button>
