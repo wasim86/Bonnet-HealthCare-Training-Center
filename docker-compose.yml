@@ -28,7 +28,7 @@ services:
       - ASPNETCORE_URLS=http://0.0.0.0:80
       - DOTNET_RUNNING_IN_CONTAINER=true
       - ConnectionStrings__DefaultConnection=Server=jeca-sqlserver,1433;Database=BonnetHealthcare;User Id=sa;Password=${SA_PASSWORD:?Set SA_PASSWORD in Dokploy};TrustServerCertificate=True;
-    entrypoint: ["bash", "-c", "until (echo > /dev/tcp/jeca-sqlserver/1433) 2>/dev/null; do echo 'waiting for SQL Server on jeca-sqlserver:1433'; sleep 5; done; exec dotnet JecaInsurance.API.dll"]
+    
     depends_on:
       - jeca-sqlserver
     restart: unless-stopped
