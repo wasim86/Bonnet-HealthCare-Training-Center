@@ -16,6 +16,11 @@ export const metadata: Metadata = {
   title: "BONNET HealthCare - Training Center",
   description: "Comprehensive insurance coverage for auto, home, life, and business. Get a quote today and protect what matters most to you and your family.",
   keywords: "insurance, auto insurance, home insurance, life insurance, business insurance, quotes",
+  icons: {
+    icon: "/images/blue.png",
+    shortcut: "/images/blue.png",
+    apple: "/images/blue.png",
+  },
 };
 
 export default function RootLayout({

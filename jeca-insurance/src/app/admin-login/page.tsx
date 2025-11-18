@@ -55,7 +55,7 @@ export default function AdminLoginPage() {
             transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
             className="w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4"
           >
-            <img src="/images/blue.png" alt="Bonnet HealthCare" className="h-8 w-8" />
+            <LockClosedIcon className="h-8 w-8 text-white" />
           </motion.div>
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Admin Login</h1>
           <p className="text-gray-600">Access Bonnet HealthCare Dashboard</p>
