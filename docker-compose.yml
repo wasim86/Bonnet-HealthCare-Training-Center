@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
       args:
         - NEXT_PUBLIC_API_URL=https://bonnethealthcare.com/api
-    container_name: jeca-frontend
+    
     environment:
       - NODE_ENV=production
       - PORT=3000
@@ -22,7 +22,7 @@ services:
     build:
       context: ./JecaInsurance.API
       dockerfile: Dockerfile
-    container_name: jeca-api
+    
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - DOTNET_RUNNING_IN_CONTAINER=true
@@ -35,7 +35,7 @@ services:
 
   jeca-sqlserver:
     image: mcr.microsoft.com/mssql/server:2022-latest
-    container_name: jeca-sqlserver
+    
     environment:
       - ACCEPT_EULA=Y
       - SA_PASSWORD=${SA_PASSWORD:?Set SA_PASSWORD in Dokploy}
@@ -51,7 +51,7 @@ services:
     build:
       context: ./nginx
       dockerfile: Dockerfile
-    container_name: jeca-nginx
+    
     ports:
       - "80:80"
     depends_on:
