@@ -58,7 +58,7 @@ export default function AdminLoginPage() {
             <LockClosedIcon className="h-8 w-8 text-white" />
           </motion.div>
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Admin Login</h1>
-          <p className="text-gray-600">Access JECA Insurance Dashboard</p>
+          <p className="text-gray-600">Access Bonnet HealthCare Dashboard</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
