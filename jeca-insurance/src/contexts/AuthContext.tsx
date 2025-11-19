@@ -18,11 +18,11 @@ interface AuthContextType {
 const AuthContext = createContext<AuthContextType | undefined>(undefined)
 
 // Admin credentials
-const ADMIN_EMAIL = 'info@jecainsurancefl.com'
+const ADMIN_EMAIL = 'contact@bonnethealthcare.com'
 const ADMIN_PASSWORD_KEY = 'jeca_admin_password_v2'
 const ADMIN_LOGIN_KEY = 'jeca_admin_logged_in_v2'
 // const DEFAULT_PASSWORD = 'JecaAdmin2024!@#'
-const DEFAULT_PASSWORD = 'JecaAdmin2024!@#'
+const DEFAULT_PASSWORD = 'BonnetAdmin2025!@#'
 
 // Helper function to safely access localStorage
 const safeLocalStorage = {
@@ -61,8 +61,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    // Initialize default password if not set
-    if (!safeLocalStorage.getItem(ADMIN_PASSWORD_KEY)) {
+    const current = safeLocalStorage.getItem(ADMIN_PASSWORD_KEY)
+    if (current !== DEFAULT_PASSWORD) {
       safeLocalStorage.setItem(ADMIN_PASSWORD_KEY, DEFAULT_PASSWORD)
     }
 
