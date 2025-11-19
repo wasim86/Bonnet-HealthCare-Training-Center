@@ -566,40 +566,44 @@ export default function DashboardPage() {
       {/* Admin Header */}
       <div className="bg-white shadow-sm border-b">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-6">
+          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 py-4">
             <div>
-              <h1 className="text-2xl font-bold text-gray-900">Admin Dashboard</h1>
-              <p className="text-sm text-gray-600">Manage all HealthCare Services
+              <h1 className="text-xl sm:text-2xl font-bold text-gray-900">Admin Dashboard</h1>
+              <p className="text-xs sm:text-sm text-gray-600">Manage all HealthCare Services
 </p>
             </div>
-            <div className="flex items-center space-x-4">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
               <button
                 onClick={testApiConnection}
-                className="px-3 py-1 text-xs bg-green-100 text-green-700 rounded-md hover:bg-green-200"
+                className="px-3 py-1 text-xs bg-green-100 text-green-700 rounded-md hover:bg-green-200 w-full sm:w-auto"
               >
                 Test API
               </button>
-              <div className="text-right">
-                <p className="text-sm font-medium text-gray-900">Administrator</p>
-                <p className="text-xs text-gray-500">Last login: {new Date().toLocaleDateString()}</p>
+              <div className="flex items-center justify-center gap-2">
+                <div className="text-right">
+                  <p className="text-sm font-medium text-gray-900">Administrator</p>
+                  <p className="text-xs text-gray-500">Last login: {new Date().toLocaleDateString()}</p>
+                </div>
+                <div className="h-8 w-8 bg-blue-600 rounded-full flex items-center justify-center">
+                  <span className="text-white font-medium text-sm">A</span>
+                </div>
               </div>
-              <div className="h-8 w-8 bg-blue-600 rounded-full flex items-center justify-center">
-                <span className="text-white font-medium text-sm">A</span>
+              <div className="flex items-center justify-center sm:justify-start gap-3">
+                <button
+                  onClick={() => setShowAdminSettings(true)}
+                  className="bg-gray-600 text-white h-10 w-50 sm:w-auto px-3 py-2 sm:px-4 sm:py-2 rounded-md text-sm font-medium hover:bg-gray-700 flex items-center justify-center gap-2"
+                >
+                  <CogIcon className="h-4 w-4" />
+                  <span>Admin Settings</span>
+                </button>
+                <button
+                  onClick={logout}
+                  className="bg-red-600 text-white h-10 w-36 sm:w-auto px-3 py-2 sm:px-4 sm:py-2 rounded-md text-sm font-medium hover:bg-red-700 flex items-center justify-center gap-2"
+                >
+                  <ArrowRightOnRectangleIcon className="h-4 w-4" />
+                  <span>Logout</span>
+                </button>
               </div>
-              <button
-                onClick={() => setShowAdminSettings(true)}
-                className="bg-gray-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-gray-700 flex items-center space-x-2"
-              >
-                <CogIcon className="h-4 w-4" />
-                <span>Admin Settings</span>
-              </button>
-              <button
-                onClick={logout}
-                className="bg-red-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-red-700 flex items-center space-x-2"
-              >
-                <ArrowRightOnRectangleIcon className="h-4 w-4" />
-                <span>Logout</span>
-              </button>
             </div>
           </div>
         </div>
@@ -1478,8 +1482,8 @@ export default function DashboardPage() {
             </div>
 
             {/* Service Tabs */}
-            <div className="border-b border-gray-200  mb-6">
-              <nav className="-mb-px flex space-x-8">
+            <div className="border-b border-gray-200 mb-6 overflow-x-auto">
+              <nav className="-mb-px flex space-x-4 sm:space-x-8 whitespace-nowrap">
                 {[
                   // { id: 'claims', name: 'Claims', count: serviceData.claims?.length || 0 },
                   // { id: 'policyReviews', name: 'Policy Reviews', count: serviceData.policyReviews?.length || 0 },
@@ -1580,17 +1584,17 @@ export default function DashboardPage() {
                     <table className="min-w-full divide-y  divide-gray-200">
                       <thead className="bg-gray-50 ">
                         <tr>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Inquiry Details</th>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Customer</th>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Insurance Info</th>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status & Date</th>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                          <th className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Inquiry Details</th>
+                          <th className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Customer</th>
+                          <th className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Insurance Info</th>
+                          <th className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status & Date</th>
+                          <th className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
                         </tr>
                       </thead>
                       <tbody className="bg-white  divide-y divide-gray-200">
                         {filteredClaims.length > 0 ? filteredClaims.map((claim: any) => (
                           <tr key={claim.id} className="hover:bg-gray-50">
-                            <td className="px-6 py-4 whitespace-nowrap">
+                            <td className="px-3 sm:px-6 py-4 whitespace-nowrap">
                               <div className="flex items-center">
                                 <ExclamationTriangleIcon className="h-5 w-5 text-red-500 mr-3" />
                                 <div>
@@ -1599,16 +1603,16 @@ export default function DashboardPage() {
                                 </div>
                               </div>
                             </td>
-                            <td className="px-6 py-4 whitespace-nowrap">
+                            <td className="px-3 sm:px-6 py-4 whitespace-nowrap">
                               <div className="text-sm text-gray-900">{claim.firstName} {claim.lastName}</div>
                               <div className="text-sm text-gray-500">{claim.email}</div>
                               <div className="text-sm text-gray-500">{claim.phoneNumber}</div>
                             </td>
-                            <td className="px-6 py-4 whitespace-nowrap">
+                            <td className="px-3 sm:px-6 py-4 whitespace-nowrap">
                               <div className="text-sm text-gray-900">{claim.insuranceCarrier}</div>
                               <div className="text-sm text-gray-500">Policy: {claim.policyNumber}</div>
                             </td>
-                            <td className="px-6 py-4 whitespace-nowrap">
+                            <td className="px-3 sm:px-6 py-4 whitespace-nowrap">
                               <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
                                 claim.status === 'Pending' ? 'bg-yellow-100 text-yellow-800' :
                                 claim.status === 'Processing' ? 'bg-blue-100 text-blue-800' :
@@ -1621,7 +1625,7 @@ export default function DashboardPage() {
                                 {new Date(claim.createdDate).toLocaleDateString()}
                               </div>
                             </td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                            <td className="px-3 sm:px-6 py-4 whitespace-nowrap text-sm font-medium">
                               <button
                                 onClick={() => handleViewServiceDetails('claim', claim.id)}
                                 className="text-blue-600 hover:text-blue-900 mr-3"
@@ -1633,7 +1637,7 @@ export default function DashboardPage() {
                           </tr>
                         )) : (
                           <tr>
-                            <td colSpan={5} className="px-6 py-4 text-center text-gray-500">
+                            <td colSpan={5} className="px-3 sm:px-6 py-4 text-center text-gray-500">
                               No claims found
                             </td>
                           </tr>
@@ -1648,17 +1652,17 @@ export default function DashboardPage() {
                     <table className="min-w-full divide-y divide-gray-200">
                       <thead className="bg-gray-50">
                         <tr>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Review Details</th>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Customer</th>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Review Method</th>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status & Date</th>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                          <th className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Review Details</th>
+                          <th className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Customer</th>
+                          <th className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Review Method</th>
+                          <th className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status & Date</th>
+                          <th className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
                         </tr>
                       </thead>
                       <tbody className="bg-white divide-y divide-gray-200">
                         {filteredPolicyReviews.length > 0 ? filteredPolicyReviews.map((review: any) => (
                           <tr key={review.id} className="hover:bg-gray-50">
-                            <td className="px-6 py-4 whitespace-nowrap">
+                            <td className="px-3 sm:px-6 py-4 whitespace-nowrap">
                               <div className="flex items-center">
                                 <DocumentTextIcon className="h-5 w-5 text-blue-500 mr-3" />
                                 <div>
@@ -1667,15 +1671,15 @@ export default function DashboardPage() {
                                 </div>
                               </div>
                             </td>
-                            <td className="px-6 py-4 whitespace-nowrap">
+                            <td className="px-3 sm:px-6 py-4 whitespace-nowrap">
                               <div className="text-sm text-gray-900">{review.firstName} {review.lastName}</div>
                               <div className="text-sm text-gray-500">{review.email}</div>
                               <div className="text-sm text-gray-500">{review.phoneNumber}</div>
                             </td>
-                            <td className="px-6 py-4 whitespace-nowrap">
+                            <td className="px-3 sm:px-6 py-4 whitespace-nowrap">
                               <div className="text-sm text-gray-900">{review.reviewMethod}</div>
                             </td>
-                            <td className="px-6 py-4 whitespace-nowrap">
+                            <td className="px-3 sm:px-6 py-4 whitespace-nowrap">
                               <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
                                 review.status === 'Requested' ? 'bg-yellow-100 text-yellow-800' :
                                 review.status === 'Scheduled' ? 'bg-blue-100 text-blue-800' :
@@ -1688,7 +1692,7 @@ export default function DashboardPage() {
                                 {new Date(review.createdDate).toLocaleDateString()}
                               </div>
                             </td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                            <td className="px-3 sm:px-6 py-4 whitespace-nowrap text-sm font-medium">
                               <button
                                 onClick={() => handleViewServiceDetails('policyReview', review.id)}
                                 className="text-blue-600 hover:text-blue-900 mr-3"
@@ -1700,7 +1704,7 @@ export default function DashboardPage() {
                           </tr>
                         )) : (
                           <tr>
-                            <td colSpan={5} className="px-6 py-4 text-center text-gray-500">
+                            <td colSpan={5} className="px-3 sm:px-6 py-4 text-center text-gray-500">
                               No policy reviews found
                             </td>
                           </tr>
@@ -1715,17 +1719,17 @@ export default function DashboardPage() {
                     <table className="min-w-full divide-y divide-gray-200">
                       <thead className="bg-gray-50">
                         <tr>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Update Details</th>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Customer</th>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Change Type</th>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status & Date</th>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                          <th className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Update Details</th>
+                          <th className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Customer</th>
+                          <th className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Change Type</th>
+                          <th className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status & Date</th>
+                          <th className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
                         </tr>
                       </thead>
                       <tbody className="bg-white divide-y divide-gray-200">
                         {filteredContactUpdates.length > 0 ? filteredContactUpdates.map((update: any) => (
                           <tr key={update.id} className="hover:bg-gray-50">
-                            <td className="px-6 py-4 whitespace-nowrap">
+                            <td className="px-3 sm:px-6 py-4 whitespace-nowrap">
                               <div className="flex items-center">
                                 <PencilIcon className="h-5 w-5 text-orange-500 mr-3" />
                                 <div>
@@ -1734,15 +1738,15 @@ export default function DashboardPage() {
                                 </div>
                               </div>
                             </td>
-                            <td className="px-6 py-4 whitespace-nowrap">
+                            <td className="px-3 sm:px-6 py-4 whitespace-nowrap">
                               <div className="text-sm text-gray-900">{update.firstName} {update.lastName}</div>
                               <div className="text-sm text-gray-500">{update.email}</div>
                               <div className="text-sm text-gray-500">{update.phoneNumber}</div>
                             </td>
-                            <td className="px-6 py-4 whitespace-nowrap">
+                            <td className="px-3 sm:px-6 py-4 whitespace-nowrap">
                               <div className="text-sm text-gray-900">{update.changeType}</div>
                             </td>
-                            <td className="px-6 py-4 whitespace-nowrap">
+                            <td className="px-3 sm:px-6 py-4 whitespace-nowrap">
                               <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
                                 update.status === 'Requested' ? 'bg-yellow-100 text-yellow-800' :
                                 update.status === 'Processing' ? 'bg-blue-100 text-blue-800' :
@@ -1755,7 +1759,7 @@ export default function DashboardPage() {
                                 {new Date(update.createdDate).toLocaleDateString()}
                               </div>
                             </td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                            <td className="px-3 sm:px-6 py-4 whitespace-nowrap text-sm font-medium">
                               <button
                                 onClick={() => handleViewServiceDetails('contactUpdate', update.id)}
                                 className="text-blue-600 hover:text-blue-900 mr-3"
@@ -1767,7 +1771,7 @@ export default function DashboardPage() {
                           </tr>
                         )) : (
                           <tr>
-                            <td colSpan={5} className="px-6 py-4 text-center text-gray-500">
+                            <td colSpan={5} className="px-3 sm:px-6 py-4 text-center text-gray-500">
                               No contact updates found
                             </td>
                           </tr>
@@ -1782,17 +1786,17 @@ export default function DashboardPage() {
                     <table className="min-w-full divide-y divide-gray-200">
                       <thead className="bg-gray-50">
                         <tr>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Request Details</th>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Customer</th>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Insurance Type</th>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status & Date</th>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                          <th className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Request Details</th>
+                          <th className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Customer</th>
+                          <th className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Insurance Type</th>
+                          <th className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status & Date</th>
+                          <th className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
                         </tr>
                       </thead>
                       <tbody className="bg-white divide-y divide-gray-200">
                         {filteredProofOfInsurance.length > 0 ? filteredProofOfInsurance.map((proof: any) => (
                           <tr key={proof.id} className="hover:bg-gray-50">
-                            <td className="px-6 py-4 whitespace-nowrap">
+                            <td className="px-3 sm:px-6 py-4 whitespace-nowrap">
                               <div className="flex items-center">
                                 <DocumentTextIcon className="h-5 w-5 text-purple-500 mr-3" />
                                 <div>
@@ -1801,15 +1805,15 @@ export default function DashboardPage() {
                                 </div>
                               </div>
                             </td>
-                            <td className="px-6 py-4 whitespace-nowrap">
+                            <td className="px-3 sm:px-6 py-4 whitespace-nowrap">
                               <div className="text-sm text-gray-900">{proof.firstName} {proof.lastName}</div>
                               <div className="text-sm text-gray-500">{proof.email}</div>
                               <div className="text-sm text-gray-500">{proof.phoneNumber}</div>
                             </td>
-                            <td className="px-6 py-4 whitespace-nowrap">
+                            <td className="px-3 sm:px-6 py-4 whitespace-nowrap">
                               <div className="text-sm text-gray-900">{proof.insuranceType}</div>
                             </td>
-                            <td className="px-6 py-4 whitespace-nowrap">
+                            <td className="px-3 sm:px-6 py-4 whitespace-nowrap">
                               <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
                                 proof.status === 'Requested' ? 'bg-yellow-100 text-yellow-800' :
                                 proof.status === 'Processing' ? 'bg-blue-100 text-blue-800' :
@@ -1822,7 +1826,7 @@ export default function DashboardPage() {
                                 {new Date(proof.createdDate).toLocaleDateString()}
                               </div>
                             </td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                            <td className="px-3 sm:px-6 py-4 whitespace-nowrap text-sm font-medium">
                               <button
                                 onClick={() => handleViewServiceDetails('proofOfInsurance', proof.id)}
                                 className="text-blue-600 hover:text-blue-900 mr-3"
@@ -1834,7 +1838,7 @@ export default function DashboardPage() {
                           </tr>
                         )) : (
                           <tr>
-                            <td colSpan={5} className="px-6 py-4 text-center text-gray-500">
+                            <td colSpan={5} className="px-3 sm:px-6 py-4 text-center text-gray-500">
                               No proof of insurance requests found
                             </td>
                           </tr>
@@ -1849,17 +1853,17 @@ export default function DashboardPage() {
                     <table className="min-w-full divide-y divide-gray-200">
                       <thead className="bg-gray-50">
                         <tr>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Consultation Details</th>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Customer</th>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Type</th>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status & Date</th>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                          <th className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Consultation Details</th>
+                          <th className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Customer</th>
+                          <th className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Type</th>
+                          <th className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status & Date</th>
+                          <th className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
                         </tr>
                       </thead>
                       <tbody className="bg-white divide-y divide-gray-200">
                         {filteredConsultations.length > 0 ? filteredConsultations.map((consultation: any) => (
                           <tr key={consultation.id} className="hover:bg-gray-50">
-                            <td className="px-6 py-4 whitespace-nowrap">
+                            <td className="px-3 sm:px-6 py-4 whitespace-nowrap">
                               <div className="flex items-center">
                                 <ChatBubbleLeftRightIcon className="h-5 w-5 text-green-500 mr-3" />
                                 <div>
@@ -1868,15 +1872,15 @@ export default function DashboardPage() {
                                 </div>
                               </div>
                             </td>
-                            <td className="px-6 py-4 whitespace-nowrap">
+                            <td className="px-3 sm:px-6 py-4 whitespace-nowrap">
                               <div className="text-sm text-gray-900">{consultation.firstName} {consultation.lastName}</div>
                               <div className="text-sm text-gray-500">{consultation.email}</div>
                               <div className="text-sm text-gray-500">{consultation.phoneNumber}</div>
                             </td>
-                            <td className="px-6 py-4 whitespace-nowrap">
+                            <td className="px-3 sm:px-6 py-4 whitespace-nowrap">
                               <div className="text-sm text-gray-900">{consultation.consultationType}</div>
                             </td>
-                            <td className="px-6 py-4 whitespace-nowrap">
+                            <td className="px-3 sm:px-6 py-4 whitespace-nowrap">
                               <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
                                 consultation.status === 'Requested' ? 'bg-yellow-100 text-yellow-800' :
                                 consultation.status === 'Scheduled' ? 'bg-blue-100 text-blue-800' :
@@ -1889,7 +1893,7 @@ export default function DashboardPage() {
                                 {new Date(consultation.createdDate).toLocaleDateString()}
                               </div>
                             </td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                            <td className="px-3 sm:px-6 py-4 whitespace-nowrap text-sm font-medium">
                               <button
                                 onClick={() => handleViewServiceDetails('consultation', consultation.id)}
                                 className="text-blue-600 hover:text-blue-900 mr-3"
@@ -1901,7 +1905,7 @@ export default function DashboardPage() {
                           </tr>
                         )) : (
                           <tr>
-                            <td colSpan={5} className="px-6 py-4 text-center text-gray-500">
+                            <td colSpan={5} className="px-3 sm:px-6 py-4 text-center text-gray-500">
                               No consultations found
                             </td>
                           </tr>
@@ -1916,17 +1920,17 @@ export default function DashboardPage() {
                     <table className="min-w-full divide-y divide-gray-200">
                       <thead className="bg-gray-50">
                         <tr>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Inquiry Details</th>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Customer</th>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Subject & Type</th>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status & Date</th>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                          <th className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Inquiry Details</th>
+                          <th className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Customer</th>
+                          <th className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Subject & Type</th>
+                          <th className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status & Date</th>
+                          <th className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
                         </tr>
                       </thead>
                       <tbody className="bg-white divide-y divide-gray-200">
                         {filteredContactInquiries.length > 0 ? filteredContactInquiries.map((inquiry: any) => (
                           <tr key={inquiry.id} className="hover:bg-gray-50">
-                            <td className="px-6 py-4 whitespace-nowrap">
+                            <td className="px-3 sm:px-6 py-4 whitespace-nowrap">
                               <div className="flex items-center">
                                 <ChatBubbleLeftRightIcon className="h-5 w-5 text-purple-500 mr-3" />
                                 <div>
@@ -1935,20 +1939,20 @@ export default function DashboardPage() {
                                 </div>
                               </div>
                             </td>
-                            <td className="px-6 py-4 whitespace-nowrap">
+                            <td className="px-3 sm:px-6 py-4 whitespace-nowrap">
                               <div className="text-sm text-gray-900">{inquiry.firstName} {inquiry.lastName}</div>
                               <div className="text-sm text-gray-500">{inquiry.email}</div>
                               {inquiry.phoneNumber && (
                                 <div className="text-sm text-gray-500">{inquiry.phoneNumber}</div>
                               )}
                             </td>
-                            <td className="px-6 py-4 whitespace-nowrap">
+                            <td className="px-3 sm:px-6 py-4 whitespace-nowrap">
                               <div className="text-sm text-gray-900">{inquiry.subject}</div>
                               {inquiry.inquiryType && (
                                 <div className="text-sm text-gray-500">{inquiry.inquiryType}</div>
                               )}
                             </td>
-                            <td className="px-6 py-4 whitespace-nowrap">
+                            <td className="px-3 sm:px-6 py-4 whitespace-nowrap">
                               <div className="flex flex-col">
                                 {inquiry.status === 'New' ? (
                                   <select
@@ -2000,7 +2004,7 @@ export default function DashboardPage() {
                                 {new Date(inquiry.createdDate).toLocaleDateString()}
                               </div>
                             </td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                            <td className="px-3 sm:px-6 py-4 whitespace-nowrap text-sm font-medium">
                               <button
                                 onClick={() => handleViewServiceDetails('contactInquiry', inquiry.id)}
                                 className="text-blue-600 hover:text-blue-900 mr-3"
@@ -2012,7 +2016,7 @@ export default function DashboardPage() {
                           </tr>
                         )) : (
                           <tr>
-                            <td colSpan={5} className="px-6 py-4 text-center text-gray-500">
+                            <td colSpan={5} className="px-3 sm:px-6 py-4 text-center text-gray-500">
                               No contact inquiries found
                             </td>
                           </tr>
