@@ -141,7 +141,7 @@ export default function AboutPage() {
           })}
         </div>
 
-        <div className="relative mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
+        <div className="relative mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:px-8">
           <div className="mx-auto max-w-4xl text-center">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
@@ -153,15 +153,15 @@ export default function AboutPage() {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="flex items-center  space-x-2  mb-6 ml-90"
+                className="flex items-center justify-center space-x-2 mb-3 sm:mb-6"
               >
                 <motion.div
                   animate={{ rotate: 360 }}
                   transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
                 >
-                  <SparklesIcon className="h-8 w-8 text-yellow-300" />
+                  <SparklesIcon className="h-5 w-5 sm:h-6 sm:w-6 text-yellow-300" />
                 </motion.div>
-                <span className="text-yellow-300 font-semibold text-sm tracking-wider uppercase">
+                <span className="text-yellow-300 font-semibold text-xs sm:text-sm tracking-wider uppercase">
                   Our Story
                 </span>
               </motion.div>
@@ -170,7 +170,7 @@ export default function AboutPage() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
-                className="text-5xl font-bold tracking-tight text-white sm:text-7xl mb-6"
+                className="text-3xl sm:text-5xl md:text-7xl font-bold tracking-tight text-white mb-4 sm:mb-6"
               >
                 About
                 <span className="bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent"> BONNET HEALTHCARE</span>
@@ -180,7 +180,7 @@ export default function AboutPage() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
-                className="text-xl leading-8 text-blue-100 mb-8"
+                className="text-base sm:text-lg md:text-xl leading-7 sm:leading-8 text-blue-100 mb-8"
               >
                 For over 20 years, Bonnet HealthCare has been safeguarding families and businesses with comprehensive health solutions, cost-effective plans, and superior service. We're more than a healthcare provider – we're your trusted partner in better health outcomes.
               </motion.p>
@@ -356,40 +356,40 @@ export default function AboutPage() {
                 Our track record speaks for itself
               </p>
             </div>
-            <div className="mt-20">
-              <div className="flex items-stretch overflow-hidden rounded-2xl bg-white shadow-lg ring-1 ring-black/5">
+            <div className="min-h-[60vh] flex items-center justify-center mt-10">
+              <div className="w-full max-w-3xl sm:max-w-4xl lg:max-w-6xl flex flex-col lg:flex-row items-stretch overflow-hidden rounded-2xl bg-white shadow-lg ring-1 ring-black/5">
                 {/* Rating Card (Left) */}
-                <div className="bg-blue-600 text-white w-full md:w-80 p-8 md:p-10 flex flex-col justify-center">
-                  <div className="text-5xl font-bold leading-none">4.7</div>
-                  <div className="mt-1 text-sm">of 5</div>
+                <div className="bg-blue-600 text-white w-full lg:w-80 p-6 sm:p-8 md:p-10 flex flex-col justify-center items-center lg:items-start text-center lg:text-left">
+                  <div className="text-3xl sm:text-4xl md:text-5xl font-bold leading-none">4.7</div>
+                  <div className="mt-1 text-xs sm:text-sm">of 5</div>
                   <div className="mt-3 flex items-center gap-1">
                     {Array.from({ length: 5 }).map((_, i) => (
-                      <StarIcon key={i} className={`${i < 4 ? 'text-white' : 'text-white/60'} h-5 w-5`} />
+                      <StarIcon key={i} className={`${i < 4 ? 'text-white' : 'text-white/60'} h-4 w-4 sm:h-5 sm:w-5`} />
                     ))}
                   </div>
                 </div>
                 {/* Achievements (Right) */}
                 <div className="flex-1 bg-white">
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-8 md:p-10">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6 sm:p-8 md:p-10">
                     <div className="flex items-center gap-4">
-                      <UsersIcon className="h-8 w-8 text-red-600" />
+                      <UsersIcon className="h-6 w-6 sm:h-8 sm:w-8 text-red-600" />
                       <div>
-                        <div className="text-4xl font-bold text-gray-900">500+</div>
-                        <div className="text-sm text-gray-600">Happy Clients</div>
+                        <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">500+</div>
+                        <div className="text-xs sm:text-sm text-gray-600">Happy Clients</div>
                       </div>
                     </div>
                     <div className="flex items-center gap-4">
-                      <ClipboardDocumentCheckIcon className="h-8 w-8 text-red-600" />
+                      <ClipboardDocumentCheckIcon className="h-6 w-6 sm:h-8 sm:w-8 text-red-600" />
                       <div>
-                        <div className="text-4xl font-bold text-gray-900">20+</div>
-                        <div className="text-sm text-gray-600">Years experience</div>
+                        <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">20+</div>
+                        <div className="text-xs sm:text-sm text-gray-600">Years experience</div>
                       </div>
                     </div>
                     <div className="flex items-center gap-4">
-                      <TrophyIcon className="h-8 w-8 text-red-600" />
+                      <TrophyIcon className="h-6 w-6 sm:h-8 sm:w-8 text-red-600" />
                       <div>
-                        <div className="text-4xl font-bold text-gray-900">10+</div>
-                        <div className="text-sm text-gray-600">Awards Winners</div>
+                        <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">10+</div>
+                        <div className="text-xs sm:text-sm text-gray-600">Awards Winners</div>
                       </div>
                     </div>
                   </div>

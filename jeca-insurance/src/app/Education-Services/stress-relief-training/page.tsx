@@ -17,7 +17,7 @@ export default function StressReliefTrainingPage() {
         />
         <div className="absolute inset-0 bg-white/60" />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-full">
-          <div className="flex h-40 w-150 items-end">
+          <div className="flex h-full items-end">
             <h1 className="text-2xl sm:text-5xl font-extrabold text-gray-900">
             Stress Relief Training
 
@@ -27,26 +27,25 @@ export default function StressReliefTrainingPage() {
       </section>
       
      
-      {/* Stress Relief Training
- */}
-      <section className="bg-gray-100 mt-[-30px]">
+      {/* Stress Relief Training */}
+      <section className="bg-gray-100 mt-0 sm:mt-[-30px]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left: Text content */}
             <div>
-              <h1 className="text-3xl md:text-3xl font-extrabold text-gray-900 mb-6">
+              <h1 className="hidden sm:block text-2xl md:text-4xl font-extrabold text-gray-900 mb-4 sm:mb-6">
               Stress Relief Training
 
               </h1>
-              <div className="space-y-5 text-gray-700  leading-relaxed">
-                <p className="font-semibold">
+              <div className="space-y-4 sm:space-y-5 text-gray-700  leading-relaxed">
+                <p className="font-semibold text-base sm:text-lg">
                   At Bonnet Healthcare Training Center, We believe that managing stress is vital for personal growth and overall well-being. Join us in our mission to empower individuals to handle stress effectively, build resilience, and live healthier, more balanced, and fulfilling lives.
 
 
 
 
                 </p>
-                <p>
+                <p className="text-sm sm:text-base">
                  Our skilled instructors, specializing in stress management and well-being, conduct interactive and insightful training sessions. They share valuable knowledge about the causes and impacts of stress, along with evidence-based methods for stress reduction and relaxation. Participants learn to recognize their personal stress triggers, adopt healthy coping strategies, and create a tailored stress management plan for long-term balance and resilience.
 
 
@@ -63,13 +62,12 @@ export default function StressReliefTrainingPage() {
               </div>
             </div>
 
-            {/* Right: Stress Relief Training
- image */}
+            {/* Right: Stress Relief Training image */}
             <div className="w-full">
               <img
                 src="https://www.totalsuccess.co.uk/wp-content/uploads/2018/06/iStock-518889364_super-768x512.jpg"
                 alt="Healthcare professional demonstrating CPR technique on training mannequin"
-                className="w-full h-auto rounded-xl shadow-sm object-cover"
+                className="w-full h-52 sm:h-64 md:h-72 lg:h-80 rounded-xl shadow-sm object-cover"
                 onError={(e) => {
                   const target = e.currentTarget as HTMLImageElement
                   target.src = '/images/services/acls/acls-illustration-323817935.jpg'
@@ -104,14 +102,14 @@ export default function StressReliefTrainingPage() {
 
       {/* Course Content section placed before the footer (matches provided UI) */}
       <section className="bg-gray-100">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
             {/* Left: Bulleted course content */}
             <div>
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Course Content</h2>
-              <div className="mt-2 h-0.5 w-84 bg-blue-600" aria-hidden="true" />
+              <div className="mt-2 h-0.5 w-24 sm:w-32 md:w-40 bg-blue-600" aria-hidden="true" />
 
-              <ul className="mt-6 space-y-4 list-disc pl-6 text-gray-700 leading-relaxed">
+              <ul className="mt-6 space-y-4 list-disc pl-6 text-gray-700 leading-relaxed text-sm sm:text-base">
                 <li>
                   <span className="font-semibold text-gray-900">Exploring the Nature and Impact of Stress:</span> Participants gain insight into the concept of stress, its effects on physical and mental health, and the common factors that contribute to it. This module lays the groundwork for understanding the significance of effective stress management.
 
@@ -156,7 +154,7 @@ export default function StressReliefTrainingPage() {
               <img
                 src="https://talkshop.ph/blog/wp-content/uploads/2014/05/business-meditation2-1024x716.jpg"
                 alt="Instructors demonstrating ACLS techniques during hands-on training"
-                className="w-full h-220 rounded-lg shadow-md object-cover"
+                className="w-full h-52 sm:h-64 md:h-72 lg:h-80 rounded-lg shadow-md object-cover"
                 onError={(e) => {
                   const target = e.currentTarget as HTMLImageElement
                   target.src = '/images/services/acls/acls-illustration-323817935.jpg'
@@ -168,13 +166,13 @@ export default function StressReliefTrainingPage() {
       </section>
        {/* Benefits section (as per screenshot) */}
       <section className="bg-gray-100">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
           Benefits of Stress Relief Training
           </h2>
-          <div className="mt-2 h-0.5 w-202 bg-blue-600" aria-hidden="true" />
+          <div className="mt-2 h-0.5 w-28 sm:w-40 md:w-52 bg-blue-600" aria-hidden="true" />
 
-          <ul className="mt-6 space-y-4 list-disc pl-6 text-gray-700 leading-relaxed">
+          <ul className="mt-6 space-y-4 list-disc pl-6 text-gray-700 leading-relaxed text-sm sm:text-base">
             <li>
               <span className="font-semibold text-gray-900">Enhancing Physical Well-Being Through Stress Management:</span> Effective stress management techniques taught in Stress Relief Training can significantly enhance physical health. By reducing stress, participants may experience lower blood pressure, strengthened immune function, decreased muscle tension, and improved sleep patterns, all of which contribute to overall well-being.
 

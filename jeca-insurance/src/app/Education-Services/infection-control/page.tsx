@@ -21,7 +21,7 @@ export default function InfectionControlPage() {
         />
         <div className="absolute inset-0 bg-white/60" />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-full">
-          <div className="flex h-40 w-100 items-end">
+          <div className="flex h-full items-end">
             <h1 className="text-2xl sm:text-5xl font-extrabold text-gray-900">
              Infection Control
             </h1>
@@ -31,21 +31,21 @@ export default function InfectionControlPage() {
       
      
       {/*LInfection Control */}
-      <section className="bg-gray-100 mt-[-30px]">
+      <section className="bg-gray-100 mt-0 sm:mt-[-30px]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left: Text content */}
             <div>
-              <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6">
+              <h1 className="hidden sm:block text-2xl md:text-4xl font-extrabold text-gray-900 mb-4 sm:mb-6">
               Infection Control
               </h1>
-              <div className="space-y-5 text-gray-700 leading-relaxed">
-                <p className='font-semibold'>
+              <div className="space-y-4 sm:space-y-5 text-gray-700 leading-relaxed">
+                <p className='font-semibold text-base sm:text-lg'>
                   At Bonnet Healthcare Training Center, We believe that every action makes a difference in preventing infections and protecting lives.
 
 
                 </p>
-                <p>
+                <p className="text-sm sm:text-base">
                   Our experienced instructors, specializing in infection prevention and control, deliver dynamic and hands-on training sessions. They share the latest best practices in infection control, covering essential topics such as proper hand hygiene, correct use of personal protective equipment (PPE), effective cleaning and disinfection procedures, and clear communication strategies to ensure safety and compliance.
 
 
@@ -66,7 +66,7 @@ export default function InfectionControlPage() {
               <img
                 src="https://lirp.cdn-website.com/c6cebdbb/dms3rep/multi/opt/AdobeStock_129008289-dc582823-1920w.jpeg"
                 alt="  Infection Control"
-                className="w-full h-auto rounded-xl shadow-sm object-cover"
+                className="w-full h-52 sm:h-64 md:h-72 lg:h-80 rounded-xl shadow-sm object-cover"
                 onError={(e) => {
                   const target = e.currentTarget as HTMLImageElement
                   target.src = '/images/services/acls/acls-illustration-323817935.jpg'
@@ -98,14 +98,14 @@ export default function InfectionControlPage() {
 
       {/* Course Content section placed before the footer (matches provided UI) */}
       <section className="bg-gray-100">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
             {/* Left: Bulleted course content */}
             <div>
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Course Content</h2>
-              <div className="mt-2 h-0.5 w-84 bg-blue-600" aria-hidden="true" />
+              <div className="mt-2 h-0.5 w-24 sm:w-32 md:w-40 bg-blue-600" aria-hidden="true" />
 
-              <ul className="mt-6 space-y-4 list-disc pl-6 text-gray-700 leading-relaxed">
+              <ul className="mt-6 space-y-4 list-disc pl-6 text-gray-700 leading-relaxed text-sm sm:text-base">
                 <li>
                   <span className="font-semibold text-gray-900">Fundamentals of Infection Prevention and Control:</span> Participants develop a clear understanding of the importance of infection control in promoting a safe and healthy environment. The training explores the impact of infections, the chain of transmission, and the critical role of effective infection control practices in preventing the spread of diseases.
 
@@ -136,7 +136,7 @@ export default function InfectionControlPage() {
               <img
                 src="https://mdforlives.com/blog/wp-content/uploads/2025/04/The-Latest-Trends-in-Infection-Control-and-Patient-Safety-1250x715.jpg"
                 alt="Instructors demonstrating ACLS techniques during hands-on training"
-                className="w-full h-200 rounded-lg shadow-md object-cover"
+                className="w-full h-52 sm:h-64 md:h-72 lg:h-80 rounded-lg shadow-md object-cover"
                 onError={(e) => {
                   const target = e.currentTarget as HTMLImageElement
                   target.src = '/images/services/acls/acls-illustration-323817935.jpg'
@@ -148,13 +148,13 @@ export default function InfectionControlPage() {
       </section>
        {/* Benefits section (as per screenshot) */}
       <section className="bg-gray-100">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
            Benefits of Life Skills Education
           </h2>
-          <div className="mt-2 h-0.5 w-202 bg-blue-600" aria-hidden="true" />
+          <div className="mt-2 h-0.5 w-28 sm:w-40 md:w-52 bg-blue-600" aria-hidden="true" />
 
-          <ul className="mt-6 space-y-4 list-disc pl-6 text-gray-700 leading-relaxed">
+          <ul className="mt-6 space-y-4 list-disc pl-6 text-gray-700 leading-relaxed text-sm sm:text-base">
             <li>
               <span className="font-semibold text-gray-900">Developing Personal Insight and Awareness:</span> Participants gain a deeper understanding of their unique strengths, areas for growth, personal values, and guiding beliefs. This heightened self-awareness enables them to make thoughtful decisions, set purposeful goals, and align their actions with what truly matters to them.
 

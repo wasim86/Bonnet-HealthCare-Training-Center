@@ -20,7 +20,7 @@ export default function AEDPage() {
         />
         <div className="absolute inset-0 bg-white/60" />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-full">
-          <div className="flex h-50 w-200 items-end">
+          <div className="flex h-full items-end">
             <h1 className="text-2xl sm:text-5xl font-extrabold text-gray-900">
               Automated External Defibrillator (AED)
             </h1>
@@ -30,20 +30,20 @@ export default function AEDPage() {
       
      
       {/* Hero Section - two column layout matching screenshot */}
-      <section className="bg-gray-100 mt-[-30px]">
+      <section className="bg-gray-100 mt-0 sm:mt-[-30px]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left: Text content */}
             <div>
-              <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6">
+              <h1 className="hidden sm:block text-2xl md:text-4xl font-extrabold text-gray-900 mb-4 sm:mb-6">
                 Automated External Defibrillator (AED)
               </h1>
-              <div className="space-y-5 text-gray-700 leading-relaxed">
-                <p className="font-semibold">
+              <div className="space-y-4 sm:space-y-5 text-gray-700 leading-relaxed">
+                <p className="font-semibold text-base sm:text-lg">
                   Bonnet Healthcare Training Center is committed to providing world-class AED Training that empowers healthcare professionals to deliver exceptional cardiac emergency care.We recognize AED training as essential for cultivating a network of confident first responders who strengthen community resilience.
 
                 </p>
-                <p>
+                <p className="text-sm sm:text-base">
                   Our AED training courses focus on hands-on practice to foster participants' assurance in deploying these vital devices. Via realistic simulations and engaging demos, learners hone skills in finding and attaching AEDs, assessing heart rhythms, and administering shocks as required.
 
                 </p>
@@ -63,7 +63,7 @@ export default function AEDPage() {
               <img
                 src="https://cprcare.com/wp-content/uploads/2024/09/Step-by-Step-Guide-to-Using-an-Automated-External-Defibrillator-AED-post-img.webp"
                 alt=" Automated External Defibrillator (AED)"
-                className="w-full h-auto rounded-xl shadow-sm object-cover"
+                className="w-full h-52 sm:h-64 md:h-72 lg:h-80 rounded-xl shadow-sm object-cover"
                 onError={(e) => {
                   const target = e.currentTarget as HTMLImageElement
                   target.src = '/images/services/acls/acls-illustration-323817935.jpg'
@@ -93,14 +93,14 @@ export default function AEDPage() {
 
       {/* Course Content section placed before the footer (matches provided UI) */}
       <section className="bg-gray-100">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
             {/* Left: Bulleted course content */}
             <div>
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Course Content</h2>
-              <div className="mt-2 h-0.5 w-84 bg-blue-600" aria-hidden="true" />
+              <div className="mt-2 h-0.5 w-24 sm:w-32 md:w-40 bg-blue-600" aria-hidden="true" />
 
-              <ul className="mt-6 space-y-4 list-disc pl-6 text-gray-700 leading-relaxed">
+              <ul className="mt-6 space-y-4 list-disc pl-6 text-gray-700 leading-relaxed text-sm sm:text-base">
                 <li>
                   <span className="font-semibold text-gray-900">Introduction to AEDs:</span> Participants gain insight into the AED's objectives, operational mechanics, and essential components, ensuring a solid foundation for effective use.
 
@@ -129,7 +129,7 @@ export default function AEDPage() {
               <img
                 src="https://head2toefirstaid.com.au/wp-content/uploads/2019/03/AdobeStock_92473231-1536x1022.jpeg"
                 alt=" Automated External Defibrillator (AED)"
-                className="w-full h-150 rounded-lg shadow-md object-cover"
+                className="w-full h-52 sm:h-64 md:h-72 lg:h-80 rounded-lg shadow-md object-cover"
                 onError={(e) => {
                   const target = e.currentTarget as HTMLImageElement
                   target.src = '/images/services/acls/acls-illustration-323817935.jpg'
@@ -141,13 +141,13 @@ export default function AEDPage() {
       </section>
        {/* Benefits section (as per screenshot) */}
       <section className="bg-gray-100">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
            Benefits of Automated External Defibrillator (AED)
           </h2>
-          <div className="mt-2 h-0.5 w-202 bg-blue-600" aria-hidden="true" />
+          <div className="mt-2 h-0.5 w-28 sm:w-40 md:w-52 bg-blue-600" aria-hidden="true" />
 
-          <ul className="mt-6 space-y-4 list-disc pl-6 text-gray-700 leading-relaxed">
+          <ul className="mt-6 space-y-4 list-disc pl-6 text-gray-700 leading-relaxed text-sm sm:text-base">
             <li>
               <span className="font-semibold text-gray-900">Elevated Survival Outcomes:</span> AED training empowers individuals with vital knowledge and practical skills to deploy an AED proficiently during cardiac emergencies, potentially saving lives.
 

@@ -21,7 +21,7 @@ export default function ACLSPage() {
         />
         <div className="absolute inset-0 bg-white/60" />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-full">
-          <div className="flex h-50 w-180 items-end">
+          <div className="flex h-full items-end">
             <h1 className="text-2xl sm:text-5xl font-extrabold text-gray-900">
               Advanced Cardiovascular Life Support (ACLS)
             </h1>
@@ -31,19 +31,19 @@ export default function ACLSPage() {
       
      
       {/* Hero Section - two column layout matching screenshot */}
-      <section className="bg-gray-100 mt-[-30px]">
+      <section className="bg-gray-100 mt-0 sm:mt-[-30px]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left: Text content */}
             <div>
-              <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6">
+              <h1 className="hidden sm:block text-2xl md:text-4xl font-extrabold text-gray-900 mb-4 sm:mb-6">
                 Advanced Cardiovascular Life Support (ACLS)
               </h1>
-              <div className="space-y-5 text-gray-700 leading-relaxed">
-                <p className="font-semibold">
+              <div className="space-y-4 sm:space-y-5 text-gray-700 leading-relaxed">
+                <p className="font-semibold text-base sm:text-lg">
                   Bonnet Healthcare Training Center is committed to providing world-class ACLS Training that empowers healthcare professionals to deliver exceptional cardiac emergency care.
                 </p>
-                <p>
+                <p className="text-sm sm:text-base">
                   Our ACLS training program combines scenario-based simulations and hands-on practice to build a deep understanding of ACLS algorithms and protocols. Participants master critical cardiac rhythm interpretation, develop decision-making skills under pressure, and learn advanced life support interventions in realistic, high-stress scenarios. Upon completion, participants receive a 2-year certification recognized by the American Heart Association.
                 </p>
               </div>
@@ -85,14 +85,14 @@ export default function ACLSPage() {
 
       {/* Course Content section placed before the footer (matches provided UI) */}
       <section className="bg-gray-100">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
             {/* Left: Bulleted course content */}
             <div>
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Course Content</h2>
-              <div className="mt-2 h-0.5 w-84 bg-blue-600" aria-hidden="true" />
+              <div className="mt-2 h-0.5 w-24 sm:w-32 md:w-40 bg-blue-600" aria-hidden="true" />
 
-              <ul className="mt-6 space-y-4 list-disc pl-6 text-gray-700 leading-relaxed">
+              <ul className="mt-6 space-y-3 sm:space-y-4 list-disc pl-6 text-gray-700 leading-relaxed text-sm sm:text-base">
                 <li>
                   <span className="font-semibold text-gray-900">Basic Life Support (BLS):</span> Throughout the ACLS program, participants strengthen their foundational BLS competencies, including mastering high-quality CPR techniques, proficient AED operation, and collaborative team dynamics during resuscitation scenarios.
                 </li>
@@ -116,7 +116,7 @@ export default function ACLSPage() {
               <img
                 src="https://cprindianapolisin.com/wp-content/uploads/2024/07/acls-renew-cincinnati-290.jpg"
                 alt="Advanced Cardiovascular Life Support (ACLS)"
-                className="w-full h-200 rounded-lg shadow-md object-cover"
+                className="w-full h-52 sm:h-64 md:h-72 lg:h-80 rounded-lg shadow-md object-cover"
                 onError={(e) => {
                   const target = e.currentTarget as HTMLImageElement
                   target.src = '/images/services/acls/acls-illustration-323817935.jpg'
@@ -128,13 +128,13 @@ export default function ACLSPage() {
       </section>
        {/* Benefits section (as per screenshot) */}
       <section className="bg-gray-100">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
             Benefits of Advanced Cardiac Life Support (ACLS)
           </h2>
-          <div className="mt-2 h-0.5 w-202 bg-blue-600" aria-hidden="true" />
+          <div className="mt-2 h-0.5 w-28 sm:w-40 md:w-52 bg-blue-600" aria-hidden="true" />
 
-          <ul className="mt-6 space-y-4 list-disc pl-6 text-gray-700 leading-relaxed">
+          <ul className="mt-6 space-y-3 sm:space-y-4 list-disc pl-6 text-gray-700 leading-relaxed text-sm sm:text-base">
             <li>
               <span className="font-semibold text-gray-900">Superior Patient Outcomes:</span> Bonnet Healthcare Training Center's ACLS program empowers healthcare professionals with advanced clinical expertise that directly translates to measurable improvements in patient survival. Research demonstrates that ACLS-trained professionals achieve 55-65% higher survival-to-discharge rates compared to untrained responders—a difference that makes life-or-death impact during cardiovascular emergencies.
             </li>

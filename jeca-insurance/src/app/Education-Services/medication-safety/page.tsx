@@ -18,7 +18,7 @@ export default function MedicationSafetyPage() {
         />
         <div className="absolute inset-0 bg-white/60" />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-full">
-          <div className="flex h-40 w-100 items-end">
+          <div className="flex h-full items-end">
             <h1 className="text-2xl sm:text-5xl font-extrabold text-gray-900">
              Medication Safety
             </h1>
@@ -28,21 +28,21 @@ export default function MedicationSafetyPage() {
       
      
       {/*Medication Safety */}
-      <section className="bg-gray-100 mt-[-30px]">
+      <section className="bg-gray-100 mt-0 sm:mt-[-30px]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left: Text content */}
             <div>
-              <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6">
+              <h1 className="hidden sm:block text-2xl md:text-4xl font-extrabold text-gray-900 mb-4 sm:mb-6">
               Medication Safety
               </h1>
-              <div className="space-y-5 text-gray-700 leading-relaxed">
-                <p className='font-semibold'>
+              <div className="space-y-4 sm:space-y-5 text-gray-700 leading-relaxed">
+                <p className='font-semibold text-base sm:text-lg'>
                   Bonnet HealthCare Training Center, We believe that medication safety is a collective responsibility. Join us in our commitment to promoting safe medication practices, preventing errors, and safeguarding the health and well-being of every individual.
 
 
                 </p>
-                <p>
+                <p className="text-sm sm:text-base">
                  Our safety training programs are built to be flexible and adaptable, meeting the distinct needs of various industries and organizations. We work closely with businesses, educational institutions, healthcare facilities, and community groups to create customized training solutions that tackle specific risks and operational challenges.
 
 
@@ -63,7 +63,7 @@ export default function MedicationSafetyPage() {
               <img
                 src="https://www.mcmasteroptimalaging.org/images/default-source/blog-post-images/medication-review.tmb-blogpost.jpg?Culture=en&sfvrsn=5f3538d6_4"
                 alt=" Medication Safety training"
-                className="w-full h-auto rounded-xl shadow-sm object-cover"
+                className="w-full h-52 sm:h-64 md:h-72 lg:h-80 rounded-xl shadow-sm object-cover"
                 onError={(e) => {
                   const target = e.currentTarget as HTMLImageElement
                   target.src = '/images/services/acls/acls-illustration-323817935.jpg'
@@ -95,14 +95,14 @@ export default function MedicationSafetyPage() {
 
       {/* Course Content section placed before the footer (matches provided UI) */}
       <section className="bg-gray-100">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
             {/* Left: Bulleted course content */}
             <div>
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Course Content</h2>
-              <div className="mt-2 h-0.5 w-84 bg-blue-600" aria-hidden="true" />
+              <div className="mt-2 h-0.5 w-24 sm:w-32 md:w-40 bg-blue-600" aria-hidden="true" />
 
-              <ul className="mt-6 space-y-4 list-disc pl-6 text-gray-700 leading-relaxed">
+              <ul className="mt-6 space-y-4 list-disc pl-6 text-gray-700 leading-relaxed text-sm sm:text-base">
                 <li>
                   <span className="font-semibold text-gray-900">Fundamentals of Safe Medication Practices:</span> Participants are introduced to the significance of medication safety and the effects of medication errors on patient well-being. The training helps them understand the main factors that contribute to such errors and emphasizes the need for a structured and proactive approach to medication management.
 
@@ -142,7 +142,7 @@ export default function MedicationSafetyPage() {
               <img
                 src="https://cdn-ilbhaeb.nitrocdn.com/ddXdbWqAVIjHPMQzvXfaQUVMosItyeTd/assets/images/optimized/rev-54c188a/educationlifeskills.com/wp-content/uploads/2018/02/AdobeStock_61769035.jpeg"
                 alt="Instructors Medication Safety training"
-                className="w-full h-245 rounded-lg shadow-md object-cover"
+                className="w-full h-52 sm:h-64 md:h-72 lg:h-80 rounded-lg shadow-md object-cover"
                 onError={(e) => {
                   const target = e.currentTarget as HTMLImageElement
                   target.src = '/images/services/acls/acls-illustration-323817935.jpg'
@@ -154,13 +154,13 @@ export default function MedicationSafetyPage() {
       </section>
        {/* Benefits section (as per screenshot) */}
       <section className="bg-gray-100">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
            Benefits of Medication Safety
           </h2>
-          <div className="mt-2 h-0.5 w-202 bg-blue-600" aria-hidden="true" />
+          <div className="mt-2 h-0.5 w-28 sm:w-40 md:w-52 bg-blue-600" aria-hidden="true" />
 
-          <ul className="mt-6 space-y-4 list-disc pl-6 text-gray-700 leading-relaxed">
+          <ul className="mt-6 space-y-4 list-disc pl-6 text-gray-700 leading-relaxed text-sm sm:text-base">
             <li>
               <span className="font-semibold text-gray-900">Reducing Medication Errors
 

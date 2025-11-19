@@ -49,7 +49,7 @@ const quoteCategories = [
   {
     id: 'first-aid',
     name: 'Heart Savers First AID',
-    description: 'Everyone deserves access to comprehensive first aid training.',
+    description: 'Everyone deserves access to comprehensive first....',
     icon: BuildingOfficeIcon,
     color: 'from-gray-600 to-slate-700',
     href: '/services/heart-savers-first-aid'

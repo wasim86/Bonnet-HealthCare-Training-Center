@@ -21,7 +21,7 @@ export default function HeimlichManeuvePage() {
         />
         <div className="absolute inset-0 bg-white/60" />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-full">
-          <div className="flex h-50 w-150 items-end">
+          <div className="flex h-full items-end">
             <h1 className="text-2xl sm:text-5xl font-extrabold text-gray-900">
              Heimlich Maneuve
             </h1>
@@ -31,20 +31,20 @@ export default function HeimlichManeuvePage() {
       
      
       {/* Hero Section - two column layout matching screenshot */}
-      <section className="bg-gray-100 mt-[-30px]">
+      <section className="bg-gray-100 mt-0 sm:mt-[-30px]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left: Text content */}
             <div>
-              <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6">
+              <h1 className="hidden sm:block text-2xl md:text-4xl font-extrabold text-gray-900 mb-4 sm:mb-6">
                 Heimlich Maneuve
               </h1>
-              <div className="space-y-5 text-gray-700 leading-relaxed">
-                <p className="font-semibold">
+              <div className="space-y-4 sm:space-y-5 text-gray-700 leading-relaxed">
+                <p className="font-semibold text-base sm:text-lg">
                  At Bonnet Healthcare Training Center, We firmly believe that Heimlich Maneuver Training should be available to everyone, empowering individuals to act swiftly in choking emergencies.
 
                 </p>
-                <p>
+                <p className="text-sm sm:text-base">
                   In our Heimlich Maneuver Training course, participants master the precise steps for delivering abdominal thrusts to dislodge a blocked airway. Through interactive hands-on drills and realistic simulations, they cultivate the confidence and instinctive muscle memory needed to execute this vital technique effectively.
 
 
@@ -60,7 +60,7 @@ export default function HeimlichManeuvePage() {
               <img
                 src="https://img.lb.wbmdstatic.com/vim/live/webmd/consumer_assets/site_images/article_thumbnails/other/heimlich_maneuver_other/1800x1200_getty_rf_heimlich_maneuver_other.jpg?resize=750px:*&output-quality=75"
                 alt="  Heimlich Maneuve"
-                className="w-full h-auto rounded-xl shadow-sm object-cover"
+                className="w-full h-52 sm:h-64 md:h-72 lg:h-80 rounded-xl shadow-sm object-cover"
                 onError={(e) => {
                   const target = e.currentTarget as HTMLImageElement
                   target.src = '/images/services/acls/acls-illustration-323817935.jpg'
@@ -92,14 +92,14 @@ export default function HeimlichManeuvePage() {
 
       {/* Course Content section placed before the footer (matches provided UI) */}
       <section className="bg-gray-100">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
             {/* Left: Bulleted course content */}
             <div>
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Course Content</h2>
-              <div className="mt-2 h-0.5 w-84 bg-blue-600" aria-hidden="true" />
+              <div className="mt-2 h-0.5 w-24 sm:w-32 md:w-40 bg-blue-600" aria-hidden="true" />
 
-              <ul className="mt-6 space-y-4 list-disc pl-6 text-gray-700 leading-relaxed">
+              <ul className="mt-6 space-y-4 list-disc pl-6 text-gray-700 leading-relaxed text-sm sm:text-base">
                 <li>
                   <span className="font-semibold text-gray-900">Choking Crisis Awareness:</span> Participants explore various airway blockages that trigger choking crises, building awareness of key indicators like the inability to speak or cough, throat-clutching gestures, and labored breathing.
 
@@ -131,7 +131,7 @@ export default function HeimlichManeuvePage() {
               <img
                 src="http://news-medical.net/image-handler/ts/20160801122016/ri/458/picture/2016/8/Heimlich_Maneuver_shutterstock_394668226.jpg"
                 alt="Heimlich Maneuve training"
-                className="w-full h-160 rounded-lg shadow-md object-cover"
+                className="w-full h-52 sm:h-64 md:h-72 lg:h-80 rounded-lg shadow-md object-cover"
                 onError={(e) => {
                   const target = e.currentTarget as HTMLImageElement
                   target.src = '/images/services/acls/acls-illustration-323817935.jpg'
@@ -143,13 +143,13 @@ export default function HeimlichManeuvePage() {
       </section>
        {/* Benefits section (as per screenshot) */}
       <section className="bg-gray-100">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
             Benefits of Heimlich Maneuve
           </h2>
-          <div className="mt-2 h-0.5 w-202 bg-blue-600" aria-hidden="true" />
+          <div className="mt-2 h-0.5 w-28 sm:w-40 md:w-52 bg-blue-600" aria-hidden="true" />
 
-          <ul className="mt-6 space-y-4 list-disc pl-6 text-gray-700 leading-relaxed">
+          <ul className="mt-6 space-y-4 list-disc pl-6 text-gray-700 leading-relaxed text-sm sm:text-base">
             <li>
               <span className="font-semibold text-gray-900">Mastering Critical Rescue Techniques
 :</span> Heimlich Maneuver Training arms participants with vital skills to clear airway obstructions and preserve lives in critical moments. Learners master precise techniques for adults, children, and infants, enabling swift, decisive responses to choking emergencies across all age groups.

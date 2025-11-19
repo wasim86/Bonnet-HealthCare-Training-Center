@@ -23,7 +23,7 @@ export default function EpiPenTrainingPage() {
         />
         <div className="absolute inset-0 bg-white/60" />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-full">
-          <div className="flex h-50 w-100 items-end">
+          <div className="flex h-full items-end">
             <h1 className="text-2xl sm:text-5xl font-extrabold text-gray-900">
              EPI-PEN
             </h1>
@@ -33,20 +33,20 @@ export default function EpiPenTrainingPage() {
       
      
       {/* Hero Section - two column layout matching screenshot */}
-      <section className="bg-gray-100 mt-[-30px]">
+      <section className="bg-gray-100 mt-0 sm:mt-[-30px]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left: Text content */}
             <div>
-              <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6">
+              <h1 className="hidden sm:block text-2xl md:text-4xl font-extrabold text-gray-900 mb-4 sm:mb-6">
                 EPI-PEN
               </h1>
-              <div className="space-y-5 text-gray-700 leading-relaxed">
-                <p className="font-semibold">
+              <div className="space-y-4 sm:space-y-5 text-gray-700 leading-relaxed">
+                <p className="font-semibold text-base sm:text-lg">
                  At Bonnet Healthcare Training Center,We recognize that Epi-Pen Training is vital for anyone who may witness or respond to life-threatening allergic reactions, providing them with the confidence to act decisively when anaphylaxis strikes.
 
                 </p>
-                <p>
+                <p className="text-sm sm:text-base">
                  In our Epi-Pen Training course, participants master the critical skills needed to evaluate allergic reaction severity, administer epinephrine accurately via Epi-Pen, and deliver immediate care until emergency medical services arrive. Through immersive hands-on drills and realistic simulations, learners build the proficiency and self-assurance required to deploy this life-saving device effectively under pressure.
 
 
@@ -62,7 +62,7 @@ export default function EpiPenTrainingPage() {
               <img
                 src="https://www.hamiltonhealthsciences.ca/wp-content/uploads/2019/06/epi-pen.jpg"
                 alt="EPI-PEN on training mannequin"
-                className="w-full h-auto rounded-xl shadow-sm object-cover"
+                className="w-full h-52 sm:h-64 md:h-72 lg:h-80 rounded-xl shadow-sm object-cover"
                 onError={(e) => {
                   const target = e.currentTarget as HTMLImageElement
                   target.src = '/images/services/acls/acls-illustration-323817935.jpg'
@@ -94,14 +94,14 @@ export default function EpiPenTrainingPage() {
 
       {/* Course Content section placed before the footer (matches provided UI) */}
       <section className="bg-gray-100">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
             {/* Left: Bulleted course content */}
             <div>
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Course Content</h2>
-              <div className="mt-2 h-0.5 w-84 bg-blue-600" aria-hidden="true" />
+              <div className="mt-2 h-0.5 w-24 sm:w-32 md:w-40 bg-blue-600" aria-hidden="true" />
 
-              <ul className="mt-6 space-y-4 list-disc pl-6 text-gray-700 leading-relaxed">
+              <ul className="mt-6 space-y-4 list-disc pl-6 text-gray-700 leading-relaxed text-sm sm:text-base">
                 <li>
                   <span className="font-semibold text-gray-900">Recognizing Anaphylactic Emergencies:</span> Participants explore anaphylaxis, a rapid and potentially fatal allergic response that demands immediate recognition and action. They identify common triggers and master the hallmark warning signs, including respiratory distress, facial or throat swelling, widespread hives, and dangerously low blood pressure that can lead to shock.
 
@@ -134,7 +134,7 @@ export default function EpiPenTrainingPage() {
               <img
                 src="https://www.scnsc.org/sites/default/files/styles/resources_image/public/images/products/EpiPen.jpeg.webp?itok=aVlArPl8"
                 alt="EPI-PEN training"
-                className="w-full h-220 rounded-lg shadow-md object-cover"
+                className="w-full h-52 sm:h-64 md:h-72 lg:h-80 rounded-lg shadow-md object-cover"
                 onError={(e) => {
                   const target = e.currentTarget as HTMLImageElement
                   target.src = '/images/services/acls/acls-illustration-323817935.jpg'
@@ -146,13 +146,13 @@ export default function EpiPenTrainingPage() {
       </section>
        {/* Benefits section (as per screenshot) */}
       <section className="bg-gray-100">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
           Benefits of EPI-PEN
           </h2>
-          <div className="mt-2 h-0.5 w-202 bg-blue-600" aria-hidden="true" />
+          <div className="mt-2 h-0.5 w-28 sm:w-40 md:w-52 bg-blue-600" aria-hidden="true" />
 
-          <ul className="mt-6 space-y-4 list-disc pl-6 text-gray-700 leading-relaxed">
+          <ul className="mt-6 space-y-4 list-disc pl-6 text-gray-700 leading-relaxed text-sm sm:text-base">
             <li>
               <span className="font-semibold text-gray-900">Essential Anaphylaxis Response Competencies:</span> Epi-Pen training arms individuals with essential knowledge and hands-on skills to deploy epinephrine rapidly during anaphylactic emergencies. By mastering proper auto-injector administration, participants gain the ability to deliver immediate, potentially life-saving intervention to anyone facing a severe allergic crisis, transforming them into confident responders in critical moments.
 
