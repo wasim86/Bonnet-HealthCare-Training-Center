@@ -1458,7 +1458,7 @@ export default function DashboardPage() {
           className="bg-white shadow rounded-lg"
         >
           <div className="px-4 py-5 sm:p-6">
-            <div className="flex items-center justify-between mb-6">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6">
               <div>
                 <h2 className="text-lg font-medium text-gray-900">Service Management</h2>
                 <p className="text-sm text-gray-600">Manage customer service requests and inquiries</p>
@@ -1474,7 +1474,7 @@ export default function DashboardPage() {
                   </div> */}
               <button
                 onClick={fetchServiceData}
-                className="inline-flex items-center px-3 py-2 border border-gray-300 shadow-sm text-sm leading-4 font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                className="inline-flex items-center self-end sm:self-auto px-3 py-2 border border-gray-300 shadow-sm text-xs sm:text-sm leading-4 font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
               >
                 <ArrowPathIcon className="h-4 w-4 mr-2" />
                 Refresh

@@ -21,6 +21,7 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined)
 const ADMIN_EMAIL = 'info@jecainsurancefl.com'
 const ADMIN_PASSWORD_KEY = 'jeca_admin_password_v2'
 const ADMIN_LOGIN_KEY = 'jeca_admin_logged_in_v2'
+// const DEFAULT_PASSWORD = 'JecaAdmin2024!@#'
 const DEFAULT_PASSWORD = 'JecaAdmin2024!@#'
 
 // Helper function to safely access localStorage
